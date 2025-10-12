@@ -1,11 +1,11 @@
 import Image from "next/image";
-import data from "@/questions/info.json";
 
 export default function IntroPage() {
-  const { intro } = data;
+  // Hardcoded data
+  const introInfo = `Oyun sahnemizin büyük kısmı, eski Doğu Roma İmparatorluğu'nun İstanbul'da inşa ettiği Hipodrom üzerinde geçecek. Önce Hipodrom'u tanıyalım: Antik çağda at yarışı düzenlenen pistlere verilen isimdir ve etrafında izleyiciler için devasa tribünler bulunur. Hipodromun ana amacı sadece yarış düzenlemek değildi; Doğu Roma İmparatoru Konstantin, İstanbul'u "Yeni Roma" olarak inşa ederken, büyük bir Hipodrom yaparak hem halkın eğlenmesini sağladı hem de hükümdarın halkla bir araya gelebileceği bir alan oluşturdu. Hipodromun tam ortasında, spina denilen anıtsal bir çizgi vardı ve üzerinde dört adet anıt yer alıyordu; ne yazık ki günümüze sadece üçü ulaşabildi. Hipodromlar aynı zamanda siyasetin de merkeziydi; halk, hükümdara dileklerini bu oyunlar sırasında iletir, araba yarışları ise siyasi mesajları temsil ederdi. Mavi takım, aristokratların desteğini ve imparatorun gücünü simgelerken, yesil takım, fakir halkın hoşnutsuzluğunu ve imparatora karşı tepkisini yansıtırdı. Bu iki takım arasındaki rekabet sadece yarışlarla sınırlı kalmaz, halkın siyasi gücünü ve imparatorla ilişkilerini de gözler önüne sererdi.`;
 
   // Split the info text into paragraphs for better readability
-  const infoParagraphs = intro.info
+  const infoParagraphs = introInfo
     .split(". ")
     .filter((paragraph) => paragraph.length > 0);
 
@@ -28,7 +28,7 @@ export default function IntroPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src={intro.img_url}
+                src="/q_imgs/info.jpg"
                 alt="Hipodrom tarihi çizimi"
                 fill
                 className="object-cover"
