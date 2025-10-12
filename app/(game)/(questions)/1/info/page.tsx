@@ -40,9 +40,9 @@ export default function InfoPage() {
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
                 <strong className="text-white">Doğru cevap: Kazan</strong>. Şu
-                anda Hipodrom'un tam merkezindesin. Hayal et, etrafında devasa
-                tribünler ve ortada spina; tüm bu alan yaklaşık 9 futbol sahası
-                büyüklüğünde!
+                anda Hipodrom&apos;un tam merkezindesin. Hayal et, etrafında
+                devasa tribünler ve ortada spina; tüm bu alan yaklaşık 9 futbol
+                sahası büyüklüğünde!
               </p>
 
               <p>

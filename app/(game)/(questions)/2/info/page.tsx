@@ -40,36 +40,36 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Tebrikler! Theodosius'un ruhunu özgür bıraktın ve kadim sırrı
-                çözdün. Şu an Hipodrom'un tam kalbindesin. Hemen yanındaki bu
-                devasa dikilitaş, sadece bir taş parçası değil, bir
+                Tebrikler! Theodosius&apos;un ruhunu özgür bıraktın ve kadim
+                sırrı çözdün. Şu an Hipodrom&apos;un tam kalbindesin. Hemen
+                yanındaki bu devasa dikilitaş, sadece bir taş parçası değil, bir
                 imkansızlığın başarılışının ve mutlak iktidarın sessiz bir
                 tanığı.
               </p>
 
               <p>
-                İmparator I. Theodosius, Mısır'daki bir firavun lahitinden
-                söktürdüğü bu kırmızı granit levhayı, İstanbul'a getirtti ve
-                Hipodrom'un spinasına, tam da şu an üzerinde durduğun yere
-                diktirdi.
+                İmparator I. Theodosius, Mısır&apos;daki bir firavun lahitinden
+                söktürdüğü bu kırmızı granit levhayı, İstanbul&apos;a getirtti
+                ve Hipodrom&apos;un spinasına, tam da şu an üzerinde durduğun
+                yere diktirdi.
               </p>
 
               <p>
                 Bu bir mühendislik harikasıydı. O dönemde böylesine devasa ve
                 ağır bir tek parça taşı, önce Nil Nehri üzerinden, sonra
-                Akdeniz'i aşarak getirmek, sonra da olduğu gibi dikmek,
+                Akdeniz&apos;i aşarak getirmek, sonra da olduğu gibi dikmek,
                 neredeyse imkansız denilebilecek bir işti. Bu muazzam maliyet ve
-                emek, imparatorun sadece Roma'nın değil, tüm dünyanın efendisi
-                olduğunu herkese göstermek içindi. "Bakın," diyordu bu taş,
-                "benim gücüm, zamanı ve mekanı aşar."
+                emek, imparatorun sadece Roma&apos;nın değil, tüm dünyanın
+                efendisi olduğunu herkese göstermek içindi. "Bakın," diyordu bu
+                taş, "benim gücüm, zamanı ve mekanı aşar."
               </p>
 
               <p>
-                Ve öyle de oldu. Yaklaşık 3500 yıllık bu anıt, Hipodrom'daki en
-                eski yapı olma özelliğini taşıyor. Kırmızı granitin eşsiz
-                dayanıklılığı sayesinde, üzerindeki hiyeroglifler hala ilk günkü
-                kadar net. Roma'yı, Bizans'ı, Osmanlı'yı gördü ve hala burada,
-                tüm ihtişamıyla ayakta.
+                Ve öyle de oldu. Yaklaşık 3500 yıllık bu anıt,
+                Hipodrom&apos;daki en eski yapı olma özelliğini taşıyor. Kırmızı
+                granitin eşsiz dayanıklılığı sayesinde, üzerindeki hiyeroglifler
+                hala ilk günkü kadar net. Roma&apos;yı, Bizans&apos;ı,
+                Osmanlı&apos;yı gördü ve hala burada, tüm ihtişamıyla ayakta.
               </p>
             </div>
           </CardContent>

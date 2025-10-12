@@ -32,8 +32,8 @@ export default function QuestionPage() {
 
   const hintData = [
     "Zafer takımın kaidesindeki figürleri tek tek say. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
-    "Taş yazıtlara ulaşmak için, önce taşın eteğindeki sessiz muhafızları anla. Doğru hiyeroglif sütunu, İmparator'un kendi suretinin gökyüzüne uzanan devamıdır.",
-    "Kırık olanları say, sonra bir eksiğini al. Bulduğun bu rakam, İmparator'un üzerindeki yazıtlarda hem bir katman numarası, hem de bir sıra numarasıdır.",
+    "Taş yazıtlara ulaşmak için, önce taşın eteğindeki sessiz muhafızları anla. Doğru hiyeroglif sütunu, İmparator&apos;un kendi suretinin gökyüzüne uzanan devamıdır.",
+    "Kırık olanları say, sonra bir eksiğini al. Bulduğun bu rakam, İmparator&apos;un üzerindeki yazıtlarda hem bir katman numarası, hem de bir sıra numarasıdır.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -193,7 +193,7 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Doğru hiyeroglifi buldunuz! İmparator Theodosius'un ruhu
+                  Doğru hiyeroglifi buldunuz! İmparator Theodosius&apos;un ruhu
                   özgür.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">

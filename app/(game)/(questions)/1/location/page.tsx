@@ -57,7 +57,7 @@ export default function LocationPage() {
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
           >
             <FaMapMarkerAlt className="mr-2" />
-            Google Haritalar'da Aç
+            Google Haritalar&apos;da Aç
           </Link>
         </div>
 
