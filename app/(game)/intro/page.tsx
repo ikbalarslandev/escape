@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function IntroPage() {
   // Hardcoded data
@@ -58,12 +59,11 @@ export default function IntroPage() {
           </div>
         </div>
 
-        {/* Continue Button */}
-        <div className="text-center">
-          <button className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 hover:scale-105">
-            İlk Soruyu Gör
-          </button>
-        </div>
+        <Link href="/1/location">
+          <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer">
+            MACERAYA BAŞLA!
+          </div>
+        </Link>
 
         {/* Footer */}
         <footer className="text-center mt-8 text-gray-400 font-light">
