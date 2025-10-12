@@ -219,7 +219,7 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! "Kazan"ı buldunuz.</p>
+                <p>Doğru cevap! &quot;Kazan&quot;ı buldunuz.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} yönlendiriliyorsunuz...

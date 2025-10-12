@@ -60,8 +60,8 @@ export default function InfoPage() {
                 Akdeniz&apos;i aşarak getirmek, sonra da olduğu gibi dikmek,
                 neredeyse imkansız denilebilecek bir işti. Bu muazzam maliyet ve
                 emek, imparatorun sadece Roma&apos;nın değil, tüm dünyanın
-                efendisi olduğunu herkese göstermek içindi. "Bakın," diyordu bu
-                taş, "benim gücüm, zamanı ve mekanı aşar."
+                efendisi olduğunu herkese göstermek içindi. &quot;Bakın,&quot;
+                diyordu bu taş, &quot;benim gücüm, zamanı ve mekanı aşar.&quot;
               </p>
 
               <p>
