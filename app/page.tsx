@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen text-gray-100 p-8">
@@ -108,9 +110,11 @@ export default function Home() {
             Her obje, her ipucu, şehrin kadim bilgeliğine giden bir anahtar.
           </p>
 
-          <button className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
-            MACERAYA BAŞLA!
-          </button>
+          <Link href="/intro">
+            <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer">
+              MACERAYA BAŞLA!
+            </div>
+          </Link>
         </div>
 
         {/* Footer */}
