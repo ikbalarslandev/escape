@@ -2,18 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,37 +11,32 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-
-// Form validation schema
-const formSchema = z.object({
-  answer: z.string().min(1, "Cevap boş olamaz"),
-});
+import {
+  FaLightbulb,
+  FaLock,
+  FaLockOpen,
+  FaCheckCircle,
+  FaTimesCircle,
+} from "react-icons/fa";
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "Hipodromdaki spina(hipodromun ortasındaki anıtsal çizgi) benim meskenimdir. Geceleri üç farklı yönden aydınlanırım. Öyle ki, üç hayvanın başında otururum. Ben neyim?";
+    "Ben İmparator Theodosius. Dostlarım da benim gibi kellelerinden oldular. Onların toplam sayısı, ruhumu özgür kılacak anahtarı taşıyor. Acılar içinde göğe yükselen ruhum, bir hiyeroglifin taş yüreğine hapsoldu. Hiyeroglifi bul ve ruhumu serbest bırak.";
 
   const hintData = [
-    "Bu 3 hayvan da yılandır.",
-    "Yılanlar artık yok",
-    "Boyum 5.5 metredir",
+    "Zafer takımın kaidesindeki figürleri tek tek say. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
+    "Taş yazıtlara ulaşmak için, önce taşın eteğindeki sessiz muhafızları anla. Doğru hiyeroglif sütunu, İmparator'un kendi suretinin gökyüzüne uzanan devamıdır.",
+    "Kırık olanları say, sonra bir eksiğini al. Bulduğun bu rakam, İmparator'un üzerindeki yazıtlarda hem bir katman numarası, hem de bir sıra numarasıdır.",
   ];
 
-  // Initialize form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      answer: "",
-    },
-  });
+  const options = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -62,28 +46,18 @@ export default function QuestionPage() {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
+  const handleOptionClick = (option: number) => {
+    setSelectedOption(option);
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
-
-    // Check if answer is correct
-    if (normalizedAnswer === "kazan") {
+    if (option === 6) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer", {
-        type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
-      });
+      setIsError(true);
     }
-
-    setIsSubmitting(false);
   };
 
-  // Countdown effect
+  // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -92,17 +66,17 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/1/info");
+      router.push("/2/info");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 1
+            Soru 2
           </h1>
         </header>
 
@@ -112,42 +86,41 @@ export default function QuestionPage() {
             {question}
           </p>
 
-          {/* Answer Form */}
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="answer"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg font-semibold text-white">
-                      Cevabınız:
-                    </FormLabel>
-                    <FormControl>
-                      <div className="flex gap-4">
-                        <Input
-                          {...field}
-                          placeholder="Cevabınızı buraya yazın..."
-                          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
-                          disabled={isSubmitting}
-                        />
-                        <Button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
-                        >
-                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
-                        </Button>
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-300 text-lg" />
-                  </FormItem>
-                )}
-              />
-            </form>
-          </Form>
+          {/* Options Grid */}
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold text-white mb-6 text-center">
+              Doğru hiyeroglifi seçin:
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {options.map((option) => (
+                <div
+                  key={option}
+                  className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
+                    selectedOption === option
+                      ? option === 6
+                        ? "border-green-400 ring-2 ring-green-400"
+                        : "border-red-400 ring-2 ring-red-400"
+                      : "border-white/20 hover:border-white/40"
+                  }`}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  <Image
+                    src={`/opt/2/${option}.jpg`}
+                    alt={`Hiyeroglif ${option}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                  <div className="absolute bottom-2 right-2 bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                    {option}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <hr className="mt-12" />
+
           {/* Hints Section */}
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
@@ -202,7 +175,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/1/location")}
+            onClick={() => router.push("/2/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -212,14 +185,17 @@ export default function QuestionPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white ">
+          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Tebrikler!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! "Kazan"ı buldunuz.</p>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+                <p>
+                  Doğru hiyeroglifi buldunuz! İmparator Theodosius'un ruhu
+                  özgür.
+                </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} yönlendiriliyorsunuz...
@@ -231,6 +207,30 @@ export default function QuestionPage() {
                     ></div>
                   </div>
                 </div>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Error Dialog */}
+        <Dialog open={isError} onOpenChange={setIsError}>
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
+                <FaTimesCircle className="mr-3" />
+                Yanlış Seçim!
+              </DialogTitle>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+                <p>
+                  Bu hiyeroglif doğru değil. İpuçlarını kullanarak tekrar
+                  deneyin.
+                </p>
+                <Button
+                  onClick={() => setIsError(false)}
+                  className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
+                >
+                  Tekrar Dene
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
