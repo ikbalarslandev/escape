@@ -5,7 +5,7 @@ export default function Home() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            İstanbul'un Kayıp Mühürleri
+            İstanbul&apos;un Kayıp Mühürleri
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6 italic">
             Şehrin kaderi sizin ellerinizde...
@@ -19,8 +19,8 @@ export default function Home() {
             <h2 className="text-2xl font-serif font-bold text-white">GÖREV</h2>
           </div>
           <p className="text-lg leading-relaxed mb-6 text-gray-200 font-light">
-            Kaşifler, dikkat! İstanbul'un kalbinde saklı üç kadim mühür var:{" "}
-            <span className="font-semibold text-white">Birlik</span>,{" "}
+            Kaşifler, dikkat! İstanbul&apos;un kalbinde saklı üç kadim mühür
+            var: <span className="font-semibold text-white">Birlik</span>,{" "}
             <span className="font-semibold text-gray-100">Kudret</span> ve{" "}
             <span className="font-semibold text-gray-300">Tevazu</span>.
           </p>
@@ -38,7 +38,7 @@ export default function Home() {
             </div>
             <p className="text-gray-200 font-light">
               Eğer iki saat içinde tüm mühürleri oluşturup sırlarını
-              çözemezseniz, İstanbul'un tarihi tamamen unutulacak ve şehir
+              çözemezseniz, İstanbul&apos;un tarihi tamamen unutulacak ve şehir
               lanetlenecek!
             </p>
           </div>
@@ -101,8 +101,8 @@ export default function Home() {
             SON UYARI
           </h2>
           <p className="text-lg mb-4 text-gray-200 font-light italic">
-            Mühürleri oluşturmak, sadece bulmacaları çözmek değil; İstanbul'un
-            ruhunu ve tarihini yeniden inşa etmek demek.
+            Mühürleri oluşturmak, sadece bulmacaları çözmek değil;
+            İstanbul&apos;un ruhunu ve tarihini yeniden inşa etmek demek.
           </p>
           <p className="text-lg mb-6 text-gray-200 font-light italic">
             Her obje, her ipucu, şehrin kadim bilgeliğine giden bir anahtar.
@@ -116,7 +116,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center mt-8 text-gray-400 font-light">
           <p className="italic">
-            İstanbul'un kaderi artık sizin ellerinizde...
+            İstanbul&apos;un kaderi artık sizin ellerinizde...
           </p>
           <p className="text-sm mt-2">Hadi başlayalım!</p>
         </footer>
