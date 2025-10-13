@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -26,7 +25,7 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    "🔹 1. Mühür – Birlik Mührü\n\nTema: Halkı etkilemek, farklı etnik grupları bir araya toplamak, sosyal birlik\n\nBirlik Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
+    " 1. Mühür – Birlik Mührü\n\nTema: Halkı etkilemek, farklı etnik grupları bir araya toplamak, sosyal birlik\n\nBirlik Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
 
   const objects = [
     {
@@ -168,69 +167,69 @@ export default function SealPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-2xl">
-            <DialogHeader>
+          <DialogContent className="bg-gray-800 [&>button]:hidden border-white/20 text-white  h-[90vh] md:h-auto overflow-y-auto">
+            <DialogHeader className=" bg-gray-800 z-10 pb-4">
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Birlik Mührü Oluşturuldu!
+                Mühür Oluşturuldu!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4">
-                <div className="space-y-6">
-                  {/* Seal Icon */}
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
-                      <GiShakingHands className="text-white text-5xl" />
-                    </div>
-                    <p className="text-xl font-serif font-bold text-white">
-                      Birlik Mührü
-                    </p>
-                    <p className="text-gray-300 mt-2">
-                      Farklı halkları bir araya getiren sosyal birlik
-                    </p>
+            </DialogHeader>
+            <div className="text-gray-200 text-lg">
+              <div className="space-y-6">
+                {/* Seal Icon */}
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
+                    <GiShakingHands className="text-white text-5xl" />
                   </div>
-
-                  <p className="text-center font-semibold">
-                    Tebrikler! Birlik Mührü'nü başarıyla oluşturdunuz. 🎉
+                  <p className="text-xl font-serif font-bold text-white">
+                    Birlik Mührü
                   </p>
+                  <p className="text-gray-300 mt-2">
+                    Farklı halkları bir araya getiren sosyal birlik
+                  </p>
+                </div>
 
-                  <div className="space-y-3 mt-6">
-                    {correctObjects.map((object) => (
+                <p className="text-center font-semibold">
+                  Tebrikler! Birlik Mührü'nü başarıyla oluşturdunuz. 🎉
+                </p>
+
+                <div className="space-y-3 mt-6">
+                  {correctObjects.map((object) => (
+                    <div
+                      key={object.id}
+                      className="flex items-center space-x-4 bg-white/5 rounded-lg p-4"
+                    >
                       <div
-                        key={object.id}
-                        className="flex items-center space-x-4 bg-white/5 rounded-lg p-4"
+                        className={`bg-gradient-to-br ${object.gradient} border border-white rounded-2xl p-3 w-16 h-16 flex items-center justify-center shadow-lg`}
                       >
-                        <div
-                          className={`bg-gradient-to-br ${object.gradient} border border-white rounded-2xl p-3 w-16 h-16 flex items-center justify-center shadow-lg`}
-                        >
-                          <object.icon className="text-white text-2xl" />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-white text-sm">
-                            {object.name}
-                          </h4>
-                          <p className="text-gray-300 text-xs mt-1">
-                            {object.description}
-                          </p>
-                        </div>
+                        <object.icon className="text-white text-2xl" />
                       </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 p-4 bg-white/10 rounded-lg">
-                    <p className="text-lg font-semibold text-center">
-                      {countdown} saniye içinde bir sonraki bölüme
-                      yönlendiriliyorsunuz...
-                    </p>
-                    <div className="w-full bg-white/20 rounded-full h-2 mt-2">
-                      <div
-                        className="bg-green-400 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${(countdown / 10) * 100}%` }}
-                      ></div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-white text-sm">
+                          {object.name}
+                        </h4>
+                        <p className="text-gray-300 text-xs mt-1">
+                          {object.description}
+                        </p>
+                      </div>
                     </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 p-4 bg-white/10 rounded-lg">
+                  <p className="text-lg font-semibold text-center">
+                    {countdown} saniye içinde bir sonraki bölüme
+                    yönlendiriliyorsunuz...
+                  </p>
+                  <div className="w-full bg-white/20 rounded-full h-2 mt-2">
+                    <div
+                      className="bg-green-400 h-2 rounded-full transition-all duration-1000"
+                      style={{ width: `${(countdown / 10) * 100}%` }}
+                    ></div>
                   </div>
                 </div>
-              </DialogDescription>
-            </DialogHeader>
+              </div>
+            </div>
           </DialogContent>
         </Dialog>
 
@@ -242,7 +241,7 @@ export default function SealPage() {
                 <FaTimesCircle className="mr-3" />
                 Yanlış Seçim!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+              <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
                   Seçtiğiniz objeler Birlik Mührü'nü oluşturmuyor. Lütfen farklı
                   halkları bir araya getiren, birlik ve dayanışmayı temsil eden
@@ -254,7 +253,7 @@ export default function SealPage() {
                 >
                   Tekrar Dene
                 </Button>
-              </DialogDescription>
+              </div>
             </DialogHeader>
           </DialogContent>
         </Dialog>
