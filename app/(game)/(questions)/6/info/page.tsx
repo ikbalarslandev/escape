@@ -2,6 +2,7 @@
 
 import { GiStoneTablet, GiShakingHands } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
+import { PiMosqueLight } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,11 +27,11 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-orange-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaFire className="text-white text-3xl" />
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
+                <PiMosqueLight className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                İsyan Ateşi
+                Kubbe Minyatürü
               </h2>
               <p className="text-gray-300">
                 Yeni bir hikaye parçasını keşfettiniz
@@ -40,16 +41,26 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Tebrikler! Üzerinde durduğunuz bu topraklar, Bizans&apos;ın en
-                büyük ayaklanmasına tanıklık etti. Hipodrom sadece bir yarış
-                alanı değil, siyasetin de kalbiydi. &quot;Maviler&quot;
-                asilleri, &quot;Yeşiller&quot; ise halkı temsil ediyordu. MS
-                532&apos;de bu rakipler, &quot;Nika!&quot; (Zafer!) naralarıyla
-                imparatora karşı birleşti. Çıkan kanlı Nika İsyanı&apos;nda
-                Ayasofya da dahil olmak üzere kentin büyük bölümü yok oldu.
+                Tebrikler! Çözdüğünüz bilmecenin ardındaki tarihi hikaye, bu
+                muazzam yapıyı daha da anlamlı kılıyor. Nika İsyanı&apos;nda
+                yakılıp yıkılan Ayasofya&apos;nın külleri üzerine, İmparator I.
+                Justinianus, dünyanın en görkemli mabedini inşa ettirmeye ant
+                içti.
               </p>
 
-              <p>&quot;İsyan Ateşi&quot; objesini kazandınız! 🔥</p>
+              <p>
+                O zamana dek Kudüs&apos;teki Süleyman Mabedi&apos;nin kutsal
+                addedilen büyüklüğü aşılamazken, İmparator binlerce işçiyle
+                sadece 5 yıl gibi rekor bir sürede bu başyapıtı tamamlattı.
+                Ayasofya&apos;nın görkemli açılışında, içeri girip kubbeyi
+                süsleyen ışığı gördüğünde, tarihe geçen sözleri haykırdı:
+                &quot;Ey Süleyman, seni geçtim!&quot;.
+              </p>
+
+              <p>
+                Bu zaferin anısına &quot;Kubbe Minyatürü&quot; objesini
+                kazandınız!
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -97,18 +108,30 @@ export default function InfoPage() {
                   </div>
                 </div>
                 <p className="text-center text-gray-300 mt-4">İsyan Ateşi</p>
-              </div>{" "}
+              </div>
+              {/* Stone Tablet Object */}
               <div className="text-center">
                 <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-2xl p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
                     <GiStoneTablet className="text-white text-3xl" />
                   </div>
                 </div>
                 <p className="text-center text-gray-300 mt-4">Parşömen</p>
               </div>
+              {/* New Kubbe Minyatürü Object */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                    <PiMosqueLight className="text-white text-3xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">
+                  Kubbe Minyatürü
+                </p>
+              </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              2/5 obje toplandı
+              3/5 obje toplandı
             </p>
           </CardContent>
         </Card>
@@ -139,12 +162,12 @@ export default function InfoPage() {
                   <div className="w-full bg-gray-700 rounded-full h-4">
                     <div
                       className="bg-orange-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "40%" }}
+                      style={{ width: "60%" }}
                     ></div>
                   </div>
-                  <span className="text-white font-bold">2/5</span>
+                  <span className="text-white font-bold">3/5</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-2">3 obje kaldı</p>
+                <p className="text-gray-300 text-sm mt-2">2 obje kaldı</p>
               </div>
             </div>
           </CardContent>
@@ -153,7 +176,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/6/location")}
+            onClick={() => router.push("/7/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Sonraki Soru →
@@ -163,7 +186,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Yeni objeler keşfederek kalan 3 mührü tamamlayın...
+            Yeni objeler keşfederek kalan 2 mührü tamamlayın...
           </p>
         </footer>
       </div>
