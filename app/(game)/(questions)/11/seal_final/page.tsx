@@ -35,17 +35,6 @@ export default function SealFinalPage() {
 
             {/* Completion Message */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed text-center">
-              <p className="text-xl">
-                🎉 <strong>Büyük başarı!</strong> Tüm objeleri başarıyla
-                topladınız ve üç mührü de oluşturdunuz.
-              </p>
-
-              <p>
-                Birlik Mührü, Kudret Mührü ve Tevazu Mührü artık sizin
-                kontrolünüzde. Bu mühürler İstanbul&apos;un en derin sırlarına
-                erişmenizi sağlayacak anahtarlardır.
-              </p>
-
               <div className="p-4 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
                 <p className="text-yellow-200 font-semibold">
                   ⚡ Şimdi son adım: Mühürleri aktifleştirmek için son bir soru
@@ -53,11 +42,6 @@ export default function SealFinalPage() {
                   nihai sırrı ortaya çıkaracak.
                 </p>
               </div>
-
-              <p>
-                Hazır olduğunuzda, aşağıdaki butona tıklayarak son soruya geçin
-                ve bu büyük yolculuğu tamamlayın.
-              </p>
             </div>
           </CardContent>
         </Card>
@@ -120,16 +104,13 @@ export default function SealFinalPage() {
                 </div>
               </div>
             </div>
-            <p className="text-center text-green-400 font-bold text-lg mt-6">
-              ✅ 3/3 mühür tamamlandı - Tüm objeler toplandı!
-            </p>
           </CardContent>
         </Card>
 
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/final-question")}
+            onClick={() => router.push("/12/location")}
             className="bg-yellow-500 hover:bg-yellow-600 border-yellow-600 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Son Soruya Geç ⚡
