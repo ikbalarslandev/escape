@@ -27,8 +27,7 @@ import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
 const formSchema = z.object({
-  answer1: z.string().min(1, "1. cevap boş olamaz"),
-  answer2: z.string().min(1, "2. cevap boş olamaz"),
+  answer: z.string().min(1, "Cevap boş olamaz"),
 });
 
 export default function QuestionPage() {
@@ -39,20 +38,19 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Kesilen su sana kitabeyi göstersin. Eskiden benim üzerimde bulunan 2 şey neydi?";
+    "Üç mızrağın kafasını kestiler, ölmeden önce kaç minare gördüler?";
 
   const hintData = [
-    "Bu antik hipodromun taş duvarını dikkatle takip et. Arayışın sırasında, normalde su akması gereken ama şu an sessiz ve kuru olan bir yapıyla karşılaşacaksın. Bu, senin ilk durağın.",
-    "Suyun kesildiği bu noktada dur. Hemen yanında, geçmişe ışık tutan resmi bir açıklama metni göreceksin. Bu metin, sana kayıp parçaların izini sürmen için gereken bilgiyi verecek.",
-    "Yanındaki bilgi tabelasını dikkatle oku. Metin, bu çeşmenin veya yapının artık var olmayan, eskiden burada bulunan iki büyük binadan bahsediyor. İşte aradığın cevap orada yazıyor.",
+    "Demir korkuluklara dikkatle bakın. Mizrak başı şeklinde olanlarından üçünün başı eksik.",
+    "Bu eksik başlı mızraklar, Ayasofya'ya bakmanız gereken doğru noktayı işaret ediyor.",
+    "Doğru noktadan Ayasofya'ya baktığınızda kaç adet minare görüyorsunuz?",
   ];
 
   // Initialize form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      answer1: "",
-      answer2: "",
+      answer: "",
     },
   });
 
@@ -67,26 +65,15 @@ export default function QuestionPage() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    // Normalize the answers: lowercase and trim
-    const normalizedAnswer1 = values.answer1.toLowerCase().trim();
-    const normalizedAnswer2 = values.answer2.toLowerCase().trim();
+    // Normalize the answer: lowercase and trim
+    const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answers are correct (accepts different order)
-    const answers = [normalizedAnswer1, normalizedAnswer2];
-    const hasHamam = answers.includes("hamam") || answers.includes("kaplıca");
-    const hasHaddehane =
-      answers.includes("haddehane") || answers.includes("demirhane");
-
-    if (hasHamam && hasHaddehane) {
+    // Check if answer is correct (accept both "3" and "üç")
+    if (normalizedAnswer === "3" || normalizedAnswer === "üç") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer1", {
-        type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
-      });
-      form.setError("answer2", {
+      form.setError("answer", {
         type: "manual",
         message:
           "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
@@ -105,7 +92,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/5/info");
+      router.push("/6/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -115,7 +102,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 5
+            Soru 6
           </h1>
         </header>
 
@@ -128,68 +115,35 @@ export default function QuestionPage() {
           {/* Answer Form */}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* First Answer Input */}
-                <FormField
-                  control={form.control}
-                  name="answer1"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        1. Cevap:
-                      </FormLabel>
-                      <FormControl>
+              <FormField
+                control={form.control}
+                name="answer"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-semibold text-white">
+                      Cevabınız:
+                    </FormLabel>
+                    <FormControl>
+                      <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="İlk cevabı yazın..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
+                          placeholder="Cevabınızı buraya yazın..."
+                          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-lg" />
-                    </FormItem>
-                  )}
-                />
-
-                {/* Second Answer Input */}
-                <FormField
-                  control={form.control}
-                  name="answer2"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        2. Cevap:
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          placeholder="İkinci cevabı yazın..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
+                        <Button
+                          type="submit"
                           disabled={isSubmitting}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-lg" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="text-center pt-4">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-12 rounded-full transition-all duration-300 flex items-center gap-2 mx-auto"
-                >
-                  {isSubmitting ? (
-                    "Kontrol Ediliyor..."
-                  ) : (
-                    <>
-                      <IoIosSend className="text-xl" />
-                      Gönder
-                    </>
-                  )}
-                </Button>
-              </div>
+                          className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
+                        >
+                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
+                        </Button>
+                      </div>
+                    </FormControl>
+                    <FormMessage className="text-red-300 text-lg" />
+                  </FormItem>
+                )}
+              />
             </form>
           </Form>
 
@@ -248,7 +202,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/5/location")}
+            onClick={() => router.push("/6/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -257,18 +211,18 @@ export default function QuestionPage() {
         </div>
 
         {/* Success Dialog */}
-        <Dialog open={isSuccess} onOpenChange={() => {}}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
+        <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Tebrikler!
               </DialogTitle>
-              <div className="text-gray-200 text-lg mt-4 text-center">
-                <p>Doğru cevap! &quot;Hamam&quot; ve &quot;Haddehane&quot;.</p>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
+                <p>Doğru cevap! &quot;3&quot; minareyi buldunuz.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} yönlendiriliyorsunuz...
+                    {countdown} saniye içinde yönlendiriliyorsunuz...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -277,7 +231,7 @@ export default function QuestionPage() {
                     ></div>
                   </div>
                 </div>
-              </div>
+              </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>
