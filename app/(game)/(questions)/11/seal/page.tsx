@@ -9,13 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaHorseHead, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
-import {
-  GiStoneTablet,
-  GiSandSnake,
-  GiClayBrick,
-  GiShakingHands,
-} from "react-icons/gi";
+import { GiMeditation, GiWatchtower, GiCrossedChains } from "react-icons/gi";
 
 export default function SealPage() {
   const router = useRouter();
@@ -25,39 +19,24 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    " 1. Mühür – Birlik Mührü\n\nTema: Halkı etkilemek, farklı etnik grupları bir araya toplamak, sosyal birlik\n\nBirlik Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
+    "3. Mühür – Tevazu Mührü\n\nTema: Allah inancı, ibadet, tevazu, maneviyat\n\nTevazu Mührü'nü oluşturmak için doğru 2 objeyi seçin:";
 
   const objects = [
     {
-      id: "at",
-      name: "Minyatür At",
-      icon: FaHorseHead,
-      gradient: "from-yellow-500 to-orange-900",
-      description: "Farklı halkları bir araya toplama, toplumsal birlik",
+      id: "minare",
+      name: "Minare Ucu",
+      icon: GiWatchtower,
+      gradient: "from-blue-500 to-purple-700",
+      description:
+        "Mekke ile eşit minare sayısı, hem maneviyat hem meydan okuma",
       correct: true,
     },
     {
-      id: "parsomen",
-      name: "Parşömen",
-      icon: GiStoneTablet,
-      gradient: "from-stone-400 to-stone-800",
-      description: "Tarihsel kudret ve imparatorluk simgesi",
-      correct: false,
-    },
-    {
-      id: "yilan",
-      name: "Yılan",
-      icon: GiSandSnake,
-      gradient: "from-green-600 to-green-900",
-      description: "Perslere karşı zafer ve birlik ruhu",
-      correct: true,
-    },
-    {
-      id: "tugla",
-      name: "Tuğla",
-      icon: GiClayBrick,
-      gradient: "from-orange-600 to-orange-900",
-      description: "Dayanıklılık ve tarihsel süreklilik",
+      id: "zincir",
+      name: "Zincir Halkası",
+      icon: GiCrossedChains,
+      gradient: "from-gray-600 to-gray-900",
+      description: "Padişahın Allah huzurunda eğilmesi, tevazu simgesi",
       correct: true,
     },
   ];
@@ -68,13 +47,13 @@ export default function SealPage() {
   const handleObjectClick = (objectId: string) => {
     if (selectedObjects.includes(objectId)) {
       setSelectedObjects(selectedObjects.filter((id) => id !== objectId));
-    } else if (selectedObjects.length < 3) {
+    } else if (selectedObjects.length < 2) {
       setSelectedObjects([...selectedObjects, objectId]);
     }
   };
 
   const checkSeal = () => {
-    if (selectedObjects.length !== 3) {
+    if (selectedObjects.length !== 2) {
       setIsError(true);
       return;
     }
@@ -100,7 +79,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/5/location");
+      router.push("/11/seal_final"); // You can change this route to wherever you want to redirect after completion
     }
   }, [isSuccess, countdown, router]);
 
@@ -110,10 +89,10 @@ export default function SealPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Birlik Mührü
+            Tevazu Mührü
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            İlk mührü oluşturun
+            Üçüncü mührü oluşturun
           </p>
         </header>
 
@@ -137,7 +116,7 @@ export default function SealPage() {
               >
                 <div className="flex items-center flex-col justify-center space-x-4 ">
                   <div
-                    className={`bg-gradient-to-br ${object.gradient} border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg `}
+                    className={`bg-gradient-to-br ${object.gradient} border border-white rounded-lg p-4 w-20 h-20 flex items-center justify-center shadow-lg `}
                   >
                     <object.icon className="text-white text-3xl" />
                   </div>
@@ -157,10 +136,10 @@ export default function SealPage() {
           <div className="text-center">
             <Button
               onClick={checkSeal}
-              disabled={selectedObjects.length !== 3}
+              disabled={selectedObjects.length !== 2}
               className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Mühürü Oluştur ({selectedObjects.length}/3)
+              Mühürü Oluştur ({selectedObjects.length}/2)
             </Button>
           </div>
         </div>
@@ -170,27 +149,26 @@ export default function SealPage() {
           <DialogContent className="bg-gray-800 [&>button]:hidden border-white/20 text-white  h-[90vh] md:h-auto overflow-y-auto">
             <DialogHeader className=" bg-gray-800 z-10 pb-4">
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
-                <FaCheckCircle className="mr-3" />
-                Mühür Oluşturuldu!
+                Tevazu Mührü Oluşturuldu!
               </DialogTitle>
             </DialogHeader>
             <div className="text-gray-200 text-lg">
               <div className="space-y-6">
                 {/* Seal Icon */}
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
-                    <GiShakingHands className="text-white text-5xl" />
+                  <div className="w-32 h-32 bg-gradient-to-br from-green-500 to-blue-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
+                    <GiMeditation className="text-white text-5xl" />
                   </div>
                   <p className="text-xl font-serif font-bold text-white">
-                    Birlik Mührü
+                    Tevazu Mührü
                   </p>
                   <p className="text-gray-300 mt-2">
-                    Farklı halkları bir araya getiren sosyal birlik
+                    Allah inancı, ibadet ve maneviyat simgesi
                   </p>
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Birlik Mührü&apos;nü başarıyla oluşturdunuz. 🎉
+                  Tebrikler! Tevazu Mührü'nü başarıyla oluşturdunuz. 🙏
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -200,7 +178,7 @@ export default function SealPage() {
                       className="flex items-center space-x-4 bg-white/5 rounded-lg p-4"
                     >
                       <div
-                        className={`bg-gradient-to-br ${object.gradient} border border-white rounded-2xl p-3 w-16 h-16 flex items-center justify-center shadow-lg`}
+                        className={`bg-gradient-to-br ${object.gradient} border border-white rounded-lg p-3 w-16 h-16 flex items-center justify-center shadow-lg`}
                       >
                         <object.icon className="text-white text-2xl" />
                       </div>
@@ -238,14 +216,14 @@ export default function SealPage() {
           <DialogContent className="bg-gray-800 border-white/20 text-white ">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
-                <FaTimesCircle className="mr-3" />
+                <GiMeditation className="mr-3" />
                 Yanlış Seçim!
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Birlik Mührü&apos;nü oluşturmuyor. Lütfen
-                  farklı halkları bir araya getiren, birlik ve dayanışmayı
-                  temsil eden objeleri seçin.
+                  Seçtiğiniz objeler Tevazu Mührü'nü oluşturmuyor. Lütfen Allah
+                  inancı, ibadet, tevazu ve maneviyatı temsil eden objeleri
+                  seçin.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
