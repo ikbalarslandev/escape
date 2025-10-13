@@ -9,7 +9,7 @@ export default function LocationPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            4.Soru
+            5.Soru
           </h1>
           <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
             Lokasyon
@@ -22,8 +22,8 @@ export default function LocationPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/4.jpg"
-                alt="Örme Dikilitaş"
+                src="/q_imgs/5.jpg"
+                alt="Hipodrom Kalıntıları"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -38,16 +38,19 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                ÖRME DİKİLİTAŞ
+                HİPODROM KALINTILARI
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Bir sonraki soru için Örme Dikilitaşa git.
+              Bir sonraki soru için Hipodrom'un günümüze kalan kalıntılarına
+              gitmeliyiz. Hipodrom'un bir ucu Alman Çeşmesi'nden başlıyor ve
+              sonu buraya kadar uzanıyor. Hipodrom'un günümüze kalan
+              kalıntılarına gidin.
             </p>
           </div>
 
           <Link
-            href="https://maps.app.goo.gl/ub8iMwSMZZiEDomX7"
+            href="https://maps.app.goo.gl/3Zx8BBjcGjL57H8L6"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -58,7 +61,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/4/qs"
+          href="/5/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Soruya Geç <FaArrowRight className="ml-2" />
