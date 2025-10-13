@@ -1,8 +1,12 @@
 "use client";
 
-import { GiStoneTablet, GiShakingHands } from "react-icons/gi";
+import {
+  GiStoneTablet,
+  GiShakingHands,
+  GiStrong,
+  GiWatchtower,
+} from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
-import { PiMosqueLight } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,11 +31,11 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <PiMosqueLight className="text-white text-3xl" />
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-700 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
+                <GiWatchtower className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Kubbe Minyatürü
+                Minare
               </h2>
               <p className="text-gray-300">
                 Yeni bir hikaye parçasını keşfettiniz
@@ -41,25 +45,19 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Tebrikler! Çözdüğünüz bilmecenin ardındaki tarihi hikaye, bu
-                muazzam yapıyı daha da anlamlı kılıyor. Nika İsyanı&apos;nda
-                yakılıp yıkılan Ayasofya&apos;nın külleri üzerine, İmparator I.
-                Justinianus, dünyanın en görkemli mabedini inşa ettirmeye ant
-                içti.
+                Minareler Osmanlı'da sadece dini sembol değil, aynı zamanda
+                gücün nişanesiydi. İstanbul'un fethiyle camiye çevrilen
+                Ayasofya'ya sultan statüsüne uygun 4 minare eklendi. Fakat I.
+                Ahmed, Ayasofya'nın Bizans ihtişamını gölgelemek için karşısına
+                6 minareli Sultanahmet Camii'ni inşa ettirdiğinde büyük tartışma
+                patlak verdi; zira o güne kadar 6 minare yalnızca İslam'ın en
+                kutsal mabedi Kabe'ye aitti.
               </p>
 
               <p>
-                O zamana dek Kudüs&apos;teki Süleyman Mabedi&apos;nin kutsal
-                addedilen büyüklüğü aşılamazken, İmparator binlerce işçiyle
-                sadece 5 yıl gibi rekor bir sürede bu başyapıtı tamamlattı.
-                Ayasofya&apos;nın görkemli açılışında, içeri girip kubbeyi
-                süsleyen ışığı gördüğünde, tarihe geçen sözleri haykırdı:
-                &quot;Ey Süleyman, seni geçtim!&quot;.
-              </p>
-
-              <p>
-                Bu zaferin anısına &quot;Kubbe Minyatürü&quot; objesini
-                kazandınız!
+                Padişahın allaha eşitlik iddiası olarak yorumlanan bu durum,
+                sonunda Kabe'ye yedinci minarenin eklenmesiyle çözüldü ve hiç
+                kimsenin kutsal olandan üstün olamayacağı mesajı verildi.
               </p>
             </div>
           </CardContent>
@@ -71,7 +69,7 @@ export default function InfoPage() {
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
               🏆 Mühürler
             </h3>
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-6 flex-wrap">
               {/* Completed Seal - Birlik Mühürü */}
               <div className="text-center">
                 <div className="flex justify-center">
@@ -86,9 +84,24 @@ export default function InfoPage() {
                   </span>
                 </div>
               </div>
+
+              {/* Completed Seal - Kudret Mühürü */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-yellow-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
+                    <GiStrong className="text-white text-5xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">Kudret Mühürü</p>
+                <div className="flex justify-center mt-2">
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                    Tamamlandı
+                  </span>
+                </div>
+              </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              1/3 mühür tamamlandı
+              2/3 mühür tamamlandı
             </p>
           </CardContent>
         </Card>
@@ -100,38 +113,18 @@ export default function InfoPage() {
               📦 Mevcut Objeler
             </h3>
             <div className="flex justify-center gap-6 flex-wrap">
-              {/* Fire Object */}
+              {/* New Minare Object */}
               <div className="text-center">
                 <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-red-600 to-orange-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <FaFire className="text-white text-3xl" />
+                  <div className="bg-gradient-to-br from-blue-500 to-purple-700 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                    <GiWatchtower className="text-white text-3xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">İsyan Ateşi</p>
-              </div>
-              {/* Stone Tablet Object */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <GiStoneTablet className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Parşömen</p>
-              </div>
-              {/* New Kubbe Minyatürü Object */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <PiMosqueLight className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">
-                  Kubbe Minyatürü
-                </p>
+                <p className="text-center text-gray-300 mt-4">Minare</p>
               </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              3/5 obje toplandı
+              1/2 obje toplandı
             </p>
           </CardContent>
         </Card>
@@ -149,12 +142,12 @@ export default function InfoPage() {
                   <div className="w-full bg-gray-700 rounded-full h-4">
                     <div
                       className="bg-purple-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "33%" }}
+                      style={{ width: "67%" }}
                     ></div>
                   </div>
-                  <span className="text-white font-bold">1/3</span>
+                  <span className="text-white font-bold">2/3</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-2">%33 tamamlandı</p>
+                <p className="text-gray-300 text-sm mt-2">%67 tamamlandı</p>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-white mb-2">Objeler</h4>
@@ -162,12 +155,12 @@ export default function InfoPage() {
                   <div className="w-full bg-gray-700 rounded-full h-4">
                     <div
                       className="bg-orange-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "60%" }}
+                      style={{ width: "50%" }}
                     ></div>
                   </div>
-                  <span className="text-white font-bold">3/5</span>
+                  <span className="text-white font-bold">1/2</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-2">2 obje kaldı</p>
+                <p className="text-gray-300 text-sm mt-2">1 obje kaldı</p>
               </div>
             </div>
           </CardContent>
@@ -176,17 +169,17 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/6/seal")}
+            onClick={() => router.push("/9/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Sonraki Muhur →
+            Sonraki Soru →
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Yeni objeler keşfederek kalan 2 mührü tamamlayın...
+            Yeni objeler keşfederek kalan 1 mührü tamamlayın...
           </p>
         </footer>
       </div>

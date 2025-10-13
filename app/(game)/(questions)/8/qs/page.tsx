@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    'Eğer Ayasofya saat 9 yönündeyse, "etekli adamlar" hangi yöne bakıyor?';
+    "Bu caminin yükselişi bir uyumlar bütünüdür. Ana binanın sahip olduğu toplam minare sayısının, ana giriş kapısının yanında yükselen minare sayısına oranı nedir?";
 
   const hintData = [
-    "Etekli adamlar aslında birer resimdir.",
-    "Bu adamlar ıslanmayı hiç umursamazlar",
-    "Adamların olduğu yerde öyle bir konum alın ki, Ayasofya tam saat 9 yönünüzde kalsın. O noktadan, etekli adamların baktığı yönü bulun.",
+    "Uyumu bulmak için önce bütünü, sonra parçayı say. Ana kapının yanındakiler, bütünün sadece bir kısmı.",
+    "Ana binanın dört köşesinde toplam dört adet minare var. Avludakileri de bularak oranlayıp cevabı bulabilirsin.",
+    "Avluda 2 adet minare var.",
   ];
 
   // Initialize form
@@ -68,8 +68,8 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Accept various forms of "5" answer
-    const correctAnswers = ["5", "beş", "saat 5", "5 yönü", "saat beş"];
+    // Accept various forms of "2" answer
+    const correctAnswers = ["2", "iki", "2/1", "2:1", "2/1", "2 birim"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
@@ -94,7 +94,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/8/location");
+      router.push("/8/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -104,7 +104,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 7
+            Soru 8
           </h1>
         </header>
 
@@ -204,7 +204,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/7/location")}
+            onClick={() => router.push("/8/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -221,9 +221,7 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>
-                  Doğru cevap! &quot;Etekli adamlar&quot; saat 5 yönüne bakıyor.
-                </p>
+                <p>Doğru cevap! Oran 2'dir. (6 minarenin 3'e oranı)</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...
