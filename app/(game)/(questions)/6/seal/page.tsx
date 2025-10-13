@@ -178,7 +178,7 @@ export default function SealPage() {
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Kudret Mührü'nü başarıyla oluşturdunuz. 💪
+                  Tebrikler! Kudret Mührü&apos;nü başarıyla oluşturdunuz. 💪
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -231,7 +231,7 @@ export default function SealPage() {
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Kudret Mührü'nü oluşturmuyor. Lütfen
+                  Seçtiğiniz objeler Kudret Mührü&apos;nü oluşturmuyor. Lütfen
                   imparatorluk gücünü, otoriteyi ve meydan okumayı temsil eden
                   objeleri seçin.
                 </p>

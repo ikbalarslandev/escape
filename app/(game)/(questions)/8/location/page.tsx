@@ -42,7 +42,8 @@ export default function LocationPage() {
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Bulunduğunuz Sultanahmet Parkı'ndan Sultanahmet Camii'ne bakın.
+              Bulunduğunuz Sultanahmet Parkı&apos;ndan Sultanahmet Camii&apos;ne
+              bakın.
             </p>
           </div>
 

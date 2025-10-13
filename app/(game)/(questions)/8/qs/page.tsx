@@ -221,7 +221,9 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! Oran 2'dir. (6 minarenin 3'e oranı)</p>
+                <p>
+                  Doğru cevap! Oran 2&apos;dir. (6 minarenin 3&apos;e oranı)
+                </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...

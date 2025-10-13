@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  GiStoneTablet,
-  GiShakingHands,
-  GiStrong,
-  GiWatchtower,
-} from "react-icons/gi";
-import { FaFire } from "react-icons/fa";
+import { GiShakingHands, GiStrong, GiWatchtower } from "react-icons/gi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -45,19 +39,19 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Minareler Osmanlı'da sadece dini sembol değil, aynı zamanda
-                gücün nişanesiydi. İstanbul'un fethiyle camiye çevrilen
-                Ayasofya'ya sultan statüsüne uygun 4 minare eklendi. Fakat I.
-                Ahmed, Ayasofya'nın Bizans ihtişamını gölgelemek için karşısına
-                6 minareli Sultanahmet Camii'ni inşa ettirdiğinde büyük tartışma
-                patlak verdi; zira o güne kadar 6 minare yalnızca İslam'ın en
-                kutsal mabedi Kabe'ye aitti.
+                Minareler Osmanlı&apos;da sadece dini sembol değil, aynı zamanda
+                gücün nişanesiydi. İstanbul&apos;un fethiyle camiye çevrilen
+                Ayasofya&apos;ya sultan statüsüne uygun 4 minare eklendi. Fakat
+                I. Ahmed, Ayasofya&apos;nın Bizans ihtişamını gölgelemek için
+                karşısına 6 minareli Sultanahmet Camii&apos;ni inşa ettirdiğinde
+                büyük tartışma patlak verdi; zira o güne kadar 6 minare yalnızca
+                İslam&apos;ın en kutsal mabedi Kabe&apos;ye aitti.
               </p>
 
               <p>
                 Padişahın allaha eşitlik iddiası olarak yorumlanan bu durum,
-                sonunda Kabe'ye yedinci minarenin eklenmesiyle çözüldü ve hiç
-                kimsenin kutsal olandan üstün olamayacağı mesajı verildi.
+                sonunda Kabe&apos;ye yedinci minarenin eklenmesiyle çözüldü ve
+                hiç kimsenin kutsal olandan üstün olamayacağı mesajı verildi.
               </p>
             </div>
           </CardContent>
