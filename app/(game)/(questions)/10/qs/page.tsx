@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Askerlerimin köşesi yoktur ve beni iç tehditlere karşı korurlar. Ne var ki bazıları bana ihanet etti. Ancak zamanın ışığında, sadık askerlerimi ayırt edebilirsin. Kaç sadık askerim kaldı?";
+    "Düşersem kırılırım, içim sarı ve beyazdır. Burada benden kaç tane var?";
 
   const hintData = [
-    "Köşeleri olmayan geometrik bir şekil bulmalısın; bu, askeri temsil eder.",
-    "Sana zamanı gösterecek bir araç bul.",
-    "Zamanın gösterdiği renk, sadık olanların rengidir.",
+    "Henüz çok küçüğüm ve yuvamdan pek ayrılmam.",
+    "Annem, dunyanin en buyuk kusudur.",
+    "Işıklar içinde parlamayı çok severim.",
   ];
 
   // Initialize form
@@ -68,8 +68,8 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Accept various forms of "8" answer
-    const correctAnswers = ["8", "sekiz", "sekiz asker", "8 asker"];
+    // Accept various forms of "12" answer
+    const correctAnswers = ["12", "oniki", "on iki", "12 tane", "oniki tane"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
@@ -94,7 +94,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/10/location");
+      router.push("/10/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -104,7 +104,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 9
+            Soru 10
           </h1>
         </header>
 
@@ -204,7 +204,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/9/location")}
+            onClick={() => router.push("/10/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -221,7 +221,7 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! 8 sadık asker kaldı.</p>
+                <p>Doğru cevap! 12 tane var.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...
