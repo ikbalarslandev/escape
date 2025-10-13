@@ -60,7 +60,7 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                Osmanlı İmparatorluğu'nun en ünlü ve en etkili mimarıdır.
+                Osmanlı İmparatorluğu&apos;nun en ünlü ve en etkili mimarıdır.
                 Yüzlerce esere imza atmış ve mimari tarzıyla sonraki nesilleri
                 derinden etkilemiştir.
               </p>
@@ -75,9 +75,9 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Mimar Sinan'ın mimari üslubu o kadar etkili oldu ki, dünyaca
-                ünlü iki harika eser temel tasarım ve estetik anlayışını
-                doğrudan onun başyapıtı Süleymaniye Camisi'nden aldı:
+                Mimar Sinan&apos;ın mimari üslubu o kadar etkili oldu ki,
+                dünyaca ünlü iki harika eser temel tasarım ve estetik anlayışını
+                doğrudan onun başyapıtı Süleymaniye Camisi&apos;nden aldı:
               </p>
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-start">
@@ -94,8 +94,8 @@ export default function InfoPage() {
                 </li>
               </ul>
               <p className="text-lg text-gray-200 leading-relaxed mt-4">
-                Her iki eser de Mimar Sinan'ın yetiştirdiği öğrenciler ve onun
-                ekolünden gelen mimarlar tarafından inşa edilmiştir.
+                Her iki eser de Mimar Sinan&apos;ın yetiştirdiği öğrenciler ve
+                onun ekolünden gelen mimarlar tarafından inşa edilmiştir.
               </p>
             </div>
           </div>
