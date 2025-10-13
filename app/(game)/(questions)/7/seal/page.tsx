@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { GiStrong, GiStoneTablet } from "react-icons/gi";
+import { GiStrong, GiStoneTablet, GiClayBrick } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
 import { PiMosqueLight } from "react-icons/pi";
 
@@ -88,7 +88,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/7/location");
+      router.push("/7/info"); // Next info page after completion
     }
   }, [isSuccess, countdown, router]);
 
