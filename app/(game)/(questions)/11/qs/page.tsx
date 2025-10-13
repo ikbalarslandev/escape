@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Ben, Örme Dikilitaş. En sevdiğim askerim yaralandı. Ancak, iki tekerleğe sahip olanlar üç çiçeğin yanından baktığında, tüm askerlerimi görebilir. Peki, kaç tane sağlıklı askerim kaldı?";
+    "Üç çizgimle bir araya gelirim, tüm gelenleri selamlarım. Eğilen başlar, beni gördüklerinde hangi harfin yansımasını görür?";
 
   const hintData = [
-    "Yaralı askerimi bulmak için taş muhafızlarımın hepsini dikkatle incele. Diğerlerinden farklı olan, zarar görmüş olanı arayın.",
-    "İki tekerlek, motorlu bir araç değil, insan gücüyle hareket eden bir ulaşım aracını işaret ediyor. Bu aracın park edildiği yer, doğru bakış açısını sunacak.",
-    "Üç çiçek, İstanbul bahçelerinin en meşhur çiçeğidir. Bu laleler, tam olarak durman gereken noktayı işaret ediyor.",
+    "Ben bir nesneyim, duvarda bir resim veya kabartma değil.",
+    "Rüzgar estiğinde hafifçe sallanırım.",
+    "Ana giriş kapısının hemen üstündeyim, gelen herkesin başı üzerinde.",
   ];
 
   // Initialize form
@@ -68,8 +68,10 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answer is correct (accepts both "9" and "dokuz")
-    if (normalizedAnswer === "9" || normalizedAnswer === "dokuz") {
+    // Accept various forms of "y" answer
+    const correctAnswers = ["y", "y harfi", "yharfi", "ye"];
+
+    if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -92,7 +94,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/4/info");
+      router.push("/11/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -102,7 +104,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 4
+            Soru 11
           </h1>
         </header>
 
@@ -121,13 +123,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Sağlıklı asker sayısı:
+                      Hangi harf:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Sayıyı buraya yazın..."
+                          placeholder="Harfi buraya yazın..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -202,7 +204,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/4/location")}
+            onClick={() => router.push("/11/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -219,10 +221,10 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! &quot;9&quot; sağlıklı asker kaldı.</p>
+                <p>Doğru cevap! &quot;Y&quot; harfi görülür.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} yönlendiriliyorsunuz...
+                    {countdown} saniye içinde yönlendiriliyorsunuz...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
