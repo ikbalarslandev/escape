@@ -22,7 +22,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
+import {
+  FaLightbulb,
+  FaLock,
+  FaLockOpen,
+  FaCheckCircle,
+  FaVolumeUp,
+} from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
@@ -30,20 +36,20 @@ const formSchema = z.object({
   answer: z.string().min(1, "Cevap boş olamaz"),
 });
 
-export default function QuestionPage() {
+export default function FinalQuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [countdown, setCountdown] = useState(4);
+  const [countdown, setCountdown] = useState(5);
 
   const question =
-    "Düşersem kırılırım, içim sarı ve beyazdır. Burada benden kaç tane var?";
+    "Kral sana yol göstersin. İlk ses dosyası 'R' harfinin şifresini öğretti. Şimdi ikinci ses dosyasını dinleyerek şifrelenmiş kelimeyi bul.";
 
   const hintData = [
-    "Henüz çok küçüğüm ve yuvamdan pek ayrılmam.",
-    "Annem, dunyanin en buyuk kusudur.",
-    "Işıklar içinde parlamayı çok severim.",
+    "Alman Çeşmesi'nin üzerinde duran metal döküm yazıda şifre gizli.",
+    "İlk ses dosyasını dikkatle dinle. Sana 'R' harfinin konumunu ve harfi bulduğunda çıkan doğrulama sesini gösteriyor.",
+    "Her harfi bulduktan sonra belirli bir ses çıkarıyor buna odaklanarak kelime içerisinde kaç adet harf olduğunu bulabilirsin",
   ];
 
   // Initialize form
@@ -62,18 +68,25 @@ export default function QuestionPage() {
     }
   };
 
+  const playAudio = (audioFile: string) => {
+    const audio = new Audio(audioFile);
+    audio.play().catch((error) => {
+      console.log("Ses dosyası çalınamadı:", error);
+    });
+  };
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
+    // Normalize the answer: uppercase and trim
+    const normalizedAnswer = values.answer.toUpperCase().trim();
 
-    // Accept various forms of "12" answer
-    const correctAnswers = ["12", "oniki", "on iki", "12 tane", "oniki tane"];
+    // Accept various forms of "BIR" answer
+    const correctAnswers = ["BIR", "BİR", "BIR ", "BİR "];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
-      setCountdown(4);
+      setCountdown(5);
     } else {
       form.setError("answer", {
         type: "manual",
@@ -94,7 +107,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/10/info");
+      router.push("/12/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -104,8 +117,11 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 10
+            Son Soru
           </h1>
+          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
+            Tüm mühürleri aktifleştirme zamanı
+          </p>
         </header>
 
         {/* Question Card */}
@@ -113,6 +129,32 @@ export default function QuestionPage() {
           <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
             {question}
           </p>
+
+          {/* Audio Files Section */}
+          <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/20">
+            <h3 className="text-xl font-serif font-bold text-white mb-4 flex items-center">
+              <FaVolumeUp className="mr-3 text-blue-400" />
+              SES DOSYALARI
+            </h3>
+            <div className="flex gap-4 flex-wrap">
+              <Button
+                onClick={() => playAudio("/opt/12/Letter (R).mp3")}
+                className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
+              >
+                <FaVolumeUp className="mr-2" />R Harf Sesini Dinle
+              </Button>
+              <Button
+                onClick={() => playAudio("/opt/12/Word (BIR).mp3")}
+                className="bg-green-500/20 hover:bg-green-500/30 border-green-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
+              >
+                <FaVolumeUp className="mr-2" />
+                Kelime Sesini Dinle
+              </Button>
+            </div>
+            <p className="text-gray-400 text-sm mt-3 italic">
+              Ses dosyalarını dikkatle dinleyin ve şifreyi çözün
+            </p>
+          </div>
 
           {/* Answer Form */}
           <Form {...form}>
@@ -123,13 +165,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Cevabınız:
+                      Şifrelenmiş Kelime:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Cevabınızı buraya yazın..."
+                          placeholder="Kelimeyi buraya yazın..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -149,7 +191,6 @@ export default function QuestionPage() {
             </form>
           </Form>
 
-          <hr className="mt-12" />
           {/* Hints Section */}
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
@@ -204,7 +245,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/10/location")}
+            onClick={() => router.push("/final-location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -218,18 +259,22 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Tebrikler!
+                Büyük Başarı!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! 12 tane var.</p>
+                <p>Tebrikler! Tüm mühürleri aktifleştirdiniz!</p>
+                <p className="mt-2">
+                  Şifre: <strong>BIR</strong>
+                </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} saniye içinde yönlendiriliyorsunuz...
+                    {countdown} saniye içinde sonuç sayfasına
+                    yönlendiriliyorsunuz...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
                       className="bg-green-400 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${(countdown / 4) * 100}%` }}
+                      style={{ width: `${(countdown / 5) * 100}%` }}
                     ></div>
                   </div>
                 </div>

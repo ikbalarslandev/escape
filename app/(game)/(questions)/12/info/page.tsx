@@ -1,115 +1,97 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { FaEgg, FaHistory, FaLightbulb } from "react-icons/fa";
-import { GiOstrich } from "react-icons/gi";
+import { FaTrophy, FaStar, FaMedal, FaFlagCheckered } from "react-icons/fa";
+import { GiLaurelsTrophy } from "react-icons/gi";
 
-export default function InfoPage() {
+export default function FinalSuccessPage() {
   const router = useRouter();
 
-  const handleProceed = () => {
-    router.push("/11/location");
-  };
-
   return (
-    <div className="min-h-screen text-gray-100 p-8 bg-gradient-to-br from-amber-900/20 to-yellow-800/20">
+    <div className="min-h-screen text-gray-100 p-8 bg-gradient-to-br from-gray-900/30 to-gray-800/30">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
-          <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
-          <p className="text-xl text-amber-200 font-light">
-            Devekuşu Yumurtalarının Mimari Sırrı
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <GiLaurelsTrophy className="text-8xl text-yellow-400" />
+              <FaStar className="text-4xl text-yellow-300 absolute -top-2 -right-2 animate-pulse" />
+              <FaStar
+                className="text-3xl text-yellow-200 absolute -bottom-2 -left-2 animate-pulse"
+                style={{ animationDelay: "0.5s" }}
+              />
+            </div>
+          </div>
+          <h1 className="text-3xl  font-serif font-bold mb-6 text-white tracking-wider">
+            TEBRİKLER!
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 font-light mb-4">
+            Büyük Yolculuğu Tamamladınız
           </p>
+          <div className="w-32 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto rounded-full"></div>
         </header>
 
         {/* Main Content */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-amber-200/30">
-          {/* Icon Header */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="relative">
-              <GiOstrich className="text-6xl text-amber-400 mr-4" />
-              <FaEgg className="text-4xl text-amber-200 absolute -bottom-2 -right-2" />
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+          {/* Achievement Summary */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center items-center mb-6">
+              <FaFlagCheckered className="text-4xl text-green-400 mr-4" />
+              <h2 className="text-3xl font-serif font-bold text-white">
+                Başarı Özeti
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                <FaMedal className="text-3xl text-green-400 mx-auto mb-2" />
+                <h3 className="text-xl font-bold text-white mb-2">3 Mühür</h3>
+                <p className="text-gray-300">Tamamlandı</p>
+              </div>
+
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                <FaStar className="text-3xl text-blue-400 mx-auto mb-2" />
+                <h3 className="text-xl font-bold text-white mb-2">12 Soru</h3>
+                <p className="text-gray-300">Çözüldü</p>
+              </div>
+
+              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                <FaTrophy className="text-3xl text-yellow-400 mx-auto mb-2" />
+                <h3 className="text-xl font-bold text-white mb-2">%100</h3>
+                <p className="text-gray-300">Tamamlanma</p>
+              </div>
             </div>
           </div>
 
-          {/* Information Sections */}
-          <div className="space-y-8">
-            {/* Historical Belief */}
-            <div className="bg-amber-900/30 rounded-xl p-6 border border-amber-200/20">
-              <div className="flex items-center mb-4">
-                <FaHistory className="text-2xl text-amber-400 mr-3" />
-                <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Tarihi İnanç
-                </h3>
-              </div>
-              <p className="text-lg text-gray-200 leading-relaxed">
-                Osmanlı geleneğinde devekuşu yumurtasının böcekleri, örümcekleri
-                ve haşereleri uzak tuttuğuna inanılırdı. Bu nedenle cami,
-                medrese ve türbe gibi dini yapılarda tavana asılan devekuşu
-                yumurtaları, doğal bir haşere savar olarak kullanılırdı.
-              </p>
-            </div>
-
-            {/* Mimar Sinan Section */}
+          {/* Completion Message */}
+          <div className="space-y-6 text-center">
             <div className="bg-white/10 rounded-xl p-6 border border-white/20">
-              <div className="flex items-center mb-4">
-                <FaLightbulb className="text-2xl text-amber-300 mr-3" />
-                <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Mimar Sinan
-                </h3>
-              </div>
+              <h3 className="text-2xl font-serif font-bold text-white mb-4">
+                🎉 Muhteşem Başarı!
+              </h3>
               <p className="text-lg text-gray-200 leading-relaxed">
-                Osmanlı İmparatorluğu&apos;nun en ünlü ve en etkili mimarıdır.
-                Yüzlerce esere imza atmış ve mimari tarzıyla sonraki nesilleri
-                derinden etkilemiştir.
+                İstanbul&apos;un tarihi sırlarını çözmek için çıktığınız bu
+                büyük yolculukta tüm engelleri aştınız, tüm mühürleri topladınız
+                ve en sonunda nihai şifreyi çözmeyi başardınız!
               </p>
             </div>
 
-            {/* Architectural Legacy */}
-            <div className="bg-amber-800/30 rounded-xl p-6 border border-amber-200/20">
-              <div className="flex items-center mb-4">
-                <FaLightbulb className="text-2xl text-yellow-400 mr-3" />
-                <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Mimari Miras
-                </h3>
-              </div>
-              <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Mimar Sinan&apos;ın mimari üslubu o kadar etkili oldu ki,
-                dünyaca ünlü iki harika eser temel tasarım ve estetik anlayışını
-                doğrudan onun başyapıtı Süleymaniye Camisi&apos;nden aldı:
-              </p>
-              <ul className="space-y-3 text-gray-200">
-                <li className="flex items-start">
-                  <span className="text-amber-400 mr-2">•</span>
-                  <span>
-                    <strong>Sultanahmet Camii</strong>
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-400 mr-2">•</span>
-                  <span>
-                    <strong>Tac Mahal</strong>
-                  </span>
-                </li>
-              </ul>
-              <p className="text-lg text-gray-200 leading-relaxed mt-4">
-                Her iki eser de Mimar Sinan&apos;ın yetiştirdiği öğrenciler ve
-                onun ekolünden gelen mimarlar tarafından inşa edilmiştir.
+            <div className="bg-white/10 rounded-xl p-6 border border-white/20">
+              <h4 className="text-xl font-bold text-white mb-4">🌟 Son Söz</h4>
+              <p className="text-lg text-gray-200 leading-relaxed italic">
+                &quot;Tarih, sadece geçmişi anlamak değil, geleceği inşa
+                etmektir. Bu yolculukta gösterdiğiniz azim ve zeka, sadece
+                İstanbul&apos;un değil, tüm insanlığın ortak mirasını anlamanızı
+                sağladı.&quot;
               </p>
             </div>
           </div>
         </div>
 
-        {/* Navigation - Centered Button */}
-        <div className="flex justify-center items-center">
-          <Button
-            onClick={handleProceed}
-            className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 transition-all duration-300"
-          >
-            Sonraki Soruya Git →
-          </Button>
-        </div>
+        {/* Footer */}
+        <footer className="text-center mt-12 text-gray-400 font-light">
+          <p className="italic">Tarihin izinde, bilginin ışığında...</p>
+        </footer>
       </div>
     </div>
   );
