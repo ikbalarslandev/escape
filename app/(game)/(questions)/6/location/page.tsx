@@ -9,7 +9,7 @@ export default function LocationPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            5.Soru
+            6.Soru
           </h1>
           <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
             Lokasyon
@@ -22,8 +22,8 @@ export default function LocationPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/5.jpg"
-                alt="Hipodrom Kalıntıları"
+                src="/q_imgs/6.jpg"
+                alt="Ayasofya"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -38,19 +38,21 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                HİPODROM KALINTILARI
+                AYASOFYA
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Bir sonraki soru için Hipodrom&apos;un günümüze kalan
-              kalıntılarına gitmeliyiz. Hipodrom&apos;un bir ucu Alman
-              Çeşmesi&apos;nden başlıyor ve sonu buraya kadar uzanıyor.
-              Hipodrom&apos;un günümüze kalan kalıntılarına gidin.
+              Bir sonraki soru için Ayasofya&apos;ya gitmeliyiz. bu muhteşem
+              yapı, Bizans İmparatorluğu&apos;nun en görkemli eserlerinden
+              biridir. Nika İsyanı sırasında yıkılan önceki bazilikanın yerine
+              inşa edilen Ayasofya, sadece 5 yıl gibi kısa bir sürede
+              tamamlanmış ve yaklaşık 1000 yıl boyunca dünyanın en büyük
+              katedrali olarak kalmıştır.
             </p>
           </div>
 
           <Link
-            href="https://maps.app.goo.gl/3Zx8BBjcGjL57H8L6"
+            href="https://maps.app.goo.gl/Xe4H5HjWF9MoEXzw8"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -61,7 +63,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/5/qs"
+          href="/6/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Soruya Geç <FaArrowRight className="ml-2" />
@@ -69,7 +71,7 @@ export default function LocationPage() {
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Tarihi hissederek ilerleyin...</p>
+          <p className="italic">Tarihin izlerini takip edin...</p>
         </footer>
       </div>
     </div>

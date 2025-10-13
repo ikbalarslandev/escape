@@ -190,7 +190,7 @@ export default function SealPage() {
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Birlik Mührü'nü başarıyla oluşturdunuz. 🎉
+                  Tebrikler! Birlik Mührü&apos;nü başarıyla oluşturdunuz. 🎉
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -243,9 +243,9 @@ export default function SealPage() {
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Birlik Mührü'nü oluşturmuyor. Lütfen farklı
-                  halkları bir araya getiren, birlik ve dayanışmayı temsil eden
-                  objeleri seçin.
+                  Seçtiğiniz objeler Birlik Mührü&apos;nü oluşturmuyor. Lütfen
+                  farklı halkları bir araya getiren, birlik ve dayanışmayı
+                  temsil eden objeleri seçin.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
