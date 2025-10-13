@@ -46,7 +46,7 @@ export default function InfoPage() {
               <p>
                 Cami avlusuna atıyla yalnızca padişah girebilirdi. Fakat bu
                 zincir, tam da bu yüzden kapı girişine yerleştirilmişti. Öyle
-                ki, padişah dahi olsa, Allah'ın evine saygı göstermek için
+                ki, padişah dahi olsa, Allah&apos;ın evine saygı göstermek için
                 eğilmek zorundaydı.
               </p>
 

@@ -168,7 +168,7 @@ export default function SealPage() {
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Tevazu Mührü'nü başarıyla oluşturdunuz. 🙏
+                  Tebrikler! Tevazu Mührü&apos;nü başarıyla oluşturdunuz. 🙏
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -221,9 +221,9 @@ export default function SealPage() {
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Tevazu Mührü'nü oluşturmuyor. Lütfen Allah
-                  inancı, ibadet, tevazu ve maneviyatı temsil eden objeleri
-                  seçin.
+                  Seçtiğiniz objeler Tevazu Mührü&apos;nü oluşturmuyor. Lütfen
+                  Allah inancı, ibadet, tevazu ve maneviyatı temsil eden
+                  objeleri seçin.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}

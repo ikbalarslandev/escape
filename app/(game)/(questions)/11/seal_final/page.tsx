@@ -42,7 +42,7 @@ export default function SealFinalPage() {
 
               <p>
                 Birlik Mührü, Kudret Mührü ve Tevazu Mührü artık sizin
-                kontrolünüzde. Bu mühürler İstanbul'un en derin sırlarına
+                kontrolünüzde. Bu mühürler İstanbul&apos;un en derin sırlarına
                 erişmenizi sağlayacak anahtarlardır.
               </p>
 
