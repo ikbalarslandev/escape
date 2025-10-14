@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GiShakingHands, GiStrong, GiMeditation } from "react-icons/gi";
 
 export default function Home() {
   return (
@@ -31,19 +32,6 @@ export default function Home() {
             sırlarını çözecek, gizli objeleri keşfedecek ve ardından bu objeleri
             mühürleri aktif hâle getireceksiniz.
           </p>
-          <div className="bg-white/5 border-l-4 border-white/40 rounded-r-lg p-4 mb-4">
-            <div className="flex items-center mb-2">
-              <span className="text-white/80 mr-2">⏰</span>
-              <p className="text-lg font-semibold text-white">
-                ZAMAN DARALIYOR!
-              </p>
-            </div>
-            <p className="text-gray-200 font-light">
-              Eğer iki saat içinde tüm mühürleri oluşturup sırlarını
-              çözemezseniz, İstanbul&apos;un tarihi tamamen unutulacak ve şehir
-              lanetlenecek!
-            </p>
-          </div>
         </div>
 
         {/* Seals Section */}
@@ -52,7 +40,7 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
               <div className="w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
-                ☯
+                <GiShakingHands className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
                 BİRLİK
@@ -68,7 +56,7 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
               <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
-                ⚜
+                <GiStrong className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
                 KUDRET
@@ -84,7 +72,7 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
               <div className="w-20 h-20 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
-                ☪
+                <GiMeditation className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
                 TEVAZU
@@ -99,9 +87,6 @@ export default function Home() {
 
         {/* Final Warning */}
         <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 text-center border border-white/20">
-          <h2 className="text-2xl font-serif font-bold mb-4 text-white">
-            SON UYARI
-          </h2>
           <p className="text-lg mb-4 text-gray-200 font-light italic">
             Mühürleri oluşturmak, sadece bulmacaları çözmek değil;
             İstanbul&apos;un ruhunu ve tarihini yeniden inşa etmek demek.

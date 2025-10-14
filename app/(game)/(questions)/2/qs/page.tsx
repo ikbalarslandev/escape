@@ -17,6 +17,7 @@ import {
   FaLockOpen,
   FaCheckCircle,
   FaTimesCircle,
+  FaSearch,
 } from "react-icons/fa";
 
 export default function QuestionPage() {
@@ -26,6 +27,7 @@ export default function QuestionPage() {
   const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
     "Ben İmparator Theodosius. Dostlarım da benim gibi kellelerinden oldular. Onların toplam sayısı, ruhumu özgür kılacak anahtarı taşıyor. Acılar içinde göğe yükselen ruhum, bir hiyeroglifin taş yüreğine hapsoldu. Hiyeroglifi bul ve ruhumu serbest bırak.";
@@ -91,11 +93,11 @@ export default function QuestionPage() {
             <h3 className="text-lg font-semibold text-white mb-6 text-center">
               Doğru hiyeroglifi seçin:
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {options.map((option) => (
                 <div
                   key={option}
-                  className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
+                  className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
                     selectedOption === option
                       ? option === 6
                         ? "border-green-400 ring-2 ring-green-400"
@@ -108,12 +110,11 @@ export default function QuestionPage() {
                     src={`/opt/2/${option}.jpg`}
                     alt={`Hiyeroglif ${option}`}
                     fill
-                    className="object-cover"
+                    className="object-contain bg-black/50 p-2"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    quality={100}
+                    unoptimized={true}
                   />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-                    {option}
-                  </div>
                 </div>
               ))}
             </div>
@@ -183,6 +184,40 @@ export default function QuestionPage() {
           </Button>
         </div>
 
+        {/* Zoom Modal */}
+        <Dialog
+          open={zoomImage !== null}
+          onOpenChange={() => setZoomImage(null)}
+        >
+          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-4xl w-[90vw] h-[90vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-white">
+                Hiyeroglif {zoomImage} - Detaylı Görünüm
+              </DialogTitle>
+            </DialogHeader>
+            <div className="relative w-full h-full flex items-center justify-center">
+              {zoomImage && (
+                <Image
+                  src={`/opt/2/${zoomImage}.jpg`}
+                  alt={`Hiyeroglif ${zoomImage} - Detaylı`}
+                  fill
+                  className="object-contain"
+                  quality={100}
+                  unoptimized={true}
+                />
+              )}
+            </div>
+            <div className="flex justify-center mt-4">
+              <Button
+                onClick={() => setZoomImage(null)}
+                className="bg-white/20 hover:bg-white/30 border-white/30 text-white"
+              >
+                Kapat
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
           <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
@@ -198,7 +233,7 @@ export default function QuestionPage() {
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} yönlendiriliyorsunuz...
+                    {countdown} saniye içinde yönlendiriliyorsunuz...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
