@@ -111,9 +111,6 @@ export default function QuestionPage() {
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
-                    {option}
-                  </div>
                 </div>
               ))}
             </div>
