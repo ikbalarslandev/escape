@@ -30,12 +30,12 @@ export default function QuestionPage() {
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "Ben İmparator Theodosius. Dostlarım da benim gibi kellelerinden oldular. Onların toplam sayısı, ruhumu özgür kılacak anahtarı taşıyor. Acılar içinde göğe yükselen ruhum, bir hiyeroglifin taş yüreğine hapsoldu. Hiyeroglifi bul ve ruhumu serbest bırak.";
+    "Ben İmparator Theodosius. Dostlarım da benim gibi aynı eksikliğe sahipler. Onların toplam sayısı, ruhumu özgür kılacak anahtarı taşıyor. Acılar içinde göğe yükselen ruhum, bir hiyeroglifin taş yüreğine hapsoldu. Hiyeroglifi bul ve ruhumu serbest bırak.";
 
   const hintData = [
-    "Zafer takımın kaidesindeki figürleri tek tek say. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
-    "Taş yazıtlara ulaşmak için, önce taşın eteğindeki sessiz muhafızları anla. Doğru hiyeroglif sütunu, İmparator&apos;un kendi suretinin gökyüzüne uzanan devamıdır.",
-    "Kırık olanları say, sonra bir eksiğini al. Bulduğun bu rakam, İmparator&apos;un üzerindeki yazıtlarda hem bir katman numarası, hem de bir sıra numarasıdır.",
+    "Dikili taşın tabanında bulunan dört yüzdeki tüm heykelleri incele. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
+    "İmparatorla aynı eksiği taşıyanları say, böylece kaç tane dostu olduğunu anlarsın.",
+    "Eksikliği olan imparatorun olduğu taraftaki hiyeroglifleri aşağıdan yukarıya doğru, dostlarının sayısı kadar say. Böylece imparatorun ruhunun tutsak olduğu hiyeroglifi bulabilirsin.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
