@@ -50,6 +50,20 @@ export default function LocationPage() {
             </p>
           </div>
 
+          {/* Image Section */}
+          <div className="mb-8">
+            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/q_imgs/spina.jpeg"
+                alt="spina"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+          </div>
+
           <Link
             href="https://maps.app.goo.gl/LKExaiWipFzrefmeA"
             target="_blank"
