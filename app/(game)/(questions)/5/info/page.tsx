@@ -48,8 +48,6 @@ export default function InfoPage() {
                 imparatora karşı birleşti. Çıkan kanlı Nika İsyanı&apos;nda
                 Ayasofya da dahil olmak üzere kentin büyük bölümü yok oldu.
               </p>
-
-              <p>&quot;İsyan Ateşi&quot; objesini kazandınız! 🔥</p>
             </div>
           </CardContent>
         </Card>
