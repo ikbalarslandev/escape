@@ -41,7 +41,7 @@ export default function SealPage() {
       name: "Parşömen",
       icon: GiStoneTablet,
       gradient: "from-stone-400 to-stone-800",
-      description: "Tarihsel kudret ve imparatorluk simgesi",
+      description: "İmkansızı başarabilmek",
       correct: false,
     },
     {
@@ -57,7 +57,7 @@ export default function SealPage() {
       name: "Tuğla",
       icon: GiClayBrick,
       gradient: "from-orange-600 to-orange-900",
-      description: "Dayanıklılık ve tarihsel süreklilik",
+      description: "Zenginliğin ve ihtişamın simgesi",
       correct: true,
     },
   ];
