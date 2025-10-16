@@ -5,9 +5,37 @@ import { FaHorseHead } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useRef } from "react";
 
 export default function InfoPage() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Audio element oluştur
+    audioRef.current = new Audio("/opt/3/greek_war.mp3");
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.3; // %30 ses seviyesi
+
+    // Sayfa yüklendiğinde müziği başlat
+    const playAudio = async () => {
+      try {
+        await audioRef.current?.play();
+      } catch (error) {
+        console.log("Audio play failed:", error);
+      }
+    };
+
+    playAudio();
+
+    // Sayfadan çıkıldığında müziği durdur
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
@@ -41,8 +69,8 @@ export default function InfoPage() {
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
                 Tebrikler! Panzehir ağacını bularak kadim zehrin etkisini yok
-                ettin. Dokunduğun bu tunç gövde, 31 Yunan şehir devletinin
-                Perslere karşı birleşerek kazandığı zaferin simgesidir.
+                ettin. Bu tunç gövde, 31 Yunan şehir devletinin Perslere karşı
+                birleşerek kazandığı zaferin simgesidir.
               </p>
 
               <p>
@@ -52,17 +80,6 @@ export default function InfoPage() {
                 olan saygısını göstermek ve halkın sevgisini kazanmak amacıyla
                 İstanbul&apos;a getirildi ve Hipodrom&apos;a dikildi.
               </p>
-
-              <div className="bg-white/5 rounded-lg p-6 border border-white/20 mt-6">
-                <p className="text-lg text-center">
-                  <GiSandSnake className="inline text-green-400 mr-2 text-xl" />
-                  <strong>İşte sürpriz:</strong> Bu birliğin sırrını çözdüğün
-                  için &quot;Yılan&quot; objesini kazandın! 🐍
-                </p>
-                <p className="text-center mt-2">
-                  Üç objeyi de topladın. Artık son mührü oluşturmaya hazırsın!
-                </p>
-              </div>
             </div>
           </CardContent>
         </Card>

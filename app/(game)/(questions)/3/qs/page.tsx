@@ -28,12 +28,12 @@ export default function QuestionPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "Ben, üçlü bir zehrin tunç beden bulmuş haliyim. Sızdığım yer, arayışının Kuzey'i olsun. Buradan, bedenimin şu anki boyunun işaret ettiği yönde ilerle. Duvara çarptığında, panzehir ağacı seni bekliyor olacak. Panzehir ağacı hangisi?";
+    "Ben, üçlü bir zehrin tunç beden bulmuş haliyim. Sızdığım yer, arayışının Kuzey'i olsun. Buradan, bedenimin şu anki boyunun işaret ettiği yönde ilerle. Panzehir ağacı seni bekliyor olacak. Panzehir ağacı hangisi?";
 
   const hintData = [
     "Zehrin izini takip etmek için anıtın altına, taşla birleştiği yere bak.",
-    "Şu anki yüksekliği bir saat kadranı gibi düşün - tam sayı değil",
-    "5.5 metre... Bu bir yükseklik değil, bir yön tarifi. Saat 5 ile 6&apos;nın tam ortasındaki o ara yön, seni doğru duvara götürecek.",
+    "Zehirin aktığı yönü saat 12 yönü olarak düşün. Buna göre yılanlı sütunun bugünkü boyu hangi yönü gösterir?",
+    "5.5 metre... Bu bir yükseklik değil, bir yön tarifi. Bu yönde ilerle, seni doğru ağaca götürecek. ",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -49,7 +49,7 @@ export default function QuestionPage() {
   const handleOptionClick = (option: number) => {
     setSelectedOption(option);
 
-    if (option === 7) {
+    if (option === 4) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -97,7 +97,7 @@ export default function QuestionPage() {
                   key={option}
                   className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
                     selectedOption === option
-                      ? option === 7
+                      ? option === 4
                         ? "border-green-400 ring-2 ring-green-400"
                         : "border-red-400 ring-2 ring-red-400"
                       : "border-white/20 hover:border-white/40"
