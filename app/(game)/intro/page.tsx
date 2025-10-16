@@ -1,5 +1,6 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import YouTube from "react-youtube";
 
 export default function IntroPage() {
   // Hardcoded data
@@ -9,6 +10,20 @@ export default function IntroPage() {
   const infoParagraphs = introInfo
     .split(". ")
     .filter((paragraph) => paragraph.length > 0);
+
+  // YouTube video options
+  const videoOptions = {
+    height: "400",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+      rel: 0,
+      modestbranding: 1,
+    },
+  };
+
+  // Extract video ID from URL
+  const videoId = "AjrnvDn2tcA";
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
@@ -25,20 +40,17 @@ export default function IntroPage() {
 
         {/* Main Content */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-          {/* Image Section */}
+          {/* Video Section */}
           <div className="mb-8">
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/q_imgs/info.jpg"
-                alt="Hipodrom tarihi çizimi"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <YouTube
+                videoId={videoId}
+                opts={videoOptions}
+                className="w-full"
               />
             </div>
             <p className="text-center text-gray-400 text-sm mt-2 italic">
-              Hipodrom&apos;un tarihi temsili
+              Hipodrom&apos;un tarihini keşfedin
             </p>
           </div>
 
@@ -59,11 +71,14 @@ export default function IntroPage() {
           </div>
         </div>
 
-        <Link href="/1/location">
-          <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer">
-            MACERAYA BAŞLA!
-          </div>
-        </Link>
+        {/* Action Button */}
+        <div className="text-center">
+          <Link href="/1/location">
+            <div className="inline-block bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer hover:scale-105 transform">
+              MACERAYA BAŞLA!
+            </div>
+          </Link>
+        </div>
 
         {/* Footer */}
         <footer className="text-center mt-8 text-gray-400 font-light">
