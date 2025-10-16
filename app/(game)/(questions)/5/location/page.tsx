@@ -60,6 +60,20 @@ export default function LocationPage() {
           </Link>
         </div>
 
+        {/* Image Section */}
+        <div className="mb-8">
+          <div className="relative w-full h-140 md:h-80 rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/opt/5/5_spina.jpg"
+              alt="spina"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          </div>
+        </div>
+
         <Link
           href="/5/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
