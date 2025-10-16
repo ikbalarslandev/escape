@@ -24,13 +24,13 @@ export default function Home() {
           <p className="text-lg leading-relaxed mb-6 text-gray-200 font-light">
             Kaşifler, dikkat! İstanbul&apos;un kalbinde saklı üç kadim mühür
             var: <span className="font-semibold text-white">Birlik</span>,{" "}
-            <span className="font-semibold text-gray-100">Kudret</span> ve{" "}
-            <span className="font-semibold text-gray-300">Tevazu</span>.
+            <span className="font-semibold text-white">Kudret</span> ve{" "}
+            <span className="font-semibold text-white">Tevazu</span>.
           </p>
           <p className="text-lg leading-relaxed mb-6 text-gray-200 font-light">
             Ama mühürler öylece beklemiyor; onları bulmak için önce şehrin
             sırlarını çözecek, gizli objeleri keşfedecek ve ardından bu objeleri
-            mühürleri aktif hâle getireceksiniz.
+            birleştirerek mühürleri oluşturacaksınız.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Home() {
           {/* Birlik Mührü */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
                 <GiShakingHands className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
@@ -47,15 +47,14 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-gray-300 font-light leading-relaxed text-center">
-              Halkı bir araya getiren güçleri simgeliyor. Farklı kültürleri,
-              inançları ve insanları birleştiren kadim enerji.
+              Farklı kültürleri birleştiren enerji.
             </p>
           </div>
 
           {/* Kudret Mührü */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
+              <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-green-700 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
                 <GiStrong className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
@@ -63,15 +62,14 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-gray-300 font-light leading-relaxed text-center">
-              İmparatorluğun kudretini ve meydan okumalarını hatırlatıyor.
-              Tarihin gördüğü en büyük medeniyetlerden birinin gücü.
+              Kudretin ve meydan okumalarının enerjisi.
             </p>
           </div>
 
           {/* Tevazu Mührü */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
             <div className="text-center mb-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
+              <div className="w-20 h-20 bg-gradient-to-br from-gray-600 to-green-800 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
                 <GiMeditation className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-serif font-bold text-white">
@@ -79,8 +77,7 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-gray-300 font-light leading-relaxed text-center">
-              Allah inancını, ibadeti ve tevazuyu gösteriyor. İnancın ve
-              alçakgönüllülüğün kadim bilgeliği.
+              Yaratıcı karşısında herkes eşittir.
             </p>
           </div>
         </div>
@@ -91,12 +88,9 @@ export default function Home() {
             Mühürleri oluşturmak, sadece bulmacaları çözmek değil;
             İstanbul&apos;un ruhunu ve tarihini yeniden inşa etmek demek.
           </p>
-          <p className="text-lg mb-6 text-gray-200 font-light italic">
-            Her obje, her ipucu, şehrin kadim bilgeliğine giden bir anahtar.
-          </p>
 
           <Link href="/intro">
-            <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer">
+            <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer hover:scale-105 transform">
               MACERAYA BAŞLA!
             </div>
           </Link>
