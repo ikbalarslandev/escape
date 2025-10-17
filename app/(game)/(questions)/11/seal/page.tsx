@@ -19,7 +19,7 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    "3. Mühür – Tevazu Mührü\n\nTema: Allah inancı, ibadet, tevazu, maneviyat\n\nTevazu Mührü'nü oluşturmak için doğru 2 objeyi seçin:";
+    "Tema: Allah inancı, ibadet, tevazu, maneviyat\n\nTevazu Mührü'nü oluşturmak için doğru 2 objeyi seçin:";
 
   const objects = [
     {
@@ -27,8 +27,7 @@ export default function SealPage() {
       name: "Minare Ucu",
       icon: GiWatchtower,
       gradient: "from-blue-500 to-purple-700",
-      description:
-        "Mekke ile eşit minare sayısı, hem maneviyat hem meydan okuma",
+      description: "Allah karşısında herkesin eşit olması",
       correct: true,
     },
     {

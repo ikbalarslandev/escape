@@ -1,7 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FaTrophy, FaStar, FaMedal, FaFlagCheckered } from "react-icons/fa";
+import {
+  FaTrophy,
+  FaStar,
+  FaMedal,
+  FaFlagCheckered,
+  FaCoffee,
+} from "react-icons/fa";
 import { GiLaurelsTrophy } from "react-icons/gi";
 
 export default function FinalSuccessPage() {
@@ -33,36 +39,6 @@ export default function FinalSuccessPage() {
 
         {/* Main Content */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-          {/* Achievement Summary */}
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-6">
-              <FaFlagCheckered className="text-4xl text-green-400 mr-4" />
-              <h2 className="text-3xl font-serif font-bold text-white">
-                Başarı Özeti
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <FaMedal className="text-3xl text-green-400 mx-auto mb-2" />
-                <h3 className="text-xl font-bold text-white mb-2">3 Mühür</h3>
-                <p className="text-gray-300">Tamamlandı</p>
-              </div>
-
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <FaStar className="text-3xl text-blue-400 mx-auto mb-2" />
-                <h3 className="text-xl font-bold text-white mb-2">12 Soru</h3>
-                <p className="text-gray-300">Çözüldü</p>
-              </div>
-
-              <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <FaTrophy className="text-3xl text-yellow-400 mx-auto mb-2" />
-                <h3 className="text-xl font-bold text-white mb-2">%100</h3>
-                <p className="text-gray-300">Tamamlanma</p>
-              </div>
-            </div>
-          </div>
-
           {/* Completion Message */}
           <div className="space-y-6 text-center">
             <div className="bg-white/10 rounded-xl p-6 border border-white/20">
@@ -75,17 +51,30 @@ export default function FinalSuccessPage() {
                 ve en sonunda nihai şifreyi çözmeyi başardınız!
               </p>
             </div>
-
-            <div className="bg-white/10 rounded-xl p-6 border border-white/20">
-              <h4 className="text-xl font-bold text-white mb-4">🌟 Son Söz</h4>
-              <p className="text-lg text-gray-200 leading-relaxed italic">
-                &quot;Tarih, sadece geçmişi anlamak değil, geleceği inşa
-                etmektir. Bu yolculukta gösterdiğiniz azim ve zeka, sadece
-                İstanbul&apos;un değil, tüm insanlığın ortak mirasını anlamanızı
-                sağladı.&quot;
-              </p>
-            </div>
           </div>
+        </div>
+
+        {/* Support Section */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20 text-center">
+          <div className="flex justify-center mb-4">
+            <FaCoffee className="text-4xl text-yellow-500" />
+          </div>
+          <h3 className="text-xl font-serif font-bold text-white mb-4">
+            Oyunu Beğendiniz mi?
+          </h3>
+          <p className="text-gray-300 mb-6">
+            Bu oyunu geliştirmemde bana destek olmak isterseniz, bir kahve
+            ısmarlayarak katkıda bulunabilirsiniz!
+          </p>
+          <a
+            href="https://buymeacoffee.com/nikapolis.today"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <FaCoffee className="text-lg" />
+            Bana Kahve Ismarla
+          </a>
         </div>
 
         {/* Footer */}
