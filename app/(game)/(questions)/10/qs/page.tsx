@@ -69,7 +69,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Accept various forms of "12" answer
-    const correctAnswers = ["12", "oniki", "on iki", "12 tane", "oniki tane"];
+    const correctAnswers = ["28"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
@@ -221,7 +221,7 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! 12 tane var.</p>
+                <p>Doğru cevap! 28 tane var.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...
