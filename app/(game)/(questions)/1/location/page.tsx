@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 
 export default function LocationPage() {
   return (
-    <div className="min-h-screen text-gray-100 p-8">
+    <div className="min-h-screen text-gray-100 p-2">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
@@ -20,7 +20,7 @@ export default function LocationPage() {
         </header>
 
         {/* Location Content */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/20">
           {/* Image Section */}
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
@@ -57,7 +57,7 @@ export default function LocationPage() {
                 src="/q_imgs/spina.jpeg"
                 alt="spina"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 768px"
                 priority
               />

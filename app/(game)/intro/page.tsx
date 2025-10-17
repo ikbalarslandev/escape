@@ -26,7 +26,7 @@ export default function IntroPage() {
   const videoId = "AjrnvDn2tcA";
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
+    <div className="min-h-screen text-gray-100 p-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
@@ -39,7 +39,7 @@ export default function IntroPage() {
         </header>
 
         {/* Main Content */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 mb-8 border border-white/20">
           {/* Video Section */}
           <div className="mb-8">
             <div className="rounded-xl overflow-hidden shadow-lg">
