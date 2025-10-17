@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Üç çizgimle bir araya gelirim, tüm gelenleri selamlarım. Eğilen başlar, beni gördüklerinde hangi harfin yansımasını görür?";
+    "Üç ulus, Tanrı'nın en büyük olduğunu göstermek için bir araya geldi. Bu birlik için aramızdan bir ulus askerlerini feda etti. Bu ulus kaç askerini feda etti?";
 
   const hintData = [
-    "Ben bir nesneyim, duvarda bir resim veya kabartma değil.",
-    "Rüzgar estiğinde hafifçe sallanırım.",
-    "Ana giriş kapısının hemen üstündeyim, gelen herkesin başı üzerinde.",
+    "Bu üç ulus oldukça uzundur ve gökyüzüne doğru uzanır.",
+    "Bu uluslar metalden yapılmıştır ve oldukça dayanıklıdırlar.",
+    "Uzun boylu insanlar bu ulusların altından geçerken kafasını çarpabilir.",
   ];
 
   // Initialize form
@@ -69,7 +69,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Accept various forms of "y" answer
-    const correctAnswers = ["y", "y harfi", "yharfi", "ye"];
+    const correctAnswers = ["6", "altı"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
@@ -123,13 +123,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Hangi harf:
+                      Feda Edilen asker sayısı:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Harfi buraya yazın..."
+                          placeholder="Asker sayısı..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -221,7 +221,7 @@ export default function QuestionPage() {
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! &quot;Y&quot; harfi görülür.</p>
+                <p>Doğru cevap! &quot;6&quot; Asker.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...
