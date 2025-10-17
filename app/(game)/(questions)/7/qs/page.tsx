@@ -69,7 +69,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Accept various forms of "5" answer
-    const correctAnswers = ["5", "beş", "saat 5", "5 yönü", "saat beş"];
+    const correctAnswers = ["10", "on"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
@@ -222,7 +222,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
                 <p>
-                  Doğru cevap! &quot;Etekli adamlar&quot; saat 5 yönüne bakıyor.
+                  Doğru cevap! &quot;Etekli adamlar&quot; saat 10 yönüne
+                  bakıyor.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
