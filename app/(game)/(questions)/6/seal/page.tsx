@@ -21,7 +21,7 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    "2. Mühür – Kudret Mührü\n\nTema: Dünyaya ve diğer imparatorluklara meydan okuma, güç gösterisi, otorite\n\nKudret Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
+    "Tema: Dünyaya ve diğer imparatorluklara meydan okuma, güç gösterisi, otorite\n\nKudret Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
 
   const objects = [
     {

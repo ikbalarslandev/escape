@@ -22,7 +22,19 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import {
+  FaLightbulb,
+  FaLock,
+  FaLockOpen,
+  FaCheckCircle,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
@@ -36,6 +48,7 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [isMinareInfoOpen, setIsMinareInfoOpen] = useState(false);
 
   const question =
     "Üç mızrağın kafasını kestiler, ölmeden önce kaç minare gördüler?";
@@ -69,7 +82,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct (accept both "3" and "üç")
-    if (normalizedAnswer === "3" || normalizedAnswer === "üç") {
+    if (normalizedAnswer === "2" || normalizedAnswer === "iki") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -111,6 +124,51 @@ export default function QuestionPage() {
           <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
             {question}
           </p>
+
+          {/* Minare Information Dropdown */}
+          <Collapsible
+            open={isMinareInfoOpen}
+            onOpenChange={setIsMinareInfoOpen}
+            className="mb-6"
+          >
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="outline"
+                className="w-full bg-white/10 hover:bg-white/20 border-white/20 text-white flex justify-between items-center py-3 px-4"
+              >
+                <span className="font-semibold">Minare nedir?</span>
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-4 bg-white/5 rounded-lg p-4 border border-white/20">
+              <div className="space-y-3 text-gray-200">
+                <p>
+                  <strong>Minare</strong>, camilerin yanında bulunan ince, uzun
+                  bir kuledir.
+                </p>
+
+                <p>
+                  Genellikle üzerinde bir veya daha fazla balkon bulunur. Bu
+                  balkonlara çıkılarak insanlara namaz vaktinin geldiği
+                  duyurulur.
+                </p>
+
+                <div className="bg-white/10 rounded-lg p-3 mt-2">
+                  <p className="text-sm">
+                    <strong>Nasıl çalışır?</strong>
+                  </p>
+                  <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
+                    <li>
+                      Namaz vakti geldiğinde, biri minarenin balkonuna çıkar
+                    </li>
+                    <li>Yüksek sesle özel bir çağrı okur (ezan)</li>
+                    <li>
+                      Bu çağrı, insanlara namaz vaktinin geldiğini bildirir
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
 
           {/* Answer Form */}
           <Form {...form}>
