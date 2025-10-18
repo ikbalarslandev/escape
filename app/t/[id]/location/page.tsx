@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
-import { questions } from "@/utils/questions";
+import { sections } from "@/utils/sections";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -12,13 +12,13 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return questions.map((question) => ({
-    id: question.id.toString(),
+  return sections.map((section) => ({
+    id: section.id.toString(),
   }));
 }
 
 export function generateMetadata({ params }: Props) {
-  const question = questions.find((q) => q.id.toString() === params.id);
+  const question = sections.find((q) => q.id.toString() === params.id);
 
   if (!question) {
     return {
@@ -33,9 +33,9 @@ export function generateMetadata({ params }: Props) {
 }
 
 export default function LocationPage({ params }: Props) {
-  const question = questions.find((q) => q.id.toString() === params.id);
+  const section = sections.find((q) => q.id.toString() === params.id);
 
-  if (!question) {
+  if (!section) {
     notFound();
   }
 
@@ -45,7 +45,7 @@ export default function LocationPage({ params }: Props) {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            {`${question.id}. Soru`}
+            {`${section.id}. Soru`}
           </h1>
           <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
             Lokasyon
@@ -58,8 +58,8 @@ export default function LocationPage({ params }: Props) {
           <div>
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src={question.location.imgUrls[0]}
-                alt={question.location.name}
+                src={section.location.imgUrls[0]}
+                alt={section.location.name}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -69,12 +69,12 @@ export default function LocationPage({ params }: Props) {
           </div>
 
           {/* Image Section */}
-          {question.location.imgUrls.length > 1 && (
+          {section.location.imgUrls.length > 1 && (
             <div>
               <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mt-4">
                 <Image
-                  src={question.location.imgUrls[1]}
-                  alt={question.location.name}
+                  src={section.location.imgUrls[1]}
+                  alt={section.location.name}
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -90,16 +90,16 @@ export default function LocationPage({ params }: Props) {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                {question.location.name}
+                {section.location.name}
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              {question.location.description}
+              {section.location.description}
             </p>
           </div>
 
           <Link
-            href={question.location.mapsUrl}
+            href={section.location.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -110,7 +110,7 @@ export default function LocationPage({ params }: Props) {
         </div>
 
         <Link
-          href={`/${question.id}/qs`}
+          href={`/${section.id}/qs`}
           // href={`/t/${question.id + 1}/location`}
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
