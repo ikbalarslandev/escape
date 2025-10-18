@@ -102,7 +102,11 @@ export default function QsClientPage({ section }: Props) {
 
   // Function to determine next page URL
   const getNextPageUrl = (currentId: number): string => {
-    return `/${currentId}/info`;
+    if (section.info) {
+      return `/t/${currentId}/info`;
+    }
+
+    return `/t/${currentId + 1}/location`;
   };
 
   return (

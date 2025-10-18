@@ -1,27 +1,27 @@
 "use client";
 
+import React from "react";
 import { useRouter, notFound } from "next/navigation";
 import { sections } from "@/utils/sections";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-export default function InfoPage({ params }: Props) {
+export default function InfoPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const router = useRouter();
+  const resolvedParams = React.use(params); // ✅ unwrap the promise
 
-  const section = sections.find((q) => q.id.toString() === params.id);
+  const section = sections.find((q) => q.id.toString() === resolvedParams.id);
 
   if (!section) {
     notFound();
   }
 
   const { info } = section;
-  const objectIndex = section.id; // you said: no icons for now, just show index
+  const objectIndex = section.id;
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
@@ -46,16 +46,17 @@ export default function InfoPage({ params }: Props) {
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
                 Obje {objectIndex}
               </h2>
-              <p className="text-gray-300">{info.desc}</p>
+              <p className="text-gray-300">{info?.desc}</p>
             </div>
 
-            {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: info.content,
-                }}
-              />
+              {info && (
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: info.content,
+                  }}
+                />
+              )}
             </div>
           </CardContent>
         </Card>
@@ -75,7 +76,6 @@ export default function InfoPage({ params }: Props) {
           </CardContent>
         </Card>
 
-        {/* Navigation */}
         <div className="text-center">
           <Button
             onClick={() => router.push(`/${section.id + 1}/location`)}
@@ -85,7 +85,6 @@ export default function InfoPage({ params }: Props) {
           </Button>
         </div>
 
-        {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">Tarihin izinde ilerlemeye devam edin...</p>
         </footer>
