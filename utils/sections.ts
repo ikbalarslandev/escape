@@ -19,6 +19,16 @@ export const sections: ISection[] = [
         "Boyum 5.5 metredir",
       ],
     },
+    info: {
+      object: 0,
+      desc: " Bu, mühürleri oluşturma yolunda ilk parçan",
+      content:
+        "Şu anda Hipodrom&apos;un tam merkezindesin. Hayal et, etrafında devasa tribünler ve ortada spina; tüm bu alan yaklaşık 9 futbol  sahası büyüklüğünde!  Bu kadar geniş bir alanın, halkı bir araya getirip eğlendirmek ve imparatorluğun görkemini göstermek için yapıldığını hayal edebiliyor musun?",
+      collected: {
+        objects: [],
+        seals: [],
+      },
+    },
   },
   //   },
   //   {

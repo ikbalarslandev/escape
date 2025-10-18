@@ -2,6 +2,7 @@ export interface ISection {
   id: number;
   location: ILocation;
   question: ITextQs;
+  info?: IInfo;
 }
 export interface ILocation {
   name: string;
@@ -14,4 +15,13 @@ export interface ITextQs {
   qs: string;
   answer: string;
   hints: string[];
+}
+
+// info
+export interface IInfo {
+  object?: number;
+  desc: string;
+  content: string;
+
+  collected: { objects: number[]; seals: number[] };
 }
