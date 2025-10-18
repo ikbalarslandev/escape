@@ -64,9 +64,10 @@ export default function ImageQs({ section }: Props) {
   // Function to determine next page URL
   const getNextPageUrl = (currentId: number): string => {
     if (section.info) {
-      return `/${currentId}/info`;
+      return `/t/${currentId}/info`;
     }
-    return `/${currentId + 1}/location`;
+
+    return `/t/${currentId + 1}/location`;
   };
   // Countdown effect for success
   useEffect(() => {

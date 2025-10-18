@@ -59,7 +59,7 @@ export default function InfoPage({
           </CardContent>
         </Card>
 
-        {/* Object Collection Card */}
+        {/* Object Collection Card
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
@@ -72,11 +72,11 @@ export default function InfoPage({
             </div>
             <p className="text-center text-gray-300 mt-4">Obje {objectIndex}</p>
           </CardContent>
-        </Card>
+        </Card> */}
 
         <div className="text-center">
           <Button
-            onClick={() => router.push(`/${section.id + 1}/location`)}
+            onClick={() => router.push(`/t/${section.id + 1}/location`)}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Sonraki Soru →
