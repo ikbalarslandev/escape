@@ -1,19 +1,9 @@
+// app/[id]/qs/ImageQsClientPage.tsx (CLIENT COMPONENT)
 "use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,38 +12,35 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-import { ISection } from "@/types";
-
-// Form validation schema
-const formSchema = z.object({
-  answer: z.string().min(1, "Cevap boş olamaz"),
-});
+import {
+  FaLightbulb,
+  FaLock,
+  FaLockOpen,
+  FaCheckCircle,
+  FaTimesCircle,
+} from "react-icons/fa";
+import { ISection, IImageQs } from "@/types";
 
 interface Props {
   section: ISection;
 }
 
-export default function TextQs({ section }: Props) {
+export default function ImageQs({ section }: Props) {
   const router = useRouter();
   const [hints, setHints] = useState<boolean[]>([]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
+
+  // Type guard to ensure it's an image question
+  const question = section.question as IImageQs;
 
   // Initialize hints based on the current question
   useEffect(() => {
-    setHints(new Array(section.question.hints.length).fill(false));
-  }, [section.id, section.question.hints.length]);
-
-  // Initialize form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      answer: "",
-    },
-  });
+    setHints(new Array(question.hints.length).fill(false));
+  }, [section.id, question.hints.length]);
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -63,25 +50,15 @@ export default function TextQs({ section }: Props) {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
+  const handleOptionClick = (option: string) => {
+    setSelectedOption(option);
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
-
-    // Check if answer is correct
-    if (normalizedAnswer === section.question.answer.toLowerCase()) {
+    if (option === question.answer) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer", {
-        type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
-      });
+      setIsError(true);
     }
-
-    setIsSubmitting(false);
   };
 
   // Countdown effect for success
@@ -102,15 +79,20 @@ export default function TextQs({ section }: Props) {
   // Function to determine next page URL
   const getNextPageUrl = (currentId: number): string => {
     if (section.info) {
-      return `/t/${currentId}/info`;
+      return `/${currentId}/info`;
     }
+    return `/${currentId + 1}/location`;
+  };
 
-    return `/t/${currentId + 1}/location`;
+  // Handle manual navigation
+  const goToNextPage = () => {
+    const nextPage = getNextPageUrl(section.id);
+    router.push(nextPage);
   };
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
@@ -121,43 +103,39 @@ export default function TextQs({ section }: Props) {
         {/* Question Card */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
           <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
-            {section.question.qs}
+            {question.qs}
           </p>
 
-          {/* Answer Form */}
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="answer"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg font-semibold text-white">
-                      Cevabınız:
-                    </FormLabel>
-                    <FormControl>
-                      <div className="flex gap-4">
-                        <Input
-                          {...field}
-                          placeholder="Cevabınızı buraya yazın..."
-                          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
-                          disabled={isSubmitting}
-                        />
-                        <Button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
-                        >
-                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
-                        </Button>
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-300 text-lg" />
-                  </FormItem>
-                )}
-              />
-            </form>
-          </Form>
+          {/* Options Grid */}
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold text-white mb-6 text-center">
+              Doğru seçeneği seçin:
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {question.options.map((option, index) => (
+                <div
+                  key={option}
+                  className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
+                    selectedOption === option
+                      ? option === question.answer
+                        ? "border-green-400 ring-2 ring-green-400"
+                        : "border-red-400 ring-2 ring-red-400"
+                      : "border-white/20 hover:border-white/40"
+                  }`}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  <Image
+                    src={option}
+                    alt={`Seçenek ${index + 1}`}
+                    fill
+                    className="object-contain bg-black/50 p-2"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    quality={100}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
           <hr className="mt-12" />
 
@@ -169,7 +147,7 @@ export default function TextQs({ section }: Props) {
             </h3>
 
             <div className="space-y-4">
-              {section.question.hints.map((hint, index) => (
+              {question.hints.map((hint, index) => (
                 <div
                   key={index}
                   className={`p-4 rounded-lg border transition-all duration-300 ${
@@ -223,18 +201,49 @@ export default function TextQs({ section }: Props) {
           </Button>
         </div>
 
+        {/* Zoom Modal */}
+        <Dialog
+          open={zoomImage !== null}
+          onOpenChange={() => setZoomImage(null)}
+        >
+          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-4xl w-[90vw] h-[90vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-white">
+                Seçenek {zoomImage} - Detaylı Görünüm
+              </DialogTitle>
+            </DialogHeader>
+            <div className="relative w-full h-full flex items-center justify-center">
+              {zoomImage && (
+                <Image
+                  src={`/opt/${section.id}/${zoomImage}.jpg`}
+                  alt={`Seçenek ${zoomImage} - Detaylı`}
+                  fill
+                  className="object-contain"
+                  quality={100}
+                />
+              )}
+            </div>
+            <div className="flex justify-center mt-4">
+              <Button
+                onClick={() => setZoomImage(null)}
+                className="bg-white/20 hover:bg-white/30 border-white/30 text-white"
+              >
+                Kapat
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white">
+          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Tebrikler!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
-                <p>
-                  Doğru cevap! &quot;{section.question.answer}&quot;ı buldunuz.
-                </p>
+                <p>Doğru seçeneği buldunuz!</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     {countdown} saniye içinde yönlendiriliyorsunuz...
@@ -246,6 +255,35 @@ export default function TextQs({ section }: Props) {
                     ></div>
                   </div>
                 </div>
+                <Button
+                  onClick={goToNextPage}
+                  className="mt-4 bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Hemen İlerle
+                </Button>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Error Dialog */}
+        <Dialog open={isError} onOpenChange={setIsError}>
+          <DialogContent className="bg-gray-800 border-white/20 text-white">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
+                <FaTimesCircle className="mr-3" />
+                Yanlış Seçim!
+              </DialogTitle>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+                <p>
+                  Bu seçenek doğru değil. İpuçlarını kullanarak tekrar deneyin.
+                </p>
+                <Button
+                  onClick={() => setIsError(false)}
+                  className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
+                >
+                  Tekrar Dene
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>

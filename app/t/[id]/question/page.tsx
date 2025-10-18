@@ -1,5 +1,6 @@
 import { sections } from "@/utils/sections";
 import TextQs from "@/components/pages/qs/Text";
+import ImageQs from "@/components/pages/qs/Image";
 
 interface Props {
   params: {
@@ -34,5 +35,14 @@ export default function QuestionPage({ params }: Props) {
     return <div>Soru bulunamadı</div>;
   }
 
-  return <TextQs section={section} />;
+  switch (section.question.type) {
+    case "text":
+      return <TextQs section={section} />;
+
+    case "image":
+      return <ImageQs section={section} />;
+
+    default:
+      return <div>Unknown question type</div>;
+  }
 }

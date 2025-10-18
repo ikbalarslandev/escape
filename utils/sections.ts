@@ -11,6 +11,7 @@ export const sections: ISection[] = [
       mapsUrl: "https://maps.app.goo.gl/LKExaiWipFzrefmeA",
     },
     question: {
+      type: "text",
       qs: "Hipodromdaki spina(hipodromun ortasındaki anıtsal çizgi) benim meskenimdir. Geceleri üç farklı yönden aydınlanırım. Öyle ki, üç hayvanın başında otururum. Ben neyim?",
       answer: "kazan",
       hints: [
@@ -30,16 +31,46 @@ export const sections: ISection[] = [
       },
     },
   },
-  //   },
-  //   {
-  //     id: 2,
-  //     location: {
-  //       name: "TEODOSIUS DİKİLİ TAŞI",
-  //       description: "Bir sonraki soru için Teodosius Dikili Taşına git.",
-  //       imgUrls: ["/q_imgs/2.jpg"],
-  //       mapsUrl: "https://maps.app.goo.gl/WQVb6XmVAej7f4fTA",
-  //     },
-  //   },
+
+  {
+    id: 2,
+    location: {
+      name: "TEODOSIUS DİKİLİ TAŞI",
+      description: "Bir sonraki soru için Teodosius Dikili Taşına git.",
+      imgUrls: ["/q_imgs/2.jpg"],
+      mapsUrl: "https://maps.app.goo.gl/WQVb6XmVAej7f4fTA",
+    },
+    question: {
+      type: "image",
+      qs: "Hipodromdaki spina(hipodromun ortasındaki anıtsal çizgi) benim meskenimdir. Geceleri üç farklı yönden aydınlanırım. Öyle ki, üç hayvanın başında otururum. Ben neyim?",
+      answer: "/opt/2/6.jpg",
+      options: [
+        "/opt/2/1.jpg",
+        "/opt/2/2.jpg",
+        "/opt/2/3.jpg",
+        "/opt/2/4.jpg",
+        "/opt/2/5.jpg",
+        "/opt/2/6.jpg",
+        "/opt/2/7.jpg",
+        "/opt/2/8.jpg",
+      ],
+      hints: [
+        "Dikili taşın tabanında bulunan dört yüzdeki tüm heykelleri incele. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
+        "İmparatorla aynı eksiği taşıyanları say, böylece kaç tane dostu olduğunu anlarsın.",
+        "Eksikliği olan imparatorun olduğu taraftaki hiyeroglifleri aşağıdan yukarıya doğru, dostlarının sayısı kadar say. Böylece imparatorun ruhunun tutsak olduğu hiyeroglifi bulabilirsin.",
+      ],
+    },
+    info: {
+      object: 0,
+      desc: " Bu, mühürleri oluşturma yolunda ilk parçan",
+      content:
+        "Şu anda Hipodrom&apos;un tam merkezindesin. Hayal et, etrafında devasa tribünler ve ortada spina; tüm bu alan yaklaşık 9 futbol  sahası büyüklüğünde!  Bu kadar geniş bir alanın, halkı bir araya getirip eğlendirmek ve imparatorluğun görkemini göstermek için yapıldığını hayal edebiliyor musun?",
+      collected: {
+        objects: [],
+        seals: [],
+      },
+    },
+  },
   //   {
   //     id: 3,
   //     location: {

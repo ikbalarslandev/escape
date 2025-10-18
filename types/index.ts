@@ -1,7 +1,7 @@
 export interface ISection {
   id: number;
   location: ILocation;
-  question: ITextQs;
+  question: ITextQs | IImageQs;
   info?: IInfo;
 }
 export interface ILocation {
@@ -12,8 +12,16 @@ export interface ILocation {
 }
 // question types
 export interface ITextQs {
+  type: "text";
   qs: string;
   answer: string;
+  hints: string[];
+}
+export interface IImageQs {
+  type: "image";
+  qs: string;
+  answer: string;
+  options: string[];
   hints: string[];
 }
 
