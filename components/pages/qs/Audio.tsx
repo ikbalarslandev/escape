@@ -88,7 +88,7 @@ export default function AudioQs({ section }: Props) {
         mystery.pause();
       };
     }
-  }, [section.id]);
+  }, [section.id, section.question.audios]);
 
   // Initialize form
   const form = useForm<z.infer<typeof formSchema>>({
@@ -171,7 +171,14 @@ export default function AudioQs({ section }: Props) {
 
     setIsSubmitting(false);
   };
+  // Function to determine next page URL
+  const getNextPageUrl = (currentId: number): string => {
+    if (section.info) {
+      return `/t/${currentId}/info`;
+    }
 
+    return `/t/${currentId + 1}/location`;
+  };
   // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
@@ -185,23 +192,14 @@ export default function AudioQs({ section }: Props) {
       const nextPage = getNextPageUrl(section.id);
       router.push(nextPage);
     }
-  }, [isSuccess, countdown, router, section.id]);
+  }, [isSuccess, countdown, router, section.id, getNextPageUrl]);
 
   // Stop audio when component unmounts
   useEffect(() => {
     return () => {
       stopAllAudio();
     };
-  }, []);
-
-  // Function to determine next page URL
-  const getNextPageUrl = (currentId: number): string => {
-    if (section.info) {
-      return `/t/${currentId}/info`;
-    }
-
-    return `/t/${currentId + 1}/location`;
-  };
+  }, [stopAllAudio]);
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
@@ -224,7 +222,8 @@ export default function AudioQs({ section }: Props) {
             {/* Example Audio */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4">
-                Örnek Ses - "{section.question.audios.example.answer}" Harfi
+                Örnek Ses - &quot;{section.question.audios.example.answer}&quot;
+                Harfi
               </h3>
               <Button
                 onClick={toggleExampleAudio}
@@ -235,8 +234,8 @@ export default function AudioQs({ section }: Props) {
                 {isPlayingExample ? "Çalıyor..." : "Örnek Ses Çal"}
               </Button>
               <p className="text-gray-400 text-sm mt-2 text-center">
-                Bu ses "{section.question.audios.example.answer}" harfinin nasıl
-                bulunacağını gösteriyor
+                Bu ses &quot;{section.question.audios.example.answer}&quot;
+                harfinin nasıl bulunacağını gösteriyor
               </p>
             </div>
 

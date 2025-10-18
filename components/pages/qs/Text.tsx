@@ -84,6 +84,15 @@ export default function TextQs({ section }: Props) {
     setIsSubmitting(false);
   };
 
+  // Function to determine next page URL
+  const getNextPageUrl = (currentId: number): string => {
+    if (section.info) {
+      return `/t/${currentId}/info`;
+    }
+
+    return `/t/${currentId + 1}/location`;
+  };
+
   // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
@@ -97,16 +106,7 @@ export default function TextQs({ section }: Props) {
       const nextPage = getNextPageUrl(section.id);
       router.push(nextPage);
     }
-  }, [isSuccess, countdown, router, section.id]);
-
-  // Function to determine next page URL
-  const getNextPageUrl = (currentId: number): string => {
-    if (section.info) {
-      return `/t/${currentId}/info`;
-    }
-
-    return `/t/${currentId + 1}/location`;
-  };
+  }, [isSuccess, countdown, router, section.id, getNextPageUrl]);
 
   return (
     <div className="min-h-screen text-gray-100 p-8">

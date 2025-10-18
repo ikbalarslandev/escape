@@ -61,6 +61,13 @@ export default function ImageQs({ section }: Props) {
     }
   };
 
+  // Function to determine next page URL
+  const getNextPageUrl = (currentId: number): string => {
+    if (section.info) {
+      return `/${currentId}/info`;
+    }
+    return `/${currentId + 1}/location`;
+  };
   // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
@@ -74,15 +81,7 @@ export default function ImageQs({ section }: Props) {
       const nextPage = getNextPageUrl(section.id);
       router.push(nextPage);
     }
-  }, [isSuccess, countdown, router, section.id]);
-
-  // Function to determine next page URL
-  const getNextPageUrl = (currentId: number): string => {
-    if (section.info) {
-      return `/${currentId}/info`;
-    }
-    return `/${currentId + 1}/location`;
-  };
+  }, [isSuccess, countdown, router, section.id, getNextPageUrl]);
 
   // Handle manual navigation
   const goToNextPage = () => {

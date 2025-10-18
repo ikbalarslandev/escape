@@ -1,18 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import {
-  FaTrophy,
-  FaStar,
-  FaMedal,
-  FaFlagCheckered,
-  FaCoffee,
-} from "react-icons/fa";
+import { FaStar, FaCoffee } from "react-icons/fa";
 import { GiLaurelsTrophy } from "react-icons/gi";
 
 export default function FinalSuccessPage() {
-  const router = useRouter();
-
   return (
     <div className="min-h-screen text-gray-100 p-8 bg-gradient-to-br from-gray-900/30 to-gray-800/30">
       <div className="max-w-4xl mx-auto">

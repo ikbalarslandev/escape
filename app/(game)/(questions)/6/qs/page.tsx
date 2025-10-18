@@ -27,14 +27,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import {
-  FaLightbulb,
-  FaLock,
-  FaLockOpen,
-  FaCheckCircle,
-  FaChevronDown,
-  FaChevronUp,
-} from "react-icons/fa";
+import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 // Form validation schema

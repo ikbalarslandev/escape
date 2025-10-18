@@ -17,7 +17,6 @@ import {
   FaLockOpen,
   FaCheckCircle,
   FaTimesCircle,
-  FaSearch,
 } from "react-icons/fa";
 
 export default function QuestionPage() {
