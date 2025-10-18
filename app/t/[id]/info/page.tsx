@@ -5,6 +5,7 @@ import { useRouter, notFound } from "next/navigation";
 import { sections } from "@/utils/sections";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { convertIndexToBage } from "@/utils/convertions";
 
 export default function InfoPage({
   params,
@@ -40,13 +41,10 @@ export default function InfoPage({
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white">
-                {objectIndex}
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Obje {objectIndex}
-              </h2>
-              <p className="text-gray-300">{info?.desc}</p>
+              {section.info?.object !== undefined &&
+                convertIndexToBage({ i: section.info.object })}
+
+              <p className="text-gray-300 mt-4">{info?.desc}</p>
             </div>
 
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
