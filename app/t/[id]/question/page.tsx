@@ -31,13 +31,8 @@ export function generateMetadata({ params }: Props) {
 export default function QuestionPage({ params }: Props) {
   const section = sections.find((q) => q.id.toString() === params.id);
   if (!section) {
-    throw new Error("Section not found");
-  }
-  const { question } = section;
-
-  if (!question) {
     return <div>Soru bulunamadı</div>;
   }
 
-  return <TextQs question={question} />;
+  return <TextQs section={section} />;
 }
