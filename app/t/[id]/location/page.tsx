@@ -6,9 +6,9 @@ import { sections } from "@/utils/sections";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -17,8 +17,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: Props) {
-  const question = sections.find((q) => q.id.toString() === params.id);
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
+  const question = sections.find((q) => q.id.toString() === id);
 
   if (!question) {
     return {
@@ -32,8 +33,9 @@ export function generateMetadata({ params }: Props) {
   };
 }
 
-export default function LocationPage({ params }: Props) {
-  const section = sections.find((q) => q.id.toString() === params.id);
+export default async function LocationPage({ params }: Props) {
+  const { id } = await params;
+  const section = sections.find((q) => q.id.toString() === id);
 
   if (!section) {
     notFound();
@@ -111,7 +113,6 @@ export default function LocationPage({ params }: Props) {
 
         <Link
           href={`/t/${section.id}/question`}
-          // href={`/t/${question.id + 1}/location`}
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Soruya Geç <FaArrowRight className="ml-2" />

@@ -5,9 +5,9 @@ import AudioQs from "@/components/pages/qs/Audio";
 import { ISection, IAudioQs } from "@/types";
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: Props) {
-  const section = sections.find((q) => q.id.toString() === params.id);
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
+  const section = sections.find((q) => q.id.toString() === id);
 
   if (!section) {
     return {
@@ -31,8 +32,10 @@ export function generateMetadata({ params }: Props) {
   };
 }
 
-export default function QuestionPage({ params }: Props) {
-  const section = sections.find((q) => q.id.toString() === params.id);
+export default async function QuestionPage({ params }: Props) {
+  const { id } = await params;
+  const section = sections.find((q) => q.id.toString() === id);
+
   if (!section) {
     return <div>Soru bulunamadı</div>;
   }
