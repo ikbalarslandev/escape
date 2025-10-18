@@ -71,6 +71,42 @@ export const sections: ISection[] = [
       },
     },
   },
+  {
+    id: 12,
+    location: {
+      name: "TEODOSIUS DİKİLİ TAŞI",
+      description: "Bir sonraki soru için Teodosius Dikili Taşına git.",
+      imgUrls: ["/q_imgs/2.jpg"],
+      mapsUrl: "https://maps.app.goo.gl/WQVb6XmVAej7f4fTA",
+    },
+    question: {
+      type: "audio",
+      qs: "Kral sana yol göstersin. İlk ses dosyası 'R' harfinin şifresini öğretti. Şimdi ikinci ses dosyasını dinleyerek şifrelenmiş kelimeyi bul.",
+      answer: "bir",
+      audios: {
+        example: {
+          route: "/opt/12/Letter (R).mp3",
+          answer: "r",
+        },
+        mystery_route: "/opt/12/Word (BIR).mp3",
+      },
+      hints: [
+        "Alman Çeşmesi'nin üzerinde duran metal döküm yazıda şifre gizli.",
+        "İlk ses dosyasını dikkatle dinle. Sana 'R' harfinin konumunu ve harfi bulduğunda çıkan doğrulama sesini gösteriyor.",
+        "Her harfi bulduktan sonra belirli bir ses çıkarıyor buna odaklanarak kelime içerisinde kaç adet harf olduğunu bulabilirsin",
+      ],
+    },
+    info: {
+      object: 0,
+      desc: " Bu, mühürleri oluşturma yolunda ilk parçan",
+      content:
+        "Şu anda Hipodrom&apos;un tam merkezindesin. Hayal et, etrafında devasa tribünler ve ortada spina; tüm bu alan yaklaşık 9 futbol  sahası büyüklüğünde!  Bu kadar geniş bir alanın, halkı bir araya getirip eğlendirmek ve imparatorluğun görkemini göstermek için yapıldığını hayal edebiliyor musun?",
+      collected: {
+        objects: [],
+        seals: [],
+      },
+    },
+  },
   //   {
   //     id: 3,
   //     location: {

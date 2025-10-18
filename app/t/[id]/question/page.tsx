@@ -1,6 +1,8 @@
 import { sections } from "@/utils/sections";
 import TextQs from "@/components/pages/qs/Text";
 import ImageQs from "@/components/pages/qs/Image";
+import AudioQs from "@/components/pages/qs/Audio";
+import { ISection, IAudioQs } from "@/types";
 
 interface Props {
   params: {
@@ -41,6 +43,9 @@ export default function QuestionPage({ params }: Props) {
 
     case "image":
       return <ImageQs section={section} />;
+
+    case "audio":
+      return <AudioQs section={section as ISection & { question: IAudioQs }} />;
 
     default:
       return <div>Unknown question type</div>;
