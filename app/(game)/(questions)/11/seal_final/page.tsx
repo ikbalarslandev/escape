@@ -14,10 +14,10 @@ export default function SealFinalPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Tebrikler!
+            Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Tüm objeleri topladınız ve mühürleri oluşturdunuz
+            You've collected all artifacts and created the seals
           </p>
         </header>
 
@@ -26,10 +26,10 @@ export default function SealFinalPage() {
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-serif font-bold text-white mb-2">
-                Tüm Mühürler Tamamlandı!
+                All Seals Completed!
               </h2>
               <p className="text-gray-300 text-lg">
-                Tüm objeler başarıyla toplandı
+                All artifacts successfully collected
               </p>
             </div>
 
@@ -37,9 +37,9 @@ export default function SealFinalPage() {
             <div className="space-y-6 text-gray-200 font-light leading-relaxed text-center">
               <div className="p-4 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
                 <p className="text-yellow-200 font-semibold">
-                  ⚡ Şimdi son adım: Mühürleri aktifleştirmek için son bir soru
-                  çözmeniz gerekiyor. Bu soru, tüm mühürlerin gücünü birleştirip
-                  nihai sırrı ortaya çıkaracak.
+                  ⚡ Now the final step: You need to solve one last question to
+                  activate the seals. This question will combine the power of
+                  all seals and reveal the ultimate secret.
                 </p>
               </div>
             </div>
@@ -50,10 +50,10 @@ export default function SealFinalPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-6 text-center">
-              🏆 Tamamlanan Tüm Mühürler
+              🏆 All Completed Seals
             </h3>
             <div className="flex justify-center gap-6 flex-wrap">
-              {/* Birlik Mühürü */}
+              {/* Unity Seal */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="w-28 h-28 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
@@ -61,16 +61,16 @@ export default function SealFinalPage() {
                   </div>
                 </div>
                 <p className="text-center text-white font-bold mt-2">
-                  Birlik Mührü
+                  Unity Seal
                 </p>
                 <div className="flex justify-center mt-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Tamamlandı
+                    Completed
                   </span>
                 </div>
               </div>
 
-              {/* Kudret Mühürü */}
+              {/* Power Seal */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="w-28 h-28 bg-gradient-to-br from-red-500 to-yellow-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
@@ -78,16 +78,16 @@ export default function SealFinalPage() {
                   </div>
                 </div>
                 <p className="text-center text-white font-bold mt-2">
-                  Kudret Mührü
+                  Power Seal
                 </p>
                 <div className="flex justify-center mt-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Tamamlandı
+                    Completed
                   </span>
                 </div>
               </div>
 
-              {/* Tevazu Mühürü */}
+              {/* Humility Seal */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="w-28 h-28 bg-gradient-to-br from-green-500 to-blue-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
@@ -95,11 +95,11 @@ export default function SealFinalPage() {
                   </div>
                 </div>
                 <p className="text-center text-white font-bold mt-2">
-                  Tevazu Mührü
+                  Humility Seal
                 </p>
                 <div className="flex justify-center mt-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Tamamlandı
+                    Completed
                   </span>
                 </div>
               </div>
@@ -113,14 +113,15 @@ export default function SealFinalPage() {
             onClick={() => router.push("/12/location")}
             className="bg-yellow-500 hover:bg-yellow-600 border-yellow-600 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Son Soruya Geç ⚡
+            Proceed to Final Question ⚡
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Mühürlerin gücü sizinle olsun. Son soruya hazır olun...
+            May the power of the seals be with you. Prepare for the final
+            question...
           </p>
         </footer>
       </div>

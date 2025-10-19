@@ -14,10 +14,10 @@ export default function InfoPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Tebrikler!
+            Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Yeni bir objeyi kazandınız
+            You've obtained a new artifact
           </p>
         </header>
 
@@ -29,29 +29,31 @@ export default function InfoPage() {
                 <GiWatchtower className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Minare
+                Minaret
               </h2>
               <p className="text-gray-300">
-                Yeni bir hikaye parçasını keşfettiniz
+                You've discovered a new piece of the story
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Minareler Osmanlı&apos;da sadece dini sembol değil, aynı zamanda
-                gücün nişanesiydi. İstanbul&apos;un fethiyle camiye çevrilen
-                Ayasofya&apos;ya sultan statüsüne uygun 4 minare eklendi. Fakat
-                I. Ahmed, Ayasofya&apos;nın Bizans ihtişamını gölgelemek için
-                karşısına 6 minareli Sultanahmet Camii&apos;ni inşa ettirdiğinde
-                büyük tartışma patlak verdi; zira o güne kadar 6 minare yalnızca
-                İslam&apos;ın en kutsal mabedi Kabe&apos;ye aitti.
+                In the Ottoman Empire, minarets were not only religious symbols
+                but also marks of power. After the conquest of Istanbul, 4
+                minarets suitable for sultan status were added to Hagia Sophia,
+                which was converted into a mosque. However, when Ahmed I built
+                the 6-minaret Sultanahmet Mosque opposite it to overshadow Hagia
+                Sophia's Byzantine splendor, a major controversy erupted; until
+                then, 6 minarets belonged only to Islam's holiest temple, the
+                Kaaba.
               </p>
 
               <p>
-                Padişahın allaha eşitlik iddiası olarak yorumlanan bu durum,
-                sonunda Kabe&apos;ye yedinci minarenin eklenmesiyle çözüldü ve
-                hiç kimsenin kutsal olandan üstün olamayacağı mesajı verildi.
+                This situation, interpreted as the sultan's claim of equality
+                with God, was finally resolved by adding a seventh minaret to
+                the Kaaba, sending the message that no one can be superior to
+                the sacred.
               </p>
             </div>
           </CardContent>
@@ -61,64 +63,64 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Mühürler
+              🏆 Seals
             </h3>
             <div className="flex justify-center gap-6 flex-wrap">
-              {/* Completed Seal - Birlik Mühürü */}
+              {/* Completed Seal - Unity Seal */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
                     <GiShakingHands className="text-white text-5xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">Birlik Mühürü</p>
+                <p className="text-center text-gray-300 mt-4">Unity Seal</p>
                 <div className="flex justify-center mt-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Tamamlandı
+                    Completed
                   </span>
                 </div>
               </div>
 
-              {/* Completed Seal - Kudret Mühürü */}
+              {/* Completed Seal - Power Seal */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-yellow-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
                     <GiStrong className="text-white text-5xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">Kudret Mühürü</p>
+                <p className="text-center text-gray-300 mt-4">Power Seal</p>
                 <div className="flex justify-center mt-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Tamamlandı
+                    Completed
                   </span>
                 </div>
               </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              2/3 mühür tamamlandı
+              2/3 seals completed
             </p>
           </CardContent>
         </Card>
 
-        {/* Object Collection Card */}
+        {/* Artifact Collection Card */}
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📦 Mevcut Objeler
+              📦 Current Artifacts
             </h3>
             <div className="flex justify-center gap-6 flex-wrap">
-              {/* New Minare Object */}
+              {/* New Minaret Artifact */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="bg-gradient-to-br from-blue-500 to-purple-700 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
                     <GiWatchtower className="text-white text-3xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">Minare</p>
+                <p className="text-center text-gray-300 mt-4">Minaret</p>
               </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              1/2 obje toplandı
+              1/2 artifacts collected
             </p>
           </CardContent>
         </Card>
@@ -127,11 +129,11 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📊 İlerleme Durumu
+              📊 Progress Status
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
               <div>
-                <h4 className="text-lg font-bold text-white mb-2">Mühürler</h4>
+                <h4 className="text-lg font-bold text-white mb-2">Seals</h4>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-full bg-gray-700 rounded-full h-4">
                     <div
@@ -141,10 +143,10 @@ export default function InfoPage() {
                   </div>
                   <span className="text-white font-bold">2/3</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-2">%67 tamamlandı</p>
+                <p className="text-gray-300 text-sm mt-2">67% completed</p>
               </div>
               <div>
-                <h4 className="text-lg font-bold text-white mb-2">Objeler</h4>
+                <h4 className="text-lg font-bold text-white mb-2">Artifacts</h4>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-full bg-gray-700 rounded-full h-4">
                     <div
@@ -154,7 +156,9 @@ export default function InfoPage() {
                   </div>
                   <span className="text-white font-bold">1/2</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-2">1 obje kaldı</p>
+                <p className="text-gray-300 text-sm mt-2">
+                  1 artifact remaining
+                </p>
               </div>
             </div>
           </CardContent>
@@ -166,14 +170,14 @@ export default function InfoPage() {
             onClick={() => router.push("/9/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Sonraki Soru →
+            Next Question →
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Yeni objeler keşfederek kalan 1 mührü tamamlayın...
+            Discover new artifacts to complete the remaining 1 seal...
           </p>
         </footer>
       </div>

@@ -29,12 +29,12 @@ export default function QuestionPage() {
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "Ben İmparator Theodosius. Dostlarım da benim gibi aynı eksikliğe sahipler. Onların toplam sayısı, ruhumu özgür kılacak anahtarı taşıyor. Acılar içinde göğe yükselen ruhum, bir hiyeroglifin taş yüreğine hapsoldu. Hiyeroglifi bul ve ruhumu serbest bırak.";
+    "I am Emperor Theodosius. My friends also share the same deficiency as me. Their total number carries the key that will free my soul. My soul, rising to the sky in agony, is trapped in the stone heart of a hieroglyph. Find the hieroglyph and free my soul.";
 
   const hintData = [
-    "Dikili taşın tabanında bulunan dört yüzdeki tüm heykelleri incele. Aynı eksikliği taşıyanlar, aynı kaderin yol arkadaşlarıdır.",
-    "İmparatorla aynı eksiği taşıyanları say, böylece kaç tane dostu olduğunu anlarsın.",
-    "Eksikliği olan imparatorun olduğu taraftaki hiyeroglifleri aşağıdan yukarıya doğru, dostlarının sayısı kadar say. Böylece imparatorun ruhunun tutsak olduğu hiyeroglifi bulabilirsin.",
+    "Examine all the statues on the four sides at the base of the obelisk. Those who share the same deficiency are companions of the same fate.",
+    "Count those who share the same deficiency as the emperor, so you understand how many friends he has.",
+    "Count the hieroglyphs on the side where the emperor with the deficiency is located, from bottom to top, as many as his friends. This way you can find the hieroglyph where the emperor's soul is trapped.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -77,7 +77,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 2
+            Question 2
           </h1>
         </header>
 
@@ -90,7 +90,7 @@ export default function QuestionPage() {
           {/* Options Grid */}
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-white mb-6 text-center">
-              Doğru hiyeroglifi seçin:
+              Select the correct hieroglyph:
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {options.map((option) => (
@@ -107,7 +107,7 @@ export default function QuestionPage() {
                 >
                   <Image
                     src={`/opt/2/${option}.jpg`}
-                    alt={`Hiyeroglif ${option}`}
+                    alt={`Hieroglyph ${option}`}
                     fill
                     className="object-contain bg-black/50 p-2"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -125,7 +125,7 @@ export default function QuestionPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
               <FaLightbulb className="mr-3 text-yellow-400" />
-              İPUÇLARI
+              HINTS
             </h3>
 
             <div className="space-y-4">
@@ -145,7 +145,7 @@ export default function QuestionPage() {
                         <span className="text-gray-200 text-lg">{hint}</span>
                       ) : (
                         <span className="text-gray-400 text-lg">
-                          {index + 1}. İpucu
+                          Hint {index + 1}
                         </span>
                       )}
                     </div>
@@ -166,8 +166,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              İpuçları sırayla açılır. Önceki ipucunu görmeden sonrakini
-              açamazsınız.
+              Hints open in order. You cannot open the next hint without seeing
+              the previous one.
             </p>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function QuestionPage() {
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
-            ← Lokasyona Dön
+            ← Back to Location
           </Button>
         </div>
 
@@ -191,14 +191,14 @@ export default function QuestionPage() {
           <DialogContent className="bg-gray-800 border-white/20 text-white max-w-4xl w-[90vw] h-[90vh]">
             <DialogHeader>
               <DialogTitle className="text-2xl text-white">
-                Hiyeroglif {zoomImage} - Detaylı Görünüm
+                Hieroglyph {zoomImage} - Detailed View
               </DialogTitle>
             </DialogHeader>
             <div className="relative w-full h-full flex items-center justify-center">
               {zoomImage && (
                 <Image
                   src={`/opt/2/${zoomImage}.jpg`}
-                  alt={`Hiyeroglif ${zoomImage} - Detaylı`}
+                  alt={`Hieroglyph ${zoomImage} - Detailed`}
                   fill
                   className="object-contain"
                   quality={100}
@@ -211,7 +211,7 @@ export default function QuestionPage() {
                 onClick={() => setZoomImage(null)}
                 className="bg-white/20 hover:bg-white/30 border-white/30 text-white"
               >
-                Kapat
+                Close
               </Button>
             </div>
           </DialogContent>
@@ -223,16 +223,16 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Tebrikler!
+                Congratulations!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Doğru hiyeroglifi buldunuz! İmparator Theodosius&apos;un ruhu
-                  özgür.
+                  You found the correct hieroglyph! Emperor Theodosius's soul is
+                  free.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} saniye içinde yönlendiriliyorsunuz...
+                    Redirecting in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -248,22 +248,21 @@ export default function QuestionPage() {
 
         {/* Error Dialog */}
         <Dialog open={isError} onOpenChange={setIsError}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white ">
+          <DialogContent className="bg-gray-800 border-white/20 text-white">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <FaTimesCircle className="mr-3" />
-                Yanlış Seçim!
+                Wrong Choice!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Bu hiyeroglif doğru değil. İpuçlarını kullanarak tekrar
-                  deneyin.
+                  This hieroglyph is not correct. Use the hints and try again.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
                   className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
                 >
-                  Tekrar Dene
+                  Try Again
                 </Button>
               </DialogDescription>
             </DialogHeader>

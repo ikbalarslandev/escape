@@ -25,39 +25,39 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    " 1. Mühür – Birlik Mührü\n\nTema: Halkı etkilemek, farklı etnik grupları bir araya toplamak, sosyal birlik\n\nBirlik Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
+    "1. Seal - Seal of Unity\n\nTheme: Influencing people, bringing different ethnic groups together, social unity\n\nSelect the correct 3 objects to create the Seal of Unity:";
 
   const objects = [
     {
       id: "at",
-      name: "Minyatür At",
+      name: "Miniature Horse",
       icon: FaHorseHead,
       gradient: "from-yellow-500 to-orange-900",
-      description: "Farklı halkları bir araya toplama, toplumsal birlik",
+      description: "Bringing different peoples together, social unity",
       correct: true,
     },
     {
       id: "parsomen",
-      name: "Parşömen",
+      name: "Parchment",
       icon: GiStoneTablet,
       gradient: "from-stone-400 to-stone-800",
-      description: "İmkansızı başarabilmek",
+      description: "Achieving the impossible",
       correct: false,
     },
     {
       id: "yilan",
-      name: "Yılan",
+      name: "Snake",
       icon: GiSandSnake,
       gradient: "from-green-600 to-green-900",
-      description: "Perslere karşı zafer ve birlik ruhu",
+      description: "Victory against Persians and spirit of unity",
       correct: true,
     },
     {
       id: "tugla",
-      name: "Tuğla",
+      name: "Brick",
       icon: GiClayBrick,
       gradient: "from-orange-600 to-orange-900",
-      description: "Zenginliğin ve ihtişamın simgesi",
+      description: "Symbol of wealth and splendor",
       correct: true,
     },
   ];
@@ -110,10 +110,10 @@ export default function SealPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Birlik Mührü
+            Seal of Unity
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            İlk mührü oluşturun
+            Create the first seal
           </p>
         </header>
 
@@ -160,7 +160,7 @@ export default function SealPage() {
               disabled={selectedObjects.length !== 3}
               className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Mühürü Oluştur ({selectedObjects.length}/3)
+              Create Seal ({selectedObjects.length}/3)
             </Button>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function SealPage() {
             <DialogHeader className=" bg-gray-800 z-10 pb-4">
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Mühür Oluşturuldu!
+                Seal Created!
               </DialogTitle>
             </DialogHeader>
             <div className="text-gray-200 text-lg">
@@ -182,15 +182,16 @@ export default function SealPage() {
                     <GiShakingHands className="text-white text-5xl" />
                   </div>
                   <p className="text-xl font-serif font-bold text-white">
-                    Birlik Mührü
+                    Seal of Unity
                   </p>
                   <p className="text-gray-300 mt-2">
-                    Farklı halkları bir araya getiren sosyal birlik
+                    Social unity that brings different peoples together
                   </p>
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Birlik Mührü&apos;nü başarıyla oluşturdunuz. 🎉
+                  Congratulations! You successfully created the Seal of Unity.
+                  🎉
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -218,8 +219,7 @@ export default function SealPage() {
 
                 <div className="mt-6 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold text-center">
-                    {countdown} saniye içinde bir sonraki bölüme
-                    yönlendiriliyorsunuz...
+                    Redirecting to the next section in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -239,19 +239,19 @@ export default function SealPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <FaTimesCircle className="mr-3" />
-                Yanlış Seçim!
+                Wrong Selection!
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Birlik Mührü&apos;nü oluşturmuyor. Lütfen
-                  farklı halkları bir araya getiren, birlik ve dayanışmayı
-                  temsil eden objeleri seçin.
+                  The objects you selected do not create the Seal of Unity.
+                  Please select objects that represent bringing different
+                  peoples together, unity and solidarity.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
                   className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
                 >
-                  Tekrar Dene
+                  Try Again
                 </Button>
               </div>
             </DialogHeader>

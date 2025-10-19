@@ -19,7 +19,7 @@ export default function InfoPage() {
         <header className="text-center mb-12">
           <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
           <p className="text-xl text-amber-200 font-light">
-            Devekuşu Yumurtalarının Mimari Sırrı
+            The Architectural Secret of Ostrich Eggs
           </p>
         </header>
 
@@ -40,14 +40,14 @@ export default function InfoPage() {
               <div className="flex items-center mb-4">
                 <FaHistory className="text-2xl text-amber-400 mr-3" />
                 <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Tarihi İnanç
+                  Historical Belief
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                Osmanlı geleneğinde devekuşu yumurtasının böcekleri, örümcekleri
-                ve haşereleri uzak tuttuğuna inanılırdı. Bu nedenle cami,
-                medrese ve türbe gibi dini yapılarda tavana asılan devekuşu
-                yumurtaları, doğal bir haşere savar olarak kullanılırdı.
+                In Ottoman tradition, it was believed that ostrich eggs repelled
+                insects, spiders, and pests. Therefore, ostrich eggs hung from
+                the ceilings of religious structures such as mosques, madrasas,
+                and tombs were used as natural pest repellents.
               </p>
             </div>
 
@@ -60,9 +60,9 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                Osmanlı İmparatorluğu&apos;nun en ünlü ve en etkili mimarıdır.
-                Yüzlerce esere imza atmış ve mimari tarzıyla sonraki nesilleri
-                derinden etkilemiştir.
+                He is the most famous and influential architect of the Ottoman
+                Empire. He signed hundreds of works and deeply influenced
+                subsequent generations with his architectural style.
               </p>
             </div>
 
@@ -71,31 +71,32 @@ export default function InfoPage() {
               <div className="flex items-center mb-4">
                 <FaLightbulb className="text-2xl text-yellow-400 mr-3" />
                 <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Mimari Miras
+                  Architectural Legacy
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Mimar Sinan&apos;ın mimari üslubu o kadar etkili oldu ki,
-                dünyaca ünlü iki harika eser temel tasarım ve estetik anlayışını
-                doğrudan onun başyapıtı Süleymaniye Camisi&apos;nden aldı:
+                Mimar Sinan's architectural style was so influential that two
+                world-famous masterpieces directly took their basic design and
+                aesthetic understanding from his masterpiece, the Süleymaniye
+                Mosque:
               </p>
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-start">
                   <span className="text-amber-400 mr-2">•</span>
                   <span>
-                    <strong>Sultanahmet Camii</strong>
+                    <strong>Sultanahmet Mosque</strong>
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-400 mr-2">•</span>
                   <span>
-                    <strong>Tac Mahal</strong>
+                    <strong>Taj Mahal</strong>
                   </span>
                 </li>
               </ul>
               <p className="text-lg text-gray-200 leading-relaxed mt-4">
-                Her iki eser de Mimar Sinan&apos;ın yetiştirdiği öğrenciler ve
-                onun ekolünden gelen mimarlar tarafından inşa edilmiştir.
+                Both structures were built by students trained by Mimar Sinan
+                and architects from his school of thought.
               </p>
             </div>
           </div>
@@ -107,7 +108,7 @@ export default function InfoPage() {
             onClick={handleProceed}
             className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 transition-all duration-300"
           >
-            Sonraki Soruya Git →
+            Go to Next Question →
           </Button>
         </div>
       </div>

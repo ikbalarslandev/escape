@@ -33,7 +33,7 @@ import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
 const formSchema = z.object({
-  answer: z.string().min(1, "Cevap boş olamaz"),
+  answer: z.string().min(1, "Answer cannot be empty"),
 });
 
 export default function FinalQuestionPage() {
@@ -44,12 +44,12 @@ export default function FinalQuestionPage() {
   const [countdown, setCountdown] = useState(5);
 
   const question =
-    "Kral sana yol göstersin. İlk ses dosyası 'R' harfinin şifresini öğretti. Şimdi ikinci ses dosyasını dinleyerek şifrelenmiş kelimeyi bul.";
+    "Let the king guide you. The first audio file taught you the code for the letter 'R'. Now listen to the second audio file and find the encrypted word.";
 
   const hintData = [
-    "Alman Çeşmesi'nin üzerinde duran metal döküm yazıda şifre gizli.",
-    "İlk ses dosyasını dikkatle dinle. Sana 'R' harfinin konumunu ve harfi bulduğunda çıkan doğrulama sesini gösteriyor.",
-    "Her harfi bulduktan sonra belirli bir ses çıkarıyor buna odaklanarak kelime içerisinde kaç adet harf olduğunu bulabilirsin",
+    "The code is hidden in the metal cast inscription on the German Fountain.",
+    "Listen carefully to the first audio file. It shows you the position of the 'R' letter and the confirmation sound that appears when you find the letter.",
+    "After finding each letter, a specific sound is made. Focus on this to determine how many letters are in the word.",
   ];
 
   // Initialize form
@@ -71,7 +71,7 @@ export default function FinalQuestionPage() {
   const playAudio = (audioFile: string) => {
     const audio = new Audio(audioFile);
     audio.play().catch((error) => {
-      console.log("Ses dosyası çalınamadı:", error);
+      console.log("Audio file could not be played:", error);
     });
   };
 
@@ -90,8 +90,7 @@ export default function FinalQuestionPage() {
     } else {
       form.setError("answer", {
         type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
+        message: "Wrong answer! Please try again or use the hints.",
       });
     }
 
@@ -117,10 +116,10 @@ export default function FinalQuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Son Soru
+            Final Question
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Tüm mühürleri aktifleştirme zamanı
+            Time to activate all seals
           </p>
         </header>
 
@@ -134,25 +133,26 @@ export default function FinalQuestionPage() {
           <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/20">
             <h3 className="text-xl font-serif font-bold text-white mb-4 flex items-center">
               <FaVolumeUp className="mr-3 text-blue-400" />
-              SES DOSYALARI
+              AUDIO FILES
             </h3>
             <div className="flex gap-4 flex-wrap">
               <Button
                 onClick={() => playAudio("/opt/12/Letter (R).mp3")}
                 className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
               >
-                <FaVolumeUp className="mr-2" />R Harf Sesini Dinle
+                <FaVolumeUp className="mr-2" />
+                Listen to R Letter Sound
               </Button>
               <Button
                 onClick={() => playAudio("/opt/12/Word (BIR).mp3")}
                 className="bg-green-500/20 hover:bg-green-500/30 border-green-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
               >
                 <FaVolumeUp className="mr-2" />
-                Kelime Sesini Dinle
+                Listen to Word Sound
               </Button>
             </div>
             <p className="text-gray-400 text-sm mt-3 italic">
-              Ses dosyalarını dikkatle dinleyin ve şifreyi çözün
+              Listen to the audio files carefully and decode the password
             </p>
           </div>
 
@@ -165,13 +165,13 @@ export default function FinalQuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Şifrelenmiş Kelime:
+                      Encrypted Word:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Kelimeyi buraya yazın..."
+                          placeholder="Enter the word here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -180,7 +180,7 @@ export default function FinalQuestionPage() {
                           disabled={isSubmitting}
                           className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
                         >
-                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
+                          {isSubmitting ? "Checking..." : <IoIosSend />}
                         </Button>
                       </div>
                     </FormControl>
@@ -195,7 +195,7 @@ export default function FinalQuestionPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
               <FaLightbulb className="mr-3 text-yellow-400" />
-              İPUÇLARI
+              HINTS
             </h3>
 
             <div className="space-y-4">
@@ -215,7 +215,7 @@ export default function FinalQuestionPage() {
                         <span className="text-gray-200 text-lg">{hint}</span>
                       ) : (
                         <span className="text-gray-400 text-lg">
-                          {index + 1}. İpucu
+                          Hint {index + 1}
                         </span>
                       )}
                     </div>
@@ -236,8 +236,8 @@ export default function FinalQuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              İpuçları sırayla açılır. Önceki ipucunu görmeden sonrakini
-              açamazsınız.
+              Hints unlock sequentially. You cannot open the next hint without
+              seeing the previous one.
             </p>
           </div>
         </div>
@@ -249,7 +249,7 @@ export default function FinalQuestionPage() {
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
-            ← Lokasyona Dön
+            ← Back to Location
           </Button>
         </div>
 
@@ -259,17 +259,16 @@ export default function FinalQuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Büyük Başarı!
+                Great Success!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Tebrikler! Tüm mühürleri aktifleştirdiniz!</p>
+                <p>Congratulations! You have activated all seals!</p>
                 <p className="mt-2">
-                  Şifre: <strong>BIR</strong>
+                  Code: <strong>BIR</strong>
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} saniye içinde sonuç sayfasına
-                    yönlendiriliyorsunuz...
+                    Redirecting to results page in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div

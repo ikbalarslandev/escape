@@ -27,7 +27,7 @@ import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
 const formSchema = z.object({
-  answer: z.string().min(1, "Cevap boş olamaz"),
+  answer: z.string().min(1, "Answer cannot be empty"),
 });
 
 export default function QuestionPage() {
@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Düşersem kırılırım, içim sarı ve beyazdır. Burada benden kaç tane var?";
+    "If I fall, I break. My inside is yellow and white. How many of me are here?";
 
   const hintData = [
-    "Henüz çok küçüğüm ve yuvamdan pek ayrılmam.",
-    "Annem, dunyanin en buyuk kusudur.",
-    "Işıklar içinde parlamayı çok severim.",
+    "I'm still very small and I don't leave my nest much.",
+    "My mother is the largest bird in the world.",
+    "I love to shine brightly in the lights.",
   ];
 
   // Initialize form
@@ -68,7 +68,7 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Accept various forms of "12" answer
+    // Accept various forms of "28" answer
     const correctAnswers = ["28"];
 
     if (correctAnswers.includes(normalizedAnswer)) {
@@ -77,8 +77,7 @@ export default function QuestionPage() {
     } else {
       form.setError("answer", {
         type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
+        message: "Wrong answer! Please try again or use the hints.",
       });
     }
 
@@ -104,7 +103,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 10
+            Question 10
           </h1>
         </header>
 
@@ -123,13 +122,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Cevabınız:
+                      Your Answer:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Cevabınızı buraya yazın..."
+                          placeholder="Enter your answer here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -138,7 +137,7 @@ export default function QuestionPage() {
                           disabled={isSubmitting}
                           className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
                         >
-                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
+                          {isSubmitting ? "Checking..." : <IoIosSend />}
                         </Button>
                       </div>
                     </FormControl>
@@ -154,7 +153,7 @@ export default function QuestionPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
               <FaLightbulb className="mr-3 text-yellow-400" />
-              İPUÇLARI
+              HINTS
             </h3>
 
             <div className="space-y-4">
@@ -174,7 +173,7 @@ export default function QuestionPage() {
                         <span className="text-gray-200 text-lg">{hint}</span>
                       ) : (
                         <span className="text-gray-400 text-lg">
-                          {index + 1}. İpucu
+                          Hint {index + 1}
                         </span>
                       )}
                     </div>
@@ -195,8 +194,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              İpuçları sırayla açılır. Önceki ipucunu görmeden sonrakini
-              açamazsınız.
+              Hints unlock sequentially. You cannot open the next hint without
+              seeing the previous one.
             </p>
           </div>
         </div>
@@ -208,7 +207,7 @@ export default function QuestionPage() {
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
-            ← Lokasyona Dön
+            ← Back to Location
           </Button>
         </div>
 
@@ -218,13 +217,13 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Tebrikler!
+                Congratulations!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! 28 tane var.</p>
+                <p>Correct answer! There are 28.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} saniye içinde yönlendiriliyorsunuz...
+                    Redirecting in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div

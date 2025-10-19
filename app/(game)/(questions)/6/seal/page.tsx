@@ -21,31 +21,31 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    "Tema: Dünyaya ve diğer imparatorluklara meydan okuma, güç gösterisi, otorite\n\nKudret Mührü'nü oluşturmak için doğru 3 objeyi seçin:";
+    "Theme: Challenging the world and other empires, power display, authority\n\nSelect the correct 3 objects to create the Seal of Power:";
 
   const objects = [
     {
-      id: "hiyeroglif",
-      name: "Hiyeroglif Parçası",
+      id: "hieroglyph",
+      name: "Hieroglyph Fragment",
       icon: GiStoneTablet,
       gradient: "from-stone-400 to-stone-800",
-      description: "Tarihsel kudret ve imparatorluk simgesi",
+      description: "Historical power and empire symbol",
       correct: true,
     },
     {
-      id: "mesale",
-      name: "Yanan Meşale",
+      id: "torch",
+      name: "Burning Torch",
       icon: FaFire,
       gradient: "from-red-600 to-orange-900",
-      description: "Halkın gücünü test eden olay, otoritenin sınanması",
+      description: "Event testing the people's power, testing authority",
       correct: true,
     },
     {
-      id: "kubbe",
-      name: "Kubbe Minyatürü",
+      id: "dome",
+      name: "Dome Miniature",
       icon: PiMosqueLight,
       gradient: "from-blue-600 to-purple-900",
-      description: "Justinianus'un görkemli kubbesi, imparatorluk kudreti",
+      description: "Justinian's magnificent dome, imperial power",
       correct: true,
     },
   ];
@@ -98,10 +98,10 @@ export default function SealPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Kudret Mührü
+            Seal of Power
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            İkinci mührü oluşturun
+            Create the second seal
           </p>
         </header>
 
@@ -148,7 +148,7 @@ export default function SealPage() {
               disabled={selectedObjects.length !== 3}
               className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Mühürü Oluştur ({selectedObjects.length}/3)
+              Create Seal ({selectedObjects.length}/3)
             </Button>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function SealPage() {
             <DialogHeader className=" bg-gray-800 z-10 pb-4">
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <GiStrong className="mr-3" />
-                Kudret Mührü Oluşturuldu!
+                Seal of Power Created!
               </DialogTitle>
             </DialogHeader>
             <div className="text-gray-200 text-lg">
@@ -170,15 +170,16 @@ export default function SealPage() {
                     <GiStrong className="text-white text-5xl" />
                   </div>
                   <p className="text-xl font-serif font-bold text-white">
-                    Kudret Mührü
+                    Seal of Power
                   </p>
                   <p className="text-gray-300 mt-2">
-                    İmparatorluk gücü ve otorite simgesi
+                    Symbol of imperial power and authority
                   </p>
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Kudret Mührü&apos;nü başarıyla oluşturdunuz. 💪
+                  Congratulations! You have successfully created the Seal of
+                  Power. 💪
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -206,8 +207,8 @@ export default function SealPage() {
 
                 <div className="mt-6 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold text-center">
-                    {countdown} saniye içinde bir sonraki bölüme
-                    yönlendiriliyorsunuz...
+                    You will be redirected to the next section in {countdown}{" "}
+                    seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -227,19 +228,19 @@ export default function SealPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <GiStrong className="mr-3" />
-                Yanlış Seçim!
+                Wrong Selection!
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Kudret Mührü&apos;nü oluşturmuyor. Lütfen
-                  imparatorluk gücünü, otoriteyi ve meydan okumayı temsil eden
-                  objeleri seçin.
+                  The objects you selected do not create the Seal of Power.
+                  Please select objects that represent imperial power,
+                  authority, and challenge.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
                   className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
                 >
-                  Tekrar Dene
+                  Try Again
                 </Button>
               </div>
             </DialogHeader>

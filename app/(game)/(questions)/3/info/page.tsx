@@ -12,12 +12,12 @@ export default function InfoPage() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Audio element oluştur
+    // Create audio element
     audioRef.current = new Audio("/opt/3/greek_war.mp3");
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3; // %30 ses seviyesi
+    audioRef.current.volume = 0.3; // 30% volume level
 
-    // Sayfa yüklendiğinde müziği başlat
+    // Start music when page loads
     const playAudio = async () => {
       try {
         await audioRef.current?.play();
@@ -28,7 +28,7 @@ export default function InfoPage() {
 
     playAudio();
 
-    // Sayfadan çıkıldığında müziği durdur
+    // Stop music when leaving page
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -43,10 +43,10 @@ export default function InfoPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Tebrikler!
+            Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Üçüncü objenizi kazandınız
+            You've obtained your third artifact
           </p>
         </header>
 
@@ -58,40 +58,41 @@ export default function InfoPage() {
                 <GiSandSnake className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Yılan
+                Snake
               </h2>
               <p className="text-gray-300">
-                Kadim zehri çözme yolunda üçüncü parçan
+                The third piece in your quest to cure the ancient poison
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Tebrikler! Panzehir ağacını bularak kadim zehrin etkisini yok
-                ettin. Bu tunç gövde, 31 Yunan şehir devletinin Perslere karşı
-                birleşerek kazandığı zaferin simgesidir.
+                Congratulations! You found the antidote tree and neutralized the
+                effects of the ancient poison. This bronze body is a symbol of
+                the victory won by 31 Greek city-states united against the
+                Persians.
               </p>
 
               <p>
-                Bu anıt, Pers ordusunun bronz silahları eritilerek döküldü.
-                Amacı, Yunan birliğinin gücünü sonsuza kadar hatırlatmaktı.
-                Yüzyıllar sonra İmparator Konstantin tarafından, Yunan kültürüne
-                olan saygısını göstermek ve halkın sevgisini kazanmak amacıyla
-                İstanbul&apos;a getirildi ve Hipodrom&apos;a dikildi.
+                This monument was cast from melted bronze weapons of the Persian
+                army. Its purpose was to forever commemorate the power of Greek
+                unity. Centuries later, Emperor Constantine brought it to
+                Istanbul and erected it in the Hippodrome to show his respect
+                for Greek culture and win the people's affection.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Object Collection Card */}
+        {/* Artifact Collection Card */}
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Topladığınız Objeler
+              🏆 Collected Artifacts
             </h3>
             <div className="flex justify-center gap-6">
-              {/* First Object - Miniature Horse */}
+              {/* First Artifact - Miniature Horse */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="bg-gradient-to-br from-yellow-500 to-orange-900 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
@@ -99,10 +100,10 @@ export default function InfoPage() {
                   </div>
                 </div>
                 <p className="text-center text-gray-300 mt-2 text-sm">
-                  Minyatür At
+                  Miniature Horse
                 </p>
               </div>
-              {/* Second Object - Stone Tablet */}
+              {/* Second Artifact - Stone Tablet */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
@@ -110,21 +111,21 @@ export default function InfoPage() {
                   </div>
                 </div>
                 <p className="text-center text-gray-300 mt-2 text-sm">
-                  Parşömen
+                  Parchment
                 </p>
               </div>
-              {/* Third Object - Snake */}
+              {/* Third Artifact - Snake */}
               <div className="text-center">
                 <div className="flex justify-center">
                   <div className="bg-gradient-to-br from-green-600 to-green-900 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
                     <GiSandSnake className="text-white text-3xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-2 text-sm">Yılan</p>
+                <p className="text-center text-gray-300 mt-2 text-sm">Snake</p>
               </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              3 obje toplandı
+              3 artifacts collected
             </p>
           </CardContent>
         </Card>
@@ -135,14 +136,14 @@ export default function InfoPage() {
             onClick={() => router.push("/4/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Sonraki Soru →
+            Next Question →
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Kadim sırların peşinde ilerlemeye devam edin...
+            Continue your journey in pursuit of ancient secrets...
           </p>
         </footer>
       </div>

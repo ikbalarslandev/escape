@@ -15,10 +15,10 @@ export default function InfoPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Tebrikler!
+            Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            İkinci objenizi kazandınız
+            You've won your second artifact
           </p>
         </header>
 
@@ -30,46 +30,46 @@ export default function InfoPage() {
                 <GiStoneTablet className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Parşömen
+                Parchment
               </h2>
               <p className="text-gray-300">
-                Kadim sırları çözme yolunda ikinci parçan
+                The second piece in your journey to unravel ancient secrets
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Tebrikler! Theodosius&apos;un ruhunu özgür bıraktın ve kadim
-                sırrı çözdün. Şu an Hipodrom&apos;un tam kalbindesin. Hemen
-                yanındaki bu devasa dikilitaş, sadece bir taş parçası değil, bir
-                imkansızlığın başarılışının ve mutlak iktidarın sessiz bir
-                tanığı.
+                Congratulations! You've freed Theodosius's spirit and solved the
+                ancient mystery. You're currently at the very heart of the
+                Hippodrome. This massive obelisk beside you is not just a stone
+                block, but a silent witness to an impossible achievement and
+                absolute power.
               </p>
 
               <p>
-                İmparator I. Theodosius, Mısır&apos;daki bir firavun lahitinden
-                söktürdüğü bu kırmızı granit levhayı, İstanbul&apos;a getirtti
-                ve Hipodrom&apos;un spinasına, tam da şu an üzerinde durduğun
-                yere diktirdi.
+                Emperor Theodosius I had this red granite slab removed from a
+                pharaoh's tomb in Egypt, brought to Istanbul, and erected on the
+                spina of the Hippodrome, right where you're standing now.
               </p>
 
               <p>
-                Bu bir mühendislik harikasıydı. O dönemde böylesine devasa ve
-                ağır bir tek parça taşı, önce Nil Nehri üzerinden, sonra
-                Akdeniz&apos;i aşarak getirmek, sonra da olduğu gibi dikmek,
-                neredeyse imkansız denilebilecek bir işti. Bu muazzam maliyet ve
-                emek, imparatorun sadece Roma&apos;nın değil, tüm dünyanın
-                efendisi olduğunu herkese göstermek içindi. &quot;Bakın,&quot;
-                diyordu bu taş, &quot;benim gücüm, zamanı ve mekanı aşar.&quot;
+                This was an engineering marvel. At that time, transporting such
+                an enormous and heavy monolithic stone first via the Nile River,
+                then across the Mediterranean, and finally erecting it upright,
+                was considered nearly impossible. This tremendous cost and
+                effort was meant to show everyone that the emperor was not just
+                the ruler of Rome, but the master of the entire world. "Behold,"
+                this stone declared, "my power transcends time and space."
               </p>
 
               <p>
-                Ve öyle de oldu. Yaklaşık 3500 yıllık bu anıt,
-                Hipodrom&apos;daki en eski yapı olma özelliğini taşıyor. Kırmızı
-                granitin eşsiz dayanıklılığı sayesinde, üzerindeki hiyeroglifler
-                hala ilk günkü kadar net. Roma&apos;yı, Bizans&apos;ı,
-                Osmanlı&apos;yı gördü ve hala burada, tüm ihtişamıyla ayakta.
+                And so it did. This approximately 3500-year-old monument holds
+                the distinction of being the oldest structure in the Hippodrome.
+                Thanks to the unique durability of red granite, the hieroglyphs
+                on it are still as clear as the first day. It has seen Rome,
+                Byzantium, the Ottomans, and still stands here today in all its
+                magnificence.
               </p>
             </div>
           </CardContent>
@@ -79,7 +79,7 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Topladığınız Objeler
+              🏆 Collected Artifacts
             </h3>
             <div className="flex justify-center gap-6">
               {/* First Object - Miniature Horse */}
@@ -89,7 +89,9 @@ export default function InfoPage() {
                     <FaHorseHead className="text-white text-4xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">Minyatür At</p>
+                <p className="text-center text-gray-300 mt-4">
+                  Miniature Horse
+                </p>
               </div>
               <div className="text-center">
                 <div className="flex justify-center">
@@ -97,11 +99,11 @@ export default function InfoPage() {
                     <GiStoneTablet className="text-white text-3xl" />
                   </div>
                 </div>
-                <p className="text-center text-gray-300 mt-4">Parşömen</p>
+                <p className="text-center text-gray-300 mt-4">Parchment</p>
               </div>
             </div>
             <p className="text-center text-gray-400 text-sm mt-4">
-              2 obje toplandı
+              2 artifacts collected
             </p>
           </CardContent>
         </Card>
@@ -112,14 +114,14 @@ export default function InfoPage() {
             onClick={() => router.push("/3/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Sonraki Soru →
+            Next Question →
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Kadim sırların peşinde ilerlemeye devam edin...
+            Continue your journey in pursuit of ancient secrets...
           </p>
         </footer>
       </div>

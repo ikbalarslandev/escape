@@ -28,12 +28,12 @@ export default function QuestionPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "Ben, üçlü bir zehrin tunç beden bulmuş haliyim. Sızdığım yer, arayışının Kuzey'i olsun. Buradan, bedenimin şu anki boyunun işaret ettiği yönde ilerle. Panzehir ağacı seni bekliyor olacak. Panzehir ağacı hangisi?";
+    "I am the bronze embodiment of a triple poison. Let the place where I leak be the North of your quest. From here, proceed in the direction indicated by my current height. The antidote tree will be waiting for you. Which tree is the antidote tree?";
 
   const hintData = [
-    "Zehrin izini takip etmek için anıtın altına, taşla birleştiği yere bak.",
-    "Zehirin aktığı yönü saat 12 yönü olarak düşün. Buna göre yılanlı sütunun bugünkü boyu hangi yönü gösterir?",
-    "5.5 metre... Bu bir yükseklik değil, bir yön tarifi. Bu yönde ilerle, seni doğru ağaca götürecek. ",
+    "Look beneath the monument, where it meets the stone, to follow the trail of the poison.",
+    "Consider the direction where the poison flows as 12 o'clock. According to this, which direction does the serpent column's current height point to?",
+    "5.5 meters... This is not a height measurement, but a direction guide. Proceed in this direction, it will lead you to the correct tree.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -76,7 +76,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 3
+            Question 3
           </h1>
         </header>
 
@@ -89,7 +89,7 @@ export default function QuestionPage() {
           {/* Options Grid */}
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-white mb-6 text-center">
-              Doğru ağacı seçin:
+              Select the correct tree:
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {options.map((option) => (
@@ -106,7 +106,7 @@ export default function QuestionPage() {
                 >
                   <Image
                     src={`/opt/3/${option}.jpg`}
-                    alt={`Ağaç ${option}`}
+                    alt={`Tree ${option}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -122,7 +122,7 @@ export default function QuestionPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
               <FaLightbulb className="mr-3 text-yellow-400" />
-              İPUÇLARI
+              HINTS
             </h3>
 
             <div className="space-y-4">
@@ -142,7 +142,7 @@ export default function QuestionPage() {
                         <span className="text-gray-200 text-lg">{hint}</span>
                       ) : (
                         <span className="text-gray-400 text-lg">
-                          {index + 1}. İpucu
+                          Hint {index + 1}
                         </span>
                       )}
                     </div>
@@ -163,8 +163,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              İpuçları sırayla açılır. Önceki ipucunu görmeden sonrakini
-              açamazsınız.
+              Hints unlock sequentially. You cannot open the next hint without
+              seeing the previous one.
             </p>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function QuestionPage() {
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
-            ← Lokasyona Dön
+            ← Back to Location
           </Button>
         </div>
 
@@ -186,13 +186,15 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Tebrikler!
+                Congratulations!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
-                <p>Doğru ağacı buldunuz! Panzehir ağacını seçtiniz.</p>
+                <p>
+                  You found the correct tree! You selected the antidote tree.
+                </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} yönlendiriliyorsunuz...
+                    Redirecting in {countdown}...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -212,17 +214,15 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <FaTimesCircle className="mr-3" />
-                Yanlış Seçim!
+                Wrong Choice!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
-                <p>
-                  Bu ağaç doğru değil. İpuçlarını kullanarak tekrar deneyin.
-                </p>
+                <p>This tree is not correct. Use the hints and try again.</p>
                 <Button
                   onClick={() => setIsError(false)}
                   className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
                 >
-                  Tekrar Dene
+                  Try Again
                 </Button>
               </DialogDescription>
             </DialogHeader>

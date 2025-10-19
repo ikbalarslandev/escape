@@ -27,7 +27,7 @@ import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
 const formSchema = z.object({
-  answer: z.string().min(1, "Cevap boş olamaz"),
+  answer: z.string().min(1, "Answer cannot be empty"),
 });
 
 export default function QuestionPage() {
@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Hipodromdaki spina(hipodromun ortasındaki anıtsal çizgi) benim meskenimdir. Geceleri üç farklı yönden aydınlanırım. Öyle ki, üç hayvanın başında otururum. Ben neyim?";
+    "The spina (the monumental line in the middle of the hippodrome) is my home. I am illuminated from three different directions at night. So much so that I sit on the heads of three animals. What am I?";
 
   const hintData = [
-    "Bu 3 hayvan da yılandır.",
-    "Yılanlar artık yok",
-    "Boyum 5.5 metredir",
+    "These 3 animals are all snakes.",
+    "The snakes are no longer there",
+    "I am 5.5 meters tall",
   ];
 
   // Initialize form
@@ -69,14 +69,16 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "kazan") {
+    if (
+      normalizedAnswer === "serpent column" ||
+      normalizedAnswer === "yılanlı sütun"
+    ) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
       form.setError("answer", {
         type: "manual",
-        message:
-          "Cevap yanlış! Lütfen tekrar deneyin veya ipuçlarını kullanın.",
+        message: "Wrong answer! Please try again or use the hints.",
       });
     }
 
@@ -102,7 +104,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Soru 1
+            Question 1
           </h1>
         </header>
 
@@ -121,13 +123,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Cevabınız:
+                      Your Answer:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Cevabınızı buraya yazın..."
+                          placeholder="Write your answer here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -136,7 +138,7 @@ export default function QuestionPage() {
                           disabled={isSubmitting}
                           className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
                         >
-                          {isSubmitting ? "Kontrol..." : <IoIosSend />}
+                          {isSubmitting ? "Checking..." : <IoIosSend />}
                         </Button>
                       </div>
                     </FormControl>
@@ -152,7 +154,7 @@ export default function QuestionPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
               <FaLightbulb className="mr-3 text-yellow-400" />
-              İPUÇLARI
+              HINTS
             </h3>
 
             <div className="space-y-4">
@@ -172,7 +174,7 @@ export default function QuestionPage() {
                         <span className="text-gray-200 text-lg">{hint}</span>
                       ) : (
                         <span className="text-gray-400 text-lg">
-                          {index + 1}. İpucu
+                          Hint {index + 1}
                         </span>
                       )}
                     </div>
@@ -193,8 +195,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              İpuçları sırayla açılır. Önceki ipucunu görmeden sonrakini
-              açamazsınız.
+              Hints open in order. You cannot open the next hint without seeing
+              the previous one.
             </p>
           </div>
         </div>
@@ -206,23 +208,23 @@ export default function QuestionPage() {
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
-            ← Lokasyona Dön
+            ← Back to Location
           </Button>
         </div>
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white ">
+          <DialogContent className="bg-gray-800 border-white/20 text-white">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Tebrikler!
+                Congratulations!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Doğru cevap! &quot;Kazan&quot;ı buldunuz.</p>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+                <p>Correct answer! You found the &quot;Serpent Column&quot;.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    {countdown} yönlendiriliyorsunuz...
+                    Redirecting in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div

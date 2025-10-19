@@ -19,23 +19,23 @@ export default function SealPage() {
   const [countdown, setCountdown] = useState(10);
 
   const question =
-    "Tema: Allah inancı, ibadet, tevazu, maneviyat\n\nTevazu Mührü'nü oluşturmak için doğru 2 objeyi seçin:";
+    "Theme: Faith in God, worship, humility, spirituality\n\nSelect the correct 2 objects to create the Seal of Humility:";
 
   const objects = [
     {
       id: "minare",
-      name: "Minare Ucu",
+      name: "Minaret Top",
       icon: GiWatchtower,
       gradient: "from-blue-500 to-purple-700",
-      description: "Allah karşısında herkesin eşit olması",
+      description: "Everyone being equal before God",
       correct: true,
     },
     {
       id: "zincir",
-      name: "Zincir Halkası",
+      name: "Chain Link",
       icon: GiCrossedChains,
       gradient: "from-gray-600 to-gray-900",
-      description: "Padişahın Allah huzurunda eğilmesi, tevazu simgesi",
+      description: "The sultan bowing before God, symbol of humility",
       correct: true,
     },
   ];
@@ -88,10 +88,10 @@ export default function SealPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Tevazu Mührü
+            Seal of Humility
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Üçüncü mührü oluşturun
+            Create the third seal
           </p>
         </header>
 
@@ -138,7 +138,7 @@ export default function SealPage() {
               disabled={selectedObjects.length !== 2}
               className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Mühürü Oluştur ({selectedObjects.length}/2)
+              Create Seal ({selectedObjects.length}/2)
             </Button>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function SealPage() {
           <DialogContent className="bg-gray-800 [&>button]:hidden border-white/20 text-white  h-[90vh] md:h-auto overflow-y-auto">
             <DialogHeader className=" bg-gray-800 z-10 pb-4">
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
-                Tevazu Mührü Oluşturuldu!
+                Seal of Humility Created!
               </DialogTitle>
             </DialogHeader>
             <div className="text-gray-200 text-lg">
@@ -159,15 +159,16 @@ export default function SealPage() {
                     <GiMeditation className="text-white text-5xl" />
                   </div>
                   <p className="text-xl font-serif font-bold text-white">
-                    Tevazu Mührü
+                    Seal of Humility
                   </p>
                   <p className="text-gray-300 mt-2">
-                    Allah inancı, ibadet ve maneviyat simgesi
+                    Symbol of faith in God, worship and spirituality
                   </p>
                 </div>
 
                 <p className="text-center font-semibold">
-                  Tebrikler! Tevazu Mührü&apos;nü başarıyla oluşturdunuz. 🙏
+                  Congratulations! You successfully created the Seal of
+                  Humility. 🙏
                 </p>
 
                 <div className="space-y-3 mt-6">
@@ -195,8 +196,7 @@ export default function SealPage() {
 
                 <div className="mt-6 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold text-center">
-                    {countdown} saniye içinde bir sonraki bölüme
-                    yönlendiriliyorsunuz...
+                    Redirecting to the next section in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -216,19 +216,19 @@ export default function SealPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <GiMeditation className="mr-3" />
-                Yanlış Seçim!
+                Wrong Selection!
               </DialogTitle>
               <div className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  Seçtiğiniz objeler Tevazu Mührü&apos;nü oluşturmuyor. Lütfen
-                  Allah inancı, ibadet, tevazu ve maneviyatı temsil eden
-                  objeleri seçin.
+                  The objects you selected do not create the Seal of Humility.
+                  Please select objects that represent faith in God, worship,
+                  humility and spirituality.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
                   className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
                 >
-                  Tekrar Dene
+                  Try Again
                 </Button>
               </div>
             </DialogHeader>
