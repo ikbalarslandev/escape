@@ -18,7 +18,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained a new artifact
+            Youve obtained a new artifact
           </p>
         </header>
 
@@ -33,7 +33,7 @@ export default function InfoPage() {
                 Rebellion Fire
               </h2>
               <p className="text-gray-300">
-                You've discovered a new piece of the story
+                Youve discovered a new piece of the story
               </p>
             </div>
 
@@ -43,11 +43,11 @@ export default function InfoPage() {
                 Congratulations! These lands you stand upon witnessed the
                 greatest rebellion of the Byzantine Empire. The Hippodrome was
                 not just a racing arena, but also the heart of politics. The
-                "Blues" represented the nobility, while the "Greens" represented
-                the common people. In 532 AD, these rivals united against the
-                emperor with cries of "Nika!" (Victory!). The bloody Nika
-                Rebellion that ensued destroyed much of the city, including
-                Hagia Sophia.
+                &quot;Blues&quot; represented the nobility, while the
+                &quot;Greens&quot; represented the common people. In 532 AD,
+                these rivals united against the emperor with cries of
+                &quot;Nika!&quot; (Victory!). The bloody Nika Rebellion that
+                ensued destroyed much of the city, including Hagia Sophia.
               </p>
             </div>
           </CardContent>

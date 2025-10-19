@@ -8,7 +8,7 @@ export default function Home() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Istanbul's Lost Seals
+            Istanbul&quot;s Lost Seals
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6 italic">
             The fate of the city is in your hands...
@@ -31,9 +31,9 @@ export default function Home() {
             <span className="font-semibold text-white">Humility</span>.
           </p>
           <p className="text-lg leading-relaxed mb-6 text-gray-200 font-light">
-            But the seals aren't just waiting to be found; to discover them, you
-            must first solve the city's secrets, uncover hidden objects, and
-            then combine these objects to form the seals.
+            But the seals aren&quot;t just waiting to be found; to discover
+            them, you must first solve the city&quot;s secrets, uncover hidden
+            objects, and then combine these objects to form the seals.
           </p>
         </div>
 
@@ -84,8 +84,8 @@ export default function Home() {
         {/* Final Warning */}
         <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 text-center border border-white/20">
           <p className="text-lg mb-4 text-gray-200 font-light italic">
-            Creating the seals is not just about solving puzzles; it's about
-            rebuilding the soul and history of Istanbul.
+            Creating the seals is not just about solving puzzles; it&quot;s
+            about rebuilding the soul and history of Istanbul.
           </p>
 
           <Link href="/intro">
@@ -98,7 +98,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center mt-8 text-gray-400 font-light">
           <p className="italic">The fate of Istanbul is now in your hands...</p>
-          <p className="text-sm mt-2">Let's get started!</p>
+          <p className="text-sm mt-2">Let&quot;s get started!</p>
         </footer>
       </div>
     </div>

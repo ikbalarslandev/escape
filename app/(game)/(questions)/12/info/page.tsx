@@ -23,7 +23,7 @@ export default function FinalSuccessPage() {
             CONGRATULATIONS!
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 font-light mb-4">
-            You've Completed the Great Journey
+            Youve Completed the Great Journey
           </p>
           <div className="w-32 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto rounded-full"></div>
         </header>
@@ -37,7 +37,7 @@ export default function FinalSuccessPage() {
                 🎉 Amazing Achievement!
               </h3>
               <p className="text-lg text-gray-200 leading-relaxed">
-                In this great journey you embarked on to solve Istanbul's
+                In this great journey you embarked on to solve Istanbuls
                 historical secrets, you overcame all obstacles, collected all
                 seals, and finally managed to solve the ultimate code!
               </p>
@@ -54,7 +54,7 @@ export default function FinalSuccessPage() {
             Did You Like the Game?
           </h3>
           <p className="text-gray-300 mb-6">
-            If you'd like to support me in developing this game, you can
+            If youd like to support me in developing this game, you can
             contribute by buying me a coffee!
           </p>
           <a

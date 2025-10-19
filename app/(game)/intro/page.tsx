@@ -34,7 +34,7 @@ export default function IntroPage() {
             Hippodrome
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6 italic">
-            The adventure begins in Istanbul's ancient square...
+            The adventure begins in Istanbuls ancient square...
           </p>
         </header>
 

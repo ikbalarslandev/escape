@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -138,18 +138,19 @@ export default function AudioQs({ section }: Props) {
     }
   };
 
-  const stopAllAudio = () => {
+  const stopAllAudio = useCallback(() => {
     if (exampleAudio) {
       exampleAudio.pause();
       exampleAudio.currentTime = 0;
       setIsPlayingExample(false);
     }
+
     if (mysteryAudio) {
       mysteryAudio.pause();
       mysteryAudio.currentTime = 0;
       setIsPlayingMystery(false);
     }
-  };
+  }, [exampleAudio, mysteryAudio, setIsPlayingExample, setIsPlayingMystery]);
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);

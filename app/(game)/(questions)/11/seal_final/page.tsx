@@ -17,7 +17,7 @@ export default function SealFinalPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've collected all artifacts and created the seals
+            Youve collected all artifacts and created the seals
           </p>
         </header>
 

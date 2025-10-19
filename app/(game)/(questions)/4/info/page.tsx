@@ -18,7 +18,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained your fourth artifact
+            Youve obtained your fourth artifact
           </p>
         </header>
 
@@ -33,14 +33,14 @@ export default function InfoPage() {
                 Brick
               </h2>
               <p className="text-gray-300">
-                You've completed the final piece for the first seal
+                Youve completed the final piece for the first seal
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Congratulations! You've unraveled the secret of this ancient
+                Congratulations! Youve unraveled the secret of this ancient
                 monument. The Walled Obelisk, whose bronze plates were stripped
                 during the Crusades to mint coins, whispers history to you
                 through its holes.
@@ -48,9 +48,9 @@ export default function InfoPage() {
 
               <p>
                 During the Ottoman period, soldiers would climb this monument by
-                stepping into these holes and receive tips from the sultan.
-                Don't forget to climb it like a real soldier while exploring
-                Istanbul in Assassin's Creed.
+                stepping into these holes and receive tips from the sultan. Dont
+                forget to climb it like a real soldier while exploring Istanbul
+                in Assassins Creed.
               </p>
             </div>
           </CardContent>
@@ -123,7 +123,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            You've collected all artifacts! Prepare to create the first seal...
+            Youve collected all artifacts! Prepare to create the first seal...
           </p>
         </footer>
       </div>

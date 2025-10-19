@@ -1,7 +1,7 @@
 // app/[id]/qs/ImageQsClientPage.tsx (CLIENT COMPONENT)
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -62,13 +62,15 @@ export default function ImageQs({ section }: Props) {
   };
 
   // Function to determine next page URL
-  const getNextPageUrl = (currentId: number): string => {
-    if (section.info) {
-      return `/t/${currentId}/info`;
-    }
-
-    return `/t/${currentId + 1}/location`;
-  };
+  const getNextPageUrl = useCallback(
+    (currentId: number): string => {
+      if (section.info) {
+        return `/t/${currentId}/info`;
+      }
+      return `/t/${currentId + 1}/location`;
+    },
+    [section.info] // 👈 only depends on section.info
+  );
   // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {

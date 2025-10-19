@@ -46,7 +46,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained your third artifact
+            Youve obtained your third artifact
           </p>
         </header>
 
@@ -79,7 +79,7 @@ export default function InfoPage() {
                 army. Its purpose was to forever commemorate the power of Greek
                 unity. Centuries later, Emperor Constantine brought it to
                 Istanbul and erected it in the Hippodrome to show his respect
-                for Greek culture and win the people's affection.
+                for Greek culture and win the peoples affection.
               </p>
             </div>
           </CardContent>

@@ -17,7 +17,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained a new artifact
+            Youve obtained a new artifact
           </p>
         </header>
 
@@ -32,7 +32,7 @@ export default function InfoPage() {
                 Minaret
               </h2>
               <p className="text-gray-300">
-                You've discovered a new piece of the story
+                Youve discovered a new piece of the story
               </p>
             </div>
 
@@ -44,13 +44,13 @@ export default function InfoPage() {
                 minarets suitable for sultan status were added to Hagia Sophia,
                 which was converted into a mosque. However, when Ahmed I built
                 the 6-minaret Sultanahmet Mosque opposite it to overshadow Hagia
-                Sophia's Byzantine splendor, a major controversy erupted; until
-                then, 6 minarets belonged only to Islam's holiest temple, the
+                Sophias Byzantine splendor, a major controversy erupted; until
+                then, 6 minarets belonged only to Islams holiest temple, the
                 Kaaba.
               </p>
 
               <p>
-                This situation, interpreted as the sultan's claim of equality
+                This situation, interpreted as the sultans claim of equality
                 with God, was finally resolved by adding a seventh minaret to
                 the Kaaba, sending the message that no one can be superior to
                 the sacred.

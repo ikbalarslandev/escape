@@ -18,7 +18,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've won your second artifact
+            Youve won your second artifact
           </p>
         </header>
 
@@ -40,8 +40,8 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Congratulations! You've freed Theodosius's spirit and solved the
-                ancient mystery. You're currently at the very heart of the
+                Congratulations! Youve freed Theodosiuss spirit and solved the
+                ancient mystery. Youre currently at the very heart of the
                 Hippodrome. This massive obelisk beside you is not just a stone
                 block, but a silent witness to an impossible achievement and
                 absolute power.
@@ -49,8 +49,8 @@ export default function InfoPage() {
 
               <p>
                 Emperor Theodosius I had this red granite slab removed from a
-                pharaoh's tomb in Egypt, brought to Istanbul, and erected on the
-                spina of the Hippodrome, right where you're standing now.
+                pharaohs tomb in Egypt, brought to Istanbul, and erected on the
+                spina of the Hippodrome, right where youre standing now.
               </p>
 
               <p>
@@ -59,8 +59,9 @@ export default function InfoPage() {
                 then across the Mediterranean, and finally erecting it upright,
                 was considered nearly impossible. This tremendous cost and
                 effort was meant to show everyone that the emperor was not just
-                the ruler of Rome, but the master of the entire world. "Behold,"
-                this stone declared, "my power transcends time and space."
+                the ruler of Rome, but the master of the entire world.
+                &quot;Behold,&quot; this stone declared, &quot;my power
+                transcends time and space.&quot;
               </p>
 
               <p>

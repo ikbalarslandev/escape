@@ -22,7 +22,6 @@ export default function InfoPage({
   }
 
   const { info } = section;
-  const objectIndex = section.id;
 
   return (
     <div className="min-h-screen text-gray-100 p-8">

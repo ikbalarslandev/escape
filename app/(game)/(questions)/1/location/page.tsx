@@ -15,7 +15,7 @@ export default function LocationPage() {
             Location
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You're in the right place for the first question
+            Youre in the right place for the first question
           </p>
         </header>
 

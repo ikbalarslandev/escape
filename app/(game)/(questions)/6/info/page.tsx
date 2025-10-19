@@ -19,7 +19,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained a new artifact
+            Youve obtained a new artifact
           </p>
         </header>
 
@@ -34,7 +34,7 @@ export default function InfoPage() {
                 Dome Miniature
               </h2>
               <p className="text-gray-300">
-                You've discovered a new piece of the story
+                Youve discovered a new piece of the story
               </p>
             </div>
 
@@ -45,22 +45,22 @@ export default function InfoPage() {
                 solved makes this magnificent structure even more meaningful. On
                 the ashes of Hagia Sophia, which was burned and destroyed during
                 the Nika Rebellion, Emperor Justinian I vowed to build the
-                world's most glorious temple.
+                worlds most glorious temple.
               </p>
 
               <p>
-                While the sacred size of Solomon's Temple in Jerusalem was
+                While the sacred size of Solomons Temple in Jerusalem was
                 considered unsurpassable until then, the Emperor completed this
                 masterpiece in a record time of just 5 years with thousands of
                 workers. At the magnificent opening of Hagia Sophia, when he
                 entered and saw the light adorning the dome, he cried out the
-                words that would go down in history: "O Solomon, I have
-                surpassed you!"
+                words that would go down in history: &quot;O Solomon, I have
+                surpassed you!&quot;
               </p>
 
               <p>
-                In memory of this victory, you've earned the "Dome Miniature"
-                artifact!
+                In memory of this victory, youve earned the &quot;Dome
+                Miniature&quot; artifact!
               </p>
             </div>
           </CardContent>

@@ -46,7 +46,7 @@ export default function LocationPage() {
               magnificent structure is one of the most glorious works of the
               Byzantine Empire. Built in place of the previous basilica that was
               destroyed during the Nika Revolt, Hagia Sophia was completed in
-              just 5 years and remained the world's largest cathedral for about
+              just 5 years and remained the worlds largest cathedral for about
               1000 years.
             </p>
           </div>

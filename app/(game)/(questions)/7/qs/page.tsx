@@ -221,8 +221,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
                 <p>
-                  Correct answer! The "men in skirts" are facing 10 o'clock
-                  direction.
+                  Correct answer! The &quot;men in skirts&quot; are facing 10
+                  oclock direction.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">

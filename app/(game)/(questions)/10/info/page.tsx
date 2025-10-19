@@ -75,7 +75,7 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Mimar Sinan's architectural style was so influential that two
+                Mimar Sinans architectural style was so influential that two
                 world-famous masterpieces directly took their basic design and
                 aesthetic understanding from his masterpiece, the Süleymaniye
                 Mosque:

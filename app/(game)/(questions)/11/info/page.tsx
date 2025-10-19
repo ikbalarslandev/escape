@@ -22,7 +22,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            You've obtained your second artifact
+            Youve obtained your second artifact
           </p>
         </header>
 
@@ -37,7 +37,7 @@ export default function InfoPage() {
                 Chain
               </h2>
               <p className="text-gray-300">
-                You've obtained an important piece for the second seal
+                Youve obtained an important piece for the second seal
               </p>
             </div>
 
@@ -47,7 +47,7 @@ export default function InfoPage() {
                 Only the sultan could enter the mosque courtyard with his horse.
                 However, this chain was placed at the entrance for exactly that
                 reason. Even if he was the sultan, he had to bow to show respect
-                to God's house.
+                to Gods house.
               </p>
 
               <p>
@@ -188,7 +188,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            You've collected all artifacts! Prepare to create the second seal...
+            Youve collected all artifacts! Prepare to create the second seal...
           </p>
         </footer>
       </div>

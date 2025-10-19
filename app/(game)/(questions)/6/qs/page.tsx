@@ -149,7 +149,7 @@ export default function QuestionPage() {
                   </p>
                   <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
                     <li>
-                      When prayer time arrives, someone climbs to the minaret's
+                      When prayer time arrives, someone climbs to the minarets
                       balcony
                     </li>
                     <li>They recite a special call to prayer (adhan) loudly</li>

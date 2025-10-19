@@ -227,7 +227,7 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
                 <p>
-                  You found the correct hieroglyph! Emperor Theodosius's soul is
+                  You found the correct hieroglyph! Emperor Theodosius soul is
                   free.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
