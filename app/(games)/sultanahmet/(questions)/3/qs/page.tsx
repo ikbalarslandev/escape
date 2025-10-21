@@ -28,11 +28,11 @@ export default function QuestionPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "I am the bronze embodiment of a triple poison. Let the place where I leak be the North of your quest. From here, proceed in the direction indicated by my current height. The antidote tree will be waiting for you. Which tree is the antidote tree?";
+    "I am the Serpent Column. The place where the blue poison drips is the north of your journey. From there, go in the direction my height points to now. The antidote tree is waiting for you. Which tree is the antidote tree?";
 
   const hintData = [
-    "Look beneath the monument, where it meets the stone, to follow the trail of the poison.",
-    "Consider the direction where the poison flows as 12 o'clock. According to this, which direction does the serpent column's current height point to?",
+    "Look under the monument, where it touches the ground, to follow the poison’s trail.",
+    "Think of the direction where the poison flows as 12 o’clock. Using this, which direction does the Serpent Column’s current height point to?",
     "5.5 meters... This is not a height measurement, but a direction guide. Proceed in this direction, it will lead you to the correct tree.",
   ];
 
@@ -66,7 +66,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/3/info");
+      router.push("/sultanahmet/3/info");
     }
   }, [isSuccess, countdown, router]);
 

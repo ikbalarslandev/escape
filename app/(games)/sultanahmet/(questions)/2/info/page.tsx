@@ -49,28 +49,26 @@ export default function InfoPage() {
 
               <p>
                 Emperor Theodosius I had this red granite slab removed from a
-                pharaohs tomb in Egypt, brought to Istanbul, and erected on the
-                spina of the Hippodrome, right where youre standing now.
+                graveyard in Egypt, brought to Istanbul, and erected on the
+                spina of the Hippodrome.
               </p>
 
               <p>
-                This was an engineering marvel. At that time, transporting such
-                an enormous and heavy monolithic stone first via the Nile River,
-                then across the Mediterranean, and finally erecting it upright,
-                was considered nearly impossible. This tremendous cost and
-                effort was meant to show everyone that the emperor was not just
-                the ruler of Rome, but the master of the entire world.
-                &quot;Behold,&quot; this stone declared, &quot;my power
-                transcends time and space.&quot;
+                This was an amazing engineering achievement. Back then, moving
+                such a huge and heavy single piece of stone was considered
+                nearly impossible. The great effort and cost were meant to show
+                everyone that the emperor was not just the ruler of Rome, but
+                the master of the whole world. &quot; Look, &quot; this stone
+                seemed to say, &quot; my power goes beyond time and space.
+                &quot;
               </p>
 
               <p>
-                And so it did. This approximately 3500-year-old monument holds
-                the distinction of being the oldest structure in the Hippodrome.
-                Thanks to the unique durability of red granite, the hieroglyphs
-                on it are still as clear as the first day. It has seen Rome,
-                Byzantium, the Ottomans, and still stands here today in all its
-                magnificence.
+                And it truly did. This monument, about 3,500 years old, is the
+                oldest structure in the Hippodrome. Because red granite is so
+                strong, the hieroglyphs on it are still as clear as the day they
+                were carved. It has witnessed Rome, Byzantium, and the Ottoman
+                Empire and it still stands here today, as magnificent as ever.
               </p>
             </div>
           </CardContent>
@@ -112,7 +110,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/3/location")}
+            onClick={() => router.push("/sultanahmet/3/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Next Question →

@@ -38,7 +38,7 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Let the cut-off water show you the inscription. What were the 2 things that used to be on me in the past?";
+    "Let the stopped water show you the writing. What are the two things that used to be on in the past";
 
   const hintData = [
     "Carefully follow the stone wall of this ancient hippodrome. During your search, you'll encounter a structure where water should normally flow but is now silent and dry. This is your first stop.",
@@ -107,7 +107,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/5/info");
+      router.push("/sultanahmet/5/info");
     }
   }, [isSuccess, countdown, router]);
 

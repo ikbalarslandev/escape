@@ -18,7 +18,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve obtained your fourth artifact
+            You have found your fourth treasure.
           </p>
         </header>
 
@@ -33,17 +33,17 @@ export default function InfoPage() {
                 Brick
               </h2>
               <p className="text-gray-300">
-                Youve completed the final piece for the first seal
+                You have completed the final piece for the first seal
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Congratulations! Youve unraveled the secret of this ancient
-                monument. The Walled Obelisk, whose bronze plates were stripped
-                during the Crusades to mint coins, whispers history to you
-                through its holes.
+                This obelisk was once covered with bronze plates. During the
+                Crusades, soldiers took the bronze by force, leaving many holes
+                that you can still see today. These holes are where the bronze
+                plates were attached to the obelisk.
               </p>
 
               <p>
@@ -113,7 +113,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/4/seal")}
+            onClick={() => router.push("/sultanahmet/4/seal")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Go to First Seal →
@@ -123,7 +123,8 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Youve collected all artifacts! Prepare to create the first seal...
+            You have collected all artifacts! Prepare to create the first
+            seal...
           </p>
         </footer>
       </div>

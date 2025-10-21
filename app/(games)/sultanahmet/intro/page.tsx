@@ -40,20 +40,6 @@ export default function IntroPage() {
 
         {/* Main Content */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 mb-8 border border-white/20">
-          {/* Video Section */}
-          <div className="mb-8">
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <YouTube
-                videoId={videoId}
-                opts={videoOptions}
-                className="w-full"
-              />
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-2 italic">
-              Discover the history of the Hippodrome
-            </p>
-          </div>
-
           {/* Information Section */}
           <div className="space-y-6">
             <div className="flex items-center mb-6">
@@ -71,9 +57,19 @@ export default function IntroPage() {
           </div>
         </div>
 
+        {/* Video Section */}
+        <div className="mb-8">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <YouTube videoId={videoId} opts={videoOptions} className="w-full" />
+          </div>
+          <p className="text-center text-gray-400 text-sm mt-2 italic">
+            Discover the history of the Hippodrome
+          </p>
+        </div>
+
         {/* Action Button */}
         <div className="text-center">
-          <Link href="/1/location">
+          <Link href="/sultanahmet/1/location">
             <div className="inline-block bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer hover:scale-105 transform">
               START THE ADVENTURE!
             </div>

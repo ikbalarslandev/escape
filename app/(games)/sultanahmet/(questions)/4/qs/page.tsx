@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "I am the Walled Obelisk. My favorite soldier was wounded. However, when those with two wheels look from beside the three flowers, they can see all my soldiers. So, how many healthy soldiers do I have left?";
+    "I am the Walled Obelisk. My favorite soldier is hurt. People who has two wheels, when they look from beside the three flowers, how many healthy soldiers will they see?";
 
   const hintData = [
-    "To find my wounded soldier, carefully examine all my stone guards. Look for the one that is different from the others, the one that has been damaged.",
-    "Two wheels do not indicate a motor vehicle, but a human-powered transportation vehicle. The place where this vehicle is parked will provide the correct viewing angle.",
-    "Three flowers refer to the most famous flower of Istanbul gardens. These tulips mark exactly where you should stand.",
+    "I am a historical building. I have soldiers to protect me from damage by tourists. Can you find the one that is injured?",
+    "Two wheels means a modern, human-powered vehicle. Stand where it’s parked to get the best view.",
+    "Three metal flowers show the exact spot where you should stand.",
   ];
 
   // Initialize form
@@ -91,7 +91,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/4/info");
+      router.push("/sultanahmet/4/info");
     }
   }, [isSuccess, countdown, router]);
 

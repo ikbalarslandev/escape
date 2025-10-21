@@ -29,12 +29,12 @@ export default function QuestionPage() {
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "I am Emperor Theodosius. My friends also share the same deficiency as me. Their total number carries the key that will free my soul. My soul, rising to the sky in agony, is trapped in the stone heart of a hieroglyph. Find the hieroglyph and free my soul.";
+    "I am Emperor Theodosius. My friends also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
 
   const hintData = [
-    "Examine all the statues on the four sides at the base of the obelisk. Those who share the same deficiency are companions of the same fate.",
-    "Count those who share the same deficiency as the emperor, so you understand how many friends he has.",
-    "Count the hieroglyphs on the side where the emperor with the deficiency is located, from bottom to top, as many as his friends. This way you can find the hieroglyph where the emperor's soul is trapped.",
+    "Look closely at all the statues on the four sides at the bottom of the obelisk. The ones who have the same missing part share the same fate.",
+    "Count the ones who have the same missing part as the emperor. Then you’ll know how many friends he has.",
+    "Count the hieroglyphs on the side where the emperor with the missing part is, from bottom to top, the same number as his friends. That’s how you’ll find the hieroglyph where the emperor’s soul is trapped.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -67,7 +67,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/2/info");
+      router.push("/sultanahmet/2/info");
     }
   }, [isSuccess, countdown, router]);
 

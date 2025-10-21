@@ -36,9 +36,10 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [showSpinaInfo, setShowSpinaInfo] = useState(false);
 
   const question =
-    "The spina (the monumental line in the middle of the hippodrome) is my home. I am illuminated from three different directions at night. So much so that I sit on the heads of three animals. What am I?";
+    "The spina is my home. I am getting light from three different directions at night. I sit on the heads of three animals. What am I?";
 
   const hintData = [
     "These 3 animals are all snakes.",
@@ -94,7 +95,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/1/info");
+      router.push("/sultanahmet/1/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -113,6 +114,16 @@ export default function QuestionPage() {
           <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
             {question}
           </p>
+
+          {/* Spina Info Button */}
+          <div className="mb-6">
+            <Button
+              onClick={() => setShowSpinaInfo(true)}
+              className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
+            >
+              What is Spina?
+            </Button>
+          </div>
 
           {/* Answer Form */}
           <Form {...form}>
@@ -204,7 +215,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/1/location")}
+            onClick={() => router.push("/sultanahmet/1/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -220,18 +231,66 @@ export default function QuestionPage() {
                 <FaCheckCircle className="mr-3" />
                 Congratulations!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
-                <p>Correct answer! You found the &quot;Serpent Column&quot;.</p>
-                <div className="mt-4 p-4 bg-white/10 rounded-lg">
-                  <p className="text-lg font-semibold">
-                    Redirecting in {countdown} seconds...
+              <DialogDescription asChild>
+                <div className="text-gray-200 text-lg mt-4 text-center">
+                  <p>
+                    Correct answer! You found the &quot;Serpent Column&quot;.
                   </p>
-                  <div className="w-full bg-white/20 rounded-full h-2 mt-2">
-                    <div
-                      className="bg-green-400 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${(countdown / 4) * 100}%` }}
-                    ></div>
+                  <div className="mt-4 p-4 bg-white/10 rounded-lg">
+                    <p className="text-lg font-semibold">
+                      Redirecting in {countdown} seconds...
+                    </p>
+                    <div className="w-full bg-white/20 rounded-full h-2 mt-2">
+                      <div
+                        className="bg-green-400 h-2 rounded-full transition-all duration-1000"
+                        style={{ width: `${(countdown / 4) * 100}%` }}
+                      ></div>
+                    </div>
                   </div>
+                </div>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Spina Info Dialog */}
+        <Dialog open={showSpinaInfo} onOpenChange={setShowSpinaInfo}>
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-blue-400 justify-center">
+                What is Spina?
+              </DialogTitle>
+              <DialogDescription asChild>
+                <div className="text-gray-200 text-lg mt-4 space-y-4">
+                  <p>
+                    Spina is a line which has towers on it. It is located in the
+                    middle of the hippodrome.
+                  </p>
+                  <p>
+                    In horse races, horses were running around it. There used to
+                    be many things on the spina, but only 3 of them lasted until
+                    today.
+                  </p>
+                  <div className="bg-white/10 p-4 rounded-lg mt-4">
+                    <img
+                      src="/q_imgs/1/spina.png"
+                      alt="Spina with towers"
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <p className="text-gray-400 text-sm mt-2 text-center">
+                      The spina with its towers in the middle of hippodrome
+                    </p>
+                  </div>
+                  <p>
+                    If you look at the area today, you can still see these 3
+                    towers on the spina. In the question, it says &quot;spina is
+                    my home&quot; - this means the answer is on one of these 3
+                    towers.
+                  </p>
+                  <p className="font-semibold text-blue-300">
+                    Check each of the 3 towers carefully to find the correct
+                    one!
+                  </p>
                 </div>
               </DialogDescription>
             </DialogHeader>
