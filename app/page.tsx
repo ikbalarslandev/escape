@@ -30,20 +30,21 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg leading-relaxed mb-6 text-gray-200 font-light">
-            At Nikapolis, we transform Istanbul's most iconic districts into
-            living puzzle boxes. Each game immerses you in the rich history and
-            hidden secrets of this magnificent city, challenging you to solve
-            mysteries that bridge empires and centuries.
+            At Nikapolis, we transform Istanbul&apos;s most iconic districts
+            into living puzzle boxes. Each game immerses you in the rich history
+            and hidden secrets of this magnificent city, challenging you to
+            solve mysteries that bridge empires and centuries.
           </p>
           <p className="text-lg leading-relaxed text-gray-200 font-light">
-            Choose your district and become part of Istanbul's eternal story...
+            Choose your district and become part of Istanbul&apos;s eternal
+            story...
           </p>
         </div>
 
         {/* Available Games */}
         <div className="mb-12">
           <h3 className="text-2xl font-serif font-bold text-white text-center mb-8">
-            EXPLORE ISTANBUL'S DISTRICTS
+            EXPLORE ISTANBUL&apos;S DISTRICTS
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,7 +55,7 @@ export default function Home() {
                   <GiAncientColumns className="text-white text-4xl" />
                 </div>
                 <h3 className="text-xl font-serif font-bold text-white mb-2">
-                  Istanbul's Lost Seals
+                  Istanbul&apos;s Lost Seals
                 </h3>
                 <p className="text-yellow-400 font-semibold mb-2">
                   Sultanahmet District
@@ -62,8 +63,8 @@ export default function Home() {
               </div>
               <p className="text-gray-300 font-light leading-relaxed text-center mb-6">
                 Three ancient seals hidden in the heart of historic Istanbul
-                await discovery. Solve the city's deepest secrets to restore
-                balance between empires.
+                await discovery. Solve the city&apos;s deepest secrets to
+                restore balance between empires.
               </p>
               <div className="text-center">
                 <Link href="/sultanahmet">
@@ -81,7 +82,7 @@ export default function Home() {
                   <GiShakingHands className="text-white text-4xl" />
                 </div>
                 <h3 className="text-xl font-serif font-bold text-white mb-2">
-                  Merchant's Gambit
+                  Merchant&apos;s Gambit
                 </h3>
                 <p className="text-orange-400 font-semibold mb-2">
                   Grand Bazaar
@@ -91,7 +92,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-gray-300 font-light leading-relaxed text-center mb-6">
-                Navigate the labyrinthine corridors of the world's oldest
+                Navigate the labyrinthine corridors of the world&apos;s oldest
                 market. Decode merchant secrets and uncover a conspiracy that
                 could shake the economy of empires.
               </p>
@@ -109,7 +110,7 @@ export default function Home() {
                   <GiCastle className="text-white text-4xl" />
                 </div>
                 <h3 className="text-xl font-serif font-bold text-white mb-2">
-                  Tower's Secret
+                  Tower&apos;s Secret
                 </h3>
                 <p className="text-blue-400 font-semibold mb-2">
                   Galata District
@@ -146,7 +147,7 @@ export default function Home() {
                 Historic Districts
               </h4>
               <p className="text-gray-300 font-light">
-                Journey through Istanbul's most iconic neighborhoods
+                Journey through Istanbul&apos;s most iconic neighborhoods
               </p>
             </div>
             <div className="text-center">
@@ -189,7 +190,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
           <p className="italic">
-            Nikapolis - Discovering Istanbul's Hidden Stories
+            Nikapolis - Discovering Istanbul&apos;s Hidden Stories
           </p>
           <p className="text-sm mt-2">© 2024 Nikapolis Istanbul Escape Games</p>
         </footer>
