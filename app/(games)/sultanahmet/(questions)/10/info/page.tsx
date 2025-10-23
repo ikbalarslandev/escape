@@ -60,9 +60,9 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                He was the Ottoman Empire's most famous and important architect.
-                He designed hundreds of buildings. His style was so good that it
-                inspired architects for many generations after him.
+                He was the Ottoman Empire&apos;s most famous and important
+                architect. He designed hundreds of buildings. His style was so
+                good that it inspired architects for many generations after him.
               </p>
             </div>
 
@@ -75,9 +75,9 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Architect Sinan's style of building was very influential. Two
-                world-famous buildings used the basic design and beauty of his
-                masterpiece, the Süleymaniye Mosque. These buildings are:
+                Architect Sinan&apos;s style of building was very influential.
+                Two world-famous buildings used the basic design and beauty of
+                his masterpiece, the Süleymaniye Mosque. These buildings are:
               </p>
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-start">
