@@ -42,12 +42,30 @@ export default function FinalQuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(5);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playAudio = (audioFile: string) => {
+    if (isPlaying) return; // Prevent playing if already playing
+
+    setIsPlaying(true);
+    const audio = new Audio(audioFile);
+
+    audio.play().catch((error) => {
+      console.log("Audio file could not be played:", error);
+      setIsPlaying(false);
+    });
+
+    // Reset isPlaying when audio ends
+    audio.onended = () => {
+      setIsPlaying(false);
+    };
+  };
 
   const question =
     "Let the king guide you. The first audio file taught you the code for the letter 'R'. Now listen to the second audio file and find the encrypted word.";
 
   const hintData = [
-    "The code is hidden in the metal cast inscription on the German Fountain.",
+    "The German King left a message on a metal sign. This message will help you find the secret word.",
     "Listen carefully to the first audio file. It shows you the position of the 'R' letter and the confirmation sound that appears when you find the letter.",
     "After finding each letter, a specific sound is made. Focus on this to determine how many letters are in the word.",
   ];
@@ -66,13 +84,6 @@ export default function FinalQuestionPage() {
       newHints[index] = true;
       setHints(newHints);
     }
-  };
-
-  const playAudio = (audioFile: string) => {
-    const audio = new Audio(audioFile);
-    audio.play().catch((error) => {
-      console.log("Audio file could not be played:", error);
-    });
   };
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
@@ -106,7 +117,7 @@ export default function FinalQuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/12/info");
+      router.push("/sultanahmet/12/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -137,18 +148,19 @@ export default function FinalQuestionPage() {
             </h3>
             <div className="flex gap-4 flex-wrap">
               <Button
+                disabled={isPlaying}
                 onClick={() => playAudio("/opt/12/Letter (R).mp3")}
                 className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
               >
-                <FaVolumeUp className="mr-2" />
-                Listen to R Letter Sound
+                <FaVolumeUp className="mr-2" />R Letter Sound
               </Button>
               <Button
+                disabled={isPlaying}
                 onClick={() => playAudio("/opt/12/Word (BIR).mp3")}
                 className="bg-green-500/20 hover:bg-green-500/30 border-green-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
               >
                 <FaVolumeUp className="mr-2" />
-                Listen to Word Sound
+                Word Sound
               </Button>
             </div>
             <p className="text-gray-400 text-sm mt-3 italic">

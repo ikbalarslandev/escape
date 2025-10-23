@@ -110,7 +110,7 @@ export default function SealFinalPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/12/location")}
+            onClick={() => router.push("/sultanahmet/12/location")}
             className="bg-yellow-500 hover:bg-yellow-600 border-yellow-600 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Proceed to Final Question ⚡

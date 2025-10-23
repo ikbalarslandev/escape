@@ -38,10 +38,10 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "My soldiers have no corners and they protect me from internal threats. However, some of them betrayed me. But in the light of time, you can distinguish my loyal soldiers. How many loyal soldiers do I have left?";
+    "My soldiers have no corners and they protect me from inside. However, some of them betrayed me. But with the help of time, you can see my loyal soldiers. How many loyal soldiers do I have left?";
 
   const hintData = [
-    "You need to find a geometric shape without corners; this represents the soldier.",
+    "You need to find a geometric shape without corners, this represents the soldier.",
     "Find a device that shows you the time.",
     "The color shown by time is the color of the loyal ones.",
   ];
@@ -93,7 +93,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/10/location");
+      router.push("/sultanahmet/10/location");
     }
   }, [isSuccess, countdown, router]);
 

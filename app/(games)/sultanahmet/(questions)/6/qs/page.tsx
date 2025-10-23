@@ -44,11 +44,11 @@ export default function QuestionPage() {
   const [isMinaretInfoOpen, setIsMinaretInfoOpen] = useState(false);
 
   const question =
-    "They cut off the heads of three spears, how many minarets did they see before they died?";
+    "There are three spears without heads. How many minarets do they see on Hagia Sophia before they die?";
 
   const hintData = [
-    "Look carefully at the iron railings. Three of the spearhead-shaped ones are missing their heads.",
-    "These headless spears point to the correct spot from which you should look at Hagia Sophia.",
+    "Look carefully at the iron railings. Three of the spearhead shaped ones are missing their heads.",
+    "These headless spears point is the correct spot from which you should look at Hagia Sophia.",
     "From the correct spot, how many minarets do you see when you look at Hagia Sophia?",
   ];
 
@@ -97,7 +97,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/6/info");
+      router.push("/sultanahmet/6/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -134,8 +134,8 @@ export default function QuestionPage() {
             <CollapsibleContent className="mt-4 bg-white/5 rounded-lg p-4 border border-white/20">
               <div className="space-y-3 text-gray-200">
                 <p>
-                  <strong>Minaret</strong> is a tall, slender tower located next
-                  to mosques.
+                  <strong>Minaret</strong> is a tall tower located next to
+                  mosques.
                 </p>
 
                 <p>
@@ -152,7 +152,10 @@ export default function QuestionPage() {
                       When prayer time arrives, someone climbs to the minarets
                       balcony
                     </li>
-                    <li>They recite a special call to prayer (adhan) loudly</li>
+                    <li>
+                      They sing the a special song which is call to prayer
+                      (adhan) loudly
+                    </li>
                     <li>
                       This call informs people that the prayer time has come
                     </li>

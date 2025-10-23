@@ -88,7 +88,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/7/location");
+      router.push("/sultanahmet/7/location");
     }
   }, [isSuccess, countdown, router]);
 

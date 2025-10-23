@@ -38,16 +38,16 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                SULTANAHMET MOSQUE INTERIOR
+                BLUE MOSQUE INSIDE
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              For the next question, we need to go inside Sultanahmet Mosque.
+              For the next question, we need to go inside Blue Mosque.
             </p>
           </div>
 
           <Link
-            href="https://maps.app.goo.gl/Csu2heRUGVN4aHzr9"
+            href="https://maps.app.goo.gl/iSdE99foHEgRRq3G6"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -58,7 +58,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/10/qs"
+          href="/sultanahmet/10/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Go to Question <FaArrowRight className="ml-2" />

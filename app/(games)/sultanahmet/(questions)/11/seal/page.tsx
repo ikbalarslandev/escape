@@ -78,7 +78,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/11/seal_final"); // You can change this route to wherever you want to redirect after completion
+      router.push("/sultanahmet/11/seal_final"); // You can change this route to wherever you want to redirect after completion
     }
   }, [isSuccess, countdown, router]);
 

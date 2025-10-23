@@ -42,12 +42,11 @@ export default function LocationPage() {
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              For the next question, we need to go to Hagia Sophia. This
-              magnificent structure is one of the most glorious works of the
-              Byzantine Empire. Built in place of the previous basilica that was
-              destroyed during the Nika Revolt, Hagia Sophia was completed in
-              just 5 years and remained the worlds largest cathedral for about
-              1000 years.
+              Now, we are going to Hagia Sophia. This amazing building was made
+              by the Byzantine Empire. It was built after the old church was
+              destroyed in the Nika Revolt. They finished it in only 5 years,
+              and it stayed the biggest church in the world for almost 1000
+              years.
             </p>
           </div>
 
@@ -63,7 +62,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/6/qs"
+          href="/sultanahmet/6/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Go to Question <FaArrowRight className="ml-2" />

@@ -9,7 +9,7 @@ export default function InfoPage() {
   const router = useRouter();
 
   const handleProceed = () => {
-    router.push("/11/location");
+    router.push("/sultanahmet/11/location");
   };
 
   return (
@@ -44,10 +44,10 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                In Ottoman tradition, it was believed that ostrich eggs repelled
-                insects, spiders, and pests. Therefore, ostrich eggs hung from
-                the ceilings of religious structures such as mosques, madrasas,
-                and tombs were used as natural pest repellents.
+                In Ottoman times, people believed that ostrich eggs kept bugs
+                and spiders away. Because of this, they would hang ostrich eggs
+                from the ceilings in their mosques and schools. The eggs were
+                used as a natural way to stop insects.
               </p>
             </div>
 
@@ -56,13 +56,13 @@ export default function InfoPage() {
               <div className="flex items-center mb-4">
                 <FaLightbulb className="text-2xl text-amber-300 mr-3" />
                 <h3 className="text-2xl font-serif font-bold text-amber-200">
-                  Mimar Sinan
+                  Architect Sinan
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed">
-                He is the most famous and influential architect of the Ottoman
-                Empire. He signed hundreds of works and deeply influenced
-                subsequent generations with his architectural style.
+                He was the Ottoman Empire's most famous and important architect.
+                He designed hundreds of buildings. His style was so good that it
+                inspired architects for many generations after him.
               </p>
             </div>
 
@@ -75,16 +75,15 @@ export default function InfoPage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-200 leading-relaxed mb-4">
-                Mimar Sinans architectural style was so influential that two
-                world-famous masterpieces directly took their basic design and
-                aesthetic understanding from his masterpiece, the Süleymaniye
-                Mosque:
+                Architect Sinan's style of building was very influential. Two
+                world-famous buildings used the basic design and beauty of his
+                masterpiece, the Süleymaniye Mosque. These buildings are:
               </p>
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-start">
                   <span className="text-amber-400 mr-2">•</span>
                   <span>
-                    <strong>Sultanahmet Mosque</strong>
+                    <strong>Blue Mosque</strong>
                   </span>
                 </li>
                 <li className="flex items-start">

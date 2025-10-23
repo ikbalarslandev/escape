@@ -41,7 +41,7 @@ export default function QuestionPage() {
     "Three nations came together to show that God is the greatest. For this unity, one nation among us sacrificed its soldiers. How many soldiers did this nation sacrifice?";
 
   const hintData = [
-    "These three nations are quite tall and reach toward the sky.",
+    "These three nations are quite tall",
     "These nations are made of metal and are quite durable.",
     "Tall people might bump their heads when passing under these nations.",
   ];
@@ -93,7 +93,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/11/info");
+      router.push("/sultanahmet/11/info");
     }
   }, [isSuccess, countdown, router]);
 

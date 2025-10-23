@@ -41,25 +41,22 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                Congratulations! The historical story behind the puzzle you
-                solved makes this magnificent structure even more meaningful. On
-                the ashes of Hagia Sophia, which was burned and destroyed during
-                the Nika Rebellion, Emperor Justinian I vowed to build the
-                worlds most glorious temple.
+                Congratulations! The story behind this puzzle makes Hagia Sophia
+                even more special. After the old Hagia Sophia was burned and
+                destroyed in the Nika Rebellion, Emperor Justinian build the
+                most beautiful temple in the world.
               </p>
 
               <p>
-                While the sacred size of Solomons Temple in Jerusalem was
-                considered unsurpassable until then, the Emperor completed this
-                masterpiece in a record time of just 5 years with thousands of
-                workers. At the magnificent opening of Hagia Sophia, when he
-                entered and saw the light adorning the dome, he cried out the
-                words that would go down in history: &quot;O Solomon, I have
-                surpassed you!&quot;
+                People once thought the Temple of Solomon in Jerusalem was the
+                greatest of all. But the Emperor built Hagia Sophia in only 5
+                years with thousands of workers. When he entered and saw the
+                bright light shining on the dome, he shouted, &quot;O Solomon, I
+                have passed you!&quot;
               </p>
 
               <p>
-                In memory of this victory, youve earned the &quot;Dome
+                In memory of this victory, you have earned the &quot;Dome
                 Miniature&quot; artifact!
               </p>
             </div>
@@ -177,7 +174,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/6/seal")}
+            onClick={() => router.push("/sultanahmet/6/seal")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Next Seal →

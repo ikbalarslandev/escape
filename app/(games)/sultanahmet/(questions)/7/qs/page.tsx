@@ -93,7 +93,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/8/location");
+      router.push("/sultanahmet/8/location");
     }
   }, [isSuccess, countdown, router]);
 

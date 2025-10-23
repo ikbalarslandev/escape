@@ -13,6 +13,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,13 +41,14 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [isMinaretInfoOpen, setIsMinaretInfoOpen] = useState(false);
 
   const question =
-    "The rise of this mosque is a harmony of proportions. What is the ratio of the total number of minarets of the main building to the number of minarets rising next to the main entrance gate?";
+    "The Blue Mosque has a perfect and balanced design. What is the ratio between all the minarets on the main building and the ones next to the main entrance gate?";
 
   const hintData = [
-    "To find the harmony, first count the whole, then the part. The ones next to the main gate are only a portion of the whole.",
-    "There are a total of four minarets at the four corners of the main building. You can find the ratio by including the ones in the courtyard.",
+    "First count all the minarets, then count the ones by the main gate. The ones near the gate are part of the whole.",
+    "The main building has 4 minarets at its corners.",
     "There are 2 minarets in the courtyard.",
   ];
 
@@ -93,7 +99,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/8/info");
+      router.push("/sultanahmet/8/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -113,6 +119,53 @@ export default function QuestionPage() {
             {question}
           </p>
 
+          {/* Minaret Information Dropdown */}
+          <Collapsible
+            open={isMinaretInfoOpen}
+            onOpenChange={setIsMinaretInfoOpen}
+            className="mb-6"
+          >
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="outline"
+                className="w-full bg-white/10 hover:bg-white/20 border-white/20 text-white flex justify-between items-center py-3 px-4"
+              >
+                <span className="font-semibold">What is a Minaret?</span>
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-4 bg-white/5 rounded-lg p-4 border border-white/20">
+              <div className="space-y-3 text-gray-200">
+                <p>
+                  <strong>Minaret</strong> is a tall tower located next to
+                  mosques.
+                </p>
+
+                <p>
+                  It typically has one or more balconies. People climb up to
+                  these balconies to announce the prayer times to the public.
+                </p>
+
+                <div className="bg-white/10 rounded-lg p-3 mt-2">
+                  <p className="text-sm">
+                    <strong>How does it work?</strong>
+                  </p>
+                  <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
+                    <li>
+                      When prayer time arrives, someone climbs to the minarets
+                      balcony
+                    </li>
+                    <li>
+                      They sing the a special song which is call to prayer
+                      (adhan) loudly
+                    </li>
+                    <li>
+                      This call informs people that the prayer time has come
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
           {/* Answer Form */}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
