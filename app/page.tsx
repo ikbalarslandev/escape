@@ -58,7 +58,7 @@ export default function Home() {
                   Istanbul&apos;s Lost Seals
                 </h3>
                 <p className="text-yellow-400 font-semibold mb-2">
-                  Sultanahmet District
+                  Sultanahmet
                 </p>
               </div>
               <p className="text-gray-300 font-light leading-relaxed text-center mb-6">
