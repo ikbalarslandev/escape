@@ -109,10 +109,6 @@ export default function ReviewPage() {
     handleComplete();
   };
 
-  const openExampleVideo = () => {
-    window.open("https://www.youtube.com/watch?v=Nt8wPYdP_2o", "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900 text-white p-4">
       <div className="max-w-md mx-auto">
