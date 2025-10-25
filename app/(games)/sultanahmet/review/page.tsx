@@ -94,10 +94,7 @@ export default function ReviewPage() {
   }, [isSuccess, countdown, router]);
 
   const openGoogleReview = () => {
-    window.open(
-      "https://www.google.com/maps/place/Nikapolis+Outdoor+Escape+Experience/@41.0195955,28.9855282,12z/data=!3m1!4b1!4m3!3m2!1s0x897e879a133773bb:0x17dd148dfe3b2237!16s%2Fg%2F11zjyq9jhh?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
-      "_blank"
-    );
+    window.open("https://g.page/r/CTciO_6NFN0XEBI/review", "_blank");
     handleNextStep();
   };
 
