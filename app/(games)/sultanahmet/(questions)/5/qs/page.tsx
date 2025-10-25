@@ -78,7 +78,7 @@ export default function QuestionPage() {
       answers.includes("bathhouse");
     const hasHaddehane =
       answers.includes("haddehane") ||
-      answers.includes("forge") ||
+      answers.includes("rolling mill") ||
       answers.includes("ironworks");
 
     if (hasHamam && hasHaddehane) {

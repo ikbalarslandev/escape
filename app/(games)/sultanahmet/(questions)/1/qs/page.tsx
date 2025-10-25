@@ -72,7 +72,7 @@ export default function QuestionPage() {
     // Check if answer is correct
     if (
       normalizedAnswer === "serpent column" ||
-      normalizedAnswer === "yılanlı sütun"
+      normalizedAnswer === "gold boiler"
     ) {
       setIsSuccess(true);
       setCountdown(4);
