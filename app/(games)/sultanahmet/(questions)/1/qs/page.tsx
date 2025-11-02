@@ -70,10 +70,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (
-      normalizedAnswer === "serpent column" ||
-      normalizedAnswer === "gold boiler"
-    ) {
+    if (normalizedAnswer === "gold boiler") {
       setIsSuccess(true);
       setCountdown(4);
     } else {

@@ -100,7 +100,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/review");
+      router.push("/sultanahmet/5/location");
     }
   }, [isSuccess, countdown, router]);
 
