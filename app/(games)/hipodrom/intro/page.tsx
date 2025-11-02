@@ -1,11 +1,8 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
-import YouTube, { YouTubeEvent } from "react-youtube";
+import YouTube from "react-youtube";
 
 export default function IntroPage() {
-  const [videoWatched, setVideoWatched] = useState(false);
-
   // Info text
   const introInfo = `Most of our game scene will take place on the Hippodrome, built by the ancient Eastern Roman Empire in Istanbul. Let's first get to know the Hippodrome: It is the name given to the racetracks where horse races were held in ancient times, and there were massive stands for spectators around it. The main purpose of the Hippodrome was not just to organize races; when Eastern Roman Emperor Constantine built Istanbul as the "New Rome," he constructed a large Hippodrome to both entertain the people and create a space where the ruler could meet with the public. Right in the middle of the Hippodrome, there was a monumental line called the spina, and it featured four monuments; unfortunately, only three of them have survived to the present day. Hippodromes were also centers of politics; the people would convey their requests to the ruler during these games, and chariot races represented political messages. The blue team symbolized the support of the aristocracy and the emperor's power, while the green team reflected the discontent of the poor people and their reaction against the emperor. The rivalry between these two teams was not limited to races alone; it also revealed the political power of the people and their relations with the emperor.`;
 
@@ -24,14 +21,6 @@ export default function IntroPage() {
   };
 
   const videoId = "AjrnvDn2tcA";
-
-  // Detect when video ends
-  const handleVideoStateChange = (event: YouTubeEvent) => {
-    if (event.data === 0) {
-      // 0 means video ended
-      setVideoWatched(true);
-    }
-  };
 
   return (
     <div className="min-h-screen text-gray-100 p-4">
@@ -67,12 +56,7 @@ export default function IntroPage() {
         {/* Video Section */}
         <div className="mb-8">
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <YouTube
-              videoId={videoId}
-              opts={videoOptions}
-              onStateChange={handleVideoStateChange}
-              className="w-full"
-            />
+            <YouTube videoId={videoId} opts={videoOptions} className="w-full" />
           </div>
           <p className="text-center text-gray-400 text-sm mt-2 italic">
             Watch the video to unlock your adventure

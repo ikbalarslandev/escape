@@ -1,8 +1,7 @@
 "use client";
 
-import { GiShakingHands, GiLaurelsTrophy } from "react-icons/gi";
-import { FaFire, FaStar, FaCoffee } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { GiLaurelsTrophy } from "react-icons/gi";
+import { FaStar, FaCoffee } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function InfoPage() {
@@ -48,7 +47,7 @@ const HeaderSection = () => (
       CONGRATULATIONS!
     </h1>
     <p className="text-xl md:text-2xl text-gray-300 font-light mb-4">
-      You've Completed the Great Journey
+      You&apos;ve Completed the Great Journey
     </p>
     <div className="w-32 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto rounded-full"></div>
   </header>
@@ -63,9 +62,9 @@ const AchievementSection = () => (
           🎉 Amazing Achievement!
         </h3>
         <p className="text-lg text-gray-200 leading-relaxed">
-          In this great journey you embarked on to solve Istanbul's historical
-          secrets, you overcame all obstacles, collected all seals, and finally
-          managed to solve the ultimate code!
+          In this great journey you embarked on to solve Istanbul&apos;s
+          historical secrets, you overcame all obstacles, collected all seals,
+          and finally managed to solve the ultimate code!
         </p>
       </div>
     </div>
@@ -83,11 +82,11 @@ const HistoricalInfoSection = () => (
         <p>
           Congratulations! These lands you stand upon witnessed the greatest
           rebellion of the Byzantine Empire. The Hippodrome was not just a
-          racing arena, but also the heart of politics. The "Blues" represented
-          the loyals, while the "Greens" represented the common people. In 532
-          AD, these teams united against the emperor with screams of "Nika!"
-          (Victory!). The bloody Nika Rebellion that ensued destroyed much of
-          the city, including Hagia Sophia.
+          racing arena, but also the heart of politics. The &quot;Blues&quot;
+          represented the loyals, while the &quot;Greens&quot; represented the
+          common people. In 532 AD, these teams united against the emperor with
+          screams of &quot;Nika!&quot; (Victory!). The bloody Nika Rebellion
+          that ensued destroyed much of the city, including Hagia Sophia.
         </p>
       </div>
     </CardContent>
@@ -104,8 +103,8 @@ const SupportSection = () => (
       Did You Like the Game?
     </h3>
     <p className="text-gray-300 mb-6">
-      If you'd like to support me in developing this game, you can contribute by
-      buying me a coffee!
+      If you&apos;d like to support me in developing this game, you can
+      contribute by buying me a coffee!
     </p>
     <a
       href="https://buymeacoffee.com/nikapolis.today"
