@@ -57,9 +57,7 @@ export default function Home() {
                 <h3 className="text-xl font-serif font-bold text-white mb-2">
                   Istanbul&apos;s Lost Seals
                 </h3>
-                <p className="text-yellow-400 font-semibold mb-2">
-                  Sultanahmet
-                </p>
+                <p className="text-yellow-400 font-semibold mb-2">Hipodrom</p>
               </div>
               <p className="text-gray-300 font-light leading-relaxed text-center mb-6">
                 Three ancient seals hidden in the heart of historic Istanbul
@@ -67,7 +65,7 @@ export default function Home() {
                 restore balance between empires.
               </p>
               <div className="text-center">
-                <Link href="/sultanahmet">
+                <Link href="/hipodrom">
                   <div className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 border border-yellow-400 cursor-pointer inline-block">
                     PLAY NOW
                   </div>
