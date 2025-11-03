@@ -28,7 +28,7 @@ export default function QuestionPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "I am the Serpent Column. The place where the blue poison drips is the north of your journey. From there, go in the direction my height points to now. The antidote tree is waiting for you. Which tree is the antidote tree?";
+    "I am the Serpent Column. The place where the blue poison drips is the south of your journey. From there, go in the direction my height points to now. The antidote tree is waiting for you. Which tree is the antidote tree?";
 
   const hintData = [
     "Look under the monument, where it touches the ground, to follow the poison’s trail.",
@@ -105,7 +105,7 @@ export default function QuestionPage() {
                   onClick={() => handleOptionClick(option)}
                 >
                   <Image
-                    src={`/opt/3/${option}.jpg`}
+                    src={`/opt/3/${option}.jpeg`}
                     alt={`Tree ${option}`}
                     fill
                     className="object-cover"
