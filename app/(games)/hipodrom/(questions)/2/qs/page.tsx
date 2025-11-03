@@ -32,9 +32,9 @@ export default function QuestionPage() {
     "I am Emperor Theodosius. My friends also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
 
   const hintData = [
-    "Look closely at all the statues on the four sides at the bottom of the obelisk. The ones who have the same missing part share the same fate.",
-    "Count the ones who have the same missing part as the emperor. Then you’ll know how many friends he has.",
-    "Count the hieroglyphs on the side where the emperor with the missing part is, from bottom to top, the same number as his friends. That’s how you’ll find the hieroglyph where the emperor’s soul is trapped.",
+    "I am the emperor so i like sitting in the center",
+    "The missing part is head",
+    "Count the hieroglyphs on the side where the emperor with no head, from bottom to top, the same number as his friends. That’s how you’ll find the hieroglyph where the emperor’s soul is trapped.",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
