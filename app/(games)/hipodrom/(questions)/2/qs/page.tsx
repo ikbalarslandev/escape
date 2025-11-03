@@ -29,7 +29,7 @@ export default function QuestionPage() {
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "I am Emperor Theodosius. My friends also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
+    "I am Emperor Theodosius. My friends are standing with me also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
 
   const hintData = [
     "I am the emperor so i like sitting in the center",
@@ -50,7 +50,7 @@ export default function QuestionPage() {
   const handleOptionClick = (option: number) => {
     setSelectedOption(option);
 
-    if (option === 6) {
+    if (option === 7) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -98,7 +98,7 @@ export default function QuestionPage() {
                   key={option}
                   className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
                     selectedOption === option
-                      ? option === 6
+                      ? option === 7
                         ? "border-green-400 ring-2 ring-green-400"
                         : "border-red-400 ring-2 ring-red-400"
                       : "border-white/20 hover:border-white/40"
@@ -106,7 +106,7 @@ export default function QuestionPage() {
                   onClick={() => handleOptionClick(option)}
                 >
                   <Image
-                    src={`/opt/2/${option}.jpg`}
+                    src={`/opt/2/${option}.jpeg`}
                     alt={`Hieroglyph ${option}`}
                     fill
                     className="object-contain bg-black/50 p-2"

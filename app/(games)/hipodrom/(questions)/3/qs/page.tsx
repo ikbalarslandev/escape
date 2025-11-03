@@ -28,11 +28,13 @@ export default function QuestionPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const question =
-    "I am the Serpent Column. The place where the blue poison drips is the south of your journey. From there, go in the direction my height points to now. The antidote tree is waiting for you. Which tree is the antidote tree?";
+    "I am the Serpent Column. The place where the blue poison drips is the south of your journey. From there, go in the direction my current height points to . The antidote is waiting for you. Which one is the antidote object?";
 
   const hintData = [
     "Look under the monument, where it touches the ground, to follow the poison’s trail.",
+    "Read the information board to know the exact height of the monument",
     "Think of the direction where the poison flows as 12 o’clock. Using this, which direction does the Serpent Column’s current height point to?",
+    "Since it says south of your journey. the poison point should direct number 6 on the clock",
     "5.5 meters... This is not a height measurement, but a direction guide. Proceed in this direction, it will lead you to the correct tree.",
   ];
 
@@ -89,7 +91,7 @@ export default function QuestionPage() {
           {/* Options Grid */}
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-white mb-6 text-center">
-              Select the correct tree:
+              Select the correct antidote:
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {options.map((option) => (
