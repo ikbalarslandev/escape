@@ -45,6 +45,7 @@ export default function QuestionPage() {
     "These 3 animals are all snakes.",
     "The snakes are no longer there",
     "I am 5.5 meters tall",
+    "Read the historical information about the statue. The answer will be hidden inside of it.",
   ];
 
   // Initialize form
