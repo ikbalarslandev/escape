@@ -83,7 +83,7 @@ export default function Home() {
                   Merchant&apos;s Gambit
                 </h3>
                 <p className="text-orange-400 font-semibold mb-2">
-                  Grand Bazaar
+                  Cemberlitas{" "}
                 </p>
                 <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full">
                   Coming Soon
@@ -96,34 +96,6 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <div className="bg-gray-700 text-gray-300 font-bold py-3 px-8 rounded-full border border-orange-500/30 inline-block">
-                  COMING SOON
-                </div>
-              </div>
-            </div>
-
-            {/* Galata Game */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/40 transition-all duration-300 group">
-              <div className="text-center mb-4">
-                <div className="w-24 h-24 bg-gradient-to-br from-gray-600 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white shadow-inner">
-                  <GiCastle className="text-white text-4xl" />
-                </div>
-                <h3 className="text-xl font-serif font-bold text-white mb-2">
-                  Tower&apos;s Secret
-                </h3>
-                <p className="text-blue-400 font-semibold mb-2">
-                  Galata District
-                </p>
-                <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
-                  Coming Soon
-                </span>
-              </div>
-              <p className="text-gray-300 font-light leading-relaxed text-center mb-6">
-                Scale the heights of Galata Tower and unravel mysteries of
-                medieval Genoese traders. Your choices will determine the fate
-                of the Golden Horn.
-              </p>
-              <div className="text-center">
-                <div className="bg-gray-700 text-gray-300 font-bold py-3 px-8 rounded-full border border-blue-500/30 inline-block">
                   COMING SOON
                 </div>
               </div>
@@ -175,9 +147,9 @@ export default function Home() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="/sultanahmet">
+          <Link href="/hipodrom">
             <div className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-yellow-400 cursor-pointer hover:scale-105 transform inline-block">
-              BEGIN IN SULTANAHMET
+              BEGIN IN HIPODROM
             </div>
           </Link>
           <p className="text-gray-400 mt-4 font-light italic">
