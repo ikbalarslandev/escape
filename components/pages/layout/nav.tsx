@@ -59,7 +59,7 @@ const NavComponent = () => {
 
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger>
+            <SheetTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon"
@@ -73,7 +73,6 @@ const NavComponent = () => {
               side="right"
               className="w-[300px] sm:w-[400px] bg-primary-800 border-l border-primary-600"
             >
-              <SheetTitle></SheetTitle>
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
                 <div className="flex items-center justify-between p-4 border-b border-primary-600 ">
@@ -82,9 +81,7 @@ const NavComponent = () => {
                     className="flex items-center space-x-2 text-lg  font-light text-white"
                     onClick={closeMenu}
                   >
-                    <div className="w-6 h-6 bg-secondary-500 rounded flex items-center justify-center">
-                      <span className="text-white font-bold text-xs">CE</span>
-                    </div>
+                    <Image width={50} height={50} alt="logo" src="/logo.png" />
                     <span>
                       <span className="font-semibold">Nika</span>polis
                     </span>
