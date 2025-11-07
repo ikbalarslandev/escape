@@ -6,6 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const PartnerAutoScroller = () => {
   const partners = [
@@ -16,7 +17,7 @@ const PartnerAutoScroller = () => {
   ];
 
   return (
-    <div className="absolute bottom-0-10 left-0 z-10 mt-16">
+    <div className="absolute bottom-8 left-0 z-10 mt-16">
       <div className="text-center">
         <p className="text-primary-200 z-50 text-sm mb-6 uppercase tracking-wider">
           Trusted by adventurers worldwide
@@ -47,13 +48,19 @@ const PartnerAutoScroller = () => {
               align: "center",
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 1000, // 2 seconds between slides
+                stopOnInteraction: false, // keeps autoplaying after user swipes
+              }),
+            ]}
             className="w-screen"
           >
             <CarouselContent>
               {partners.map((partner, index) => (
                 <CarouselItem
                   key={`mobile-${index}`}
-                  className="basis-1/2 bg-green-300"
+                  className="basis-1/2 bg-gray-400/50 mx-2 "
                 >
                   {partner.name}
                 </CarouselItem>
