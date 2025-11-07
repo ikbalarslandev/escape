@@ -7,13 +7,31 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import Link from "next/link";
 
 const PartnerAutoScroller = () => {
   const partners = [
-    { name: "Airbnb", logo: "/partners/airbnb.svg" },
-    { name: "Tripadvisor", logo: "/partners/tripadvisor.svg" },
-    { name: "Tiqets", logo: "/partners/tiqets.svg" },
-    { name: "GetYourGuide", logo: "/partners/getyourguide.svg" },
+    {
+      name: "Airbnb",
+      img: "/partners/airbnb.png",
+      link: "https://www.airbnb.com/",
+    },
+    {
+      name: "Tripadvisor",
+      img: "/partners/tripadvisor.png",
+      link: "https://www.tripadvisor.com/",
+    },
+    {
+      name: "Tiqets",
+      img: "/partners/tiqets.png",
+      link: "https://www.tiqets.com/en/",
+    },
+    {
+      name: "GetYourGuide",
+      img: "/partners/gyg.png",
+      link: "https://www.getyourguide.com/",
+    },
   ];
 
   return (
@@ -50,19 +68,26 @@ const PartnerAutoScroller = () => {
             }}
             plugins={[
               Autoplay({
-                delay: 1000, // 2 seconds between slides
+                delay: 1500, // 2 seconds between slides
                 stopOnInteraction: false, // keeps autoplaying after user swipes
               }),
             ]}
-            className="w-screen"
+            className="w-screen bg-gray-600/40"
           >
             <CarouselContent>
               {partners.map((partner, index) => (
                 <CarouselItem
                   key={`mobile-${index}`}
-                  className="basis-1/2 bg-gray-400/50 mx-2 "
+                  className="basis-1/2  mx-2 flex items-center justify-center "
                 >
-                  {partner.name}
+                  <Link href={partner.link} target="_blank">
+                    <Image
+                      width={70}
+                      height={30}
+                      src={partner.img}
+                      alt={partner.name}
+                    />
+                  </Link>
                 </CarouselItem>
               ))}
             </CarouselContent>
