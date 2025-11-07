@@ -20,6 +20,7 @@ const GameCardsSection = () => {
       languages: ["English"],
       playersCount: 3,
       image: "/hero.jpeg",
+      isActive: true,
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const GameCardsSection = () => {
       languages: ["English"],
       playersCount: 3,
       image: "/hero.jpeg",
+      isActive: false,
     },
   ];
 
@@ -75,6 +77,7 @@ const GameCardsSection = () => {
                     languages={game.languages}
                     playersCount={game.playersCount}
                     image={game.image}
+                    isActive={game.isActive}
                   />
                 </CarouselItem>
               ))}

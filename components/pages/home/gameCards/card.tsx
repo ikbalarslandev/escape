@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Clock, MapPin, Languages, Users } from "lucide-react";
+import Image from "next/image";
 
 interface GameCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface GameCardProps {
   languages: string[];
   playersCount: number;
   image: string;
+  isActive: boolean;
 }
 
 const GameCard = ({
@@ -20,14 +22,29 @@ const GameCard = ({
   languages,
   playersCount,
   image,
+  isActive,
 }: GameCardProps) => {
   return (
-    <Card className=" mx-2 bg-primary-800 border-primary-600 overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <Card className="mx-2 bg-primary-800 border-primary-600 overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
       {/* Game Image */}
-      <div className="relative h-48 bg-gradient-to-br from-secondary-500 to-secondary-600">
+      <div className="relative h-48">
+        <Image src={image} alt={title} fill className="object-cover" />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute bottom-4 left-4">
-          <h3 className="text-xl font-bold text-white">{title}</h3>
+        {!isActive && (
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+            <span className="text-white font-bold text-lg bg-primary-800/90 px-4 py-2 rounded-lg">
+              Coming Soon
+            </span>
+          </div>
+        )}
+        <div className="absolute bottom-4 left-0 w-full">
+          <h3
+            className={`text-xl font-bold text-primary-50 ${
+              isActive && "bg-primary-800/60"
+            }  px-2 w-full`}
+          >
+            {title}
+          </h3>
         </div>
       </div>
 
@@ -91,8 +108,15 @@ const GameCard = ({
       </CardContent>
 
       <CardFooter className="p-6 pt-0">
-        <Button className="w-full bg-secondary-500 hover:bg-secondary-600 text-white">
-          Play Now
+        <Button
+          className={`w-full ${
+            isActive
+              ? "bg-secondary-500 hover:bg-secondary-600 text-white"
+              : "bg-primary-600 text-primary-300 cursor-not-allowed"
+          }`}
+          disabled={!isActive}
+        >
+          {isActive ? "Play Now" : "Coming Soon"}
         </Button>
       </CardFooter>
     </Card>
