@@ -1,5 +1,3 @@
-import NavComponent from "@/components/pages/layout/nav";
-import FooterComponent from "@/components/pages/layout/footer";
 import BannerReviewsSection from "@/components/pages/home/bannerReviews";
 import BannerScrollerSection from "@/components/pages/home/bannerScroller";
 import BannerStepsSection from "@/components/pages/home/bannerSteps";
@@ -9,17 +7,13 @@ import HeroSection from "@/components/pages/home/hero";
 
 const HomePage = () => {
   return (
-    <div className="text-white">
-      <NavComponent />
-
+    <div>
       <HeroSection />
       <BannerStepsSection />
       <BannerScrollerSection />
       <BannerTargetSection />
       <GameCardsSection />
       <BannerReviewsSection />
-
-      <FooterComponent />
     </div>
   );
 };

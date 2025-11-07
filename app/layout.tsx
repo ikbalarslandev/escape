@@ -25,10 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900`}
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900`}
       >
         {/* Main content */}
-        <div className="relative z-10">{children}</div>
+        <div
+        // className="relative z-10"
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
