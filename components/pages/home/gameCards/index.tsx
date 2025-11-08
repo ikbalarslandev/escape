@@ -18,7 +18,6 @@ const GameCardsSection = () => {
       playTime: "2 hours",
       kilometers: 1.8,
       languages: ["English"],
-      playersCount: 3,
       image: "/hero.jpeg",
       isActive: true,
     },
@@ -29,7 +28,6 @@ const GameCardsSection = () => {
       playTime: "2 hours",
       kilometers: 1.8,
       languages: ["English"],
-      playersCount: 3,
       image: "/hero.jpeg",
       isActive: false,
     },
@@ -75,7 +73,6 @@ const GameCardsSection = () => {
                     playTime={game.playTime}
                     kilometers={game.kilometers}
                     languages={game.languages}
-                    playersCount={game.playersCount}
                     image={game.image}
                     isActive={game.isActive}
                   />

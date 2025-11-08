@@ -9,7 +9,6 @@ interface GameCardProps {
   playTime: string; // e.g., "2 hours"
   kilometers: number; // e.g., 1.3
   languages: string[];
-  playersCount: number;
   image: string;
   isActive: boolean;
 }
@@ -20,7 +19,6 @@ const GameCard = ({
   playTime,
   kilometers,
   languages,
-  playersCount,
   image,
   isActive,
 }: GameCardProps) => {
@@ -100,8 +98,8 @@ const GameCard = ({
           <div className="flex items-center space-x-2">
             <Users className="w-4 h-4 text-secondary-400" />
             <div>
-              <p className="text-primary-200">Played</p>
-              <p className="text-white font-semibold">{playersCount} people</p>
+              <p className="text-primary-200">Recomended for</p>
+              <p className="text-white font-semibold">2-4 people</p>
             </div>
           </div>
         </div>
