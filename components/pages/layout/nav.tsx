@@ -17,7 +17,7 @@ const NavComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "/how-to-play", label: "How to Play" },
+    { href: "/howItWorks", label: "How to Play" },
     { href: "/games", label: "Games" },
     { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About Us" },

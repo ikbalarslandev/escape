@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import GameCard from "./card";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 
 const GameCardsSection = () => {
   const gamesData = [
@@ -87,10 +88,11 @@ const GameCardsSection = () => {
         {/* See All Games Button */}
         <div className="text-center mt-12">
           <Button
+            asChild
             variant="outline"
-            className="border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white px-8 py-6 text-lg font-semibold"
+            className="border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 rounded-lg shadow-sm"
           >
-            See All Games
+            <Link href="/games">See All Games</Link>
           </Button>
         </div>
       </div>

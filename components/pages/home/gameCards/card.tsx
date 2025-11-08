@@ -114,7 +114,7 @@ const GameCard = ({
           }`}
           disabled={!isActive}
         >
-          {isActive ? "Play Now" : "Coming Soon"}
+          {isActive ? "Book Now" : "Coming Soon"}
         </Button>
       </CardFooter>
     </Card>

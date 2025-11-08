@@ -51,8 +51,8 @@ const FooterComponent = () => {
   const companyLinks = [
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/home/#", label: "Privacy Policy" },
-    { href: "/home", label: "Terms of Service" },
+    { href: "/#", label: "Privacy Policy" },
+    { href: "/", label: "Terms of Service" },
   ];
 
   const contactInfo = [

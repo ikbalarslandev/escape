@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { faqData, features } from "./data";
+import Link from "next/link";
 
 const FAQPage = () => {
   return (
@@ -97,9 +98,15 @@ const FAQPage = () => {
                 through Nikapolis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-3 rounded-lg font-normal text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
-                  Choose Your Route
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  <div>
+                    <Link href="/games">Choose Your Route</Link>
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </div>
                 </Button>
               </div>
             </div>

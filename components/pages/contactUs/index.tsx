@@ -170,7 +170,7 @@ const ContactPage = () => {
                       </h3>
                       <p className="text-gray-600 text-sm">
                         We understand your time is valuable. We strive to
-                        respond to all inquiries within 24 hours, and usually
+                        respond to all inquiries within 8 hours, and usually
                         much sooner!
                       </p>
                     </div>

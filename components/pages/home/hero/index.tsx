@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
 import Image from "next/image";
 import PartnerAutoScroller from "./partners";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -46,17 +47,18 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button
+              asChild
               size="lg"
               className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
-              See the Games
+              <Link href="/games">See the Games</Link>
             </Button>
             <Button
-              variant="outline"
+              asChild
               size="lg"
               className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
-              How It Works
+              <Link href="/howItWorks">How it Works</Link>
             </Button>
           </div>
         </div>
