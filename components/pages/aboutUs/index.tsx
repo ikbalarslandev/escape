@@ -37,7 +37,7 @@ const AboutPage = () => {
     {
       title: "Interactive Learning",
       description:
-        "History comes alive when you're actively exploring and solving puzzles.",
+        "History comes alive when you&apos;re actively exploring and solving puzzles.",
     },
     {
       title: "Local Insights",
@@ -109,7 +109,7 @@ const AboutPage = () => {
                 </div>
 
                 <h2 className="text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
-                  Hi, I'm{" "}
+                  Hi, I&apos;m{" "}
                   <span className="font-semibold text-secondary-600">
                     Ikbal
                   </span>
@@ -117,24 +117,20 @@ const AboutPage = () => {
 
                 <p className="text-lg text-gray-600 leading-relaxed">
                   The creator of Nikapolis, and a passionate traveler living in
-                  Istanbul. I've always been fascinated by exploring new
+                  Istanbul. I&apos;ve always been fascinated by exploring new
                   cultures and uncovering the stories behind every place I
                   visit.
                 </p>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Having traveled to{" "}
-                  <span className="font-semibold text-primary-600">
-                    15 countries
-                  </span>
-                  , I realized that this curiosity is something I want to
-                  dedicate my life to.
+                  Having traveled to many countries , I realized that this
+                  curiosity is something I want to dedicate my life to.
                 </p>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Nikapolis is my way of sharing that passion. It's proof that
-                  learning about history can be fun, interactive, and full of
-                  discovery.
+                  Nikapolis is my way of sharing that passion. It&apos;s proof
+                  that learning about history can be fun, interactive, and full
+                  of discovery.
                 </p>
 
                 <div className="pt-6">
@@ -155,10 +151,10 @@ const AboutPage = () => {
                 </h3>
                 <p className="text-lg text-primary-700 leading-relaxed">
                   Together with my small team of storytellers and designers,
-                  we're building games that help people explore the city.
-                  Through our outdoor escape games, you'll explore Istanbul in a
-                  completely new way: uncover hidden facts, solve creative
-                  puzzles, and experience the city's history coming to life
+                  we&apos;re building games that help people explore the city.
+                  Through our outdoor escape games, you&apos;ll explore Istanbul
+                  in a completely new way: uncover hidden facts, solve creative
+                  puzzles, and experience the city&apos;s history coming to life
                   right before your eyes.
                 </p>
               </div>
@@ -222,9 +218,9 @@ const AboutPage = () => {
                 Ready to Explore Istanbul Differently?
               </h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
-                Whether you're with friends, family, or exploring on your own,
-                Nikapolis turns every walk into an adventure: where curiosity
-                leads the way.
+                Whether you&apos;re with friends, family, or exploring on your
+                own, Nikapolis turns every walk into an adventure: where
+                curiosity leads the way.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/games">
