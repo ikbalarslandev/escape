@@ -167,9 +167,6 @@ const FooterComponent = () => {
               >
                 Terms of Service
               </Link>
-              <Link href="/" className="hover:text-white transition-colors">
-                Sitemap
-              </Link>
             </div>
           </div>
         </div>
