@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -18,28 +14,6 @@ import { BiCoffeeTogo } from "react-icons/bi";
 import { Send, MapPin, Mail, Phone } from "lucide-react";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // You can add your form submission logic here
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const socialLinks = [
     {
       name: "WhatsApp",
@@ -101,7 +75,7 @@ const ContactPage = () => {
               Contact Us
             </h1>
             <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed">
-              Do you have any questions? Send us a message and we'll get in
+              Do you have any questions? Send us a message and we&apos;ll get in
               touch shortly
             </p>
           </div>

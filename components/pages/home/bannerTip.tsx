@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Coffee, Star, Gift } from "lucide-react";
-
 const BannerTipSection = () => {
   return (
     <section className="w-full bg-gradient-to-br from-primary-800 to-primary-900 py-16 lg:py-20">
@@ -19,10 +16,10 @@ const BannerTipSection = () => {
                 <span className="text-secondary-400 font-semibold">
                   yes, you heard right{" "}
                 </span>{" "}
-                it's completely free! At the end of each game, you'll see links
-                to review us and options to tip us. Your support is really
-                important for us, so if you enjoyed the experience, please
-                consider tipping.
+                it&apos;s completely free! At the end of each game, you&apos;ll
+                see links to review us and options to tip us. Your support is
+                really important for us, so if you enjoyed the experience,
+                please consider tipping.
               </p>
             </div>
           </div>

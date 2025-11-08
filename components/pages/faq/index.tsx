@@ -93,7 +93,7 @@ const FAQPage = () => {
                 Ready to Start Your Adventure?
               </h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                Join players who have discovered Istanbul's hidden secrets
+                Join players who have discovered Istanbul&apos;s hidden secrets
                 through Nikapolis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
