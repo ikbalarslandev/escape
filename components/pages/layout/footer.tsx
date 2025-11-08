@@ -156,21 +156,15 @@ const FooterComponent = () => {
             </p>
             <div className="flex space-x-6 text-sm text-primary-400">
               <Link
-                href="/home/#"
+                href="/privacy-policy"
                 className="hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
-              <Link
-                href="/home/#"
-                className="hover:text-white transition-colors"
-              >
+              <Link href="/" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link
-                href="/home/#"
-                className="hover:text-white transition-colors"
-              >
+              <Link href="/" className="hover:text-white transition-colors">
                 Sitemap
               </Link>
             </div>
