@@ -80,8 +80,9 @@ const HippodromeIntroPage = () => {
               </p>
               <p className="text-secondary-300 italic text-sm md:text-base">
                 Every location has a soul - what the ancients called{" "}
-                <strong>'Genius Loci'</strong>. It's the unique spirit, the
-                memory, the very essence that makes a place what it truly is.
+                <strong>&apos;Genius Loci&apos;</strong>. It&apos;s the unique
+                spirit, the memory, the very essence that makes a place what it
+                truly is.
               </p>
               <p>
                 The Hippodrome was once the beating heart of Constantinople,
@@ -95,7 +96,7 @@ const HippodromeIntroPage = () => {
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
                 Your mission: Help us reawaken the spirit of this ancient arena.
                 Solve the puzzles hidden in its surviving monuments to restore
-                the genius loci and hear the Hippodrome's lost stories.
+                the genius loci and hear the Hippodrome&apos;s lost stories.
               </p>
             </div>
 
@@ -123,7 +124,7 @@ const HippodromeIntroPage = () => {
             Hippodrome: The Lost Spirit
           </h1>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto px-2">
-            Reawaken the ancient soul of Constantinople's greatest arena
+            Reawaken the ancient soul of Constantinople&apos;s greatest arena
           </p>
         </div>
 
@@ -274,7 +275,7 @@ const HippodromeIntroPage = () => {
               </CardContent>
             </Card>
 
-            {/* Monuments You'll Visit */}
+            {/* Monuments You&apos;ll Visit */}
             <Card className="border border-primary-600 bg-primary-800 rounded-2xl">
               <CardContent className="p-4 md:p-6">
                 <h2 className="text-xl md:text-2xl font-light text-white mb-4 md:mb-6">
@@ -302,7 +303,7 @@ const HippodromeIntroPage = () => {
           </div>
         </div>
 
-        {/* What You'll Learn */}
+        {/* What You&apos;ll Learn */}
         <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
