@@ -76,7 +76,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/hipodrom/5/qs"
+          href="/hippodrome/5/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Go to Question <FaArrowRight className="ml-2" />

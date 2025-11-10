@@ -100,7 +100,7 @@ export default function SealPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hipodrom/5/location");
+      router.push("/hippodrome/5/location");
     }
   }, [isSuccess, countdown, router]);
 

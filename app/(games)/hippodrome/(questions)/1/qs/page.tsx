@@ -93,7 +93,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hipodrom/1/info");
+      router.push("/hippodrome/1/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -213,7 +213,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/hipodrom/1/location")}
+            onClick={() => router.push("/hippodrome/1/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >

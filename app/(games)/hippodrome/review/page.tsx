@@ -28,7 +28,7 @@ export default function ReviewPage() {
       const timer = setTimeout(() => setCountdown((prev) => prev - 1), 1000);
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hipodrom/2/location");
+      router.push("/hippodrome/2/location");
     }
   }, [isSuccess, countdown, router]);
 
@@ -102,7 +102,7 @@ export default function ReviewPage() {
             </Button>
 
             <button
-              onClick={() => router.push("/hipodrom/2/location")}
+              onClick={() => router.push("/hippodrome/2/location")}
               className="text-gray-400 text-sm underline mt-4"
             >
               I&apos;ll do this later

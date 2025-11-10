@@ -116,7 +116,6 @@ const GameCard = ({
           disabled={!isActive}
         >
           <Link href="/hippodrome">
-            {" "}
             {isActive ? "Play Now" : "Coming Soon"}
           </Link>
         </Button>

@@ -88,7 +88,7 @@ export default function Home() {
             about rebuilding the soul and history of Istanbul.
           </p>
 
-          <Link href="/hipodrom/intro">
+          <Link href="/hippodrome/intro">
             <div className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer hover:scale-105 transform">
               START THE ADVENTURE!
             </div>

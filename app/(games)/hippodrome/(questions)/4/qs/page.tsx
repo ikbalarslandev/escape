@@ -91,7 +91,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hipodrom/4/info");
+      router.push("/hippodrome/4/info");
     }
   }, [isSuccess, countdown, router]);
 
