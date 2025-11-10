@@ -26,7 +26,7 @@ const HippodromeIntroPage = () => {
     duration: "1.5-2 hours",
     difficulty: "Medium",
     teamSize: "2-4 players",
-    distance: "2.5 km",
+    distance: "1.3 km",
     monuments: [
       "German Fountain",
       "Serpent Column",

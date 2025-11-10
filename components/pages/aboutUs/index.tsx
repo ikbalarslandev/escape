@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Globe, Puzzle } from "lucide-react";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const AboutPage = () => {
   const stats = [
@@ -50,6 +51,46 @@ const AboutPage = () => {
         "Premium experiences that are available to everyone through our tip-based model.",
     },
   ];
+
+  const socialLinks = [
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/ikbal._arslan",
+      label: "Instagram",
+      color: "hover:text-pink-500",
+    },
+    {
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/ikbaldev", // Replace with actual LinkedIn URL
+      label: "LinkedIn",
+      color: "hover:text-blue-600",
+    },
+    {
+      icon: FaGithub,
+      href: "https://github.com/ikbalarslandev", // Replace with actual GitHub URL
+      label: "GitHub",
+      color: "hover:text-gray-700",
+    },
+  ];
+
+  const Socials = () => {
+    return (
+      <div className="flex items-center gap-6">
+        {socialLinks.map(({ icon: Icon, href, label, color }) => (
+          <Link
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className={`text-2xl transition-colors duration-300 ${color}`}
+          >
+            <Icon />
+          </Link>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -133,6 +174,7 @@ const AboutPage = () => {
                   of discovery.
                 </p>
 
+                <Socials />
                 <div className="pt-6">
                   <Link href="/games">
                     <Button className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-4 rounded-lg font-normal text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
