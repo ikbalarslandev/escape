@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Clock, MapPin, Languages, Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface GameCardProps {
   title: string;
@@ -114,7 +115,10 @@ const GameCard = ({
           }`}
           disabled={!isActive}
         >
-          {isActive ? "Book Now" : "Coming Soon"}
+          <Link href="/hippodrome">
+            {" "}
+            {isActive ? "Play Now" : "Coming Soon"}
+          </Link>
         </Button>
       </CardFooter>
     </Card>
