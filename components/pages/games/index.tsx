@@ -195,7 +195,7 @@ const GamesPage = () => {
               Choose Your Adventure
             </h1>
             <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed">
-              Explore Istanbul's hidden stories through interactive outdoor
+              Explore Istanbul&apos;s hidden stories through interactive outdoor
               escape games
             </p>
           </div>
