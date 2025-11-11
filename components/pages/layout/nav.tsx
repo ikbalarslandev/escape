@@ -60,8 +60,11 @@ const NavComponent = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button className="bg-secondary-500 hover:bg-secondary-600 text-white px-6 py-2 rounded-lg font-normal transition-all duration-200">
-                Book Now
+              <Button
+                asChild
+                className="bg-secondary-500 hover:bg-secondary-600 text-white px-6 py-2 rounded-lg font-normal transition-all duration-200"
+              >
+                <Link href="/games"> Play Now</Link>
               </Button>
             </div>
 
@@ -131,7 +134,7 @@ const NavComponent = () => {
                       className="w-full bg-secondary-500 hover:bg-secondary-600 text-white py-3 rounded-lg font-normal text-lg transition-all duration-200"
                       onClick={closeMenu}
                     >
-                      Book Adventure
+                      <Link href="/games">Play Now</Link>
                     </Button>
                   </div>
                 </div>
