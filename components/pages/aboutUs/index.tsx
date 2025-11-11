@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Globe, Puzzle } from "lucide-react";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+// import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const AboutPage = () => {
   const stats = [
@@ -38,7 +38,7 @@ const AboutPage = () => {
     {
       title: "Interactive Learning",
       description:
-        "History comes alive when you&apos;re actively exploring and solving puzzles.",
+        "History comes alive when you're actively exploring and solving puzzles.",
     },
     {
       title: "Local Insights",
@@ -52,45 +52,45 @@ const AboutPage = () => {
     },
   ];
 
-  const socialLinks = [
-    {
-      icon: FaInstagram,
-      href: "https://www.instagram.com/ikbal._arslan",
-      label: "Instagram",
-      color: "hover:text-pink-500",
-    },
-    {
-      icon: FaLinkedin,
-      href: "https://www.linkedin.com/in/ikbaldev", // Replace with actual LinkedIn URL
-      label: "LinkedIn",
-      color: "hover:text-blue-600",
-    },
-    {
-      icon: FaGithub,
-      href: "https://github.com/ikbalarslandev", // Replace with actual GitHub URL
-      label: "GitHub",
-      color: "hover:text-gray-700",
-    },
-  ];
+  // const socialLinks = [
+  //   {
+  //     icon: FaInstagram,
+  //     href: "https://www.instagram.com/ikbal._arslan",
+  //     label: "Instagram",
+  //     color: "hover:text-pink-500",
+  //   },
+  //   {
+  //     icon: FaLinkedin,
+  //     href: "https://www.linkedin.com/in/ikbaldev", // Replace with actual LinkedIn URL
+  //     label: "LinkedIn",
+  //     color: "hover:text-blue-600",
+  //   },
+  //   {
+  //     icon: FaGithub,
+  //     href: "https://github.com/ikbalarslandev", // Replace with actual GitHub URL
+  //     label: "GitHub",
+  //     color: "hover:text-gray-700",
+  //   },
+  // ];
 
-  const Socials = () => {
-    return (
-      <div className="flex items-center gap-6">
-        {socialLinks.map(({ icon: Icon, href, label, color }) => (
-          <Link
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            className={`text-2xl transition-colors duration-300 ${color}`}
-          >
-            <Icon />
-          </Link>
-        ))}
-      </div>
-    );
-  };
+  // const Socials = () => {
+  //   return (
+  //     <div className="flex items-center gap-6">
+  //       {socialLinks.map(({ icon: Icon, href, label, color }) => (
+  //         <Link
+  //           key={label}
+  //           href={href}
+  //           target="_blank"
+  //           rel="noopener noreferrer"
+  //           aria-label={label}
+  //           className={`text-2xl transition-colors duration-300 ${color}`}
+  //         >
+  //           <Icon />
+  //         </Link>
+  //       ))}
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -174,7 +174,7 @@ const AboutPage = () => {
                   of discovery.
                 </p>
 
-                <Socials />
+                {/* <Socials /> */}
                 <div className="pt-6">
                   <Link href="/games">
                     <Button className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-4 rounded-lg font-normal text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
@@ -192,12 +192,11 @@ const AboutPage = () => {
                   Our Mission
                 </h3>
                 <p className="text-lg text-primary-700 leading-relaxed">
-                  Together with my small team of storytellers and designers,
-                  we&apos;re building games that help people explore the city.
-                  Through our outdoor escape games, you&apos;ll explore Istanbul
-                  in a completely new way: uncover hidden facts, solve creative
-                  puzzles, and experience the city&apos;s history coming to life
-                  right before your eyes.
+                  Together with my small team of storytellers and designers, we
+                  are excited to create games that help people explore the city.
+                  Our main goal is to give people access to history in an
+                  enjoyable way. We really hope you enjoy our games and have a
+                  great and memorable time.
                 </p>
               </div>
             </div>

@@ -12,7 +12,7 @@ const faqData = [
   },
   {
     question: "Who is it for?",
-    answer: `Nikapolis is perfect for:\n• Travelers who want to explore Istanbul in a more interactive way.\n• Friends, families, and teams looking for a fun and meaningful group activity.\n• Locals who want to rediscover their city from a new perspective.\n• You can play alone or with a group: it's designed for 1–6 players per team.`,
+    answer: `Nikapolis is perfect for:\n• Travelers who want to explore Istanbul in a more interactive way.\n• Friends, families, and teams looking for a fun and meaningful group activity.\n• Locals who want to rediscover their city from a new perspective.\n• You should with a team: it's designed for 2–4 players per team.`,
   },
   {
     question: "How much does it cost?",
@@ -68,8 +68,8 @@ const features = [
   },
   {
     icon: Users,
-    title: "1-6 Players",
-    description: "Perfect for solo or group adventures",
+    title: "2-4 Players",
+    description: "Perfect for group adventures",
   },
   {
     icon: Clock,

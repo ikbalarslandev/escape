@@ -16,7 +16,7 @@ const GamesPage = () => {
   const games = [
     {
       id: "hippodrome",
-      title: "Hippodrome Adventure",
+      title: "Hippodrome",
       location: "Sultanahmet, Istanbul",
       description:
         "Step back in time to the heart of Byzantine Constantinople. The Hippodrome was the center of social and political life for over 1000 years. Help us recreate the genius loci of this ancient space as you solve puzzles that bring its history to life.",

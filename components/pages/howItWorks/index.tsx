@@ -22,15 +22,14 @@ const HowItWorksPage = () => {
       icon: Smartphone,
       title: "Activate Your Game",
       description:
-        "No booking needed! Choose your game and start playing immediately. Everything works directly in your mobile browser - no app download required.",
+        "No booking needed! Choose your game and start playing immediately. Everything works directly in your mobile browser.",
       color: "bg-blue-50 border-blue-200",
       iconColor: "bg-blue-500",
     },
     {
       icon: MapPin,
       title: "Prepare Your Tools",
-      description:
-        "Bring 1 smartphone with internet access per team. We recommend a power bank. That's all you need!",
+      description: "Bring 1 smartphone with internet access per team.",
       color: "bg-green-50 border-green-200",
       iconColor: "bg-green-500",
     },
@@ -38,7 +37,7 @@ const HowItWorksPage = () => {
       icon: HelpCircle,
       title: "Explore and Solve",
       description:
-        "Follow the map, listen to the story, and solve riddles at real historical locations. Each correct answer reveals new secrets about Istanbul.",
+        "Follow the map and solve riddles at real historical locations. ",
       color: "bg-purple-50 border-purple-200",
       iconColor: "bg-purple-500",
     },
@@ -57,7 +56,7 @@ const HowItWorksPage = () => {
       step: "1",
       title: "Location Page",
       description:
-        "This page shows you the exact historical location you need to visit. Each puzzle is tied to a specific building or landmark in Istanbul.",
+        "This page shows you the exact historical location you need to visit. Each puzzle is tied to a specific building or landmark.",
       details:
         "You'll see the location on a map and get directions. The puzzle can only be solved when you're physically present at the location.",
       icon: MapPin,
@@ -67,9 +66,9 @@ const HowItWorksPage = () => {
       step: "2",
       title: "Question Page",
       description:
-        "Once you're at the location, you'll find a puzzle related to that specific place. Observe the details around you to find the solution.",
+        "Once you're there, you'll find a puzzle related to that specific place. Observe the details around you to find the solution.",
       details:
-        "Each question comes with 3-6 progressive hints. Start with the subtle hints and reveal more if needed. The answer is always found in your surroundings.",
+        "Each question comes with 3-6 progressive hints. The answer is always found in your surroundings.",
       icon: HelpCircle,
       color: "from-purple-500 to-purple-600",
     },
@@ -79,7 +78,7 @@ const HowItWorksPage = () => {
       description:
         "After solving the puzzle correctly, you'll unlock historical information about that location.",
       details:
-        "Learn fascinating facts and stories about the place you just explored. This page then automatically directs you to the next location, continuing your adventure.",
+        "Learn interesting facts and stories about the place you just explored.",
       icon: BookOpen,
       color: "from-green-500 to-green-600",
     },
@@ -104,8 +103,7 @@ const HowItWorksPage = () => {
               How to Play
             </h1>
             <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed mb-8">
-              Your guide to experiencing Istanbul through interactive outdoor
-              escape games
+              Discover Istanbul through interactive outdoor escape games
             </p>
             {videoUrl && (
               <Button
