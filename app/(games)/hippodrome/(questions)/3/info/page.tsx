@@ -1,10 +1,9 @@
 "use client";
 
-import { GiStoneTablet, GiSandSnake } from "react-icons/gi";
-import { FaHorseHead } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaCheckCircle, FaArrowRight, FaMusic } from "react-icons/fa";
 import { useEffect, useRef } from "react";
 
 export default function InfoPage() {
@@ -38,95 +37,57 @@ export default function InfoPage() {
   }, []);
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Congratulations!
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve obtained your third artifact
-          </p>
+        <header className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <div className="flex items-center justify-center text-primary-300 text-sm">
+            <FaMusic className="mr-2" />
+            <span>Ancient Greek music playing...</span>
+          </div>
         </header>
 
         {/* Success Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <GiSandSnake className="text-white text-3xl" />
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Snake
-              </h2>
-              <p className="text-gray-300">
-                The third piece in your quest to cure the ancient poison
-              </p>
-            </div>
-
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
-            <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p>
-                Congratulations! You found the antidote tree and neutralized the
-                effects of the ancient poison. This bronze body is a symbol of
-                the victory won by 31 Greek city-states united against the
-                Persians.
+            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <p className="text-base md:text-lg">
+                Great job! You found the antidote tree and stopped the ancient
+                poison. This bronze column is a symbol of victory. 31 Greek
+                cities worked together to win against the Persians.
               </p>
 
-              <p>
-                This monument was cast from melted bronze weapons of the Persian
-                army. Its purpose was to forever commemorate the power of Greek
-                unity. Centuries later, Emperor Constantine brought it to
-                Istanbul and erected it in the Hippodrome to show his respect
-                for Greek culture and win the peoples affection.
+              <p className="text-base md:text-lg">
+                They made this monument from melted Persian weapons. They wanted
+                to show how strong the Greek cities were when they worked
+                together. Many years later, Emperor Constantine brought it to
+                Istanbul. He put it in the Hippodrome to show he respected Greek
+                culture and to make people like him.
               </p>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Artifact Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Collected Artifacts
-            </h3>
-            <div className="flex justify-center gap-6">
-              {/* First Artifact - Miniature Horse */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-yellow-500 to-orange-900 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
-                    <FaHorseHead className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-2 text-sm">
-                  Miniature Horse
-                </p>
-              </div>
-              {/* Second Artifact - Stone Tablet */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
-                    <GiStoneTablet className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-2 text-sm">
-                  Parchment
-                </p>
-              </div>
-              {/* Third Artifact - Snake */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-green-600 to-green-900 border border-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center shadow-lg">
-                    <GiSandSnake className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-2 text-sm">Snake</p>
-              </div>
+              {/* Additional Historical Context */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Did you know?
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    The Serpent Column originally had three snake heads at the
+                    top holding a golden bowl. Over time, the heads broke off.
+                    One head was found and is now in the Istanbul Archaeology
+                    Museum.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              3 artifacts collected
-            </p>
           </CardContent>
         </Card>
 
@@ -134,16 +95,17 @@ export default function InfoPage() {
         <div className="text-center">
           <Button
             onClick={() => router.push("/hippodrome/4/location")}
-            className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question →
+            Next Question
+            <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">
-            Continue your journey in pursuit of ancient secrets...
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Continue your journey to find more ancient secrets...
           </p>
         </footer>
       </div>
