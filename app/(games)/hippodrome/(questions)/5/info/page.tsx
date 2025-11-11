@@ -1,128 +1,92 @@
+// app/hippodrome/info/page.tsx - INFO PAGE
 "use client";
 
-import { GiLaurelsTrophy } from "react-icons/gi";
-import { FaStar, FaCoffee } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaHistory,
+  FaCrown,
+  FaExclamationTriangle,
+} from "react-icons/fa";
 
 export default function InfoPage() {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen text-gray-100 p-8 bg-gradient-to-br from-gray-900/30 to-gray-800/30">
-      <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
-        <HeaderSection />
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+        {/* Header */}
+        <header className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You solved the last question!
+          </p>
+        </header>
 
-        {/* Main Content Grid */}
-        <div className="grid gap-8 mb-8">
-          {/* Achievement Section */}
-          <AchievementSection />
+        {/* Success Card */}
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
+            {/* Historical Info */}
+            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <p className="text-base md:text-lg">
+                You've uncovered the story of the Nika Rebellion - the greatest
+                uprising in Byzantine history that shook Constantinople to its
+                core in 532 AD.
+              </p>
 
-          {/* Historical Info Section */}
-          <HistoricalInfoSection />
+              <p className="text-base md:text-lg">
+                The Hippodrome was not just a racing arena, but the political
+                heart where the "Blues" and "Greens" united against Emperor
+                Justinian with cries of "Nika!" meaning "Victory!"
+              </p>
 
-          {/* Support Section */}
-          <SupportSection />
+              {/* Additional Historical Context */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaHistory className="mr-2" />
+                    Historical Significance
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    The Nika Rebellion resulted in approximately 30,000 deaths
+                    and nearly toppled the Byzantine Empire. The original Hagia
+                    Sophia was destroyed during the chaos, leading to the
+                    construction of the magnificent structure we know today.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Navigation */}
+        <div className="text-center">
+          <Button
+            onClick={() => router.push("/hippodrome/final")}
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            See Your Achievement
+            <FaArrowRight className="ml-2" />
+          </Button>
         </div>
 
         {/* Footer */}
-        <FooterSection />
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            You have uncovered the final piece of history! Prepare to restore
+            the genius loci...
+          </p>
+        </footer>
       </div>
     </div>
   );
 }
-
-// Header Component
-const HeaderSection = () => (
-  <header className="text-center mb-12">
-    <div className="flex justify-center mb-6">
-      <div className="relative">
-        <GiLaurelsTrophy className="text-8xl text-yellow-400" />
-        <FaStar className="text-4xl text-yellow-300 absolute -top-2 -right-2 animate-pulse" />
-        <FaStar
-          className="text-3xl text-yellow-200 absolute -bottom-2 -left-2 animate-pulse"
-          style={{ animationDelay: "0.5s" }}
-        />
-      </div>
-    </div>
-    <h1 className="text-3xl font-serif font-bold mb-6 text-white tracking-wider">
-      CONGRATULATIONS!
-    </h1>
-    <p className="text-xl md:text-2xl text-gray-300 font-light mb-4">
-      You&apos;ve Completed the Great Journey
-    </p>
-    <div className="w-32 h-1 bg-gradient-to-r from-white to-gray-300 mx-auto rounded-full"></div>
-  </header>
-);
-
-// Achievement Component
-const AchievementSection = () => (
-  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-    <div className="space-y-6 text-center">
-      <div className="bg-white/10 rounded-xl p-6 border border-white/20">
-        <h3 className="text-2xl font-serif font-bold text-white mb-4">
-          🎉 Amazing Achievement!
-        </h3>
-        <p className="text-lg text-gray-200 leading-relaxed">
-          In this great journey you embarked on to solve Istanbul&apos;s
-          historical secrets, you overcame all obstacles, collected all seals,
-          and finally managed to solve the ultimate code!
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
-// Historical Info Component
-const HistoricalInfoSection = () => (
-  <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-    <CardContent className="p-8">
-      <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-        <h3 className="text-xl font-serif font-bold text-white text-center mb-4">
-          📜 Historical Significance
-        </h3>
-        <p>
-          Congratulations! These lands you stand upon witnessed the greatest
-          rebellion of the Byzantine Empire. The Hippodrome was not just a
-          racing arena, but also the heart of politics. The &quot;Blues&quot;
-          represented the loyals, while the &quot;Greens&quot; represented the
-          common people. In 532 AD, these teams united against the emperor with
-          screams of &quot;Nika!&quot; (Victory!). The bloody Nika Rebellion
-          that ensued destroyed much of the city, including Hagia Sophia.
-        </p>
-      </div>
-    </CardContent>
-  </Card>
-);
-
-// Support Component
-const SupportSection = () => (
-  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
-    <div className="flex justify-center mb-4">
-      <FaCoffee className="text-4xl text-yellow-500" />
-    </div>
-    <h3 className="text-xl font-serif font-bold text-white mb-4">
-      Did You Like the Game?
-    </h3>
-    <p className="text-gray-300 mb-6">
-      If you&apos;d like to support me in developing this game, you can
-      contribute by buying me a coffee!
-    </p>
-    <a
-      href="https://buymeacoffee.com/nikapolis.today"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-    >
-      <FaCoffee className="text-lg" />
-      Buy Me a Coffee
-    </a>
-  </div>
-);
-
-// Footer Component
-const FooterSection = () => (
-  <footer className="text-center mt-12 text-gray-400 font-light">
-    <p className="italic">
-      In the footsteps of history, in the light of knowledge...
-    </p>
-  </footer>
-);
