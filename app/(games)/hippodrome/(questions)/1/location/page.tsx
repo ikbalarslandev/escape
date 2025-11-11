@@ -1,91 +1,120 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaMapMarkerAlt,
+  FaArrowRight,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 export default function LocationPage() {
   return (
-    <div className="min-h-screen text-gray-100 p-2">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Question 1
-          </h1>
-          <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
-            Location
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youre in the right place for the first question
+        <header className="text-center mb-8 md:mb-12">
+          <div className="mb-4">
+            <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
+              Question 1
+            </h1>
+            <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+            <h2 className="text-2xl md:text-3xl font-light text-secondary-400 mb-4">
+              Location
+            </h2>
+          </div>
+          <p className="text-lg md:text-xl text-primary-200 font-light max-w-2xl mx-auto">
+            You're in the right place for the first question
           </p>
         </header>
 
         {/* Location Content */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/20">
-          {/* Image Section */}
-          <div className="mb-8">
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/q_imgs/1.jpg"
-                alt="German Fountain"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-              />
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
+            {/* Image Section */}
+            <div className="mb-6 md:mb-8">
+              <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
+                <Image
+                  src="/q_imgs/1.jpg"
+                  alt="German Fountain"
+                  fill
+                  className="object-cover z-10"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-primary-900 bg-opacity-20"></div>
+              </div>
             </div>
-          </div>
 
-          {/* Description Section */}
-          <div className="mb-8">
-            <div className="flex items-center mb-6">
-              <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
-              <h2 className="text-2xl font-serif font-bold text-white flex items-center">
-                <FaMapMarkerAlt className="mr-3" />
-                GERMAN FOUNTAIN
-              </h2>
+            {/* Description Section */}
+            <div className="mb-6 md:mb-8">
+              <div className="flex items-center mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
+                  <FaMapMarkerAlt className="mr-2 text-secondary-400" />
+                  GERMAN FOUNTAIN
+                </h2>
+              </div>
+              <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+                The German Fountain marks where the ancient hippodrome began. If
+                you look carefully, you can see the spina, the monumental line
+                in the middle, from here.
+              </p>
             </div>
-            <p className="text-lg text-gray-200 font-light leading-relaxed">
-              The German Fountain marks where the ancient hippodrome began. If
-              you look carefully, you can see the spina, the monumental line in
-              the middle, from here.
-            </p>
-          </div>
 
-          {/* Image Section */}
-          <div className="mb-8">
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/q_imgs/spina.jpeg"
-                alt="spina"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-              />
+            {/* Spina Image Section */}
+            <div className="mb-6 md:mb-8">
+              <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden bg-primary-700">
+                <Image
+                  src="/q_imgs/spina.jpeg"
+                  alt="Ancient Hippodrome Spina"
+                  fill
+                  className="object-contain p-4 z-10"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-primary-900 bg-opacity-10"></div>
+              </div>
+              <p className="text-primary-300 text-sm text-center mt-2 italic">
+                The spina - the central line of the ancient hippodrome
+              </p>
             </div>
-          </div>
 
-          <Link
-            href="https://maps.app.goo.gl/LKExaiWipFzrefmeA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
-          >
-            <FaMapMarkerAlt className="mr-2" />
-            Open in Google Maps
+            {/* Google Maps Link */}
+            <div className="text-center">
+              <Link
+                href="https://maps.app.goo.gl/LKExaiWipFzrefmeA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-secondary-400 text-secondary-400 hover:bg-secondary-400 hover:text-primary-900 font-semibold py-3 px-6 rounded-full transition-all duration-300"
+                >
+                  <FaMapMarkerAlt className="mr-2" />
+                  Open in Google Maps
+                  <FaExternalLinkAlt className="ml-2 h-3 w-3" />
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Next Button */}
+        <div className="text-center">
+          <Link href="/hippodrome/1/qs">
+            <Button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+              Go to Question
+              <FaArrowRight className="ml-2" />
+            </Button>
           </Link>
         </div>
 
-        <Link
-          href="/hippodrome/1/qs"
-          className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
-        >
-          Go to Question <FaArrowRight className="ml-2" />
-        </Link>
-
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Progress by feeling the history...</p>
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Progress by feeling the history...
+          </p>
         </footer>
       </div>
     </div>

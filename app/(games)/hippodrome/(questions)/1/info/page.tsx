@@ -1,72 +1,65 @@
 "use client";
 
-import { FaHorseHead } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 
 export default function InfoPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Congratulations!
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve earned your first object
+        <header className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You solved the first puzzle!
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaHorseHead className="text-white text-3xl" />
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Miniature Horse
-              </h2>
-              <p className="text-gray-300">
-                This is your first piece in creating the seals
-              </p>
-            </div>
-
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
-            <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p>
-                <strong className="text-white">
-                  Correct answer: Serpent Column
+            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <p className="text-base md:text-lg">
+                <strong className="text-white font-semibold">
+                  Correct answer: Gold Boiler
                 </strong>
-                . You are now right in the center of the Hippodrome. Imagine,
-                around you are massive stands and in the middle is the spina;
-                this entire area is about the size of 9 football fields!
+                . You are now in the center of the Hippodrome. Imagine this
+                place long ago: big stands all around you and the spina in the
+                middle. This whole area was as big as 9 football fields
+                together!
               </p>
 
-              <p>
-                Can you imagine that such a vast area was built to bring people
-                together, entertain them, and showcase the glory of the empire?
+              <p className="text-base md:text-lg">
+                Can you imagine? They built this huge place to bring people
+                together, to have fun, and to show the power of the empire.
               </p>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Object Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Collected Objects
-            </h3>
-            <div className="flex justify-center">
-              <div className="bg-gradient-to-br from-yellow-500 to-orange-900 border border-white rounded-2xl p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                <FaHorseHead className="text-white text-4xl" />
-              </div>
+              {/* Additional Historical Context */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Did you know?
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    The Hippodrome could hold up to 100,000 people. Chariot
+                    races were not just for fun. They were also important for
+                    politics. People showed if they supported the emperor or not
+                    during these races.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
-            <p className="text-center text-gray-300 mt-4">Miniature Horse</p>
           </CardContent>
         </Card>
 
@@ -74,15 +67,18 @@ export default function InfoPage() {
         <div className="text-center">
           <Button
             onClick={() => router.push("/hippodrome/review")}
-            className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question →
+            Next Question
+            <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Continue following the traces of history...</p>
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Keep following the story of history...
+          </p>
         </footer>
       </div>
     </div>
