@@ -22,7 +22,7 @@ export default function LocationPage() {
             Location
           </h2>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You're in the right place for the third question
+            You&apos;re in the right place for the third question
           </p>
         </header>
 

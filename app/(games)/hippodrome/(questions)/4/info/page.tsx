@@ -51,10 +51,10 @@ export default function InfoPage() {
                     Gaming Connection
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    In Assassin's Creed: Revelations, you can actually climb the
-                    Walled Obelisk using the same holes that Ottoman soldiers
-                    used! The game recreates historical Istanbul with amazing
-                    detail.
+                    In Assassin&apos;s Creed: Revelations, you can actually
+                    climb the Walled Obelisk using the same holes that Ottoman
+                    soldiers used! The game recreates historical Istanbul with
+                    amazing detail.
                   </p>
                 </CardContent>
               </Card>

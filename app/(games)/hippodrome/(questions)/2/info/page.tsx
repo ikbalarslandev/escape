@@ -21,7 +21,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You freed Emperor Theodosius's spirit!
+            You freed Emperor Theodosius&apos;s spirit!
           </p>
         </header>
 
@@ -31,10 +31,10 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <p className="text-base md:text-lg">
-                Great job! You freed Theodosius's spirit and solved the ancient
-                mystery. You are now in the center of the Hippodrome. The big
-                stone beside you is not just a rock - it saw many amazing things
-                and shows great power.
+                Great job! You freed Theodosius&apos;s spirit and solved the
+                ancient mystery. You are now in the center of the Hippodrome.
+                The big stone beside you is not just a rock - it saw many
+                amazing things and shows great power.
               </p>
 
               <p className="text-base md:text-lg">

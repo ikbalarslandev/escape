@@ -24,7 +24,7 @@ export default function LocationPage() {
             </h2>
           </div>
           <p className="text-lg md:text-xl text-primary-200 font-light max-w-2xl mx-auto">
-            You're in the right place for the first question
+            You&apos;re in the right place for the first question
           </p>
         </header>
 

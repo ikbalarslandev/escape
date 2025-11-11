@@ -52,7 +52,7 @@ export default function FinalPage() {
                   <p className="text-primary-100 text-sm md:text-base">
                     In old times, people believed every place has a special
                     spirit. This spirit holds the memories and feelings of the
-                    place. You brought back the Hippodrome's spirit.
+                    place. You brought back the Hippodrome&apos;s spirit.
                   </p>
                 </CardContent>
               </Card>
