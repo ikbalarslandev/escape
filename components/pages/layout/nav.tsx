@@ -43,7 +43,7 @@ const NavComponent = () => {
               className="flex items-center space-x-2 text-xl font-light text-white hover:text-secondary-300 transition-colors"
               onClick={closeMenu}
             >
-              <Image width={50} height={50} alt="logo" src="/logo.png" />
+              <Image width={25} height={25} alt="logo" src="/logo.png" />
               <span>
                 <span className="font-semibold">Nika</span>polis
               </span>
@@ -90,8 +90,8 @@ const NavComponent = () => {
                       onClick={closeMenu}
                     >
                       <Image
-                        width={50}
-                        height={50}
+                        width={20}
+                        height={20}
                         alt="logo"
                         src="/logo.png"
                       />
