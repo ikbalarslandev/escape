@@ -60,7 +60,7 @@ const GameCardsSection = () => {
                 stopOnInteraction: false, // keeps autoplaying after user swipes
               }),
             ]}
-            className="w-screen"
+            className="w-full"
           >
             <CarouselContent className="-ml-4">
               {gamesData.map((game) => (

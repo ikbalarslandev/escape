@@ -13,6 +13,7 @@ const HomePage = () => {
       <BannerScrollerSection />
       <GameCardsSection />
       <BannerTipSection />
+
       {/* <BannerReviewsSection /> */}
     </div>
   );

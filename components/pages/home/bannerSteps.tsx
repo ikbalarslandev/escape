@@ -1,3 +1,5 @@
+"use client";
+
 import { LuCalendarCheck } from "react-icons/lu";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaPuzzlePiece } from "react-icons/fa";
@@ -25,7 +27,7 @@ const BannerStepsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-primary-800 py-16 lg:py-24">
+    <section className="w-full overflow-x-hidden bg-primary-800 py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -37,12 +39,12 @@ const BannerStepsSection = () => {
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Steps Flexbox */}
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-12">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center group"
+              className="flex flex-col items-center text-center relative flex-1 max-w-sm mx-auto"
             >
               {/* Step Number */}
               <div className="relative mb-6">
@@ -62,11 +64,6 @@ const BannerStepsSection = () => {
               <p className="text-primary-200 leading-relaxed">
                 {step.description}
               </p>
-
-              {/* Connecting Line (except for last item) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-20 left-1/2 w-full h-0.5 bg-primary-600 transform translate-x-1/2 -z-10" />
-              )}
             </div>
           ))}
         </div>

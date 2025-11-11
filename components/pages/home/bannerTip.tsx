@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FaCoffee } from "react-icons/fa";
+
 const BannerTipSection = () => {
   return (
     <section className="w-full bg-gradient-to-br from-primary-800 to-primary-900 py-16 lg:py-20">
@@ -14,13 +17,25 @@ const BannerTipSection = () => {
             <div className="bg-primary-700/50 rounded-2xl p-8 border border-primary-600/50 backdrop-blur-sm">
               <p className="text-primary-200 text-lg lg:text-xl leading-relaxed mb-6">
                 <span className="text-secondary-400 font-semibold">
-                  yes, you heard right{" "}
+                  yes, you heard right,{" "}
                 </span>{" "}
-                it&apos;s completely free! At the end of each game, you&apos;ll
-                see links to review us and options to tip us. Your support is
-                really important for us, so if you enjoyed the experience,
-                please consider tipping.
+                our games are completely free! At the end of each adventure,
+                you&apos;ll find a link with tipping options. Your support helps
+                us grow, so if you enjoyed the game, please consider tipping
               </p>
+
+              {/* Buy Me a Coffee Button */}
+              <div className="text-center mt-8">
+                <Link
+                  href="https://buymeacoffee.com/nikapolis.today"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-secondary-400/30"
+                >
+                  <FaCoffee className="text-xl" />
+                  Buy Me a Coffee
+                </Link>
+              </div>
             </div>
           </div>
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -41,25 +40,23 @@ const PartnerAutoScroller = () => {
           Trusted by adventurers worldwide
         </p>
 
-        {/* Desktop - Static Grid */}
+        {/* Desktop - Simple Grid */}
         <div className="hidden md:flex justify-center items-center gap-8 lg:gap-12 px-4">
           {partners.map((partner, index) => (
-            <Card
-              key={`desktop-${index}`}
-              className="bg-white/10 backdrop-blur-sm border-white/20"
-            >
-              <CardContent className="p-3 flex items-center justify-center">
-                <div className="relative h-6 w-20 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
-                  <div className="text-white text-xs font-semibold text-center">
-                    {partner.name}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <Link key={`desktop-${index}`} href={partner.link} target="_blank">
+              <div className="relative h-10 w-24">
+                <Image
+                  src={partner.img}
+                  alt={partner.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </Link>
           ))}
         </div>
 
-        {/* Mobile - Carousel */}
+        {/* Mobile - Carousel (unchanged) */}
         <div className="md:hidden">
           <Carousel
             opts={{
@@ -68,8 +65,8 @@ const PartnerAutoScroller = () => {
             }}
             plugins={[
               Autoplay({
-                delay: 1500, // 2 seconds between slides
-                stopOnInteraction: false, // keeps autoplaying after user swipes
+                delay: 1500,
+                stopOnInteraction: false,
               }),
             ]}
             className="w-screen bg-gray-600/40"
@@ -78,7 +75,7 @@ const PartnerAutoScroller = () => {
               {partners.map((partner, index) => (
                 <CarouselItem
                   key={`mobile-${index}`}
-                  className="basis-1/2  mx-2 flex items-center justify-center "
+                  className="basis-1/2 mx-2 flex items-center justify-center"
                 >
                   <Link href={partner.link} target="_blank">
                     <Image
