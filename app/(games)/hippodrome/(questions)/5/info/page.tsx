@@ -90,8 +90,8 @@ export default function InfoPage() {
                   <p className="text-primary-100 text-sm md:text-base">
                     In 532 AD, something unprecedented happened. The Blues and
                     Greens put aside their rivalry and united against Emperor
-                    Justinian. The Hippodrome echoed with cries of "Nika! Nika!
-                    Nika!" meaning "Conquer!" in Greek.
+                    Justinian. The Hippodrome echoed with cries of &quot;Nika!
+                    Nika! Nika!&quot; meaning &quot;Conquer!&quot; in Greek.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base mt-2">
                     This rebellion turned into one of the most violent uprisings

@@ -47,7 +47,7 @@ export default function FinalPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <GiGreekTemple className="mr-2" />
-                    What is "Genius Loci"?
+                    What is &quot;Genius Loci&quot;?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
                     In old times, people believed every place has a special
@@ -62,17 +62,18 @@ export default function FinalPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaStar className="mr-2" />
-                    What Does "Nikapolis" Mean?
+                    What Does &quot;Nikapolis&quot; Mean?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    "Nika" is an old Greek word. It means "conquer" or "win".
-                    "Polis" means "city". So "Nikapolis" means "conquer the
-                    city".
+                    &quot;Nika&quot; is an old Greek word. It means
+                    &quot;conquer&quot; or &quot;win&quot;. &quot;Polis&quot;
+                    means &quot;city&quot;. So &quot;Nikapolis&quot; means
+                    &quot;conquer the city&quot;.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base mt-2">
                     This name comes from the Nika Rebellion. People shouted
-                    "Nika! Nika! Nika!" when they tried to conquer the city. Now
-                    our company name remembers this history.
+                    &quot;Nika! Nika! Nika!&quot; when they tried to conquer the
+                    city. Now our company name remembers this history.
                   </p>
                 </CardContent>
               </Card>
@@ -121,8 +122,8 @@ export default function FinalPage() {
                       <span className="text-secondary-400 mr-2">•</span>
                       <span>
                         <strong>The Great Rebellion:</strong> When Blues and
-                        Greens united shouting "Nika!" and nearly destroyed the
-                        empire
+                        Greens united shouting &quot;Nika!&quot; and nearly
+                        destroyed the empire
                       </span>
                     </li>
                   </ul>

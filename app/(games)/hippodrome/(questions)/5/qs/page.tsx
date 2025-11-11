@@ -291,7 +291,9 @@ export default function QuestionPage() {
                 Congratulations!
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>Correct answer! "Hamam" and "Haddehane".</p>
+                <p>
+                  Correct answer! &quot;Hamam&quot; and &quot;Haddehane&quot;.
+                </p>
                 <Card className="bg-primary-700 border-primary-500">
                   <CardContent className="p-4">
                     <p className="text-lg font-semibold text-center">

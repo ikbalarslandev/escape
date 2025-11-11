@@ -46,7 +46,7 @@ export default function InfoPage() {
                 This was very hard to do. Moving such a big and heavy stone was
                 almost impossible at that time. The emperor did this to show
                 everyone that he was the ruler of the whole world. The stone
-                says: "Look, my power is very big."
+                says: &quot;Look, my power is very big.&quot;
               </p>
 
               {/* Additional Historical Context */}
