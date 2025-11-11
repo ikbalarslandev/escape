@@ -7,9 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   FaCheckCircle,
   FaArrowRight,
-  FaHistory,
-  FaCrown,
-  FaExclamationTriangle,
+  FaFire,
+  FaUsers,
+  FaLandmark,
 } from "react-icons/fa";
 
 export default function InfoPage() {
@@ -28,7 +28,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You solved the last question!
+            You discovered the secrets of the Hippodrome walls!
           </p>
         </header>
 
@@ -38,29 +38,86 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <p className="text-base md:text-lg">
-                You've uncovered the story of the Nika Rebellion - the greatest
-                uprising in Byzantine history that shook Constantinople to its
-                core in 532 AD.
+                Look around you, these walls you see are the actual walls of the
+                ancient Hippodrome, standing strong for centuries. While most of
+                the structure is gone, these edges remain as silent witnesses to
+                history.
               </p>
 
               <p className="text-base md:text-lg">
-                The Hippodrome was not just a racing arena, but the political
-                heart where the "Blues" and "Greens" united against Emperor
-                Justinian with cries of "Nika!" meaning "Victory!"
+                The Hippodrome was not just an arena for chariot races. This was
+                the political heart of Constantinople, where emperors met with
+                the people, and citizens had their only chance to show the
+                emperor their satisfaction or discontent.
               </p>
 
-              {/* Additional Historical Context */}
+              {/* Teams and Colors */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <FaHistory className="mr-2" />
-                    Historical Significance
+                    <FaUsers className="mr-2" />
+                    Teams of the Races
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4 text-primary-100 text-sm md:text-base">
+                    <div>
+                      <h4 className="font-semibold text-blue-400 mb-1">
+                        Blue Team
+                      </h4>
+                      <p className="mb-3">
+                        Represented the aristocracy, supported orthodox
+                        Christianity, and were generally loyal to the emperor.
+                      </p>
+
+                      <h4 className="font-semibold text-green-400 mb-1">
+                        Green Team
+                      </h4>
+                      <p>
+                        Represented the merchant class and common people, often
+                        opposed imperial policies.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Nika Rebellion */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaFire className="mr-2" />
+                    The Nika Rebellion
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The Nika Rebellion resulted in approximately 30,000 deaths
-                    and nearly toppled the Byzantine Empire. The original Hagia
-                    Sophia was destroyed during the chaos, leading to the
-                    construction of the magnificent structure we know today.
+                    In 532 AD, something unprecedented happened. The Blues and
+                    Greens put aside their rivalry and united against Emperor
+                    Justinian. The Hippodrome echoed with cries of "Nika! Nika!
+                    Nika!" meaning "Conquer!" in Greek.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    This rebellion turned into one of the most violent uprisings
+                    in Byzantine history, resulting in widespread destruction
+                    across Constantinople.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Hagia Sophia Card */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaLandmark className="mr-2" />
+                    The Burning of Hagia Sophia
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    During the Nika Rebellion, one of the most significant
+                    casualties was the second Hagia Sophia. The magnificent
+                    church was burned to the ground in the chaos that consumed
+                    the city.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    From these ashes, Emperor Justinian would later build the
+                    even more magnificent Hagia Sophia that stands today. The
+                    Third Hagia Sophia
                   </p>
                 </CardContent>
               </Card>
@@ -74,7 +131,7 @@ export default function InfoPage() {
             onClick={() => router.push("/hippodrome/final")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            See Your Achievement
+            Continue to Final
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
@@ -82,8 +139,8 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            You have uncovered the final piece of history! Prepare to restore
-            the genius loci...
+            These walls witnessed empires rise and fall, and now they witness
+            your discovery...
           </p>
         </footer>
       </div>

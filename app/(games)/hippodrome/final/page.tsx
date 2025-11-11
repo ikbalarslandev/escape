@@ -23,7 +23,7 @@ export default function FinalPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You restored the Genius Loci of the Hippodrome!
+            You brought the soul back to the Hippodrome!
           </p>
         </header>
 
@@ -33,15 +33,13 @@ export default function FinalPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <p className="text-base md:text-lg">
-                You successfully created the genius loci of the Hippodrome. This
-                ancient place has its soul again just because of you,
-                adventurer.
+                You did it! You brought the spirit back to this ancient place.
+                The Hippodrome has its soul again because of you.
               </p>
 
               <p className="text-base md:text-lg">
-                The spirit of this legendary arena - where chariots thundered
-                and empires were decided - has been awakened from centuries of
-                slumber.
+                Now this place can remember its great past. The sounds of
+                chariot races and happy crowds can live here again.
               </p>
 
               {/* Genius Loci Explanation */}
@@ -49,13 +47,12 @@ export default function FinalPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <GiGreekTemple className="mr-2" />
-                    What is Genius Loci?
+                    What is "Genius Loci"?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    In ancient Roman belief, every place has a "genius loci" - a
-                    protective spirit that embodies its essence and memory.
-                    You've restored the Hippodrome's spirit, bringing back the
-                    echoes of ancient crowds and the thrill of chariot races.
+                    In old times, people believed every place has a special
+                    spirit. This spirit holds the memories and feelings of the
+                    place. You brought back the Hippodrome's spirit.
                   </p>
                 </CardContent>
               </Card>
@@ -65,14 +62,70 @@ export default function FinalPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaStar className="mr-2" />
-                    The Meaning of Nikapolis
+                    What Does "Nikapolis" Mean?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    "Nika" means "victory" in Ancient Greek, and "polis" means
-                    "city." Together, Nikapolis means "victorious city" -
-                    honoring the Nika Rebellion and using the language of the
-                    Eastern Roman Empire where this history unfolded.
+                    "Nika" is an old Greek word. It means "conquer" or "win".
+                    "Polis" means "city". So "Nikapolis" means "conquer the
+                    city".
                   </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    This name comes from the Nika Rebellion. People shouted
+                    "Nika! Nika! Nika!" when they tried to conquer the city. Now
+                    our company name remembers this history.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Achievement Summary */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    You Made History Live Again!
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Because of you, the Hippodrome remembers:
+                  </p>
+                  <ul className="text-primary-100 text-sm md:text-base mt-2 space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-secondary-400 mr-2">•</span>
+                      <span>
+                        <strong>Greek Unity:</strong> 31 city-states united
+                        against Persia, celebrating victory with the Serpent
+                        Column
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-secondary-400 mr-2">•</span>
+                      <span>
+                        <strong>Imperial Power:</strong> Theodosius brought an
+                        obelisk from Egypt to show Roman strength across
+                        continents
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-secondary-400 mr-2">•</span>
+                      <span>
+                        <strong>Ancient Engineering:</strong> Massive stones
+                        traveled from Egypt to Constantinople by river and sea
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-secondary-400 mr-2">•</span>
+                      <span>
+                        <strong>Political Voice:</strong> Common people and
+                        nobles used chariot races to speak to emperors
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-secondary-400 mr-2">•</span>
+                      <span>
+                        <strong>The Great Rebellion:</strong> When Blues and
+                        Greens united shouting "Nika!" and nearly destroyed the
+                        empire
+                      </span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
@@ -80,28 +133,33 @@ export default function FinalPage() {
         </Card>
 
         {/* Support Section */}
-        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
-          <CardContent className="p-6 md:p-8">
+        <Card className="border border-secondary-500/30 bg-gradient-to-br from-secondary-900/20 to-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-8">
             <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <FaCoffee className="h-8 w-8 text-secondary-400" />
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-secondary-400/20 rounded-full animate-ping"></div>
+                  <FaCoffee className="h-12 w-12 text-secondary-400 relative z-10" />
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Enjoyed Your Journey?
+              <h3 className="text-2xl font-serif font-bold text-white mb-4">
+                Keep History Alive!
               </h3>
-              <p className="text-primary-200 mb-4 text-sm md:text-base">
-                Support our mission to bring more historical locations back to
-                life!
+              <p className="text-primary-200 mb-6 text-lg leading-relaxed max-w-md mx-auto">
+                Your journey through time helps preserve these ancient stories.
+                Support our mission to bring more lost histories back to life.
               </p>
               <a
                 href="https://buymeacoffee.com/nikapolis.today"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 text-sm"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-secondary-400/30"
               >
-                <FaCoffee className="text-lg" />
-                Buy Me a Coffee
+                Support Our Journey
               </a>
+              <p className="text-primary-300 text-sm mt-4 italic">
+                Every coffee helps unlock another piece of history
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -112,7 +170,7 @@ export default function FinalPage() {
             onClick={() => router.push("/")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Start New Journey
+            Play Again
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
@@ -120,7 +178,7 @@ export default function FinalPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            In the footsteps of history, in the light of knowledge...
+            Walking through history, learning from the past...
           </p>
         </footer>
       </div>
