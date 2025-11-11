@@ -1,109 +1,70 @@
 "use client";
 
-import { GiStoneTablet } from "react-icons/gi";
-import { FaHorseHead } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 
 export default function InfoPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Congratulations!
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve won your second artifact
+        <header className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You freed Emperor Theodosius's spirit!
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-stone-600 to-stone-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <GiStoneTablet className="text-white text-3xl" />
-              </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Parchment
-              </h2>
-              <p className="text-gray-300">
-                The second piece in your journey to unravel ancient secrets
-              </p>
-            </div>
-
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
-            <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p>
-                Congratulations! Youve freed Theodosiuss spirit and solved the
-                ancient mystery. Youre currently at the very heart of the
-                Hippodrome. This massive obelisk beside you is not just a stone
-                block, but a silent witness to an impossible achievement and
-                absolute power.
+            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <p className="text-base md:text-lg">
+                Great job! You freed Theodosius's spirit and solved the ancient
+                mystery. You are now in the center of the Hippodrome. The big
+                stone beside you is not just a rock - it saw many amazing things
+                and shows great power.
               </p>
 
-              <p>
-                Emperor Theodosius I had this red granite slab removed from a
-                graveyard in Egypt, brought to Istanbul, and erected on the
-                spina of the Hippodrome.
+              <p className="text-base md:text-lg">
+                Emperor Theodosius took this red stone from Egypt. He brought it
+                to Istanbul and put it in the middle of the Hippodrome.
               </p>
 
-              <p>
-                This was an amazing engineering achievement. Back then, moving
-                such a huge and heavy single piece of stone was considered
-                nearly impossible. The great effort and cost were meant to show
-                everyone that the emperor was not just the ruler of Rome, but
-                the master of the whole world. &quot; Look, &quot; this stone
-                seemed to say, &quot; my power goes beyond time and space.
-                &quot;
+              <p className="text-base md:text-lg">
+                This was very hard to do. Moving such a big and heavy stone was
+                almost impossible at that time. The emperor did this to show
+                everyone that he was the ruler of the whole world. The stone
+                says: "Look, my power is very big."
               </p>
 
-              <p>
-                And it truly did. This monument, about 3,500 years old, is the
-                oldest structure in the Hippodrome. Because red granite is so
-                strong, the hieroglyphs on it are still as clear as the day they
-                were carved. It has witnessed Rome, Byzantium, and the Ottoman
-                Empire and it still stands here today, as magnificent as ever.
-              </p>
+              {/* Additional Historical Context */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Did you know?
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    This stone is about 3,500 years old. It is the oldest thing
+                    in the Hippodrome. Because the stone (red granit) is very
+                    strong, the pictures and writing on it are still clear. It
+                    saw the Roman Empire, the Byzantine Empire, and the Ottoman
+                    Empire. And it still stands here today, looking amazing.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Object Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Collected Artifacts
-            </h3>
-            <div className="flex justify-center gap-6">
-              {/* First Object - Miniature Horse */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-yellow-500 to-orange-900 border border-white rounded-2xl p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <FaHorseHead className="text-white text-4xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">
-                  Miniature Horse
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-2xl p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <GiStoneTablet className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Parchment</p>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              2 artifacts collected
-            </p>
           </CardContent>
         </Card>
 
@@ -111,16 +72,17 @@ export default function InfoPage() {
         <div className="text-center">
           <Button
             onClick={() => router.push("/hippodrome/3/location")}
-            className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question →
+            Next Question
+            <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">
-            Continue your journey in pursuit of ancient secrets...
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Continue your journey to find more ancient secrets...
           </p>
         </footer>
       </div>
