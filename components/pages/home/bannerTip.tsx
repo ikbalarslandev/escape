@@ -17,7 +17,7 @@ const BannerTipSection = () => {
             <div className="bg-primary-700/50 rounded-2xl p-8 border border-primary-600/50 backdrop-blur-sm">
               <p className="text-primary-200 text-lg lg:text-xl leading-relaxed mb-6">
                 <span className="text-secondary-400 font-semibold">
-                  yes, you heard right,{" "}
+                  Yes, you heard right,{" "}
                 </span>{" "}
                 our games are completely free! At the end of each adventure,
                 you&apos;ll find a link with tipping options. Your support helps
