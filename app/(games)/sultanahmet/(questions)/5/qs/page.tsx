@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -26,8 +27,7 @@ import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
 const formSchema = z.object({
-  answer1: z.string().min(1, "First answer cannot be empty"),
-  answer2: z.string().min(1, "Second answer cannot be empty"),
+  answer: z.string().min(1, "Answer cannot be empty"),
 });
 
 export default function QuestionPage() {
@@ -38,20 +38,19 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "Let the stopped water show you the writing. What are the two things that used to be on in the past";
+    "If I fall, I break. My inside is yellow and white. How many of me are here?";
 
   const hintData = [
-    "Carefully follow the stone wall of this ancient hippodrome. During your search, you'll encounter a structure where water should normally flow but is now silent and dry. This is your first stop.",
-    "Stop at this point where the water has been cut off. Right beside it, you'll see an official explanatory text that sheds light on the past. This text will give you the information you need to trace the lost pieces.",
-    "Read the information panel next to you carefully. The text mentions two large buildings that no longer exist but were once located here. The answer you're looking for is written there.",
+    "I'm still very small and I don't leave my nest much.",
+    "My mother is the largest bird in the world.",
+    "I love to shine brightly in the lights.",
   ];
 
   // Initialize form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      answer1: "",
-      answer2: "",
+      answer: "",
     },
   });
 
@@ -66,30 +65,17 @@ export default function QuestionPage() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    // Normalize the answers: lowercase and trim
-    const normalizedAnswer1 = values.answer1.toLowerCase().trim();
-    const normalizedAnswer2 = values.answer2.toLowerCase().trim();
+    // Normalize the answer: lowercase and trim
+    const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answers are correct (accepts different order)
-    const answers = [normalizedAnswer1, normalizedAnswer2];
-    const hasHamam =
-      answers.includes("hamam") ||
-      answers.includes("bath") ||
-      answers.includes("bathhouse");
-    const hasHaddehane =
-      answers.includes("haddehane") ||
-      answers.includes("rolling mill") ||
-      answers.includes("ironworks");
+    // Accept various forms of "28" answer
+    const correctAnswers = ["28"];
 
-    if (hasHamam && hasHaddehane) {
+    if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer1", {
-        type: "manual",
-        message: "Wrong answer! Please try again or use the hints.",
-      });
-      form.setError("answer2", {
+      form.setError("answer", {
         type: "manual",
         message: "Wrong answer! Please try again or use the hints.",
       });
@@ -130,68 +116,35 @@ export default function QuestionPage() {
           {/* Answer Form */}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* First Answer Input */}
-                <FormField
-                  control={form.control}
-                  name="answer1"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        1. Answer:
-                      </FormLabel>
-                      <FormControl>
+              <FormField
+                control={form.control}
+                name="answer"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-semibold text-white">
+                      Your Answer:
+                    </FormLabel>
+                    <FormControl>
+                      <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Enter first answer..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
+                          placeholder="Enter your answer here..."
+                          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-lg" />
-                    </FormItem>
-                  )}
-                />
-
-                {/* Second Answer Input */}
-                <FormField
-                  control={form.control}
-                  name="answer2"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        2. Answer:
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          placeholder="Enter second answer..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
+                        <Button
+                          type="submit"
                           disabled={isSubmitting}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-lg" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="text-center pt-4">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-12 rounded-full transition-all duration-300 flex items-center gap-2 mx-auto"
-                >
-                  {isSubmitting ? (
-                    "Checking..."
-                  ) : (
-                    <>
-                      <IoIosSend className="text-xl" />
-                      Submit
-                    </>
-                  )}
-                </Button>
-              </div>
+                          className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
+                        >
+                          {isSubmitting ? "Checking..." : <IoIosSend />}
+                        </Button>
+                      </div>
+                    </FormControl>
+                    <FormMessage className="text-red-300 text-lg" />
+                  </FormItem>
+                )}
+              />
             </form>
           </Form>
 
@@ -250,7 +203,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/5/location")}
+            onClick={() => router.push("/10/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -259,20 +212,18 @@ export default function QuestionPage() {
         </div>
 
         {/* Success Dialog */}
-        <Dialog open={isSuccess} onOpenChange={() => {}}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
+        <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Congratulations!
               </DialogTitle>
-              <div className="text-gray-200 text-lg mt-4 text-center">
-                <p>
-                  Correct answer! &quot;Hamam&quot; and &quot;Haddehane&quot;.
-                </p>
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
+                <p>Correct answer! There are 28.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    Redirecting in {countdown}...
+                    Redirecting in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
@@ -281,7 +232,7 @@ export default function QuestionPage() {
                     ></div>
                   </div>
                 </div>
-              </div>
+              </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>

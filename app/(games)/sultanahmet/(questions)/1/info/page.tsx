@@ -1,6 +1,8 @@
 "use client";
 
-import { FaHorseHead } from "react-icons/fa";
+import { GiStoneTablet, GiShakingHands } from "react-icons/gi";
+import { FaFire } from "react-icons/fa";
+import { PiMosqueLight } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,7 +19,7 @@ export default function InfoPage() {
             Congratulations!
           </h1>
           <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve earned your first object
+            Youve obtained a new artifact
           </p>
         </header>
 
@@ -25,64 +27,165 @@ export default function InfoPage() {
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FaHorseHead className="text-white text-3xl" />
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
+                <PiMosqueLight className="text-white text-3xl" />
               </div>
               <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Miniature Horse
+                Dome Miniature
               </h2>
               <p className="text-gray-300">
-                This is your first piece in creating the seals
+                Youve discovered a new piece of the story
               </p>
             </div>
 
             {/* Historical Info */}
             <div className="space-y-6 text-gray-200 font-light leading-relaxed">
               <p>
-                <strong className="text-white">
-                  Correct answer: Serpent Column
-                </strong>
-                . You are now right in the center of the Hippodrome. Imagine,
-                around you are massive stands and in the middle is the spina;
-                this entire area is about the size of 9 football fields!
+                Congratulations! The story behind this puzzle makes Hagia Sophia
+                even more special. After the old Hagia Sophia was burned and
+                destroyed in the Nika Rebellion, Emperor Justinian build the
+                most beautiful temple in the world.
               </p>
 
               <p>
-                Can you imagine that such a vast area was built to bring people
-                together, entertain them, and showcase the glory of the empire?
+                People once thought the Temple of Solomon in Jerusalem was the
+                greatest of all. But the Emperor built Hagia Sophia in only 5
+                years with thousands of workers. When he entered and saw the
+                bright light shining on the dome, he shouted, &quot;O Solomon, I
+                have passed you!&quot;
+              </p>
+
+              <p>
+                In memory of this victory, you have earned the &quot;Dome
+                Miniature&quot; artifact!
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Object Collection Card */}
+        {/* Seals Collection Card */}
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
           <CardContent className="p-6">
             <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Collected Objects
+              🏆 Seals
             </h3>
-            <div className="flex justify-center">
-              <div className="bg-gradient-to-br from-yellow-500 to-orange-900 border border-white rounded-2xl p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                <FaHorseHead className="text-white text-4xl" />
+            <div className="flex justify-center gap-6">
+              {/* Completed Seal - Unity Seal */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
+                    <GiShakingHands className="text-white text-5xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">Unity Seal</p>
+                <div className="flex justify-center mt-2">
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                    Completed
+                  </span>
+                </div>
               </div>
             </div>
-            <p className="text-center text-gray-300 mt-4">Miniature Horse</p>
+            <p className="text-center text-gray-400 text-sm mt-4">
+              1/3 seals completed
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Artifact Collection Card */}
+        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
+          <CardContent className="p-6">
+            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
+              📦 Current Artifacts
+            </h3>
+            <div className="flex justify-center gap-6 flex-wrap">
+              {/* Fire Artifact */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="bg-gradient-to-br from-red-600 to-orange-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                    <FaFire className="text-white text-3xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">Rebellion Fire</p>
+              </div>
+              {/* Parchment Artifact */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                    <GiStoneTablet className="text-white text-3xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">Parchment</p>
+              </div>
+              {/* New Dome Miniature Artifact */}
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <div className="bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
+                    <PiMosqueLight className="text-white text-3xl" />
+                  </div>
+                </div>
+                <p className="text-center text-gray-300 mt-4">Dome Miniature</p>
+              </div>
+            </div>
+            <p className="text-center text-gray-400 text-sm mt-4">
+              3/5 artifacts collected
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Progress Summary */}
+        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
+          <CardContent className="p-6">
+            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
+              📊 Progress Status
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+              <div>
+                <h4 className="text-lg font-bold text-white mb-2">Seals</h4>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-full bg-gray-700 rounded-full h-4">
+                    <div
+                      className="bg-purple-600 h-4 rounded-full transition-all duration-500"
+                      style={{ width: "33%" }}
+                    ></div>
+                  </div>
+                  <span className="text-white font-bold">1/3</span>
+                </div>
+                <p className="text-gray-300 text-sm mt-2">33% completed</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-white mb-2">Artifacts</h4>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-full bg-gray-700 rounded-full h-4">
+                    <div
+                      className="bg-orange-600 h-4 rounded-full transition-all duration-500"
+                      style={{ width: "60%" }}
+                    ></div>
+                  </div>
+                  <span className="text-white font-bold">3/5</span>
+                </div>
+                <p className="text-gray-300 text-sm mt-2">
+                  2 artifacts remaining
+                </p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/sultanahmet/review")}
+            onClick={() => router.push("/sultanahmet/2/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
-            Next Question →
+            Next Seal →
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Continue following the traces of history...</p>
+          <p className="italic">
+            Discover new artifacts to complete the remaining 2 seals...
+          </p>
         </footer>
       </div>
     </div>

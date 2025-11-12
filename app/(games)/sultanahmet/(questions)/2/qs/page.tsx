@@ -2,7 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,33 +22,37 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  FaLightbulb,
-  FaLock,
-  FaLockOpen,
-  FaCheckCircle,
-  FaTimesCircle,
-} from "react-icons/fa";
+import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
+
+// Form validation schema
+const formSchema = z.object({
+  answer: z.string().min(1, "Answer cannot be empty"),
+});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "I am Emperor Theodosius. My friends also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
+    'If Hagia Sophia is at 9 o\'clock direction, which direction are the "men in skirts" facing?';
 
   const hintData = [
-    "Look closely at all the statues on the four sides at the bottom of the obelisk. The ones who have the same missing part share the same fate.",
-    "Count the ones who have the same missing part as the emperor. Then you’ll know how many friends he has.",
-    "Count the hieroglyphs on the side where the emperor with the missing part is, from bottom to top, the same number as his friends. That’s how you’ll find the hieroglyph where the emperor’s soul is trapped.",
+    "The men in skirts are actually paintings.",
+    "These men don't mind getting wet at all",
+    "Position yourself where the men are located so that Hagia Sophia remains exactly at your 9 o'clock direction. From that point, find the direction the men in skirts are facing.",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  // Initialize form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      answer: "",
+    },
+  });
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -47,18 +62,29 @@ export default function QuestionPage() {
     }
   };
 
-  const handleOptionClick = (option: number) => {
-    setSelectedOption(option);
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
 
-    if (option === 6) {
+    // Normalize the answer: lowercase and trim
+    const normalizedAnswer = values.answer.toLowerCase().trim();
+
+    // Accept various forms of "10" answer
+    const correctAnswers = ["10", "ten"];
+
+    if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      setIsError(true);
+      form.setError("answer", {
+        type: "manual",
+        message: "Wrong answer! Please try again or use the hints.",
+      });
     }
+
+    setIsSubmitting(false);
   };
 
-  // Countdown effect for success
+  // Countdown effect
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -67,17 +93,17 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/2/info");
+      router.push("/sultanahmet/3/location");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Question 2
+            Question 7
           </h1>
         </header>
 
@@ -87,40 +113,42 @@ export default function QuestionPage() {
             {question}
           </p>
 
-          {/* Options Grid */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-white mb-6 text-center">
-              Select the correct hieroglyph:
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {options.map((option) => (
-                <div
-                  key={option}
-                  className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
-                    selectedOption === option
-                      ? option === 6
-                        ? "border-green-400 ring-2 ring-green-400"
-                        : "border-red-400 ring-2 ring-red-400"
-                      : "border-white/20 hover:border-white/40"
-                  }`}
-                  onClick={() => handleOptionClick(option)}
-                >
-                  <Image
-                    src={`/opt/2/${option}.jpg`}
-                    alt={`Hieroglyph ${option}`}
-                    fill
-                    className="object-contain bg-black/50 p-2"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    quality={100}
-                    unoptimized={true}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Answer Form */}
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="answer"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-semibold text-white">
+                      Your Answer:
+                    </FormLabel>
+                    <FormControl>
+                      <div className="flex gap-4">
+                        <Input
+                          {...field}
+                          placeholder="Enter your answer here..."
+                          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
+                          disabled={isSubmitting}
+                        />
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-6 px-8 transition-all duration-300"
+                        >
+                          {isSubmitting ? "Checking..." : <IoIosSend />}
+                        </Button>
+                      </div>
+                    </FormControl>
+                    <FormMessage className="text-red-300 text-lg" />
+                  </FormItem>
+                )}
+              />
+            </form>
+          </Form>
 
           <hr className="mt-12" />
-
           {/* Hints Section */}
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
@@ -166,8 +194,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              Hints open in order. You cannot open the next hint without seeing
-              the previous one.
+              Hints unlock sequentially. You cannot open the next hint without
+              seeing the previous one.
             </p>
           </div>
         </div>
@@ -175,7 +203,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/2/location")}
+            onClick={() => router.push("/7/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -183,52 +211,18 @@ export default function QuestionPage() {
           </Button>
         </div>
 
-        {/* Zoom Modal */}
-        <Dialog
-          open={zoomImage !== null}
-          onOpenChange={() => setZoomImage(null)}
-        >
-          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-4xl w-[90vw] h-[90vh]">
-            <DialogHeader>
-              <DialogTitle className="text-2xl text-white">
-                Hieroglyph {zoomImage} - Detailed View
-              </DialogTitle>
-            </DialogHeader>
-            <div className="relative w-full h-full flex items-center justify-center">
-              {zoomImage && (
-                <Image
-                  src={`/opt/2/${zoomImage}.jpg`}
-                  alt={`Hieroglyph ${zoomImage} - Detailed`}
-                  fill
-                  className="object-contain"
-                  quality={100}
-                  unoptimized={true}
-                />
-              )}
-            </div>
-            <div className="flex justify-center mt-4">
-              <Button
-                onClick={() => setZoomImage(null)}
-                className="bg-white/20 hover:bg-white/30 border-white/30 text-white"
-              >
-                Close
-              </Button>
-            </div>
-          </DialogContent>
-        </Dialog>
-
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white max-w-md">
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Congratulations!
               </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
                 <p>
-                  You found the correct hieroglyph! Emperor Theodosius soul is
-                  free.
+                  Correct answer! The &quot;men in skirts&quot; are facing 10
+                  oclock direction.
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
@@ -241,29 +235,6 @@ export default function QuestionPage() {
                     ></div>
                   </div>
                 </div>
-              </DialogDescription>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
-
-        {/* Error Dialog */}
-        <Dialog open={isError} onOpenChange={setIsError}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white">
-            <DialogHeader>
-              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
-                <FaTimesCircle className="mr-3" />
-                Wrong Choice!
-              </DialogTitle>
-              <DialogDescription className="text-gray-200 text-lg mt-4 text-center">
-                <p>
-                  This hieroglyph is not correct. Use the hints and try again.
-                </p>
-                <Button
-                  onClick={() => setIsError(false)}
-                  className="mt-4 bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-2 px-6"
-                >
-                  Try Again
-                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>

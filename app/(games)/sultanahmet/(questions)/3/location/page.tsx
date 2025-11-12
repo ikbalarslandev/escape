@@ -14,9 +14,6 @@ export default function LocationPage() {
           <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
             Location
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youre in the right place for the third question
-          </p>
         </header>
 
         {/* Location Content */}
@@ -25,8 +22,8 @@ export default function LocationPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/3.jpg"
-                alt="Serpent Column"
+                src="/q_imgs/7.jpg"
+                alt="Sultanahmet Mosque"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -41,23 +38,19 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                SERPENT COLUMN
+                BLUE MOSQUE
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Go to the Serpent Column for the next question.
+              Look at the Blue Mosque from Sultanahmet Park where you are
+              located.
             </p>
           </div>
 
-          <Link
-            href="https://maps.app.goo.gl/bcVZfK6fvjyTVtub8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
-          >
+          <div className="inline-flex items-center bg-white/20 text-white font-semibold py-3 px-6 rounded-full border border-white/30 opacity-75 cursor-not-allowed">
             <FaMapMarkerAlt className="mr-2" />
-            Open in Google Maps
-          </Link>
+            You Are Already Here
+          </div>
         </div>
 
         <Link
@@ -69,7 +62,7 @@ export default function LocationPage() {
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Progress by feeling the history...</p>
+          <p className="italic">Follow the traces of history...</p>
         </footer>
       </div>
     </div>

@@ -22,8 +22,8 @@ export default function LocationPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/6.jpg"
-                alt="Hagia Sophia"
+                src="/q_imgs/11/avlu.jpeg"
+                alt="Sultanahmet Mosque Courtyard"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -38,20 +38,34 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                HAGIA SOPHIA
+                BLUE MOSQUE COURTYARD EXIT
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Now, we are going to Hagia Sophia. This amazing building was made
-              by the Byzantine Empire. It was built after the old church was
-              destroyed in the Nika Revolt. They finished it in only 5 years,
-              and it stayed the biggest church in the world for almost 1000
-              years.
+              For the next question, we need to exit from the Sultanahmet Mosque
+              courtyard through the exit in the direction of the arrow and go
+              under the Arabic writing shown in the photo. While you are
+              standing under the arabic writing look at the garden. the question
+              is in the garden
             </p>
           </div>
 
+          {/* Image Section */}
+          <div className="mb-8">
+            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/q_imgs/11/door.jpeg"
+                alt="Sultanahmet Mosque Courtyard Exit"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+          </div>
+
           <Link
-            href="https://maps.app.goo.gl/Xe4H5HjWF9MoEXzw8"
+            href="https://maps.app.goo.gl/Csu2heRUGVN4aHzr9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"

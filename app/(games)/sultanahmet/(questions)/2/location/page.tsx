@@ -22,8 +22,8 @@ export default function LocationPage() {
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/2.jpg"
-                alt="Obelisk of Theodosius"
+                src="/q_imgs/7.jpg"
+                alt="Sultanahmet Park"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -38,16 +38,16 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                OBELISK OF THEODOSIUS
+                SULTANAHMET PARK
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              Go to the Obelisk of Theodosius for the next question.
+              For the next question, we need to go to Sultanahmet Park.
             </p>
           </div>
 
           <Link
-            href="https://maps.app.goo.gl/WQVb6XmVAej7f4fTA"
+            href="https://maps.app.goo.gl/Csu2heRUGVN4aHzr9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -66,7 +66,7 @@ export default function LocationPage() {
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Progress by feeling the history...</p>
+          <p className="italic">Follow the traces of history...</p>
         </footer>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 
 export default function LocationPage() {
   return (
-    <div className="min-h-screen text-gray-100 p-2">
+    <div className="min-h-screen text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
@@ -14,19 +14,16 @@ export default function LocationPage() {
           <h1 className="text-2xl md:text-6xl font-serif font-bold mb-4 text-orange-300 tracking-wider">
             Location
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youre in the right place for the first question
-          </p>
         </header>
 
         {/* Location Content */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
           {/* Image Section */}
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/q_imgs/1.jpg"
-                alt="German Fountain"
+                src="/q_imgs/6.jpg"
+                alt="Hagia Sophia"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -41,32 +38,20 @@ export default function LocationPage() {
               <div className="w-1 h-12 bg-gradient-to-b from-white to-gray-300 mr-4"></div>
               <h2 className="text-2xl font-serif font-bold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-3" />
-                GERMAN FOUNTAIN
+                HAGIA SOPHIA
               </h2>
             </div>
             <p className="text-lg text-gray-200 font-light leading-relaxed">
-              The German Fountain marks where the ancient hippodrome began. If
-              you look carefully, you can see the spina, the monumental line in
-              the middle, from here.
+              Now, we are going to Hagia Sophia. This amazing building was made
+              by the Byzantine Empire. It was built after the old church was
+              destroyed in the Nika Revolt. They finished it in only 5 years,
+              and it stayed the biggest church in the world for almost 1000
+              years.
             </p>
           </div>
 
-          {/* Image Section */}
-          <div className="mb-8">
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/q_imgs/spina.jpeg"
-                alt="spina"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-              />
-            </div>
-          </div>
-
           <Link
-            href="https://maps.app.goo.gl/LKExaiWipFzrefmeA"
+            href="https://maps.app.goo.gl/Xe4H5HjWF9MoEXzw8"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
@@ -85,7 +70,7 @@ export default function LocationPage() {
 
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">Progress by feeling the history...</p>
+          <p className="italic">Follow the traces of history...</p>
         </footer>
       </div>
     </div>

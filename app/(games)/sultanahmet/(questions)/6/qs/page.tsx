@@ -22,11 +22,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
@@ -41,15 +36,14 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [isMinaretInfoOpen, setIsMinaretInfoOpen] = useState(false);
 
   const question =
-    "There are three spears without heads. How many minarets do they see on Hagia Sophia before they die?";
+    "Three nations came together to show that God is the greatest. For this unity, one nation among us sacrificed its soldiers. How many soldiers did this nation sacrifice?";
 
   const hintData = [
-    "Look carefully at the iron railings. Three of the spearhead shaped ones are missing their heads.",
-    "These headless spears point is the correct spot from which you should look at Hagia Sophia.",
-    "From the correct spot, how many minarets do you see when you look at Hagia Sophia?",
+    "These three nations are quite tall",
+    "These nations are made of metal and are quite durable.",
+    "Tall people might bump their heads when passing under these nations.",
   ];
 
   // Initialize form
@@ -74,8 +68,10 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answer is correct (accept both "2" and "two")
-    if (normalizedAnswer === "2" || normalizedAnswer === "two") {
+    // Accept various forms of "6" answer
+    const correctAnswers = ["6", "six"];
+
+    if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -117,54 +113,6 @@ export default function QuestionPage() {
             {question}
           </p>
 
-          {/* Minaret Information Dropdown */}
-          <Collapsible
-            open={isMinaretInfoOpen}
-            onOpenChange={setIsMinaretInfoOpen}
-            className="mb-6"
-          >
-            <CollapsibleTrigger asChild>
-              <Button
-                variant="outline"
-                className="w-full bg-white/10 hover:bg-white/20 border-white/20 text-white flex justify-between items-center py-3 px-4"
-              >
-                <span className="font-semibold">What is a Minaret?</span>
-              </Button>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 bg-white/5 rounded-lg p-4 border border-white/20">
-              <div className="space-y-3 text-gray-200">
-                <p>
-                  <strong>Minaret</strong> is a tall tower located next to
-                  mosques.
-                </p>
-
-                <p>
-                  It typically has one or more balconies. People climb up to
-                  these balconies to announce the prayer times to the public.
-                </p>
-
-                <div className="bg-white/10 rounded-lg p-3 mt-2">
-                  <p className="text-sm">
-                    <strong>How does it work?</strong>
-                  </p>
-                  <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
-                    <li>
-                      When prayer time arrives, someone climbs to the minarets
-                      balcony
-                    </li>
-                    <li>
-                      They sing the a special song which is call to prayer
-                      (adhan) loudly
-                    </li>
-                    <li>
-                      This call informs people that the prayer time has come
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
-
           {/* Answer Form */}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -174,13 +122,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Your Answer:
+                      Number of soldiers sacrificed:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Enter your answer here..."
+                          placeholder="Number of soldiers..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -255,7 +203,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/6/location")}
+            onClick={() => router.push("/11/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -272,7 +220,7 @@ export default function QuestionPage() {
                 Congratulations!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Correct answer! You found &quot;2&quot; minarets.</p>
+                <p>Correct answer! &quot;6&quot; Soldiers.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
                     Redirecting in {countdown} seconds...

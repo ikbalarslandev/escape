@@ -22,7 +22,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
+import {
+  FaLightbulb,
+  FaLock,
+  FaLockOpen,
+  FaCheckCircle,
+  FaVolumeUp,
+} from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
@@ -30,20 +36,38 @@ const formSchema = z.object({
   answer: z.string().min(1, "Answer cannot be empty"),
 });
 
-export default function QuestionPage() {
+export default function FinalQuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [countdown, setCountdown] = useState(4);
+  const [countdown, setCountdown] = useState(5);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playAudio = (audioFile: string) => {
+    if (isPlaying) return; // Prevent playing if already playing
+
+    setIsPlaying(true);
+    const audio = new Audio(audioFile);
+
+    audio.play().catch((error) => {
+      console.log("Audio file could not be played:", error);
+      setIsPlaying(false);
+    });
+
+    // Reset isPlaying when audio ends
+    audio.onended = () => {
+      setIsPlaying(false);
+    };
+  };
 
   const question =
-    'If Hagia Sophia is at 9 o\'clock direction, which direction are the "men in skirts" facing?';
+    "Let the king guide you. The first audio file taught you the code for the letter 'R'. Now listen to the second audio file and find the encrypted word.";
 
   const hintData = [
-    "The men in skirts are actually paintings.",
-    "These men don't mind getting wet at all",
-    "Position yourself where the men are located so that Hagia Sophia remains exactly at your 9 o'clock direction. From that point, find the direction the men in skirts are facing.",
+    "The German King left a message on a metal sign. This message will help you find the secret word.",
+    "Listen carefully to the first audio file. It shows you the position of the 'R' letter and the confirmation sound that appears when you find the letter.",
+    "After finding each letter, a specific sound is made. Focus on this to determine how many letters are in the word.",
   ];
 
   // Initialize form
@@ -65,15 +89,15 @@ export default function QuestionPage() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
+    // Normalize the answer: uppercase and trim
+    const normalizedAnswer = values.answer.toUpperCase().trim();
 
-    // Accept various forms of "10" answer
-    const correctAnswers = ["10", "ten"];
+    // Accept various forms of "BIR" answer
+    const correctAnswers = ["BIR", "BİR", "BIR ", "BİR "];
 
     if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
-      setCountdown(4);
+      setCountdown(5);
     } else {
       form.setError("answer", {
         type: "manual",
@@ -93,7 +117,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/8/location");
+      router.push("/sultanahmet/7/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -103,8 +127,11 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Question 7
+            Final Question
           </h1>
+          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
+            Time to activate all seals
+          </p>
         </header>
 
         {/* Question Card */}
@@ -112,6 +139,34 @@ export default function QuestionPage() {
           <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
             {question}
           </p>
+
+          {/* Audio Files Section */}
+          <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/20">
+            <h3 className="text-xl font-serif font-bold text-white mb-4 flex items-center">
+              <FaVolumeUp className="mr-3 text-blue-400" />
+              AUDIO FILES
+            </h3>
+            <div className="flex gap-4 flex-wrap">
+              <Button
+                disabled={isPlaying}
+                onClick={() => playAudio("/opt/12/Letter (R).mp3")}
+                className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
+              >
+                <FaVolumeUp className="mr-2" />R Letter Sound
+              </Button>
+              <Button
+                disabled={isPlaying}
+                onClick={() => playAudio("/opt/12/Word (BIR).mp3")}
+                className="bg-green-500/20 hover:bg-green-500/30 border-green-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
+              >
+                <FaVolumeUp className="mr-2" />
+                Word Sound
+              </Button>
+            </div>
+            <p className="text-gray-400 text-sm mt-3 italic">
+              Listen to the audio files carefully and decode the password
+            </p>
+          </div>
 
           {/* Answer Form */}
           <Form {...form}>
@@ -122,13 +177,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Your Answer:
+                      Encrypted Word:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Enter your answer here..."
+                          placeholder="Enter the word here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -148,7 +203,6 @@ export default function QuestionPage() {
             </form>
           </Form>
 
-          <hr className="mt-12" />
           {/* Hints Section */}
           <div className="bg-white/5 rounded-xl p-6 border border-white/20 mt-8">
             <h3 className="text-xl font-serif font-bold text-white mb-6 flex items-center">
@@ -203,7 +257,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/7/location")}
+            onClick={() => router.push("/final-location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -217,21 +271,21 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Congratulations!
+                Great Success!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>
-                  Correct answer! The &quot;men in skirts&quot; are facing 10
-                  oclock direction.
+                <p>Congratulations! You have activated all seals!</p>
+                <p className="mt-2">
+                  Code: <strong>BIR</strong>
                 </p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    Redirecting in {countdown} seconds...
+                    Redirecting to results page in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
                       className="bg-green-400 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${(countdown / 4) * 100}%` }}
+                      style={{ width: `${(countdown / 5) * 100}%` }}
                     ></div>
                   </div>
                 </div>

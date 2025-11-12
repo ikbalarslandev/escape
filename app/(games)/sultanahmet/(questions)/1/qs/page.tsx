@@ -22,6 +22,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
@@ -36,15 +41,15 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [showSpinaInfo, setShowSpinaInfo] = useState(false);
+  const [isMinaretInfoOpen, setIsMinaretInfoOpen] = useState(false);
 
   const question =
-    "The spina is my home. I am getting light from three different directions at night. I sit on the heads of three animals. What am I?";
+    "There are three spears without heads. How many minarets do they see on Hagia Sophia before they die?";
 
   const hintData = [
-    "These 3 animals are all snakes.",
-    "The snakes are no longer there",
-    "I am 5.5 meters tall",
+    "Look carefully at the iron railings. Three of the spearhead shaped ones are missing their heads.",
+    "These headless spears point is the correct spot from which you should look at Hagia Sophia.",
+    "From the correct spot, how many minarets do you see when you look at Hagia Sophia?",
   ];
 
   // Initialize form
@@ -69,8 +74,8 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answer is correct
-    if (normalizedAnswer === "gold boiler") {
+    // Check if answer is correct (accept both "2" and "two")
+    if (normalizedAnswer === "2" || normalizedAnswer === "two") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -112,15 +117,53 @@ export default function QuestionPage() {
             {question}
           </p>
 
-          {/* Spina Info Button */}
-          <div className="mb-6">
-            <Button
-              onClick={() => setShowSpinaInfo(true)}
-              className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/30 text-white font-bold py-3 px-6 transition-all duration-300"
-            >
-              What is Spina?
-            </Button>
-          </div>
+          {/* Minaret Information Dropdown */}
+          <Collapsible
+            open={isMinaretInfoOpen}
+            onOpenChange={setIsMinaretInfoOpen}
+            className="mb-6"
+          >
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="outline"
+                className="w-full bg-white/10 hover:bg-white/20 border-white/20 text-white flex justify-between items-center py-3 px-4"
+              >
+                <span className="font-semibold">What is a Minaret?</span>
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-4 bg-white/5 rounded-lg p-4 border border-white/20">
+              <div className="space-y-3 text-gray-200">
+                <p>
+                  <strong>Minaret</strong> is a tall tower located next to
+                  mosques.
+                </p>
+
+                <p>
+                  It typically has one or more balconies. People climb up to
+                  these balconies to announce the prayer times to the public.
+                </p>
+
+                <div className="bg-white/10 rounded-lg p-3 mt-2">
+                  <p className="text-sm">
+                    <strong>How does it work?</strong>
+                  </p>
+                  <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
+                    <li>
+                      When prayer time arrives, someone climbs to the minarets
+                      balcony
+                    </li>
+                    <li>
+                      They sing the a special song which is call to prayer
+                      (adhan) loudly
+                    </li>
+                    <li>
+                      This call informs people that the prayer time has come
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
 
           {/* Answer Form */}
           <Form {...form}>
@@ -137,7 +180,7 @@ export default function QuestionPage() {
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Write your answer here..."
+                          placeholder="Enter your answer here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -203,8 +246,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-gray-400 text-sm mt-4 italic">
-              Hints open in order. You cannot open the next hint without seeing
-              the previous one.
+              Hints unlock sequentially. You cannot open the next hint without
+              seeing the previous one.
             </p>
           </div>
         </div>
@@ -212,7 +255,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/sultanahmet/1/location")}
+            onClick={() => router.push("/6/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -222,72 +265,24 @@ export default function QuestionPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white">
+          <DialogContent className="bg-gray-800 border-white/20 text-white ">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-green-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Congratulations!
               </DialogTitle>
-              <DialogDescription asChild>
-                <div className="text-gray-200 text-lg mt-4 text-center">
-                  <p>
-                    Correct answer! You found the &quot;Serpent Column&quot;.
+              <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
+                <p>Correct answer! You found &quot;2&quot; minarets.</p>
+                <div className="mt-4 p-4 bg-white/10 rounded-lg">
+                  <p className="text-lg font-semibold">
+                    Redirecting in {countdown} seconds...
                   </p>
-                  <div className="mt-4 p-4 bg-white/10 rounded-lg">
-                    <p className="text-lg font-semibold">
-                      Redirecting in {countdown} seconds...
-                    </p>
-                    <div className="w-full bg-white/20 rounded-full h-2 mt-2">
-                      <div
-                        className="bg-green-400 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${(countdown / 4) * 100}%` }}
-                      ></div>
-                    </div>
+                  <div className="w-full bg-white/20 rounded-full h-2 mt-2">
+                    <div
+                      className="bg-green-400 h-2 rounded-full transition-all duration-1000"
+                      style={{ width: `${(countdown / 4) * 100}%` }}
+                    ></div>
                   </div>
-                </div>
-              </DialogDescription>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
-
-        {/* Spina Info Dialog */}
-        <Dialog open={showSpinaInfo} onOpenChange={setShowSpinaInfo}>
-          <DialogContent className="bg-gray-800 border-white/20 text-white ">
-            <DialogHeader>
-              <DialogTitle className="text-2xl flex items-center text-blue-400 justify-center">
-                What is Spina?
-              </DialogTitle>
-              <DialogDescription asChild>
-                <div className="text-gray-200 text-lg mt-4 space-y-4">
-                  <p>
-                    Spina is a line which has towers on it. It is located in the
-                    middle of the hippodrome.
-                  </p>
-                  <p>
-                    In horse races, horses were running around it. There used to
-                    be many things on the spina, but only 3 of them lasted until
-                    today.
-                  </p>
-                  <div className="bg-white/10 p-4 rounded-lg mt-4">
-                    <img
-                      src="/q_imgs/1/spina.png"
-                      alt="Spina with towers"
-                      className="w-full h-auto rounded-lg"
-                    />
-                    <p className="text-gray-400 text-sm mt-2 text-center">
-                      The spina with its towers in the middle of hippodrome
-                    </p>
-                  </div>
-                  <p>
-                    If you look at the area today, you can still see these 3
-                    towers on the spina. In the question, it says &quot;spina is
-                    my home&quot; - this means the answer is on one of these 3
-                    towers.
-                  </p>
-                  <p className="font-semibold text-blue-300">
-                    Check each of the 3 towers carefully to find the correct
-                    one!
-                  </p>
                 </div>
               </DialogDescription>
             </DialogHeader>

@@ -38,12 +38,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "I am the Walled Obelisk. My favorite soldier is hurt. People who has two wheels, when they look from beside the three flowers, how many healthy soldiers will they see?";
+    "My soldiers have no corners and they protect me from inside. However, some of them betrayed me. But with the help of time, you can see my loyal soldiers. How many loyal soldiers do I have left?";
 
   const hintData = [
-    "I am a historical building. I have soldiers to protect me from damage by tourists. Can you find the one that is injured?",
-    "Two wheels means a modern, human-powered vehicle. Stand where it’s parked to get the best view.",
-    "Three metal flowers show the exact spot where you should stand.",
+    "You need to find a geometric shape without corners, this represents the soldier.",
+    "Find a device that shows you the time.",
+    "The color shown by time is the color of the loyal ones.",
   ];
 
   // Initialize form
@@ -68,8 +68,10 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answer is correct (accepts both "9" and "nine")
-    if (normalizedAnswer === "9" || normalizedAnswer === "nine") {
+    // Accept various forms of "8" answer
+    const correctAnswers = ["8", "eight", "eight soldiers", "8 soldiers"];
+
+    if (correctAnswers.includes(normalizedAnswer)) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -91,7 +93,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/4/info");
+      router.push("/sultanahmet/5/location");
     }
   }, [isSuccess, countdown, router]);
 
@@ -101,7 +103,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Question 4
+            Question 9
           </h1>
         </header>
 
@@ -120,13 +122,13 @@ export default function QuestionPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-semibold text-white">
-                      Number of healthy soldiers:
+                      Your Answer:
                     </FormLabel>
                     <FormControl>
                       <div className="flex gap-4">
                         <Input
                           {...field}
-                          placeholder="Enter the number here..."
+                          placeholder="Enter your answer here..."
                           className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400 text-lg py-6 px-4 focus:border-white/40"
                           disabled={isSubmitting}
                         />
@@ -201,7 +203,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/4/location")}
+            onClick={() => router.push("/9/location")}
             variant="outline"
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold py-3 px-8"
           >
@@ -218,10 +220,10 @@ export default function QuestionPage() {
                 Congratulations!
               </DialogTitle>
               <DialogDescription className="text-gray-200 text-lg mt-4 text-center ">
-                <p>Correct answer! &quot;9&quot; healthy soldiers remain.</p>
+                <p>Correct answer! 8 loyal soldiers remain.</p>
                 <div className="mt-4 p-4 bg-white/10 rounded-lg">
                   <p className="text-lg font-semibold">
-                    Redirecting in {countdown}...
+                    Redirecting in {countdown} seconds...
                   </p>
                   <div className="w-full bg-white/20 rounded-full h-2 mt-2">
                     <div
