@@ -1,172 +1,110 @@
 "use client";
 
-import { GiStoneTablet, GiShakingHands } from "react-icons/gi";
-import { FaFire } from "react-icons/fa";
-import { PiMosqueLight } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaCheckCircle, FaArrowRight, FaHistory } from "react-icons/fa";
 
 export default function InfoPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Congratulations!
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve obtained a new artifact
+        <header className="text-center mb-8 md:mb-12">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You&apos;ve unlocked the mystery behind the puzzle — now it&apos;s
+            time to learn the story behind these stones.
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <PiMosqueLight className="text-white text-3xl" />
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
+            {/* Historical Story */}
+            <div className="space-y-6 text-primary-200 leading-relaxed">
+              <div className="flex items-center mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
+                  <FaHistory className="mr-2 text-secondary-400" />
+                  The Story of Hagia Sophia
+                </h2>
               </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Dome Miniature
-              </h2>
-              <p className="text-gray-300">
-                Youve discovered a new piece of the story
-              </p>
-            </div>
 
-            {/* Historical Info */}
-            <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p>
-                Congratulations! The story behind this puzzle makes Hagia Sophia
-                even more special. After the old Hagia Sophia was burned and
-                destroyed in the Nika Rebellion, Emperor Justinian build the
-                most beautiful temple in the world.
+              <p className="text-base md:text-lg">
+                The story of Hagia Sophia is not just about a building —
+                it&apos;s about an emperor&apos;s pride and ambition.
               </p>
 
-              <p>
-                People once thought the Temple of Solomon in Jerusalem was the
-                greatest of all. But the Emperor built Hagia Sophia in only 5
-                years with thousands of workers. When he entered and saw the
-                bright light shining on the dome, he shouted, &quot;O Solomon, I
-                have passed you!&quot;
+              <p className="text-base md:text-lg">
+                In <strong className="text-white">532 AD</strong>, one of the
+                bloodiest events in Istanbul&apos;s history happened — the{" "}
+                <strong className="text-secondary-400">Nika Revolt</strong>.
+                People were tired of taxes and the emperor&apos;s harsh rule.
+                After days of rebellion, the city was set on fire; palaces,
+                churches, and the original Hagia Sophia were completely burned
+                and destroyed.
               </p>
 
-              <p>
-                In memory of this victory, you have earned the &quot;Dome
-                Miniature&quot; artifact!
+              <p className="text-base md:text-lg">
+                Emperor <strong className="text-white">Justinian I</strong>{" "}
+                swore to build a new Hagia Sophia from the ashes — but this time
+                it wouldn&apos;t just be a church, it would be a masterpiece
+                that challenged the world.
               </p>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Seals Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Seals
-            </h3>
-            <div className="flex justify-center gap-6">
-              {/* Completed Seal - Unity Seal */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
-                    <GiShakingHands className="text-white text-5xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Unity Seal</p>
-                <div className="flex justify-center mt-2">
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Completed
-                  </span>
-                </div>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              1/3 seals completed
-            </p>
-          </CardContent>
-        </Card>
+              {/* Solomon&apos;s Temple Info */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Why Solomon&apos;s Temple Was Important
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    His goal was to surpass the{" "}
+                    <strong className="text-white">Temple of Solomon</strong> in
+                    Jerusalem.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    In Jewish belief, this was God&apos;s house on Earth — in
+                    the &quot;Holy of Holies,&quot; God&apos;s presence was
+                    closest to humanity. For centuries, when people spoke of
+                    &quot;God&apos;s House,&quot; they meant Solomon&apos;s
+                    Temple.
+                  </p>
+                </CardContent>
+              </Card>
 
-        {/* Artifact Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📦 Current Artifacts
-            </h3>
-            <div className="flex justify-center gap-6 flex-wrap">
-              {/* Fire Artifact */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-red-600 to-orange-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <FaFire className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Rebellion Fire</p>
-              </div>
-              {/* Parchment Artifact */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-stone-400 to-stone-800 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <GiStoneTablet className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Parchment</p>
-              </div>
-              {/* New Dome Miniature Artifact */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-blue-600 to-purple-900 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <PiMosqueLight className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Dome Miniature</p>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              3/5 artifacts collected
-            </p>
-          </CardContent>
-        </Card>
+              <p className="text-base md:text-lg">
+                Justinian wanted to beat this holy symbol. With thousands of
+                craftsmen, architects, and workers, he completed Hagia Sophia in
+                just <strong className="text-white">five years</strong>.
+              </p>
 
-        {/* Progress Summary */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📊 Progress Status
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">Seals</h4>
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="w-full bg-gray-700 rounded-full h-4">
-                    <div
-                      className="bg-purple-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "33%" }}
-                    ></div>
-                  </div>
-                  <span className="text-white font-bold">1/3</span>
-                </div>
-                <p className="text-gray-300 text-sm mt-2">33% completed</p>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">Artifacts</h4>
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="w-full bg-gray-700 rounded-full h-4">
-                    <div
-                      className="bg-orange-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "60%" }}
-                    ></div>
-                  </div>
-                  <span className="text-white font-bold">3/5</span>
-                </div>
-                <p className="text-gray-300 text-sm mt-2">
-                  2 artifacts remaining
+              <div className="bg-secondary-400/20 border-l-4 border-secondary-400 p-4 rounded-r-lg">
+                <p className="text-base md:text-lg italic text-white">
+                  &quot;On opening day, when he entered under the dome and saw
+                  the light shining down like from heaven, he shouted these
+                  words that would go down in history:&quot;
+                </p>
+                <p className="text-xl md:text-2xl font-semibold text-secondary-400 text-center mt-3">
+                  &quot;Oh Solomon, I have surpassed you!&quot;
                 </p>
               </div>
+
+              <p className="text-base md:text-lg">
+                That moment marked not just the birth of a building, but also a
+                struggle for religious superiority. Hagia Sophia became a
+                declaration made of stone, light, and pride — a monument where
+                an emperor spoke not to God, but to history itself.
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -174,17 +112,18 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/seventh-minaret/2/location")}
-            className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
+            onClick={() => router.push("/seventh-minaret/review")}
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Seal →
+            Continue Journey
+            <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">
-            Discover new artifacts to complete the remaining 2 seals...
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Continue following the traces of history...
           </p>
         </footer>
       </div>
