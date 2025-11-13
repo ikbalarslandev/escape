@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "İstanbul'un Kayıp Mühürleri",
-  description: "Şehrin kaderi sizin ellerinizde...",
+  title: "Nikapolis",
+  description: "Discover the history in a fun way",
 };
 
 export default function RootLayout({

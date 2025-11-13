@@ -24,7 +24,7 @@ const GameCardsSection = () => {
     },
     {
       id: 2,
-      title: "Hipodrome",
+      title: "Seventh Minaret",
       difficulty: 7,
       playTime: "2 hours",
       kilometers: 1.8,
