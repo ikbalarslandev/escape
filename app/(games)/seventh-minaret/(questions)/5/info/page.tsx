@@ -9,7 +9,7 @@ export default function InfoPage() {
   const router = useRouter();
 
   const handleProceed = () => {
-    router.push("/sultanahmet/6/location");
+    router.push("/seventh-minaret/6/location");
   };
 
   return (

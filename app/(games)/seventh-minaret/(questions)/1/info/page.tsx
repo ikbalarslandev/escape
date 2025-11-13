@@ -174,7 +174,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/sultanahmet/2/location")}
+            onClick={() => router.push("/seventh-minaret/2/location")}
             className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
           >
             Next Seal →

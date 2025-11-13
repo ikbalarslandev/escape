@@ -97,7 +97,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/1/info");
+      router.push("/seventh-minaret/1/info");
     }
   }, [isSuccess, countdown, router]);
 

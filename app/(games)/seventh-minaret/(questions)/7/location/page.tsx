@@ -58,7 +58,7 @@ export default function LocationPage() {
         </div>
 
         <Link
-          href="/sultanahmet/7/qs"
+          href="/seventh-minaret/7/qs"
           className="bg-white/20 hover:bg-white/30 text-white font-serif font-bold py-3 px-8 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 flex justify-center items-center"
         >
           Go to Final Question <FaArrowRight className="ml-2" />

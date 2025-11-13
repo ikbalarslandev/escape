@@ -117,7 +117,7 @@ export default function FinalQuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/sultanahmet/7/info");
+      router.push("/seventh-minaret/7/info");
     }
   }, [isSuccess, countdown, router]);
 

@@ -82,7 +82,7 @@ export default function IntroPage() {
         {/* Action Button */}
         <div className="text-center">
           {true ? (
-            <Link href="/sultanahmet/1/location">
+            <Link href="/seventh-minaret/1/location">
               <div className="inline-block bg-white/20 hover:bg-white/30 text-white font-serif font-bold text-xl py-4 px-12 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50 cursor-pointer hover:scale-105 transform">
                 START THE ADVENTURE!
               </div>
