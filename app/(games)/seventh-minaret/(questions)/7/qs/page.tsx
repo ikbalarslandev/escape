@@ -28,7 +28,6 @@ import {
   FaLock,
   FaLockOpen,
   FaCheckCircle,
-  FaArrowRight,
   FaVolumeUp,
 } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";

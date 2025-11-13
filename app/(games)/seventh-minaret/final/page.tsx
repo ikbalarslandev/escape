@@ -90,8 +90,8 @@ export default function FinalPage() {
                   The Final Truth
                 </p>
                 <p className="text-primary-200 text-lg">
-                  Remember: It's not about which building is greater. It's about
-                  the balance between them.
+                  Remember: It&apos;s not about which building is greater.
+                  It&apos;s about the balance between them.
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export default function FinalPage() {
                     <li className="flex items-start">
                       <span className="text-secondary-400 mr-2">•</span>
                       <span>
-                        <strong>The Sultan's Chain:</strong> A symbol of
+                        <strong>The Sultan&apos;s Chain:</strong> A symbol of
                         humility where even emperors must bow before God
                       </span>
                     </li>

@@ -98,9 +98,9 @@ export default function InfoPage() {
 
               <p className="text-base md:text-lg">
                 All seven riddles you solved were steps toward understanding
-                this hidden balance. You've uncovered how pride and humility,
-                tradition and innovation, faith and power lived together in this
-                city.
+                this hidden balance. You&apos;ve uncovered how pride and
+                humility, tradition and innovation, faith and power lived
+                together in this city.
               </p>
 
               <div className="text-center p-6 bg-primary-700/50 rounded-xl border border-secondary-400/30 mt-6">
@@ -108,7 +108,7 @@ export default function InfoPage() {
                   The Journey is Complete
                 </p>
                 <p className="text-primary-200">
-                  You've discovered the harmony behind the architecture
+                  You&apos;ve discovered the harmony behind the architecture
                 </p>
               </div>
             </div>

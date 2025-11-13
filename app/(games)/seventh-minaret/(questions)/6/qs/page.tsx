@@ -23,13 +23,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  FaLightbulb,
-  FaLock,
-  FaLockOpen,
-  FaCheckCircle,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaLightbulb, FaLock, FaLockOpen, FaCheckCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 // Form validation schema
@@ -272,7 +266,7 @@ export default function QuestionPage() {
                 Congratulations!
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center">
-                <p>Correct answer! "6" Soldiers.</p>
+                <p>Correct answer! &quot;6&quot; Soldiers.</p>
                 <div className="mt-4 p-4 bg-primary-700/50 rounded-lg">
                   <p className="text-lg font-semibold text-white">
                     Redirecting in {countdown} seconds...

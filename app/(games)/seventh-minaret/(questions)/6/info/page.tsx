@@ -21,7 +21,7 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              The Sultan's Chain
+              The Sultan&apos;s Chain
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
@@ -53,14 +53,14 @@ export default function InfoPage() {
               <p className="text-base md:text-lg">
                 But this chain was placed at the entrance for exactly that
                 reason. Even if he was the sultan, he had to bow to show respect
-                to God's house.
+                to God&apos;s house.
               </p>
 
               <div className="bg-secondary-400/20 border-l-4 border-secondary-400 p-4 rounded-r-lg">
                 <p className="text-lg text-white">
                   This simple chain taught a powerful lesson: no matter how
                   important you are in this world, you must show humility when
-                  entering God's house.
+                  entering God&apos;s house.
                 </p>
               </div>
 
