@@ -1,165 +1,137 @@
 "use client";
 
-import { GiShakingHands, GiStrong, GiWatchtower } from "react-icons/gi";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaHistory,
+  FaVolumeUp,
+} from "react-icons/fa";
 
 export default function InfoPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-white tracking-wider">
-            Congratulations!
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 font-light mb-6">
-            Youve obtained a new artifact
+        <header className="text-center mb-8 md:mb-12">
+          <div className="flex items-center justify-center mb-4">
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <h1 className="text-3xl md:text-4xl font-light text-white">
+              Congratulations!
+            </h1>
+          </div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You&apos;ve discovered the secret language of minarets!
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-700 border border-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                <GiWatchtower className="text-white text-3xl" />
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
+            {/* Historical Story */}
+            <div className="space-y-6 text-primary-200 leading-relaxed">
+              <div className="flex items-center mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
+                  <FaHistory className="mr-2 text-secondary-400" />
+                  The Secret Language of Minarets
+                </h2>
               </div>
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">
-                Minaret
-              </h2>
-              <p className="text-gray-300">
-                Youve discovered a new piece of the story
-              </p>
-            </div>
 
-            {/* Historical Info */}
-            <div className="space-y-6 text-gray-200 font-light leading-relaxed">
-              <p>
-                In the Ottoman Empire, minarets were not only religious symbols
-                but also marks of power. After the conquest of Istanbul, 4
-                minarets suitable for sultan status were added to Hagia Sophia,
-                which was converted into a mosque. However, when Ahmed I built
-                the 6-minaret Sultanahmet Mosque opposite it to overshadow Hagia
-                Sophias Byzantine splendor, a major controversy erupted; until
-                then, 6 minarets belonged only to Islams holiest temple, the
-                Kaaba.
+              <p className="text-base md:text-lg">
+                When you look at the tall towers beside the Blue Mosque, you see
+                minarets — the thin towers where the call to prayer is made five
+                times a day.
               </p>
 
-              <p>
-                This situation, interpreted as the sultans claim of equality
-                with God, was finally resolved by adding a seventh minaret to
-                the Kaaba, sending the message that no one can be superior to
-                the sacred.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Seals Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              🏆 Seals
-            </h3>
-            <div className="flex justify-center gap-6 flex-wrap">
-              {/* Completed Seal - Unity Seal */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
-                    <GiShakingHands className="text-white text-5xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Unity Seal</p>
-                <div className="flex justify-center mt-2">
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Completed
-                  </span>
-                </div>
-              </div>
-
-              {/* Completed Seal - Power Seal */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-yellow-600 border-4 border-white rounded-full mx-auto flex items-center justify-center shadow-2xl mb-4">
-                    <GiStrong className="text-white text-5xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Power Seal</p>
-                <div className="flex justify-center mt-2">
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                    Completed
-                  </span>
-                </div>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              2/3 seals completed
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Artifact Collection Card */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📦 Current Artifacts
-            </h3>
-            <div className="flex justify-center gap-6 flex-wrap">
-              {/* New Minaret Artifact */}
-              <div className="text-center">
-                <div className="flex justify-center">
-                  <div className="bg-gradient-to-br from-blue-500 to-purple-700 border border-white rounded-lg p-4 w-24 h-24 flex items-center justify-center shadow-lg">
-                    <GiWatchtower className="text-white text-3xl" />
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 mt-4">Minaret</p>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 text-sm mt-4">
-              1/2 artifacts collected
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Progress Summary */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
-              📊 Progress Status
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">Seals</h4>
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="w-full bg-gray-700 rounded-full h-4">
-                    <div
-                      className="bg-purple-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "67%" }}
-                    ></div>
-                  </div>
-                  <span className="text-white font-bold">2/3</span>
-                </div>
-                <p className="text-gray-300 text-sm mt-2">67% completed</p>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">Artifacts</h4>
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="w-full bg-gray-700 rounded-full h-4">
-                    <div
-                      className="bg-orange-600 h-4 rounded-full transition-all duration-500"
-                      style={{ width: "50%" }}
-                    ></div>
-                  </div>
-                  <span className="text-white font-bold">1/2</span>
-                </div>
-                <p className="text-gray-300 text-sm mt-2">
-                  1 artifact remaining
+              <div className="flex items-start bg-primary-700/50 rounded-lg p-4 border border-primary-500">
+                <FaVolumeUp className="text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-primary-100">
+                  But minarets are not just for sound. In the Ottoman times,
+                  they also showed power and respect.
                 </p>
               </div>
+
+              <p className="text-base md:text-lg">
+                The number of minarets told who built the mosque — it was like a
+                secret code that everyone understood:
+              </p>
+
+              {/* Minaret Hierarchy */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-4">
+                    What the Minarets Say:
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center p-3 bg-primary-600/50 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-secondary-400 flex items-center justify-center mr-4">
+                        <span className="text-primary-900 font-bold">1</span>
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold">Rich man</p>
+                        <p className="text-primary-200 text-sm">
+                          Could build a mosque with 1 minaret
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-3 bg-primary-600/50 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-secondary-400 flex items-center justify-center mr-4">
+                        <span className="text-primary-900 font-bold">2</span>
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold">Royal family</p>
+                        <p className="text-primary-200 text-sm">
+                          Could build a mosque with 2 minarets
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-3 bg-primary-600/50 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-secondary-400 flex items-center justify-center mr-4">
+                        <span className="text-primary-900 font-bold">4</span>
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold">Sultan</p>
+                        <p className="text-primary-200 text-sm">
+                          Could build a mosque with 4 minarets
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <p className="text-base md:text-lg">
+                When Hagia Sophia became a mosque, it was seen as a mosque for
+                sultans — so four minarets were built around it.
+              </p>
+
+              <div className="bg-secondary-400/20 border-l-4 border-secondary-400 p-4 rounded-r-lg">
+                <p className="text-base md:text-lg text-white">
+                  Now, look again at the Blue Mosque in front of you. Count the
+                  minarets carefully.
+                </p>
+                <p className="text-xl md:text-2xl font-semibold text-secondary-400 text-center mt-3">
+                  Do you notice something different?
+                </p>
+                <p className="text-lg font-semibold text-white text-center mt-2">
+                  Why do you think that is?
+                </p>
+              </div>
+
+              <p className="text-base md:text-lg">
+                The Blue Mosque has <strong className="text-white">six</strong>{" "}
+                minarets — more than even a sultan&apos;s mosque! This was a
+                bold statement by Sultan Ahmed I, showing his special devotion
+                and the importance of this magnificent mosque.
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -168,16 +140,17 @@ export default function InfoPage() {
         <div className="text-center">
           <Button
             onClick={() => router.push("/seventh-minaret/4/location")}
-            className="bg-white/20 hover:bg-white/30 border-white/30 text-white font-bold text-lg py-4 px-8 rounded-full transition-all duration-300"
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question →
+            Continue Journey
+            <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-400 font-light">
-          <p className="italic">
-            Discover new artifacts to complete the remaining 1 seal...
+        <footer className="text-center mt-8 md:mt-12">
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Reading the stones, hearing the stories...
           </p>
         </footer>
       </div>
