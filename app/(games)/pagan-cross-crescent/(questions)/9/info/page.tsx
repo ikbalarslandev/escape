@@ -21,7 +21,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You've uncovered the revolutionary courtyard of Nuruosmaniye
+            You&apos;ve uncovered the revolutionary courtyard of Nuruosmaniye
           </p>
         </header>
 
@@ -149,7 +149,7 @@ export default function InfoPage() {
                     while maintaining its Islamic identity. The reuse of ancient
                     columns demonstrates a respect for history and a practical
                     approach to building materials, creating a space that truly
-                    embodies Istanbul's position as a bridge between
+                    embodies Istanbul&apos;s position as a bridge between
                     civilizations.
                   </p>
                 </CardContent>

@@ -276,8 +276,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  This chimney doesn't have the smoke pipe. Check the hints and
-                  try again.
+                  This chimney doesn&apos;t have the smoke pipe. Check the hints
+                  and try again.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}

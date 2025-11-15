@@ -74,7 +74,7 @@ export default function InfoPage() {
                     Constantinople/Istanbul from its highest vantage point. It
                     saw empires rise and fall, heard the prayers of different
                     faiths, and watched as the city transformed around it.
-                    Finding this piece connects us directly to the column's
+                    Finding this piece connects us directly to the column&apos;s
                     original glory.
                   </p>
                 </CardContent>

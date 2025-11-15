@@ -89,8 +89,8 @@ const PaganCrossCrescentIntroPage = () => {
                 Each tradition left its mark, creating the city we know today.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Now it's your turn to discover how these three forces came
-                together to build one of the world's greatest cities.
+                Now it&apos;s your turn to discover how these three forces came
+                together to build one of the world&apos;s greatest cities.
               </p>
             </div>
 
@@ -130,7 +130,7 @@ const PaganCrossCrescentIntroPage = () => {
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
               Explore how Pagan, Christian, and Islamic influences shaped
-              Istanbul's unique character.
+              Istanbul&apos;s unique character.
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
@@ -297,7 +297,7 @@ const PaganCrossCrescentIntroPage = () => {
         <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
-              What You'll Discover
+              What You&apos;ll Discover
             </h2>
             <ul className="space-y-2 md:space-y-3 text-secondary-100 text-xs md:text-sm">
               <li className="flex items-start">
@@ -314,7 +314,7 @@ const PaganCrossCrescentIntroPage = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The secret behind Istanbul's enduring power
+                The secret behind Istanbul&apos;s enduring power
               </li>
             </ul>
           </CardContent>
@@ -392,7 +392,8 @@ const PaganCrossCrescentIntroPage = () => {
               </Link>
             </div>
             <p className="text-secondary-200 text-xs md:text-sm mt-3 md:mt-4">
-              Free to play • No booking required • Discover Istanbul's secret
+              Free to play • No booking required • Discover Istanbul&apos;s
+              secret
             </p>
           </div>
         </div>

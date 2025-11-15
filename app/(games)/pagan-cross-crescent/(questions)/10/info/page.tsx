@@ -21,7 +21,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-300 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
-            You've discovered the unique fusion of East and West
+            You&lsquo;ve discovered the unique fusion of East and West
           </p>
         </header>
 
@@ -121,7 +121,7 @@ export default function InfoPage() {
                             Classical Ottoman Style
                           </th>
                           <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
-                            Nuruosmaniye's Baroque Style
+                            Nuruosmaniye&lsquo;s Baroque Style
                           </th>
                         </tr>
                       </thead>
@@ -224,10 +224,10 @@ export default function InfoPage() {
                   <p className="text-primary-50 text-base md:text-lg leading-relaxed">
                     Built between 1748-1755, Nuruosmaniye represents a turning
                     point in Ottoman architecture. It marks the beginning of the
-                    "Tulip Period" and the Westernization movement that would
-                    eventually transform the empire. The mosque stands as a
-                    testament to cultural exchange and the ability to embrace
-                    new influences while preserving core identity.
+                    &quot;Tulip Period&quot; and the Westernization movement
+                    that would eventually transform the empire. The mosque
+                    stands as a testament to cultural exchange and the ability
+                    to embrace new influences while preserving core identity.
                   </p>
                 </CardContent>
               </Card>

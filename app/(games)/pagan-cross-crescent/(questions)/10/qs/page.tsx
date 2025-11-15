@@ -243,8 +243,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  That's not the correct direction. Check the hints and look for
-                  the restored sections.
+                  That&apos;s not the correct direction. Check the hints and
+                  look for the restored sections.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}

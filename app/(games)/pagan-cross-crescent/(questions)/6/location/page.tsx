@@ -22,7 +22,7 @@ export default function LocationPage() {
             Location
           </h2>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            Discover another vital part of the külliye's economic system
+            Discover another vital part of the külliye&apos;s economic system
           </p>
         </header>
 
@@ -55,7 +55,7 @@ export default function LocationPage() {
               </div>
               <p className="text-primary-200 leading-relaxed text-base md:text-lg">
                 Enter Sofcu Han, another important commercial building that was
-                part of the Nuruosmaniye Külliyesi's economic network.
+                part of the Nuruosmaniye Külliyesi&apos;s economic network.
               </p>
             </div>
 

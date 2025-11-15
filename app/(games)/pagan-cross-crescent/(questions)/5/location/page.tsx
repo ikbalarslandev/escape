@@ -22,7 +22,7 @@ export default function LocationPage() {
             Location
           </h2>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            Discover the heart of the külliye's community service
+            Discover the heart of the külliye&apos;s community service
           </p>
         </header>
 

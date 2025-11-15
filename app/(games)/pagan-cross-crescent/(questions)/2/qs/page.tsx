@@ -237,8 +237,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  That's not the fruit of the holy tree. Check the hints and try
-                  again.
+                  That&apos;s not the fruit of the holy tree. Check the hints
+                  and try again.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}

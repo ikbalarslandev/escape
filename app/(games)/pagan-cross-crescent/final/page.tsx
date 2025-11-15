@@ -33,14 +33,15 @@ export default function FinalPage() {
             <div className="space-y-4 md:space-y-6 text-primary-100 leading-relaxed">
               <p className="text-base md:text-lg">
                 You did it! You discovered how three great traditions came
-                together to build one of the world's greatest cities. The
+                together to build one of the world&apos;s greatest cities. The
                 ancient balance between Pagan, Cross, and Crescent has been
                 restored.
               </p>
 
               <p className="text-base md:text-lg">
-                Because of your journey, Istanbul's layered soul can continue to
-                inspire generations with its story of unity in diversity.
+                Because of your journey, Istanbul&apos;s layered soul can
+                continue to inspire generations with its story of unity in
+                diversity.
               </p>
 
               {/* The Three Traditions */}
@@ -55,7 +56,7 @@ export default function FinalPage() {
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">Pagan:</strong> The
-                        ancient column from Apollo's temple that helped
+                        ancient column from Apollo&apos;s temple that helped
                         Constantine build his capital
                       </span>
                     </div>
@@ -64,7 +65,7 @@ export default function FinalPage() {
                       <span>
                         <strong className="text-white">Cross:</strong> The
                         Christian Baroque architecture that inspired
-                        Nuruosmaniye's revolutionary design
+                        Nuruosmaniye&apos;s revolutionary design
                       </span>
                     </div>
                     <div className="flex items-start">
@@ -110,7 +111,7 @@ export default function FinalPage() {
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          Constantine's Vision:
+                          Constantine&apos;s Vision:
                         </strong>{" "}
                         How a pagan column attracted people from all faiths to
                         build a new capital

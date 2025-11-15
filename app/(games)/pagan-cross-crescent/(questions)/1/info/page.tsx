@@ -24,7 +24,6 @@ export default function InfoPage() {
             You discovered the secret of Çemberlitaş!
           </p>
         </header>
-
         {/* Success Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
@@ -37,8 +36,8 @@ export default function InfoPage() {
               <p className="text-base md:text-lg">
                 A long time ago, Emperor Constantine visited a small pagan town
                 called <strong className="text-white">Byzantium</strong>. He
-                decided, "I will build my new capital city here. I will call it{" "}
-                <strong className="text-white">New Rome</strong>."
+                decided, &quot;I will build my new capital city here. I will
+                call it <strong className="text-white">New Rome</strong>.&quot;
               </p>
 
               <p className="text-base md:text-lg">
@@ -50,9 +49,9 @@ export default function InfoPage() {
                 So, Constantine made a clever plan. First, he built a large,
                 round public square called a{" "}
                 <strong className="text-white">Forum</strong>. This was a place
-                for people to meet. Then, he made a brilliant "honey pot" plan
-                to attract people from all around the world. If many people
-                came, he could build a big and powerful nation.
+                for people to meet. Then, he made a brilliant &quot;honey
+                pot&quot; plan to attract people from all around the world. If
+                many people came, he could build a big and powerful nation.
               </p>
 
               {/* How He Attracted Pagans */}
@@ -99,7 +98,7 @@ export default function InfoPage() {
                   <div className="text-primary-100 text-sm md:text-base space-y-2">
                     <p>
                       <strong>For Jews:</strong> The seven-branched candlestick
-                      (Menorah) from King Solomon's Temple.
+                      (Menorah) from King Solomon&apos;s Temple.
                     </p>
                     <p>
                       <strong>For Christians:</strong> Pieces of wood from the
@@ -145,7 +144,6 @@ export default function InfoPage() {
             </div>
           </CardContent>
         </Card>
-
         {/* Navigation */}
         <div className="text-center">
           <Button
@@ -156,7 +154,6 @@ export default function InfoPage() {
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
-
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
