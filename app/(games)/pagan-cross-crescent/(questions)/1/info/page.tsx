@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export default function InfoPage() {
             You discovered the secret of Çemberlitaş!
           </p>
         </header>
+
         {/* Success Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
@@ -32,6 +34,23 @@ export default function InfoPage() {
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
                 The Column That Built a Capital City
               </h2>
+
+              {/* Forum of Constantine Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/pagan-cross-crescent/info/1/forum.jpeg"
+                  alt="Forum of Constantine with the Column of Constantine erected in the center"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    The Forum of Constantine with the Column of Constantine
+                    standing proudly in the center
+                  </p>
+                </div>
+              </div>
 
               <p className="text-base md:text-lg">
                 A long time ago, Emperor Constantine visited a small pagan town
@@ -144,6 +163,7 @@ export default function InfoPage() {
             </div>
           </CardContent>
         </Card>
+
         {/* Navigation */}
         <div className="text-center">
           <Button
@@ -154,6 +174,7 @@ export default function InfoPage() {
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
+
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">

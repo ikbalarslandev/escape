@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -34,6 +35,23 @@ export default function InfoPage() {
                 The Story of Çemberlitaş
               </h2>
 
+              {/* Column of Constantine Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/pagan-cross-crescent/info/2/column.jpg"
+                  alt="Column of Constantine showing the nine distinct stone blocks"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    The Column of Constantine (Çemberlitaş) showing the nine
+                    stone blocks
+                  </p>
+                </div>
+              </div>
+
               <p className="text-base md:text-lg">
                 The Column of Constantine was very tall and was made of{" "}
                 <strong className="text-white">
@@ -60,6 +78,24 @@ export default function InfoPage() {
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
                     How They Fixed the Column
                   </h3>
+
+                  {/* Column with Rings Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                    <Image
+                      src="/qs-imgs/pagan-cross-crescent/info/2/column-with-rings.jpg"
+                      alt="Close-up view of the iron reinforcement rings that give Çemberlitaş its name"
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-primary-200 italic">
+                        The iron reinforcement rings that give the column its
+                        Turkish name "Çemberlitaş"
+                      </p>
+                    </div>
+                  </div>
+
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     After the statue and the top blocks fell, the column was
                     shorter and damaged. To fix it, people put a simple{" "}

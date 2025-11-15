@@ -39,7 +39,7 @@ export default function QuestionPage() {
     "The correct chimney has metal barriers around one hole. From there smoke flows",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -87,43 +87,49 @@ export default function QuestionPage() {
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
+            {/* Question Image */}
+            <div className="mb-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+              <Image
+                src="/qs-imgs/pagan-cross-crescent/qs/5/qs.jpeg"
+                alt="Chimneys view - Identify which chimney has the smoke pipe"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-cover"
+                quality={100}
+                unoptimized={true}
+              />
+              <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                <p className="text-sm text-primary-200 italic">
+                  Look carefully at the chimneys to find the one with the smoke
+                  pipe
+                </p>
+              </div>
+            </div>
+
             <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6">
               {question}
             </p>
 
-            {/* Options Grid */}
+            {/* Options Grid - Numbers Only */}
             <div className="mb-6">
               <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Select the correct chimney:
+                Select the correct chimney number:
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-4 md:grid-cols-8 gap-3 md:gap-4 max-w-2xl mx-auto">
                 {options.map((option) => (
-                  <div
+                  <button
                     key={option}
-                    className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
+                    onClick={() => handleOptionClick(option)}
+                    className={`aspect-square rounded-lg border-2 text-xl font-bold transition-all duration-300 hover:scale-105 ${
                       selectedOption === option
                         ? option === 1
-                          ? "border-secondary-400 ring-2 ring-secondary-400"
-                          : "border-red-400 ring-2 ring-red-400"
-                        : "border-primary-500 hover:border-secondary-400"
+                          ? "border-secondary-400 bg-secondary-400 text-primary-900 ring-2 ring-secondary-400"
+                          : "border-red-400 bg-red-400 text-white ring-2 ring-red-400"
+                        : "border-primary-500 bg-primary-700 text-white hover:border-secondary-400 hover:bg-primary-600"
                     }`}
-                    onClick={() => handleOptionClick(option)}
                   >
-                    <Image
-                      src={`/opt/5/chimney-${option}.jpg`}
-                      alt={`Chimney ${option}`}
-                      fill
-                      className="object-contain bg-primary-900 p-2"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      quality={100}
-                      unoptimized={true}
-                    />
-                    <div className="absolute bottom-2 left-2 bg-primary-800 bg-opacity-80 rounded-full w-8 h-8 flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
-                        {option}
-                      </span>
-                    </div>
-                  </div>
+                    {option}
+                  </button>
                 ))}
               </div>
             </div>
@@ -201,40 +207,6 @@ export default function QuestionPage() {
             Back to Location
           </Button>
         </div>
-
-        {/* Zoom Modal */}
-        <Dialog
-          open={zoomImage !== null}
-          onOpenChange={() => setZoomImage(null)}
-        >
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
-            <DialogHeader>
-              <DialogTitle className="text-2xl text-white">
-                Chimney {zoomImage} - Detailed View
-              </DialogTitle>
-            </DialogHeader>
-            <div className="relative w-full h-full flex items-center justify-center">
-              {zoomImage && (
-                <Image
-                  src={`/opt/5/chimney-${zoomImage}.jpg`}
-                  alt={`Chimney ${zoomImage} - Detailed`}
-                  fill
-                  className="object-contain"
-                  quality={100}
-                  unoptimized={true}
-                />
-              )}
-            </div>
-            <div className="flex justify-center mt-4">
-              <Button
-                onClick={() => setZoomImage(null)}
-                className="bg-secondary-500 hover:bg-secondary-600 text-white"
-              >
-                Close
-              </Button>
-            </div>
-          </DialogContent>
-        </Dialog>
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>

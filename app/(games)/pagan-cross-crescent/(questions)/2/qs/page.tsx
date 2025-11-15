@@ -108,12 +108,12 @@ export default function QuestionPage() {
                   <Button
                     key={option}
                     variant="outline"
-                    className={`h-16 md:h-20 border-2 text-base md:text-lg font-medium transition-all duration-300 ${
+                    className={`h-16 md:h-20 border-2 text-base md:text-lg font-medium transition-all duration-300  ${
                       selectedOption === option
                         ? option === "Grape"
                           ? "border-secondary-400 bg-secondary-400 bg-opacity-20 text-secondary-400"
                           : "border-red-400 bg-red-400 bg-opacity-20 text-red-400"
-                        : "border-primary-400 text-primary-200 hover:border-secondary-400 hover:text-secondary-400"
+                        : "border-primary-400 bg-primary-700 text-primary-200 hover:border-secondary-400 hover:text-secondary-400"
                     }`}
                     onClick={() => handleOptionClick(option)}
                   >
