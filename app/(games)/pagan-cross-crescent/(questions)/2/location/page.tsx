@@ -89,7 +89,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Follow the path and discover what feeds the city's creatures...
+            Follow the path and discover what feeds the city&apos;s creatures...
           </p>
         </footer>
       </div>

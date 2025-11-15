@@ -118,8 +118,10 @@ export default function InfoPage() {
                   <p className="text-secondary-100 text-sm md:text-base mb-4">
                     This building is so famous that it was in a James Bond
                     movie! A scene from{" "}
-                    <strong className="text-white">"Skyfall" (2012)</strong> was
-                    filmed right here inside Vezir Han.
+                    <strong className="text-white">
+                      &quot;Skyfall&quot; (2012)
+                    </strong>{" "}
+                    was filmed right here inside Vezir Han.
                   </p>
 
                   {/* YouTube Video */}

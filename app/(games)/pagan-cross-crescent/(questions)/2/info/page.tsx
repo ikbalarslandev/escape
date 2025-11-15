@@ -84,12 +84,16 @@ export default function InfoPage() {
                   <p className="text-secondary-100 text-sm md:text-base">
                     Because of these metal rings, the column got a new name.
                     People started to call it{" "}
-                    <strong className="text-white">"Çemberlitaş"</strong>, which
-                    means{" "}
-                    <strong className="text-white">"The Hooped Stone"</strong>{" "}
+                    <strong className="text-white">
+                      &quot;Çemberlitaş&quot;
+                    </strong>
+                    , which means{" "}
+                    <strong className="text-white">
+                      &quot;The Hooped Stone&quot;
+                    </strong>{" "}
                     or{" "}
                     <strong className="text-white">
-                      "The Column with Rings"
+                      &quot;The Column with Rings&quot;
                     </strong>
                     . That is the name we still use today.
                   </p>
