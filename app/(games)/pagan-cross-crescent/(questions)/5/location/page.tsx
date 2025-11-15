@@ -18,9 +18,12 @@ export default function LocationPage() {
             Question 5
           </h1>
           <div className="w-20 h-1 bg-secondary-400 mx-auto mb-4"></div>
-          <h2 className="text-2xl md:text-3xl font-light text-secondary-400">
+          <h2 className="text-2xl md:text-3xl font-light text-secondary-400 mb-4">
             Location
           </h2>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            Discover the heart of the külliye's community service
+          </p>
         </header>
 
         {/* Location Content */}
@@ -30,8 +33,8 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/q_imgs/5.jpg"
-                  alt="Hippodrome Remains"
+                  src="/q_imgs/kitchen-wall.jpg"
+                  alt="Kitchen Wall of Nuruosmaniye Külliyesi"
                   fill
                   className="object-cover z-10"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -47,24 +50,24 @@ export default function LocationPage() {
                 <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
                 <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
                   <FaMapMarkerAlt className="mr-2 text-secondary-400" />
-                  HIPPODROME REMAINS
+                  KITCHEN WALL
                 </h2>
               </div>
               <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                For the next question, we need to go to the remains of the
-                Hippodrome that have survived to the present day. One end of the
-                Hippodrome starts from the German Fountain and extends all the
-                way to here. Go to the remains of the Hippodrome that have
-                survived to the present day.
+                Stand in front of the kitchen wall of Nuruosmaniye Külliyesi.
+                This was the heart of the imaret - the soup kitchen that
+                provided free meals to students, the poor, and travelers every
+                single day. From this very spot, the külliye demonstrated the
+                Ottoman tradition of social welfare and community support.
               </p>
             </div>
 
-            {/* Spina Image Section */}
+            {/* Historical Context Image */}
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden bg-primary-700">
                 <Image
-                  src="/opt/5/5_spina.jpg"
-                  alt="Ancient Hippodrome Spina Remains"
+                  src="/q_imgs/imaret-kitchen.jpg"
+                  alt="Traditional Ottoman Soup Kitchen"
                   fill
                   className="object-contain p-4 z-10"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -73,14 +76,14 @@ export default function LocationPage() {
                 <div className="absolute inset-0 bg-primary-900 bg-opacity-10"></div>
               </div>
               <p className="text-primary-300 text-sm text-center mt-2 italic">
-                The ancient spina - where chariots raced around
+                Traditional Ottoman imaret serving meals to the community
               </p>
             </div>
 
             {/* Google Maps Link */}
             <div className="text-center">
               <Link
-                href="https://maps.app.goo.gl/3Zx8BBjcGjL57H8L6"
+                href="https://maps.app.goo.gl/RP1LaCgJryC7vuy5A"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -99,7 +102,7 @@ export default function LocationPage() {
 
         {/* Next Button */}
         <div className="text-center">
-          <Link href="/hippodrome/5/qs">
+          <Link href="/pagan-cross-crescent/5/qs">
             <Button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Go to Question
               <FaArrowRight className="ml-2" />
@@ -110,7 +113,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Progress by feeling the history...
+            Where charity and community came together...
           </p>
         </footer>
       </div>

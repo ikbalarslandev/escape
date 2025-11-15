@@ -2,18 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -28,40 +17,29 @@ import {
   FaLock,
   FaLockOpen,
   FaCheckCircle,
+  FaTimesCircle,
   FaArrowLeft,
 } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-
-// Form validation schema
-const formSchema = z.object({
-  answer1: z.string().min(1, "First answer cannot be empty"),
-  answer2: z.string().min(1, "Second answer cannot be empty"),
-});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "Let the stopped water show you the writing. What are the two things that used to be on in the past";
+    "For kitchen fire we created a pipe for smoke, which chimney has the pipe?";
 
   const hintData = [
-    "Carefully follow the stone wall of this ancient hippodrome. During your search, you'll encounter a structure where water should normally flow but is now silent and dry. This is your first stop.",
-    "Stop at this point where the water has been cut off. Right beside it, you'll see an official explanatory text that sheds light on the past. This text will give you the information you need to trace the lost pieces.",
-    "Read the information panel next to you carefully. The text mentions two large buildings that no longer exist but were once located here. The answer you're looking for is written there.",
+    "Focus on the bigger chimneys. You are trying to find one of them.",
+    "Look at the holes on the chimneys. If smoke flows there then it paints it to the black",
+    "The correct chimney has metal barriers around one hole. From there smoke flows",
   ];
 
-  // Initialize form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      answer1: "",
-      answer2: "",
-    },
-  });
+  const options = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -71,42 +49,18 @@ export default function QuestionPage() {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
+  const handleOptionClick = (option: number) => {
+    setSelectedOption(option);
 
-    // Normalize the answers: lowercase and trim
-    const normalizedAnswer1 = values.answer1.toLowerCase().trim();
-    const normalizedAnswer2 = values.answer2.toLowerCase().trim();
-
-    // Check if answers are correct (accepts different order)
-    const answers = [normalizedAnswer1, normalizedAnswer2];
-    const hasHamam =
-      answers.includes("hamam") ||
-      answers.includes("bath") ||
-      answers.includes("bathhouse");
-    const hasHaddehane =
-      answers.includes("haddehane") ||
-      answers.includes("rolling mill") ||
-      answers.includes("ironworks");
-
-    if (hasHamam && hasHaddehane) {
+    if (option === 1) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer1", {
-        type: "manual",
-        message: "Wrong answer! Please try again or use the hints.",
-      });
-      form.setError("answer2", {
-        type: "manual",
-        message: "Wrong answer! Please try again or use the hints.",
-      });
+      setIsError(true);
     }
-
-    setIsSubmitting(false);
   };
 
-  // Countdown effect
+  // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -115,13 +69,13 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hippodrome/5/info");
+      router.push("/pagan-cross-crescent/5/info");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
@@ -137,76 +91,42 @@ export default function QuestionPage() {
               {question}
             </p>
 
-            {/* Answer Form */}
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  {/* First Answer Input */}
-                  <FormField
-                    control={form.control}
-                    name="answer1"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-lg font-semibold text-white">
-                          1. Answer:
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            placeholder="Enter first answer..."
-                            className="bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
-                            disabled={isSubmitting}
-                          />
-                        </FormControl>
-                        <FormMessage className="text-red-300 text-base" />
-                      </FormItem>
-                    )}
-                  />
-
-                  {/* Second Answer Input */}
-                  <FormField
-                    control={form.control}
-                    name="answer2"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-lg font-semibold text-white">
-                          2. Answer:
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            placeholder="Enter second answer..."
-                            className="bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
-                            disabled={isSubmitting}
-                          />
-                        </FormControl>
-                        <FormMessage className="text-red-300 text-base" />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="text-center pt-4">
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-12 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto"
+            {/* Options Grid */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-white mb-4 text-center">
+                Select the correct chimney:
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {options.map((option) => (
+                  <div
+                    key={option}
+                    className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
+                      selectedOption === option
+                        ? option === 1
+                          ? "border-secondary-400 ring-2 ring-secondary-400"
+                          : "border-red-400 ring-2 ring-red-400"
+                        : "border-primary-500 hover:border-secondary-400"
+                    }`}
+                    onClick={() => handleOptionClick(option)}
                   >
-                    {isSubmitting ? (
-                      "Checking..."
-                    ) : (
-                      <>
-                        <IoIosSend className="text-xl" />
-                        Submit
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </Form>
+                    <Image
+                      src={`/opt/5/chimney-${option}.jpg`}
+                      alt={`Chimney ${option}`}
+                      fill
+                      className="object-contain bg-primary-900 p-2"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      quality={100}
+                      unoptimized={true}
+                    />
+                    <div className="absolute bottom-2 left-2 bg-primary-800 bg-opacity-80 rounded-full w-8 h-8 flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
+                        {option}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -264,8 +184,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-primary-400 text-sm mt-4 italic">
-              Hints unlock sequentially. You cannot open the next hint without
-              seeing the previous one.
+              Hints open in order. You cannot open the next hint without seeing
+              the previous one.
             </p>
           </CardContent>
         </Card>
@@ -273,7 +193,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/hippodrome/5/location")}
+            onClick={() => router.push("/pagan-cross-crescent/5/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -282,22 +202,56 @@ export default function QuestionPage() {
           </Button>
         </div>
 
+        {/* Zoom Modal */}
+        <Dialog
+          open={zoomImage !== null}
+          onOpenChange={() => setZoomImage(null)}
+        >
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-white">
+                Chimney {zoomImage} - Detailed View
+              </DialogTitle>
+            </DialogHeader>
+            <div className="relative w-full h-full flex items-center justify-center">
+              {zoomImage && (
+                <Image
+                  src={`/opt/5/chimney-${zoomImage}.jpg`}
+                  alt={`Chimney ${zoomImage} - Detailed`}
+                  fill
+                  className="object-contain"
+                  quality={100}
+                  unoptimized={true}
+                />
+              )}
+            </div>
+            <div className="flex justify-center mt-4">
+              <Button
+                onClick={() => setZoomImage(null)}
+                className="bg-secondary-500 hover:bg-secondary-600 text-white"
+              >
+                Close
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
           <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Congratulations!
+                Correct!
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  Correct answer! &quot;Hamam&quot; and &quot;Haddehane&quot;.
+                  Yes! The first chimney has the smoke pipe with metal barriers.
                 </p>
                 <Card className="bg-primary-700 border-primary-500">
                   <CardContent className="p-4">
                     <p className="text-lg font-semibold text-center">
-                      Redirecting in {countdown}...
+                      Continuing your journey in {countdown} seconds...
                     </p>
                     <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
                       <div
@@ -307,6 +261,30 @@ export default function QuestionPage() {
                     </div>
                   </CardContent>
                 </Card>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Error Dialog */}
+        <Dialog open={isError} onOpenChange={setIsError}>
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
+                <FaTimesCircle className="mr-3" />
+                Wrong Chimney!
+              </DialogTitle>
+              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                <p>
+                  This chimney doesn't have the smoke pipe. Check the hints and
+                  try again.
+                </p>
+                <Button
+                  onClick={() => setIsError(false)}
+                  className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-6 w-full"
+                >
+                  Try Again
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
