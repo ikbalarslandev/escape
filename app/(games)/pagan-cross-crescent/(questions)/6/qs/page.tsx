@@ -2,9 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -12,34 +22,43 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   FaLightbulb,
   FaLock,
   FaLockOpen,
   FaCheckCircle,
-  FaTimesCircle,
   FaArrowLeft,
 } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
+
+// Form validation schema
+const formSchema = z.object({
+  answer: z.string().min(1, "Answer cannot be empty"),
+});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
-  const question =
-    "For kitchen fire we created a pipe for smoke, which chimney has the pipe?";
+  const question = "How many lamps get sunlight?";
 
   const hintData = [
-    "Focus on the bigger chimneys. You are trying to find one of them.",
-    "Look at the holes on the chimneys. If smoke flows there then it paints it to the black",
-    "The correct chimney has metal barriers around one hole. From there smoke flows",
+    "Look around and count all the lamps that are not blocked from the sun.",
+    "The lamps are in the second floor",
+    "They are old fashioned",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  // Initialize form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      answer: "",
+    },
+  });
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -49,18 +68,27 @@ export default function QuestionPage() {
     }
   };
 
-  const handleOptionClick = (option: number) => {
-    setSelectedOption(option);
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
 
-    if (option === 1) {
+    // Normalize the answer: lowercase and trim
+    const normalizedAnswer = values.answer.toLowerCase().trim();
+
+    // Check if answer is correct
+    if (normalizedAnswer === "2") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      setIsError(true);
+      form.setError("answer", {
+        type: "manual",
+        message: "Wrong answer! Please try again or use the hints.",
+      });
     }
+
+    setIsSubmitting(false);
   };
 
-  // Countdown effect for success
+  // Countdown effect
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -69,17 +97,17 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/5/info");
+      router.push("/pagan-cross-crescent/6/info");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
-            Question 5
+            Question 6
           </h1>
           <div className="w-20 h-1 bg-secondary-400 mx-auto mb-4"></div>
         </header>
@@ -91,42 +119,50 @@ export default function QuestionPage() {
               {question}
             </p>
 
-            {/* Options Grid */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Select the correct chimney:
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                {options.map((option) => (
-                  <div
-                    key={option}
-                    className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
-                      selectedOption === option
-                        ? option === 1
-                          ? "border-secondary-400 ring-2 ring-secondary-400"
-                          : "border-red-400 ring-2 ring-red-400"
-                        : "border-primary-500 hover:border-secondary-400"
-                    }`}
-                    onClick={() => handleOptionClick(option)}
-                  >
-                    <Image
-                      src={`/opt/5/chimney-${option}.jpg`}
-                      alt={`Chimney ${option}`}
-                      fill
-                      className="object-contain bg-primary-900 p-2"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      quality={100}
-                      unoptimized={true}
-                    />
-                    <div className="absolute bottom-2 left-2 bg-primary-800 bg-opacity-80 rounded-full w-8 h-8 flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
-                        {option}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Answer Form */}
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
+                <FormField
+                  control={form.control}
+                  name="answer"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-semibold text-white">
+                        Your Answer:
+                      </FormLabel>
+                      <FormControl>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <Input
+                            {...field}
+                            placeholder="Enter the number of lamps..."
+                            className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
+                            disabled={isSubmitting}
+                          />
+                          <Button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-6 md:px-8 text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl min-w-[140px]"
+                          >
+                            {isSubmitting ? (
+                              "Checking..."
+                            ) : (
+                              <>
+                                Submit
+                                <IoIosSend className="ml-2" />
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-300 text-base" />
+                    </FormItem>
+                  )}
+                />
+              </form>
+            </Form>
           </CardContent>
         </Card>
 
@@ -193,7 +229,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/5/location")}
+            onClick={() => router.push("/pagan-cross-crescent/6/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -202,89 +238,34 @@ export default function QuestionPage() {
           </Button>
         </div>
 
-        {/* Zoom Modal */}
-        <Dialog
-          open={zoomImage !== null}
-          onOpenChange={() => setZoomImage(null)}
-        >
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
-            <DialogHeader>
-              <DialogTitle className="text-2xl text-white">
-                Chimney {zoomImage} - Detailed View
-              </DialogTitle>
-            </DialogHeader>
-            <div className="relative w-full h-full flex items-center justify-center">
-              {zoomImage && (
-                <Image
-                  src={`/opt/5/chimney-${zoomImage}.jpg`}
-                  alt={`Chimney ${zoomImage} - Detailed`}
-                  fill
-                  className="object-contain"
-                  quality={100}
-                  unoptimized={true}
-                />
-              )}
-            </div>
-            <div className="flex justify-center mt-4">
-              <Button
-                onClick={() => setZoomImage(null)}
-                className="bg-secondary-500 hover:bg-secondary-600 text-white"
-              >
-                Close
-              </Button>
-            </div>
-          </DialogContent>
-        </Dialog>
-
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+          <DialogContent className="bg-primary-800 border-primary-600 text-white">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Correct!
               </DialogTitle>
-              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>
-                  Yes! The first chimney has the smoke pipe with metal barriers.
-                </p>
-                <Card className="bg-primary-700 border-primary-500">
-                  <CardContent className="p-4">
-                    <p className="text-lg font-semibold text-center">
-                      Continuing your journey in {countdown} seconds...
-                    </p>
-                    <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
-                      <div
-                        className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${((4 - countdown) / 4) * 100}%` }}
-                      ></div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </DialogDescription>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
-
-        {/* Error Dialog */}
-        <Dialog open={isError} onOpenChange={setIsError}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
-            <DialogHeader>
-              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
-                <FaTimesCircle className="mr-3" />
-                Wrong Chimney!
-              </DialogTitle>
-              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>
-                  This chimney doesn't have the smoke pipe. Check the hints and
-                  try again.
-                </p>
-                <Button
-                  onClick={() => setIsError(false)}
-                  className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-6 w-full"
-                >
-                  Try Again
-                </Button>
+              <DialogDescription asChild>
+                <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                  <p>
+                    Yes! There are 2 lamps that receive sunlight in the second
+                    floor.
+                  </p>
+                  <Card className="bg-primary-700 border-primary-500">
+                    <CardContent className="p-4">
+                      <p className="text-lg font-semibold text-center">
+                        Continuing your journey in {countdown} seconds...
+                      </p>
+                      <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
+                        <div
+                          className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
+                          style={{ width: `${((4 - countdown) / 4) * 100}%` }}
+                        ></div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
