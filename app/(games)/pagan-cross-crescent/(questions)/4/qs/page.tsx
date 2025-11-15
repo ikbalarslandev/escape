@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -23,6 +22,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   FaLightbulb,
   FaLock,
@@ -45,12 +45,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "I am the Walled Obelisk. My favorite soldier is hurt. People who has two wheels, when they look from beside the three flowers, how many healthy soldiers will they see?";
+    "I am standing next to the hairs, half of me doesn't have protection from the rain so that part got broken. Which building stands on top of me?";
 
   const hintData = [
-    "I am a historical building. I have soldiers to protect me from damage by tourists. Can you find the one that is injured?",
-    "Two wheels means a modern, human-powered vehicle. Stand where it's parked to get the best view.",
-    "Three metal flowers show the exact spot where you should stand.",
+    "I am standing next to a hair saloon",
+    "On top of me half of me covered with the shield from rain but the other half doesn't have protection so that part got broken",
+    "I am a historical stone. They built a whole balcony on top of me",
   ];
 
   // Initialize form
@@ -75,8 +75,11 @@ export default function QuestionPage() {
     // Normalize the answer: lowercase and trim
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
-    // Check if answer is correct (accepts both "9" and "nine")
-    if (normalizedAnswer === "9" || normalizedAnswer === "nine") {
+    // Check if answer is correct
+    if (
+      normalizedAnswer === "jewelry store" ||
+      normalizedAnswer === "jewelry shop"
+    ) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -98,7 +101,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hippodrome/4/info");
+      router.push("/pagan-cross-crescent/4/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -132,13 +135,13 @@ export default function QuestionPage() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-lg font-semibold text-white">
-                        Number of healthy soldiers:
+                        Your Answer:
                       </FormLabel>
                       <FormControl>
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number here..."
+                            placeholder="Enter the name of the building..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -221,8 +224,8 @@ export default function QuestionPage() {
             </div>
 
             <p className="text-primary-400 text-sm mt-4 italic">
-              Hints unlock sequentially. You cannot open the next hint without
-              seeing the previous one.
+              Hints open in order. You cannot open the next hint without seeing
+              the previous one.
             </p>
           </CardContent>
         </Card>
@@ -230,7 +233,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/hippodrome/4/location")}
+            onClick={() => router.push("/pagan-cross-crescent/4/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -241,27 +244,29 @@ export default function QuestionPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+          <DialogContent className="bg-primary-800 border-primary-600 text-white">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Congratulations!
+                Correct!
               </DialogTitle>
-              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>Correct answer! &quot;9&quot; healthy soldiers remain.</p>
-                <Card className="bg-primary-700 border-primary-500">
-                  <CardContent className="p-4">
-                    <p className="text-lg font-semibold text-center">
-                      Redirecting in {countdown}...
-                    </p>
-                    <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
-                      <div
-                        className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${((4 - countdown) / 4) * 100}%` }}
-                      ></div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <DialogDescription asChild>
+                <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                  <p>Yes! The jewelry store stands above the ancient stone.</p>
+                  <Card className="bg-primary-700 border-primary-500">
+                    <CardContent className="p-4">
+                      <p className="text-lg font-semibold text-center">
+                        Moving to next location in {countdown} seconds...
+                      </p>
+                      <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
+                        <div
+                          className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
+                          style={{ width: `${((4 - countdown) / 4) * 100}%` }}
+                        ></div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
