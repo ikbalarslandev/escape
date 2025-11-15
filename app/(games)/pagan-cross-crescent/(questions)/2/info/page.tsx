@@ -91,7 +91,7 @@ export default function InfoPage() {
                     <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
                       <p className="text-xs text-primary-200 italic">
                         The iron reinforcement rings that give the column its
-                        Turkish name "Çemberlitaş"
+                        Turkish name &quot;Çemberlitaş&quot;
                       </p>
                     </div>
                   </div>
