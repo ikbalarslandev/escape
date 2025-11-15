@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hipodrom",
+  title: "Pagan Cross Crescent",
   description: "Şehrin kaderi sizin ellerinizde...",
 };
 
