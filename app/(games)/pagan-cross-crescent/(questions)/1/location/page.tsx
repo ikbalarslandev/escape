@@ -35,7 +35,7 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/q_imgs/cemberlistas-column.jpg"
+                  src="/qs-imgs/pagan-cross-crescent/1.jpeg"
                   alt="Çemberlitaş Column"
                   fill
                   className="object-cover z-10"
