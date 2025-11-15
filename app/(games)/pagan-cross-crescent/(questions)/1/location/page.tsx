@@ -65,7 +65,7 @@ export default function LocationPage() {
             {/* Google Maps Link */}
             <div className="text-center">
               <Link
-                href="https://maps.app.goo.gl/4FCYXiLLR433UYcj8"
+                href="https://maps.app.goo.gl/FuZYAzsVNQ4jQ1Nq5"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -16,12 +16,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Congratulations!
+              Well Done!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You freed Emperor Theodosius&apos;s spirit!
+            You discovered the path and found the holy tree!
           </p>
         </header>
 
@@ -30,37 +30,84 @@ export default function InfoPage() {
           <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
+                The Story of Çemberlitaş
+              </h2>
+
               <p className="text-base md:text-lg">
-                Great job! You freed Theodosius&apos;s spirit and solved the
-                ancient mystery. You are now in the center of the Hippodrome.
-                The big stone beside you is not just a rock - it saw many
-                amazing things and shows great power.
+                The Column of Constantine was very tall and was made of{" "}
+                <strong className="text-white">
+                  nine separate stone blocks
+                </strong>
+                .
               </p>
 
               <p className="text-base md:text-lg">
-                Emperor Theodosius took this red stone from Egypt. He brought it
-                to Istanbul and put it in the middle of the Hippodrome.
+                One day, a very{" "}
+                <strong className="text-white">strong wind storm</strong> hit
+                the city. The wind was so powerful that the statue of
+                Constantine on top of the column fell down. When it fell, it
+                broke, and it also broke{" "}
+                <strong className="text-white">
+                  three of the nine stone blocks
+                </strong>
+                .
               </p>
 
-              <p className="text-base md:text-lg">
-                This was very hard to do. Moving such a big and heavy stone was
-                almost impossible at that time. The emperor did this to show
-                everyone that he was the ruler of the whole world. The stone
-                says: &quot;Look, my power is very big.&quot;
-              </p>
-
-              {/* Additional Historical Context */}
+              {/* Repair Story */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Did you know?
+                    How They Fixed the Column
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    After the statue and the top blocks fell, the column was
+                    shorter and damaged. To fix it, people put a simple{" "}
+                    <strong className="text-white">white marble capital</strong>{" "}
+                    on the top to finish it.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    They also saw that the column was now weak. So, they placed{" "}
+                    <strong className="text-white">strong iron rings</strong>{" "}
+                    around it to hold the stone blocks together and make it
+                    strong again.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Name Origin */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    How It Got Its Name
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    Because of these metal rings, the column got a new name.
+                    People started to call it{" "}
+                    <strong className="text-white">"Çemberlitaş"</strong>, which
+                    means{" "}
+                    <strong className="text-white">"The Hooped Stone"</strong>{" "}
+                    or{" "}
+                    <strong className="text-white">
+                      "The Column with Rings"
+                    </strong>
+                    . That is the name we still use today.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Fun Fact */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Did You Know?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    This stone is about 3,500 years old. It is the oldest thing
-                    in the Hippodrome. Because the stone (red granit) is very
-                    strong, the pictures and writing on it are still clear. It
-                    saw the Roman Empire, the Byzantine Empire, and the Ottoman
-                    Empire. And it still stands here today, looking amazing.
+                    The original column stood approximately 50 meters high.
+                    After the storm damage and repairs, it now stands at about
+                    35 meters tall. The iron rings that gave it its famous name
+                    have been replaced and reinforced several times over the
+                    centuries to keep this ancient monument standing strong.
                   </p>
                 </CardContent>
               </Card>
@@ -71,10 +118,10 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/hippodrome/3/location")}
+            onClick={() => router.push("/pagan-cross-crescent/3/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question
+            Continue Your Journey
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
@@ -82,7 +129,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Continue your journey to find more ancient secrets...
+            The stones remember what people forget...
           </p>
         </footer>
       </div>

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -27,19 +26,27 @@ export default function QuestionPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  const [zoomImage, setZoomImage] = useState<number | null>(null);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const question =
-    "I am Emperor Theodosius. My friends are standing with me also are missing same body part as me. Their total number carries the key that will free my soul. My soul, rising to the sky and it is trapped in a hieroglyph. Find the hieroglyph and free my soul.";
+    "Cemberlitas is standing at number 12 keep walking towards to number 10 to find the red path. At the end of the path you will see the holly tree. Which fruit does it have?";
 
   const hintData = [
-    "I am the emperor so i like sitting in the center",
-    "The missing part is head",
-    "Count the hieroglyphs on the side where the emperor with no head, from bottom to top, the same number as his friends. That's how you'll find the hieroglyph where the emperor's soul is trapped.",
+    "Numbers are representing directions from the manual clock.",
+    "Red path is a hallway at the end you will find the place with trees",
+    "The tree which you are trying to find is connected to metal.",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  const options = [
+    "Grape",
+    "Apple",
+    "Date",
+    "Cherry",
+    "Orange",
+    "Fig",
+    "Chestnut",
+    "Black pepper",
+  ];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -49,10 +56,10 @@ export default function QuestionPage() {
     }
   };
 
-  const handleOptionClick = (option: number) => {
+  const handleOptionClick = (option: string) => {
     setSelectedOption(option);
 
-    if (option === 7) {
+    if (option === "Grape") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -69,13 +76,13 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/hippodrome/2/info");
+      router.push("/pagan-cross-crescent/2/info");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
@@ -94,31 +101,24 @@ export default function QuestionPage() {
             {/* Options Grid */}
             <div className="mb-6">
               <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Select the correct hieroglyph:
+                Select the correct fruit:
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 {options.map((option) => (
-                  <div
+                  <Button
                     key={option}
-                    className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
+                    variant="outline"
+                    className={`h-16 md:h-20 border-2 text-base md:text-lg font-medium transition-all duration-300 ${
                       selectedOption === option
-                        ? option === 7
-                          ? "border-secondary-400 ring-2 ring-secondary-400"
-                          : "border-red-400 ring-2 ring-red-400"
-                        : "border-primary-500 hover:border-secondary-400"
+                        ? option === "Grape"
+                          ? "border-secondary-400 bg-secondary-400 bg-opacity-20 text-secondary-400"
+                          : "border-red-400 bg-red-400 bg-opacity-20 text-red-400"
+                        : "border-primary-400 text-primary-200 hover:border-secondary-400 hover:text-secondary-400"
                     }`}
                     onClick={() => handleOptionClick(option)}
                   >
-                    <Image
-                      src={`/opt/2/${option}.jpeg`}
-                      alt={`Hieroglyph ${option}`}
-                      fill
-                      className="object-contain bg-primary-900 p-2"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      quality={100}
-                      unoptimized={true}
-                    />
-                  </div>
+                    {option}
+                  </Button>
                 ))}
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/hippodrome/2/location")}
+            onClick={() => router.push("/pagan-cross-crescent/2/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -197,57 +197,22 @@ export default function QuestionPage() {
           </Button>
         </div>
 
-        {/* Zoom Modal */}
-        <Dialog
-          open={zoomImage !== null}
-          onOpenChange={() => setZoomImage(null)}
-        >
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
-            <DialogHeader>
-              <DialogTitle className="text-2xl text-white">
-                Hieroglyph {zoomImage} - Detailed View
-              </DialogTitle>
-            </DialogHeader>
-            <div className="relative w-full h-full flex items-center justify-center">
-              {zoomImage && (
-                <Image
-                  src={`/opt/2/${zoomImage}.jpg`}
-                  alt={`Hieroglyph ${zoomImage} - Detailed`}
-                  fill
-                  className="object-contain"
-                  quality={100}
-                  unoptimized={true}
-                />
-              )}
-            </div>
-            <div className="flex justify-center mt-4">
-              <Button
-                onClick={() => setZoomImage(null)}
-                className="bg-secondary-500 hover:bg-secondary-600 text-white"
-              >
-                Close
-              </Button>
-            </div>
-          </DialogContent>
-        </Dialog>
-
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
           <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Congratulations!
+                Correct!
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  You found the correct hieroglyph! Emperor Theodosius soul is
-                  free.
+                  Yes! The holy tree bears grapes. You found the right path.
                 </p>
                 <Card className="bg-primary-700 border-primary-500">
                   <CardContent className="p-4">
                     <p className="text-lg font-semibold text-center">
-                      Redirecting in {countdown} seconds...
+                      Continuing your journey in {countdown} seconds...
                     </p>
                     <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
                       <div
@@ -268,11 +233,12 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <FaTimesCircle className="mr-3" />
-                Wrong Choice!
+                Incorrect Fruit
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  This hieroglyph is not correct. Use the hints and try again.
+                  That's not the fruit of the holy tree. Check the hints and try
+                  again.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
