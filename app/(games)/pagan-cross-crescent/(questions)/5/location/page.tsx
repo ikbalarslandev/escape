@@ -33,7 +33,7 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/q_imgs/kitchen-wall.jpg"
+                  src="/qs-imgs/pagan-cross-crescent/loc/5.JPG"
                   alt="Kitchen Wall of Nuruosmaniye Külliyesi"
                   fill
                   className="object-cover z-10"
@@ -59,24 +59,6 @@ export default function LocationPage() {
                 provided free meals to students, the poor, and travelers every
                 single day. From this very spot, the külliye demonstrated the
                 Ottoman tradition of social welfare and community support.
-              </p>
-            </div>
-
-            {/* Historical Context Image */}
-            <div className="mb-6 md:mb-8">
-              <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden bg-primary-700">
-                <Image
-                  src="/q_imgs/imaret-kitchen.jpg"
-                  alt="Traditional Ottoman Soup Kitchen"
-                  fill
-                  className="object-contain p-4 z-10"
-                  sizes="(max-width: 768px) 100vw, 768px"
-                  priority
-                />
-                <div className="absolute inset-0 bg-primary-900 bg-opacity-10"></div>
-              </div>
-              <p className="text-primary-300 text-sm text-center mt-2 italic">
-                Traditional Ottoman imaret serving meals to the community
               </p>
             </div>
 

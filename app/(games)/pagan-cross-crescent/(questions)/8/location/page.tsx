@@ -33,7 +33,7 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/q_imgs/mosque-entrance.jpg"
+                  src="/qs-imgs/pagan-cross-crescent/loc/8.JPG"
                   alt="Nuruosmaniye Mosque Main Entrance"
                   fill
                   className="object-cover z-10"
