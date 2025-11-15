@@ -10,134 +10,224 @@ export default function InfoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
         {/* Header */}
         <header className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
+            <FaCheckCircle className="h-12 w-12 text-secondary-300 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Well Done!
+              Journey Complete!
             </h1>
           </div>
-          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
-          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the heart of the külliye's community service
+          <div className="w-24 h-1 bg-secondary-300 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
+            You've discovered the unique fusion of East and West
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+        <Card className="border border-primary-500 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
-            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
-              <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Küllıye: A Self-Sufficient Community
+            <div className="space-y-6 md:space-y-8 text-primary-100 leading-relaxed">
+              <h2 className="text-2xl md:text-3xl font-light text-secondary-300 text-center mb-6">
+                The Perfect Fusion: Baroque Meets Ottoman
               </h2>
 
-              {/* What is a Küllıye */}
-              <Card className="bg-primary-700 border-primary-500">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What is a Küllıye?
+              {/* Baroque Style */}
+              <Card className="bg-primary-700 border-primary-400">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
+                    What is Baroque Style?
                   </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    A Küllıye is not just one building. It is a group of
-                    buildings with a mosque at its center. It was like a small
-                    city that provided for all the needs of the people.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Buildings of a Küllıye */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  The Buildings of a Küllıye:
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Mosque:</strong> The main
-                      building for prayer
+                  <div className="space-y-3 text-primary-50">
+                    <p>
+                      <strong className="text-white">Origin:</strong> Started in
+                      17th century Italy.
                     </p>
-                    <p className="text-base">
-                      <strong className="text-white">Medrese:</strong> The
-                      school for education
+                    <p>
+                      <strong className="text-white">Goal:</strong> To create
+                      emotion, drama, and a sense of theater.
                     </p>
-                    <p className="text-base">
-                      <strong className="text-white">Imaret:</strong> The soup
-                      kitchen for free food
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Bath (Hamam):</strong> The
-                      public bath for cleaning
-                    </p>
+                    <div>
+                      <strong className="text-white">Features:</strong>
+                      <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                        <li>Curves and Wavy Lines</li>
+                        <li>
+                          Lots of Decoration: Gold leaf, detailed plasterwork,
+                          carvings
+                        </li>
+                        <li>
+                          Dramatic Light: Uses windows to create light and
+                          shadow
+                        </li>
+                        <li>
+                          Sculptural Elements: Looks like the building is
+                          covered in carvings
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Inn (Han):</strong> A place
-                      for traders to stay and sell their goods
+                </CardContent>
+              </Card>
+
+              {/* Ottoman Style */}
+              <Card className="bg-primary-600 border-primary-400">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
+                    What is Classical Ottoman Style?
+                  </h3>
+                  <div className="space-y-3 text-primary-50">
+                    <p>
+                      <strong className="text-white">Origin:</strong> Perfected
+                      in the 16th century by architect Mimar Sinan.
                     </p>
-                    <p className="text-base">
-                      <strong className="text-white">Library:</strong> A place
-                      to read and study books
+                    <p>
+                      <strong className="text-white">Goal:</strong> To create a
+                      calm, peaceful, and harmonious space for prayer.
                     </p>
-                    <p className="text-base">
-                      <strong className="text-white">Tomb (Türbe):</strong> A
-                      special building for important graves
-                    </p>
+                    <div>
+                      <strong className="text-white">Features:</strong>
+                      <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                        <li>Geometric Shapes: Clear circles and squares</li>
+                        <li>A Grand Central Dome</li>
+                        <li>
+                          Simple & Abstract Decoration: Tiles, Islamic
+                          calligraphy, patterns
+                        </li>
+                        <li>
+                          Balanced & Even Light: Many windows for a soft glow
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              {/* The Free Soup Kitchen */}
-              <Card className="bg-primary-700 border-primary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    The Free Soup Kitchen (Imaret)
+              {/* Comparison Table */}
+              <Card className="bg-primary-700 border-primary-400">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold text-secondary-300 mb-4 text-center">
+                    The Unique Mix at Nuruosmaniye Mosque
                   </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    Right now, you are looking at the Imaret – the soup kitchen
-                    of the Nuruosmaniye Küllıye. From this building,{" "}
-                    <strong className="text-white">
-                      free food was given out every single day
-                    </strong>{" "}
-                    to people in need, like poor people and students. This was a
-                    very important social service that demonstrated the Ottoman
-                    tradition of caring for the community.
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm md:text-base">
+                      <thead>
+                        <tr className="border-b border-primary-400">
+                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
+                            Feature
+                          </th>
+                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
+                            Classical Ottoman Style
+                          </th>
+                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
+                            Nuruosmaniye's Baroque Style
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-primary-500">
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            COURTYARD
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Rectangle or Square
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Semi-Circle or Oval
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            DOME BASE
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Triangular Supports (pendentives)
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Curved, Shell-like Supports
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            DECORATION
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Tiles and Calligraphy
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Plaster Reliefs, Leaf Patterns, more 3D effect and
+                            gold
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            STAIRS
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Straight and simple lines
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Curved and Wavy form
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            WINDOWS
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Regular rows, straight tops
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Wavy and Curved tops
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-primary-600 transition-colors">
+                          <td className="py-3 px-2 md:px-4 font-medium text-white">
+                            OVERALL FEELING
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-primary-50">
+                            Calm, peaceful, balanced
+                          </td>
+                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
+                            Movement, grandeur, emotional
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Conclusion */}
+              <Card className="bg-primary-600 border-primary-400">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold text-secondary-300 mb-4 text-center">
+                    A Masterpiece of Mixing Styles
+                  </h3>
+                  <p className="text-primary-50 text-base md:text-lg text-center leading-relaxed">
+                    Nuruosmaniye Mosque is a perfect example of the Ottoman
+                    Empire opening up to the West. It keeps the traditional
+                    Ottoman mosque plan but reinterprets it with the dynamic and
+                    decorative language of Baroque style. This created a
+                    completely unique synthesis in architectural history.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Sultan's Mosque */}
-              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Special Note: How to Know a Sultan Built This Mosque
+              {/* Historical Significance */}
+              <Card className="bg-primary-700 border-primary-400">
+                <CardContent className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
+                    Historical Significance
                   </h3>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    Look at the mosque from here. Can you see it has{" "}
-                    <strong className="text-white">four minarets</strong>? This
-                    is a very important sign. In the Ottoman Empire, only a{" "}
-                    <strong className="text-white">Sultan (the emperor)</strong>{" "}
-                    was allowed to build a mosque with four or more minarets.
-                    So, this mosque was definitely built by a Sultan.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Social Impact */}
-              <Card className="bg-primary-700 border-primary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Social Impact
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    The külliye system represented a comprehensive approach to
-                    social welfare. It provided education, healthcare, food,
-                    shelter, and spiritual guidance all in one complex. This
-                    innovative system ensured that knowledge, charity, and
-                    community support were accessible to everyone, regardless of
-                    their social status or wealth.
+                  <p className="text-primary-50 text-base md:text-lg leading-relaxed">
+                    Built between 1748-1755, Nuruosmaniye represents a turning
+                    point in Ottoman architecture. It marks the beginning of the
+                    "Tulip Period" and the Westernization movement that would
+                    eventually transform the empire. The mosque stands as a
+                    testament to cultural exchange and the ability to embrace
+                    new influences while preserving core identity.
                   </p>
                 </CardContent>
               </Card>
@@ -145,21 +235,21 @@ export default function InfoPage() {
           </CardContent>
         </Card>
 
-        {/* Navigation */}
+        {/* Final Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/6/location")}
-            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            onClick={() => router.push("/pagan-cross-crescent/final")}
+            className="bg-secondary-500 hover:bg-secondary-400 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Continue Your Journey
+            See The Final Page
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
-          <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where faith, education, and charity came together as one...
+          <p className="text-primary-200 font-light italic text-sm md:text-base">
+            Where Pagan, Cross, and Crescent found perfect harmony...
           </p>
         </footer>
       </div>
