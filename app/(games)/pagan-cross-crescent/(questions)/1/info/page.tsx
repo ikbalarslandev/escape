@@ -21,7 +21,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You solved the first puzzle!
+            You discovered the secret of Çemberlitaş!
           </p>
         </header>
 
@@ -30,32 +30,115 @@ export default function InfoPage() {
           <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
+                The Column That Built a Capital City
+              </h2>
+
               <p className="text-base md:text-lg">
-                <strong className="text-white font-semibold">
-                  Correct answer: Gold Boiler
-                </strong>
-                . You are now in the center of the Hippodrome. Imagine this
-                place long ago: big stands all around you and the spina in the
-                middle. This whole area was as big as 9 football fields
-                together!
+                A long time ago, Emperor Constantine visited a small pagan town
+                called <strong className="text-white">Byzantium</strong>. He
+                decided, "I will build my new capital city here. I will call it{" "}
+                <strong className="text-white">New Rome</strong>."
               </p>
 
               <p className="text-base md:text-lg">
-                Can you imagine? They built this huge place to bring people
-                together, to have fun, and to show the power of the empire.
+                But he had a big problem. The town was very small. He did not
+                have enough people to build a great capital for his empire.
               </p>
 
-              {/* Additional Historical Context */}
+              <p className="text-base md:text-lg">
+                So, Constantine made a clever plan. First, he built a large,
+                round public square called a{" "}
+                <strong className="text-white">Forum</strong>. This was a place
+                for people to meet. Then, he made a brilliant "honey pot" plan
+                to attract people from all around the world. If many people
+                came, he could build a big and powerful nation.
+              </p>
+
+              {/* How He Attracted Pagans */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Did you know?
+                    How Did He Attract the Pagans?
                   </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    In the exact center of the new Forum, he erected a giant
+                    column. This column was special because it came from a
+                    temple for the sun god,{" "}
+                    <strong className="text-white">Apollo</strong>. On top of
+                    the column, he put a statue of himself. The statue wore a
+                    crown with{" "}
+                    <strong className="text-white">seven lights</strong> to look
+                    like Apollo. This made all the pagan people respect him and
+                    want to live in his city.
+                  </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The Hippodrome could hold up to 100,000 people. Chariot
-                    races were not just for fun. They were also important for
-                    politics. People showed if they supported the emperor or not
-                    during these races.
+                    He also made a very important rule: the country became{" "}
+                    <strong className="text-white">bilingual</strong>. This
+                    means there were two official languages:{" "}
+                    <strong className="text-white">Latin and Greek</strong>.
+                    Now, the Greek-speaking pagan people felt welcome and were
+                    happy to join his new empire.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* How He Attracted Christians and Jews */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    How Did He Attract Christians and Jews?
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    Constantine sent his mother,{" "}
+                    <strong className="text-white">Helena</strong>, to
+                    Jerusalem. She brought back many holy objects for Christians
+                    and Jews. They buried these holy things under the column in
+                    the forum to protect the city.
+                  </p>
+                  <div className="text-primary-100 text-sm md:text-base space-y-2">
+                    <p>
+                      <strong>For Jews:</strong> The seven-branched candlestick
+                      (Menorah) from King Solomon's Temple.
+                    </p>
+                    <p>
+                      <strong>For Christians:</strong> Pieces of wood from the
+                      cross where Jesus died.
+                    </p>
+                    <p>
+                      <strong>For Christians:</strong> Pieces of the bread that
+                      Jesus used to feed 5,000 people.
+                    </p>
+                    <p>
+                      <strong>For Jews and Christians:</strong> The axe that
+                      Noah used to build his ark.
+                    </p>
+                    <p>
+                      <strong>For Jews and Christians:</strong> One of the
+                      stones that David used in his sling.
+                    </p>
+                  </div>
+                  <p className="text-primary-100 text-sm md:text-base mt-3">
+                    Because of this, Christians and Jews from all over the world
+                    wanted to come and join him.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* The Center of Everything */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    The Center of Everything
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    This Forum with its column was the{" "}
+                    <strong className="text-white">
+                      heart of Constantinople
+                    </strong>
+                    . It was the reason people came, and it was the reason the
+                    city became a great Empire. Without this special place,
+                    there may have been no great capital city at all.
                   </p>
                 </CardContent>
               </Card>
@@ -66,10 +149,10 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/hippodrome/review")}
+            onClick={() => router.push("/pagan-cross-crescent/2/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Next Question
+            Continue Your Journey
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
@@ -77,7 +160,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Keep following the story of history...
+            Discover how three traditions came together to build an empire...
           </p>
         </footer>
       </div>

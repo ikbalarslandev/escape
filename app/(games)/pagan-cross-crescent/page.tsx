@@ -13,30 +13,27 @@ import {
   Play,
   Target,
   History,
+  Cross,
+  Moon,
 } from "lucide-react";
 import { FaSearch, FaMapMarkerAlt, FaLightbulb } from "react-icons/fa";
 import YouTube from "react-youtube";
 
-const HippodromeIntroPage = () => {
+const PaganCrossCrescentIntroPage = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   const gameInfo = {
-    title: "Hippodrome: The Lost Spirit",
-    location: "Sultanahmet Square, Istanbul",
-    duration: "1.5-2 hours",
+    title: "Pagan, Cross, Crescent",
+    location: "Historic Peninsula, Istanbul",
+    duration: "2-2.5 hours",
     difficulty: "Medium",
-    teamSize: "2-4 players",
-    distance: "1.3 km",
-    monuments: [
-      "German Fountain",
-      "Serpent Column",
-      "Walled Obelisk",
-      "Obelisk of Theodosius",
-    ],
+    teamSize: "2-5 players",
+    distance: "1.8 km",
+    monuments: ["Çemberlitaş Column", "Nuruosmaniye Mosque", "Vezir Han"],
   };
 
   const startGame = () => {
-    window.location.href = "/hippodrome/1/location";
+    window.location.href = "/pagan-cross-crescent/1/location";
   };
 
   const handleIntroClick = () => {
@@ -46,7 +43,6 @@ const HippodromeIntroPage = () => {
     }
   };
 
-  // YouTube video options
   const videoOpts = {
     height: "100%",
     width: "100%",
@@ -68,35 +64,33 @@ const HippodromeIntroPage = () => {
           <div className="max-w-2xl mx-auto text-center bg-primary-800 rounded-2xl p-6 md:p-8 border border-primary-600">
             <div className="mb-6 md:mb-8">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-secondary-400">
-                Hippodrome: The Lost Spirit
+                Pagan, Cross, Crescent
               </h1>
               <div className="w-20 md:w-24 h-1 bg-secondary-400 mx-auto mb-4 md:mb-6"></div>
             </div>
 
             <div className="text-base md:text-lg lg:text-xl leading-relaxed space-y-3 md:space-y-4 mb-6 md:mb-8 text-primary-100">
               <p>
-                Welcome, time traveler. Before we begin our journey, let me
-                share a secret about places...
+                Do you want to know why this city became the capital of empires?
               </p>
               <p className="text-secondary-300 italic text-sm md:text-base">
-                Every location has a soul - what the ancients called{" "}
-                <strong>&apos;Genius Loci&apos;</strong>. It&apos;s the unique
-                spirit, the memory, the very essence that makes a place what it
-                truly is.
+                The answer lies in three powerful forces that shaped its
+                destiny...
               </p>
               <p>
-                The Hippodrome was once the beating heart of Constantinople,
-                where emperors connected with the people, where chariots
-                thundered, and where the fate of empires was decided.
+                For centuries, three great traditions have existed in harmony
+                here:
+                <span className="text-secondary-300"> Pagan</span>,{" "}
+                <span className="text-blue-300">Cross</span>, and{" "}
+                <span className="text-green-300">Crescent</span>.
               </p>
               <p>
-                But over centuries, its genius loci has faded, its stories
-                forgotten.
+                This unique balance is what made Istanbul the heart of empires.
+                Each tradition left its mark, creating the city we know today.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Your mission: Help us reawaken the spirit of this ancient arena.
-                Solve the puzzles hidden in its surviving monuments to restore
-                the genius loci and hear the Hippodrome&apos;s lost stories.
+                Now it's your turn to discover how these three forces came
+                together to build one of the world's greatest cities.
               </p>
             </div>
 
@@ -104,11 +98,10 @@ const HippodromeIntroPage = () => {
               onClick={() => setShowIntro(false)}
               className="bg-secondary-500 hover:bg-secondary-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold w-full md:w-auto"
             >
-              Begin the Quest
+              Discover the Secret
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Button>
 
-            {/* Mobile hint */}
             <p className="text-primary-300 text-xs mt-4 md:hidden">
               Tap anywhere to continue
             </p>
@@ -116,15 +109,15 @@ const HippodromeIntroPage = () => {
         </div>
       )}
 
-      {/* Main Content - Now scrollable */}
+      {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 py-6 max-w-6xl min-h-screen">
         {/* Header */}
         <div className="text-center mb-8 pt-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4">
-            Hippodrome: The Lost Spirit
+            Pagan, Cross, Crescent
           </h1>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto px-2">
-            Reawaken the ancient soul of Constantinople&apos;s greatest arena
+            Discover how three traditions created an imperial capital
           </p>
         </div>
 
@@ -133,16 +126,16 @@ const HippodromeIntroPage = () => {
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-white mb-4 flex items-center">
               <History className="h-5 w-5 md:h-6 md:w-6 text-secondary-400 mr-2 md:mr-3" />
-              Discover the Hippodrome
+              The Three Traditions
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
-              Watch this short documentary to understand the historical
-              significance of the Hippodrome before you begin your adventure.
+              Explore how Pagan, Christian, and Islamic influences shaped
+              Istanbul's unique character.
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
                 <YouTube
-                  videoId="AjrnvDn2tcA"
+                  videoId="YOUR_VIDEO_ID_HERE"
                   opts={videoOpts}
                   className="w-full h-full"
                   iframeClassName="w-full h-full rounded-lg"
@@ -160,47 +153,44 @@ const HippodromeIntroPage = () => {
               <CardContent className="p-4 md:p-6">
                 <h2 className="text-xl md:text-2xl font-light text-white mb-4 md:mb-6 flex items-center">
                   <Target className="h-5 w-5 md:h-6 md:w-6 text-secondary-400 mr-2 md:mr-3" />
-                  Your Quest
+                  Your Journey
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-primary-200">
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <span className="text-white text-xs md:text-sm font-bold">
-                        1
-                      </span>
+                      <Moon className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Visit 4 ancient monuments around the Hippodrome
+                      Start at the <strong>Pagan Column</strong> in Çemberlitaş
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
+                      <Cross className="text-white text-xs md:text-sm" />
+                    </div>
+                    <span className="text-sm md:text-base">
+                      Explore the <strong>Baroque Mosque</strong> of
+                      Nuruosmaniye
                     </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
                       <span className="text-white text-xs md:text-sm font-bold">
-                        2
+                        ☪
                       </span>
                     </div>
                     <span className="text-sm md:text-base">
-                      Solve historical puzzles tied to each location
+                      Discover the <strong>Trade Hub</strong> at Vezir Han
                     </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
                       <span className="text-white text-xs md:text-sm font-bold">
-                        3
+                        !
                       </span>
                     </div>
                     <span className="text-sm md:text-base">
-                      Uncover stories of chariot races and imperial politics
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <span className="text-white text-xs md:text-sm font-bold">
-                        4
-                      </span>
-                    </div>
-                    <span className="text-sm md:text-base">
-                      Restore the Genius Loci - the spirit of the place
+                      Uncover how three traditions built an empire
                     </span>
                   </li>
                 </ul>
@@ -275,11 +265,11 @@ const HippodromeIntroPage = () => {
               </CardContent>
             </Card>
 
-            {/* Monuments You&apos;ll Visit */}
+            {/* Locations You'll Visit */}
             <Card className="border border-primary-600 bg-primary-800 rounded-2xl">
               <CardContent className="p-4 md:p-6">
                 <h2 className="text-xl md:text-2xl font-light text-white mb-4 md:mb-6">
-                  Ancient Monuments
+                  Historic Locations
                 </h2>
                 <div className="grid grid-cols-1 gap-2 md:gap-3">
                   {gameInfo.monuments.map((monument, index) => (
@@ -303,28 +293,28 @@ const HippodromeIntroPage = () => {
           </div>
         </div>
 
-        {/* What You&apos;ll Learn */}
+        {/* What You'll Discover */}
         <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
-              Historical Insights
+              What You'll Discover
             </h2>
             <ul className="space-y-2 md:space-y-3 text-secondary-100 text-xs md:text-sm">
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The political power of chariot racing factions (Blues vs Greens)
+                How a pagan column helped establish a Christian capital
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                How emperors used the Hippodrome to connect with citizens
+                Why a mosque features Christian Baroque architecture
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The engineering marvel of ancient Roman stadium design
+                The economic system that sustained empires for centuries
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                Stories of famous charioteers and their legendary races
+                The secret behind Istanbul's enduring power
               </li>
             </ul>
           </CardContent>
@@ -338,10 +328,10 @@ const HippodromeIntroPage = () => {
                 <FaSearch className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Observe Carefully
+                Look for Symbols
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                Look for details in architecture and inscriptions
+                Find hidden pagan, Christian, and Islamic symbols
               </p>
             </CardContent>
           </Card>
@@ -351,10 +341,10 @@ const HippodromeIntroPage = () => {
                 <FaMapMarkerAlt className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Be Present
+                Follow the Path
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                Puzzles require you to be at each location
+                Each location reveals clues to the next
               </p>
             </CardContent>
           </Card>
@@ -364,10 +354,10 @@ const HippodromeIntroPage = () => {
                 <FaLightbulb className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Use Hints
+                Connect the Dots
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                Multiple hint levels available if stuck
+                See how three traditions created one great city
               </p>
             </CardContent>
           </Card>
@@ -377,12 +367,12 @@ const HippodromeIntroPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-secondary-600 to-secondary-700 rounded-2xl p-6 md:p-8 border border-secondary-500">
             <h2 className="text-2xl md:text-3xl font-light text-white mb-3 md:mb-4">
-              Ready to Awaken the Spirit?
+              Ready to Discover the Secret?
             </h2>
             <p className="text-secondary-100 mb-4 md:mb-6 text-sm md:text-base max-w-2xl mx-auto px-2">
-              Begin your journey at the German Fountain and follow the path of
-              ancient chariots. Remember to observe carefully - the answers are
-              hidden in plain sight!
+              Begin your journey at the Çemberlitaş Column and uncover how three
+              great traditions came together to build an imperial capital that
+              stood the test of time.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Button
@@ -390,7 +380,7 @@ const HippodromeIntroPage = () => {
                 className="bg-white hover:bg-gray-100 text-primary-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-2xl"
               >
                 <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Start Adventure
+                Start Your Discovery
               </Button>
               <Link href="/games">
                 <Button
@@ -402,7 +392,7 @@ const HippodromeIntroPage = () => {
               </Link>
             </div>
             <p className="text-secondary-200 text-xs md:text-sm mt-3 md:mt-4">
-              Free to play • No booking required • Play at your own pace
+              Free to play • No booking required • Discover Istanbul's secret
             </p>
           </div>
         </div>
@@ -411,4 +401,4 @@ const HippodromeIntroPage = () => {
   );
 };
 
-export default HippodromeIntroPage;
+export default PaganCrossCrescentIntroPage;
