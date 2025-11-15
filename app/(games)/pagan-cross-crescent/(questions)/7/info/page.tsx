@@ -16,12 +16,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Well Done!
+              Perfect Discovery!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the heart of the külliye's community service
+            You uncovered the hidden engineering marvel beneath the mosque
           </p>
         </header>
 
@@ -31,113 +31,121 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Küllıye: A Self-Sufficient Community
+                The Hidden Engineering Marvel
               </h2>
 
-              {/* What is a Küllıye */}
+              {/* Foundation Story */}
               <Card className="bg-primary-700 border-primary-500">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What is a Küllıye?
+                    A Huge Hole for a Foundation
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    A Küllıye is not just one building. It is a group of
-                    buildings with a mosque at its center. It was like a small
-                    city that provided for all the needs of the people.
+                    Before builders could start the mosque, they had a big job.
+                    They needed to dig a giant hole. They dug down{" "}
+                    <strong className="text-white">10 meters deep</strong> into
+                    the earth.
                   </p>
-                </CardContent>
-              </Card>
-
-              {/* Buildings of a Küllıye */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  The Buildings of a Küllıye:
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Mosque:</strong> The main
-                      building for prayer
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Medrese:</strong> The
-                      school for education
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Imaret:</strong> The soup
-                      kitchen for free food
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Bath (Hamam):</strong> The
-                      public bath for cleaning
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Inn (Han):</strong> A place
-                      for traders to stay and sell their goods
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Library:</strong> A place
-                      to read and study books
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Tomb (Türbe):</strong> A
-                      special building for important graves
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* The Free Soup Kitchen */}
-              <Card className="bg-primary-700 border-primary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    The Free Soup Kitchen (Imaret)
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    Right now, you are looking at the Imaret – the soup kitchen
-                    of the Nuruosmaniye Küllıye. From this building,{" "}
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    The bottom{" "}
                     <strong className="text-white">
-                      free food was given out every single day
+                      8 meters became a huge cistern
                     </strong>{" "}
-                    to people in need, like poor people and students. This was a
-                    very important social service that demonstrated the Ottoman
-                    tradition of caring for the community.
+                    (an underground water tank).
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    The top{" "}
+                    <strong className="text-white">
+                      2 meters were filled with stones and earth
+                    </strong>{" "}
+                    to make a strong, flat foundation for the mosque.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    So, the mosque you see stands on a man-made hill, with a
+                    secret water palace beneath it.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Sultan's Mosque */}
+              {/* Where Did the Dirt Go */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Special Note: How to Know a Sultan Built This Mosque
+                    Where Did All the Dirt Go?
                   </h3>
                   <p className="text-secondary-100 text-sm md:text-base">
-                    Look at the mosque from here. Can you see it has{" "}
-                    <strong className="text-white">four minarets</strong>? This
-                    is a very important sign. In the Ottoman Empire, only a{" "}
-                    <strong className="text-white">Sultan (the emperor)</strong>{" "}
-                    was allowed to build a mosque with four or more minarets.
-                    So, this mosque was definitely built by a Sultan.
+                    All the earth from this big dig was taken to{" "}
+                    <strong className="text-white">Sultanahmet Square</strong>.
+                    They used it to raise the level of the ground.
+                  </p>
+                  <p className="text-secondary-100 text-sm md:text-base mt-2">
+                    This is why the ancient{" "}
+                    <strong className="text-white">
+                      Obelisk and Serpent Column
+                    </strong>{" "}
+                    in the square look like they sank. They did not sink.{" "}
+                    <strong className="text-white">
+                      The ground around them was made higher!
+                    </strong>
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Social Impact */}
+              {/* Working Cistern */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Social Impact
+                    A Cistern That Still Works Today
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The külliye system represented a comprehensive approach to
-                    social welfare. It provided education, healthcare, food,
-                    shelter, and spiritual guidance all in one complex. This
-                    innovative system ensured that knowledge, charity, and
-                    community support were accessible to everyone, regardless of
-                    their social status or wealth.
+                    The amazing part is that the{" "}
+                    <strong className="text-white">
+                      Nuruosmaniye Cistern still works after hundreds of years!
+                    </strong>{" "}
+                    It still provides water today. It gives water to the elegant
+                    fountain in front of the mosque. It even provides water for
+                    the famous{" "}
+                    <strong className="text-white">German Fountain</strong> in
+                    the middle of Sultanahmet Square.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base mt-2">
+                    This shows the{" "}
+                    <strong className="text-white">
+                      brilliant and lasting vision of Ottoman engineers.
+                    </strong>
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Engineering Innovation */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Ottoman Engineering Genius
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    This project demonstrates incredible foresight. Instead of
+                    simply disposing of the excavated earth, the Ottoman
+                    engineers found multiple practical uses for it. They created
+                    a stable foundation, built a massive water storage system,
+                    and improved another public space - all from the same
+                    excavation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Water Management */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Advanced Water Management
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    The cistern system was part of a sophisticated water network
+                    that collected rainwater and channeled it through aqueducts.
+                    This ensured the külliye had a reliable water supply for
+                    drinking, cooking, cleaning, and the fountains - essential
+                    for a complex that served thousands of people daily.
                   </p>
                 </CardContent>
               </Card>
@@ -148,7 +156,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/6/location")}
+            onClick={() => router.push("/pagan-cross-crescent/8/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
@@ -159,7 +167,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where faith, education, and charity came together as one...
+            Where vision built foundations that lasted centuries...
           </p>
         </footer>
       </div>
