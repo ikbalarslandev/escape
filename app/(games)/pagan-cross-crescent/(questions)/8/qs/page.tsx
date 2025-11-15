@@ -23,20 +23,20 @@ import {
 
 export default function QuestionPage() {
   const router = useRouter();
-  const [hints, setHints] = useState([false, false, false]);
+  const [hints, setHints] = useState([false, false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
-  const question =
-    "For kitchen fire we created a pipe for smoke, which chimney has the pipe?";
+  const question = "Which special figure placed on top of main door?";
 
   const hintData = [
-    "Focus on the bigger chimneys. You are trying to find one of them.",
-    "Look at the holes on the chimneys. If smoke flows there then it paints it to the black",
-    "The correct chimney has metal barriers around one hole. From there smoke flows",
+    "There is three doors and 2 of them are similar to each other but only main door is different form them.",
+    "The main door is generally closed.",
+    "Look above the door you will see some shaped stones. In the middle of it there is a special figure",
+    "The special figure is circular",
   ];
 
   const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -52,7 +52,7 @@ export default function QuestionPage() {
   const handleOptionClick = (option: number) => {
     setSelectedOption(option);
 
-    if (option === 1) {
+    if (option === 5) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -69,7 +69,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/5/info");
+      router.push("/pagan-cross-crescent/9/location");
     }
   }, [isSuccess, countdown, router]);
 
@@ -79,7 +79,7 @@ export default function QuestionPage() {
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
-            Question 5
+            Question 8
           </h1>
           <div className="w-20 h-1 bg-secondary-400 mx-auto mb-4"></div>
         </header>
@@ -94,7 +94,7 @@ export default function QuestionPage() {
             {/* Options Grid */}
             <div className="mb-6">
               <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Select the correct chimney:
+                Select the correct figure:
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {options.map((option) => (
@@ -102,7 +102,7 @@ export default function QuestionPage() {
                     key={option}
                     className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
                       selectedOption === option
-                        ? option === 1
+                        ? option === 5
                           ? "border-secondary-400 ring-2 ring-secondary-400"
                           : "border-red-400 ring-2 ring-red-400"
                         : "border-primary-500 hover:border-secondary-400"
@@ -110,8 +110,8 @@ export default function QuestionPage() {
                     onClick={() => handleOptionClick(option)}
                   >
                     <Image
-                      src={`/opt/5/chimney-${option}.jpg`}
-                      alt={`Chimney ${option}`}
+                      src={`/opt/8/figure-${option}.jpg`}
+                      alt={`Figure ${option}`}
                       fill
                       className="object-contain bg-primary-900 p-2"
                       sizes="(max-width: 768px) 50vw, 25vw"
@@ -193,7 +193,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/5/location")}
+            onClick={() => router.push("/pagan-cross-crescent/8/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -210,14 +210,14 @@ export default function QuestionPage() {
           <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
             <DialogHeader>
               <DialogTitle className="text-2xl text-white">
-                Chimney {zoomImage} - Detailed View
+                Figure {zoomImage} - Detailed View
               </DialogTitle>
             </DialogHeader>
             <div className="relative w-full h-full flex items-center justify-center">
               {zoomImage && (
                 <Image
-                  src={`/opt/5/chimney-${zoomImage}.jpg`}
-                  alt={`Chimney ${zoomImage} - Detailed`}
+                  src={`/opt/8/figure-${zoomImage}.jpg`}
+                  alt={`Figure ${zoomImage} - Detailed`}
                   fill
                   className="object-contain"
                   quality={100}
@@ -246,7 +246,8 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  Yes! The first chimney has the smoke pipe with metal barriers.
+                  Yes! The 5th figure is the circular symbol above the main
+                  door.
                 </p>
                 <Card className="bg-primary-700 border-primary-500">
                   <CardContent className="p-4">
@@ -272,12 +273,12 @@ export default function QuestionPage() {
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
                 <FaTimesCircle className="mr-3" />
-                Wrong Chimney!
+                Wrong Figure!
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  This chimney doesn't have the smoke pipe. Check the hints and
-                  try again.
+                  This is not the figure above the main door. Check the hints
+                  and try again.
                 </p>
                 <Button
                   onClick={() => setIsError(false)}
