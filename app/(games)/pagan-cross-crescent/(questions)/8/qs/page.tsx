@@ -39,7 +39,7 @@ export default function QuestionPage() {
     "The special figure is circular",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  const options = [1, 2, 3, 4, 5, 6];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -52,7 +52,7 @@ export default function QuestionPage() {
   const handleOptionClick = (option: number) => {
     setSelectedOption(option);
 
-    if (option === 5) {
+    if (option === 3) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -96,13 +96,13 @@ export default function QuestionPage() {
               <h3 className="text-lg font-semibold text-white mb-4 text-center">
                 Select the correct figure:
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 {options.map((option) => (
                   <div
                     key={option}
                     className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
                       selectedOption === option
-                        ? option === 5
+                        ? option === 3
                           ? "border-secondary-400 ring-2 ring-secondary-400"
                           : "border-red-400 ring-2 ring-red-400"
                         : "border-primary-500 hover:border-secondary-400"
@@ -110,19 +110,14 @@ export default function QuestionPage() {
                     onClick={() => handleOptionClick(option)}
                   >
                     <Image
-                      src={`/opt/8/figure-${option}.jpg`}
+                      src={`/qs-imgs/pagan-cross-crescent/opts/8/${option}.jpeg`}
                       alt={`Figure ${option}`}
                       fill
                       className="object-contain bg-primary-900 p-2"
-                      sizes="(max-width: 768px) 50vw, 25vw"
+                      sizes="(max-width: 768px) 50vw, 33vw"
                       quality={100}
                       unoptimized={true}
                     />
-                    <div className="absolute bottom-2 left-2 bg-primary-800 bg-opacity-80 rounded-full w-8 h-8 flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
-                        {option}
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>
@@ -216,7 +211,7 @@ export default function QuestionPage() {
             <div className="relative w-full h-full flex items-center justify-center">
               {zoomImage && (
                 <Image
-                  src={`/opt/8/figure-${zoomImage}.jpg`}
+                  src={`/qs-imgs/pagan-cross-crescent/opts/8/${zoomImage}.jpeg`}
                   alt={`Figure ${zoomImage} - Detailed`}
                   fill
                   className="object-contain"
@@ -246,7 +241,7 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
                 <p>
-                  Yes! The 5th figure is the circular symbol above the main
+                  Yes! The 3rd figure is the circular symbol above the main
                   door.
                 </p>
                 <Card className="bg-primary-700 border-primary-500">
