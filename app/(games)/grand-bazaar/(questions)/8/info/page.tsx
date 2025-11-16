@@ -3,7 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaHotel,
+  FaWarehouse,
+  FaBuilding,
+} from "react-icons/fa";
+import { GiStonePath } from "react-icons/gi";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -16,12 +24,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Perfect Discovery!
+              Well Done!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You uncovered the hidden engineering marvel beneath the mosque
+            You discovered the secret of Ottoman Hans!
           </p>
         </header>
 
@@ -31,121 +39,155 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Hidden Engineering Marvel
+                The Multi-Purpose Trading Centers
               </h2>
 
-              {/* Foundation Story */}
-              <Card className="bg-primary-700 border-primary-500">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Huge Hole for a Foundation
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    Before builders could start the mosque, they had a big job.
-                    They needed to dig a giant hole. They dug down{" "}
-                    <strong className="text-white">10 meters deep</strong> into
-                    the earth.
+              {/* Han Overview Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/8/1.jpg"
+                  alt="Traditional Ottoman Han - merchant trading center"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    An Ottoman Han - where merchants lived, stored goods, and
+                    conducted business
                   </p>
-                  <p className="text-primary-100 text-sm md:text-base mt-2">
-                    The bottom{" "}
-                    <strong className="text-white">
-                      8 meters became a huge cistern
-                    </strong>{" "}
-                    (an underground water tank).
-                  </p>
-                  <p className="text-primary-100 text-sm md:text-base mt-2">
-                    The top{" "}
-                    <strong className="text-white">
-                      2 meters were filled with stones and earth
-                    </strong>{" "}
-                    to make a strong, flat foundation for the mosque.
-                  </p>
-                  <p className="text-primary-100 text-sm md:text-base mt-2">
-                    So, the mosque you see stands on a man-made hill, with a
-                    secret water palace beneath it.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              {/* Where Did the Dirt Go */}
-              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Where Did All the Dirt Go?
-                  </h3>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    All the earth from this big dig was taken to{" "}
-                    <strong className="text-white">Sultanahmet Square</strong>.
-                    They used it to raise the level of the ground.
-                  </p>
-                  <p className="text-secondary-100 text-sm md:text-base mt-2">
-                    This is why the ancient{" "}
-                    <strong className="text-white">
-                      Obelisk and Serpent Column
-                    </strong>{" "}
-                    in the square look like they sank. They did not sink.{" "}
-                    <strong className="text-white">
-                      The ground around them was made higher!
-                    </strong>
-                  </p>
-                </CardContent>
-              </Card>
+              <p className="text-base md:text-lg">
+                <strong className="text-white">Hans</strong> were multi-purpose
+                buildings in Ottoman cities where merchants could stay, store
+                their goods, and conduct business - all in one place.
+              </p>
 
-              {/* Working Cistern */}
+              <div className="flex items-start mb-4">
+                <FaHotel className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  Think of them as today's{" "}
+                  <strong className="text-white">
+                    hotels, warehouses, and office centers combined
+                  </strong>
+                  . They were vital rest, supply, and trading points for
+                  merchant caravans.
+                </p>
+              </div>
+
+              {/* What is a Han? */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Cistern That Still Works Today
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaBuilding className="mr-2" />
+                    The Ottoman Business Hub
                   </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    The amazing part is that the{" "}
-                    <strong className="text-white">
-                      Nuruosmaniye Cistern still works after hundreds of years!
-                    </strong>{" "}
-                    It still provides water today. It gives water to the elegant
-                    fountain in front of the mosque. It even provides water for
-                    the famous{" "}
-                    <strong className="text-white">German Fountain</strong> in
-                    the middle of Sultanahmet Square.
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    When merchant caravans arrived in a city after long
+                    journeys, they needed a safe place to rest, store their
+                    valuable goods, and meet with other traders.
                   </p>
-                  <p className="text-primary-100 text-sm md:text-base mt-2">
-                    This shows the{" "}
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Hans provided{" "}
                     <strong className="text-white">
-                      brilliant and lasting vision of Ottoman engineers.
-                    </strong>
+                      everything a merchant needed
+                    </strong>{" "}
+                    - from sleeping quarters to secure storage and business
+                    meeting spaces.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Engineering Innovation */}
+              {/* Zincirli Han */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Ottoman Engineering Genius
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiStonePath className="mr-2" />
+                    Zincirli Han: The Han with Chains
                   </h3>
+
+                  {/* Zincirli Han Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                    <Image
+                      src="/qs-imgs/grand-bazaar/info/8/2.jpg"
+                      alt="Zincirli Han with its characteristic chains on the facade"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-primary-200 italic">
+                        Zincirli Han gets its name from the chains used for
+                        rainwater drainage
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    Zincirli Han is one of these commercial hans in the Grand
+                    Bazaar area. It gets its name from the{" "}
+                    <strong className="text-white">chains on its facade</strong>
+                    that were used to drain rainwater.
+                  </p>
+
                   <p className="text-primary-100 text-sm md:text-base">
-                    This project demonstrates incredible foresight. Instead of
-                    simply disposing of the excavated earth, the Ottoman
-                    engineers found multiple practical uses for it. They created
-                    a stable foundation, built a massive water storage system,
-                    and improved another public space - all from the same
-                    excavation.
+                    These chains served a practical purpose but also gave the
+                    building its{" "}
+                    <strong className="text-white">
+                      characteristic appearance
+                    </strong>
+                    , making it instantly recognizable.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Water Management */}
+              {/* Architectural Details */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Advanced Water Management
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiStonePath className="mr-2" />
+                    Centuries of History Underfoot
                   </h3>
+                  <p className="text-secondary-100 text-sm md:text-base mb-3">
+                    The{" "}
+                    <strong className="text-white">cobblestone pavement</strong>{" "}
+                    on Zincirli Han's ground floor has witnessed centuries of
+                    commercial activity. Each stone has seen countless
+                    merchants, customers, and trade deals over hundreds of
+                    years.
+                  </p>
                   <p className="text-secondary-100 text-sm md:text-base">
-                    The cistern system was part of a sophisticated water network
-                    that collected rainwater and channeled it through aqueducts.
-                    This ensured the külliye had a reliable water supply for
-                    drinking, cooking, cleaning, and the fountains - essential
-                    for a complex that served thousands of people daily.
+                    In short, Zincirli Han is one of Istanbul's most vibrant
+                    trading centers, a place where{" "}
+                    <strong className="text-white">
+                      architecture tells the story of commerce
+                    </strong>
+                    and where every element has both function and meaning.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Legacy */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaWarehouse className="mr-2" />
+                    The Heartbeat of Ottoman Commerce
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Places like Zincirli Han were the{" "}
+                    <strong className="text-white">
+                      beating heart of Ottoman trade
+                    </strong>
+                    . They weren't just buildings - they were complete
+                    ecosystems where commerce, culture, and community came
+                    together. The chains that give Zincirli Han its name are
+                    more than just architectural features; they're symbols of a
+                    sophisticated trading network that connected continents and
+                    made Istanbul one of the world's greatest commercial
+                    centers.
                   </p>
                 </CardContent>
               </Card>
@@ -167,7 +209,8 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where vision built foundations that lasted centuries...
+            Where merchants found rest, goods found safety, and deals found
+            life...
           </p>
         </footer>
       </div>
