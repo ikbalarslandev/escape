@@ -33,7 +33,7 @@ const PaganCrossCrescentIntroPage = () => {
   };
 
   const startGame = () => {
-    window.location.href = "/pagan-cross-crescent/1/location";
+    window.location.href = "/grand-bazaar/1/location";
   };
 
   const handleIntroClick = () => {

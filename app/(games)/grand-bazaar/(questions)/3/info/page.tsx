@@ -163,7 +163,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/4/location")}
+            onClick={() => router.push("/grand-bazaar/4/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
