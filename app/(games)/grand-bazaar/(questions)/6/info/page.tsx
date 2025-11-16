@@ -3,7 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaFire,
+  FaSun,
+  FaLightbulb,
+} from "react-icons/fa";
+import { GiWindow } from "react-icons/gi";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -16,12 +24,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Excellent
+              Well Done!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the economic engine behind the külliye
+            You discovered the Grand Bazaar's brilliant fire protection system!
           </p>
         </header>
 
@@ -31,105 +39,113 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Vakıf Han: Economic Engine of the Küllıye
+                The Bazaar That Lived by the Sun
               </h2>
 
-              {/* What is a Vakıf Han */}
-              <Card className="bg-primary-700 border-primary-500">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What is a Vakıf Han?
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    A Vakıf Han is a special building for shops. It was built to
-                    be a money-making machine for a mosque complex (a küllıye).
-                    All the shops you see under this mosque were built for this
-                    purpose.
+              {/* Grand Bazaar Interior Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/6/1.jpg"
+                  alt="Grand Bazaar interior showing natural light from dome windows"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    Natural light flooding through hundreds of windows in the
+                    domes and roof
                   </p>
-                  <p className="text-primary-100 text-sm md:text-base mt-2">
-                    <strong className="text-white">
-                      The Sofcu Han you are in right now and the Vezir Han you
-                      previously saw are vakıf han.
-                    </strong>
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* How It Worked */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  How Did It Work?
-                </h3>
-                <p className="text-base md:text-lg mb-4">
-                  The money from the shop rents was used to pay for everything
-                  the mosque complex needed. This money was used for:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      • Cleaning and repairing the mosque
-                    </p>
-                    <p className="text-base">
-                      • Salaries for the imam and the prayer caller
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      • Salaries for the teachers in the school
-                    </p>
-                    <p className="text-base">
-                      • The free food for poor people in the soup kitchen
-                    </p>
-                  </div>
                 </div>
               </div>
 
-              {/* Self-Sufficient System */}
-              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+              <p className="text-base md:text-lg">
+                In the Grand Bazaar, there was a strict rule:{" "}
+                <strong className="text-white">no open flames allowed</strong>.
+                No gas lamps, no oil lamps - nothing that could start a fire.
+              </p>
+
+              <div className="flex items-start mb-4">
+                <FaFire className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  This was because the main goods traded here -{" "}
+                  <strong className="text-white">
+                    silk, velvet, and other precious fabrics
+                  </strong>{" "}
+                  - were extremely flammable. A single spark could destroy
+                  everything.
+                </p>
+              </div>
+
+              {/* The Fire Danger */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Self-Sufficient System
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiWindow className="mr-2" />
+                    Why Fire Was the Greatest Enemy
                   </h3>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    This system was very clever. The küllıye was
-                    self-sufficient. This means it took care of itself.
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    The Grand Bazaar was filled with the most valuable fabrics
+                    in the world. These materials could catch fire easily and
+                    burn quickly.
                   </p>
-                  <div className="mt-3 space-y-2">
-                    <p className="text-secondary-100 text-sm md:text-base">
-                      •{" "}
-                      <strong className="text-white">
-                        It did not need money from the government.
-                      </strong>
-                    </p>
-                    <p className="text-secondary-100 text-sm md:text-base">
-                      •{" "}
-                      <strong className="text-white">
-                        It did not pay taxes to the government.
-                      </strong>
-                    </p>
-                  </div>
-                  <p className="text-secondary-100 text-sm md:text-base mt-3">
-                    The shops paid for everything. This way, the mosque, school,
-                    and soup kitchen could run forever, helping people for
-                    centuries without ever asking for help.
+                  <p className="text-primary-100 text-sm md:text-base">
+                    An open flame in this environment would create{" "}
+                    <strong className="text-white">
+                      an enormous fire risk
+                    </strong>
+                    that could destroy the entire market and the empire's
+                    commercial heart.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Economic Innovation */}
+              {/* The Brilliant Solution */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Ottoman Economic Innovation
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiWindow className="mr-2" />
+                    The Architectural Masterpiece
                   </h3>
+
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    The architects solved this problem brilliantly. They placed{" "}
+                    <strong className="text-white">
+                      hundreds of windows and holes
+                    </strong>
+                    in the domes and roof, allowing natural light to flood the
+                    interior all day long.
+                  </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    This vakıf (endowment) system was one of the most
-                    sophisticated social welfare systems of its time. By
-                    creating sustainable income sources through commercial
-                    buildings like Sofcu Han and Vezir Han, the Ottomans ensured
-                    that education, healthcare, and charity could continue for
-                    generations without relying on unpredictable government
-                    funding or donations.
+                    This clever design eliminated the need for artificial
+                    lighting completely. The bazaar was designed to work with
+                    nature, not against it.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* The Daily Rhythm */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaSun className="mr-2" />
+                    Trading with the Sun
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base mb-3">
+                    Business in the Grand Bazaar followed the sun's rhythm.
+                    Trading{" "}
+                    <strong className="text-white">
+                      started with sunrise and ended with sunset
+                    </strong>
+                    . When natural light was available, the market was open.
+                  </p>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    This natural schedule meant the{" "}
+                    <strong className="text-white">
+                      commercial heart of the Empire
+                    </strong>
+                    could beat safely, without any fire danger threatening its
+                    existence.
                   </p>
                 </CardContent>
               </Card>
@@ -137,17 +153,22 @@ export default function InfoPage() {
               {/* Legacy */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Lasting Legacy
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaLightbulb className="mr-2" />
+                    Sustainable Design Before Its Time
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Thanks to this brilliant economic model, institutions like
-                    the Nuruosmaniye Külliyesi could operate independently for
-                    centuries. The rental income from these hans provided
-                    financial stability that allowed the complex to survive
-                    political changes, economic crises, and even the transition
-                    from empire to republic, continuing to serve the community
-                    through the ages.
+                    The Grand Bazaar's lighting solution was not just about
+                    safety - it was about
+                    <strong className="text-white">
+                      {" "}
+                      intelligent, sustainable design
+                    </strong>
+                    . Centuries before electricity, the architects created a
+                    building that used natural resources perfectly. This
+                    brilliant approach protected priceless goods, enabled
+                    international trade, and showed how architecture could solve
+                    practical problems in beautiful ways.
                   </p>
                 </CardContent>
               </Card>
@@ -169,7 +190,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where commerce sustained compassion for centuries...
+            Where sunlight protects commerce and architecture solves problems...
           </p>
         </footer>
       </div>

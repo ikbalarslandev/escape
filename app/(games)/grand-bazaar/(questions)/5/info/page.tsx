@@ -3,7 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaShieldAlt,
+  FaCoins,
+  FaHistory,
+} from "react-icons/fa";
+import { GiBank, GiMoneyStack } from "react-icons/gi";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -21,7 +29,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the heart of the külliye&apos;s community service
+            You discovered the world's first banking system!
           </p>
         </header>
 
@@ -31,113 +39,164 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Küllıye: A Self-Sufficient Community
+                The First Banks of the World
               </h2>
 
-              {/* What is a Küllıye */}
-              <Card className="bg-primary-700 border-primary-500">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What is a Küllıye?
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    A Küllıye is not just one building. It is a group of
-                    buildings with a mosque at its center. It was like a small
-                    city that provided for all the needs of the people.
+              {/* Bedesten Security Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/5/1.jpg"
+                  alt="Cevahir and Sandal Bedestenleri - the secure banking centers"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    Cevahir and Sandal Bedestenleri - protected by state
+                    soldiers as secure banking centers
                   </p>
-                </CardContent>
-              </Card>
-
-              {/* Buildings of a Küllıye */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  The Buildings of a Küllıye:
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Mosque:</strong> The main
-                      building for prayer
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Medrese:</strong> The
-                      school for education
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Imaret:</strong> The soup
-                      kitchen for free food
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Bath (Hamam):</strong> The
-                      public bath for cleaning
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-base">
-                      <strong className="text-white">Inn (Han):</strong> A place
-                      for traders to stay and sell their goods
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Library:</strong> A place
-                      to read and study books
-                    </p>
-                    <p className="text-base">
-                      <strong className="text-white">Tomb (Türbe):</strong> A
-                      special building for important graves
-                    </p>
-                  </div>
                 </div>
               </div>
 
-              {/* The Free Soup Kitchen */}
+              <p className="text-base md:text-lg">
+                Cevahir and Sandal Bedestenleri were much more than just markets
+                - they were{" "}
+                <strong className="text-white">
+                  one of the world's first banking systems
+                </strong>
+                .
+              </p>
+
+              <div className="flex items-start mb-4">
+                <FaShieldAlt className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  These buildings were{" "}
+                  <strong className="text-white">
+                    protected by state soldiers
+                  </strong>
+                  , making them the safest places in the city. Merchants trusted
+                  them completely.
+                </p>
+              </div>
+
+              {/* Banking Functions */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    The Free Soup Kitchen (Imaret)
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiBank className="mr-2" />
+                    More Than Just Trading
                   </h3>
+
+                  {/* Money Storage Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                    <Image
+                      src="/qs-imgs/grand-bazaar/info/5/2.jpg"
+                      alt="Merchants storing money and gold in secure chests"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-primary-200 italic">
+                        Merchants stored their money and gold in the secure
+                        bedestens
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    In these secure buildings, merchants didn't just trade
+                    jewels and fabrics. They also stored their{" "}
+                    <strong className="text-white">money and gold</strong> for
+                    safekeeping.
+                  </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Right now, you are looking at the Imaret – the soup kitchen
-                    of the Nuruosmaniye Küllıye. From this building,{" "}
+                    This security function turned the bedestens into something
+                    like a{" "}
                     <strong className="text-white">
-                      free food was given out every single day
+                      "state-guaranteed bank"
                     </strong>{" "}
-                    to people in need, like poor people and students. This was a
-                    very important social service that demonstrated the Ottoman
-                    tradition of caring for the community.
+                    - the most trusted financial institution of its time.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Sultan's Mosque */}
+              {/* Modern Banking Foundations */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiMoneyStack className="mr-2" />
+                    The Birth of Modern Banking
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    Large payments were made directly from the{" "}
+                    <strong className="text-white">trust accounts</strong> kept
+                    in these bedestens. Merchants didn't need to carry heavy
+                    gold or coins - they could transfer money safely.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    This system laid the{" "}
+                    <strong className="text-white">
+                      foundations of modern banking
+                    </strong>
+                    . The concepts of secure storage, money transfers, and
+                    trusted financial institutions all started here, centuries
+                    ago.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* How It Worked */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Special Note: How to Know a Sultan Built This Mosque
+                    How This Ancient Banking Worked
                   </h3>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    Look at the mosque from here. Can you see it has{" "}
-                    <strong className="text-white">four minarets</strong>? This
-                    is a very important sign. In the Ottoman Empire, only a{" "}
-                    <strong className="text-white">Sultan (the emperor)</strong>{" "}
-                    was allowed to build a mosque with four or more minarets.
-                    So, this mosque was definitely built by a Sultan.
-                  </p>
+                  <div className="space-y-2 text-secondary-100 text-sm md:text-base">
+                    <p>
+                      • <strong>State soldiers protected</strong> the bedestens
+                      day and night
+                    </p>
+                    <p>
+                      • Merchants stored{" "}
+                      <strong>money, gold, and valuable items</strong> in secure
+                      chests
+                    </p>
+                    <p>
+                      • <strong>Trust accounts</strong> were created for each
+                      merchant
+                    </p>
+                    <p>
+                      • Large payments were{" "}
+                      <strong>transferred between accounts</strong> without
+                      moving physical money
+                    </p>
+                    <p>
+                      • The system was <strong>state-guaranteed</strong> -
+                      completely secure and reliable
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Social Impact */}
+              {/* Historical Significance */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Social Impact
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaHistory className="mr-2" />A Financial Revolution
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The külliye system represented a comprehensive approach to
-                    social welfare. It provided education, healthcare, food,
-                    shelter, and spiritual guidance all in one complex. This
-                    innovative system ensured that knowledge, charity, and
-                    community support were accessible to everyone, regardless of
-                    their social status or wealth.
+                    The banking system developed in Cevahir and Sandal
+                    Bedestenleri was revolutionary. It created a{" "}
+                    <strong className="text-white">
+                      safe, efficient way to handle money
+                    </strong>{" "}
+                    that enabled international trade to flourish. Without this
+                    secure financial foundation, the Grand Bazaar could never
+                    have become the world's most important trading center. These
+                    buildings weren't just markets - they were the heart of a
+                    global financial network.
                   </p>
                 </CardContent>
               </Card>
@@ -148,7 +207,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/6/location")}
+            onClick={() => router.push("/grand-bazaar/7/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
@@ -159,7 +218,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where faith, education, and charity came together as one...
+            Where commerce meets security, banking is born...
           </p>
         </footer>
       </div>
