@@ -82,7 +82,7 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <GiGate className="mr-2" />
-                    The Grand Bazaar's Gateway
+                    The Grand Bazaar&apos;s Gateway
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     In its early days, Çukur Kule was the{" "}
@@ -115,7 +115,7 @@ export default function InfoPage() {
                     Over time, the Grand Bazaar experienced{" "}
                     <strong className="text-white">massive growth</strong>.
                     Shops, streets, and new sections were added, gradually
-                    expanding the market's boundaries.
+                    expanding the market&apos;s boundaries.
                   </p>
 
                   <p className="text-primary-100 text-sm md:text-base">
@@ -160,16 +160,16 @@ export default function InfoPage() {
                   <p className="text-primary-100 text-sm md:text-base">
                     Çukur Kule stands as a{" "}
                     <strong className="text-white">
-                      living testament to the Grand Bazaar's incredible
+                      living testament to the Grand Bazaar&apos;s incredible
                       expansion
                     </strong>
                     . Its transformation from customs checkpoint to ordinary
                     shop shows how organic urban development can repurpose
-                    historical structures. This tower witnessed the bazaar's
-                    growth from a small trading center to the world's largest
-                    covered market, and its story reminds us that cities and
-                    markets are always evolving, constantly rewriting their own
-                    histories through growth and change.
+                    historical structures. This tower witnessed the
+                    bazaar&apos;s growth from a small trading center to the
+                    world&apos;s largest covered market, and its story reminds
+                    us that cities and markets are always evolving, constantly
+                    rewriting their own histories through growth and change.
                   </p>
                 </CardContent>
               </Card>

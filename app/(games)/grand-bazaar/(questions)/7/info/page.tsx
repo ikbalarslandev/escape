@@ -54,7 +54,7 @@ export default function InfoPage() {
               </div>
 
               <p className="text-base md:text-lg">
-                If you walk through the Grand Bazaar, you'll see{" "}
+                If you walk through the Grand Bazaar, you&apos;ll see{" "}
                 <strong className="text-white">
                   walkie-talkies at almost every shop entrance
                 </strong>
@@ -91,7 +91,7 @@ export default function InfoPage() {
                     relaxed and increases the likelihood of making a sale.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    It's a{" "}
+                    It&apos;s a{" "}
                     <strong className="text-white">
                       brilliant psychological strategy
                     </strong>{" "}
@@ -129,8 +129,8 @@ export default function InfoPage() {
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     Tea is served in special{" "}
                     <strong className="text-white">waist-shaped glasses</strong>
-                    that are inspired by the female form. This design isn't just
-                    beautiful - it's{" "}
+                    that are inspired by the female form. This design isn&apos;t
+                    just beautiful - it&apos;s{" "}
                     <strong className="text-white">
                       practical and functional
                     </strong>
@@ -158,9 +158,11 @@ export default function InfoPage() {
                     <strong className="text-white">
                       silent communication tool
                     </strong>
-                    . If the customer isn't interested in buying, the seller can
-                    politely say{" "}
-                    <strong className="text-white">"The tea got cold!"</strong>{" "}
+                    . If the customer isn&apos;t interested in buying, the
+                    seller can politely say{" "}
+                    <strong className="text-white">
+                      &quot;The tea got cold!&quot;
+                    </strong>{" "}
                     as a gentle way to end the conversation.
                   </p>
                   <p className="text-secondary-100 text-sm md:text-base">
@@ -186,7 +188,7 @@ export default function InfoPage() {
                     <strong className="text-white">
                       much more than a beverage
                     </strong>
-                    . It's a social lubricant, a psychological tool, a
+                    . It&apos;s a social lubricant, a psychological tool, a
                     time-management device, and a silent language all rolled
                     into one. This centuries-old tradition shows the
                     sophistication of Turkish sales culture, where every detail

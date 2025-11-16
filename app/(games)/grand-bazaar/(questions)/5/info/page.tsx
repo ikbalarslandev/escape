@@ -7,7 +7,6 @@ import {
   FaCheckCircle,
   FaArrowRight,
   FaShieldAlt,
-  FaCoins,
   FaHistory,
 } from "react-icons/fa";
 import { GiBank, GiMoneyStack } from "react-icons/gi";
@@ -29,7 +28,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the world's first banking system!
+            You discovered the world&apos;s first banking system!
           </p>
         </header>
 
@@ -63,7 +62,7 @@ export default function InfoPage() {
                 Cevahir and Sandal Bedestenleri were much more than just markets
                 - they were{" "}
                 <strong className="text-white">
-                  one of the world's first banking systems
+                  one of the world&apos;s first banking systems
                 </strong>
                 .
               </p>
@@ -106,7 +105,7 @@ export default function InfoPage() {
                   </div>
 
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    In these secure buildings, merchants didn't just trade
+                    In these secure buildings, merchants didn&apos;t just trade
                     jewels and fabrics. They also stored their{" "}
                     <strong className="text-white">money and gold</strong> for
                     safekeeping.
@@ -115,7 +114,7 @@ export default function InfoPage() {
                     This security function turned the bedestens into something
                     like a{" "}
                     <strong className="text-white">
-                      "state-guaranteed bank"
+                      &quot;state-guaranteed bank&quot;
                     </strong>{" "}
                     - the most trusted financial institution of its time.
                   </p>
@@ -132,8 +131,8 @@ export default function InfoPage() {
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     Large payments were made directly from the{" "}
                     <strong className="text-white">trust accounts</strong> kept
-                    in these bedestens. Merchants didn't need to carry heavy
-                    gold or coins - they could transfer money safely.
+                    in these bedestens. Merchants didn&apos;t need to carry
+                    heavy gold or coins - they could transfer money safely.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
                     This system laid the{" "}
@@ -194,9 +193,9 @@ export default function InfoPage() {
                     </strong>{" "}
                     that enabled international trade to flourish. Without this
                     secure financial foundation, the Grand Bazaar could never
-                    have become the world's most important trading center. These
-                    buildings weren't just markets - they were the heart of a
-                    global financial network.
+                    have become the world&apos;s most important trading center.
+                    These buildings weren&apos;t just markets - they were the
+                    heart of a global financial network.
                   </p>
                 </CardContent>
               </Card>

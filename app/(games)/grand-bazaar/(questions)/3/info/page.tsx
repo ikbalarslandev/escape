@@ -66,7 +66,7 @@ export default function InfoPage() {
                 <p className="text-base md:text-lg">
                   The name{" "}
                   <strong className="text-white">
-                    "Cevahir" means "jewels"
+                    &quot;Cevahir&quot; means &quot;jewels&quot;
                   </strong>
                   . This tells us exactly what this building was for - it was a
                   secure place where the most valuable jewels and precious items

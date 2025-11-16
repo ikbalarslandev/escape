@@ -68,7 +68,7 @@ export default function InfoPage() {
               <div className="flex items-start mb-4">
                 <FaHotel className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  Think of them as today's{" "}
+                  Think of them as today&apos;s{" "}
                   <strong className="text-white">
                     hotels, warehouses, and office centers combined
                   </strong>
@@ -153,14 +153,14 @@ export default function InfoPage() {
                   <p className="text-secondary-100 text-sm md:text-base mb-3">
                     The{" "}
                     <strong className="text-white">cobblestone pavement</strong>{" "}
-                    on Zincirli Han's ground floor has witnessed centuries of
-                    commercial activity. Each stone has seen countless
+                    on Zincirli Han&apos;s ground floor has witnessed centuries
+                    of commercial activity. Each stone has seen countless
                     merchants, customers, and trade deals over hundreds of
                     years.
                   </p>
                   <p className="text-secondary-100 text-sm md:text-base">
-                    In short, Zincirli Han is one of Istanbul's most vibrant
-                    trading centers, a place where{" "}
+                    In short, Zincirli Han is one of Istanbul&apos;s most
+                    vibrant trading centers, a place where{" "}
                     <strong className="text-white">
                       architecture tells the story of commerce
                     </strong>
@@ -181,13 +181,13 @@ export default function InfoPage() {
                     <strong className="text-white">
                       beating heart of Ottoman trade
                     </strong>
-                    . They weren't just buildings - they were complete
+                    . They weren&apos;t just buildings - they were complete
                     ecosystems where commerce, culture, and community came
                     together. The chains that give Zincirli Han its name are
-                    more than just architectural features; they're symbols of a
-                    sophisticated trading network that connected continents and
-                    made Istanbul one of the world's greatest commercial
-                    centers.
+                    more than just architectural features; they&apos;re symbols
+                    of a sophisticated trading network that connected continents
+                    and made Istanbul one of the world&apos;s greatest
+                    commercial centers.
                   </p>
                 </CardContent>
               </Card>

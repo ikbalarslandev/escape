@@ -83,7 +83,7 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaCoins className="mr-2" />
-                    Europe's Big Money Problem
+                    Europe&apos;s Big Money Problem
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     European countries had to buy spices and silk from the
@@ -96,7 +96,7 @@ export default function InfoPage() {
                     <strong className="text-white">
                       many explorers across the ocean
                     </strong>{" "}
-                    to find a route to India that didn't go through Ottoman
+                    to find a route to India that didn&apos;t go through Ottoman
                     lands.
                   </p>
                 </CardContent>
@@ -107,7 +107,7 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaShip className="mr-2" />
-                    Columbus's Big Plan
+                    Columbus&apos;s Big Plan
                   </h3>
 
                   {/* Columbus Voyage Image */}
@@ -161,14 +161,14 @@ export default function InfoPage() {
                     <div className="bg-secondary-800 bg-opacity-70 p-2 text-center">
                       <p className="text-xs text-secondary-200 italic">
                         The people Columbus met in America, whom he mistakenly
-                        called "Indians"
+                        called &quot;Indians&quot;
                       </p>
                     </div>
                   </div>
 
                   <p className="text-secondary-100 text-sm md:text-base mb-3">
-                    Columbus sailed west, but he didn't find India. Instead, he
-                    found{" "}
+                    Columbus sailed west, but he didn&apos;t find India.
+                    Instead, he found{" "}
                     <strong className="text-white">
                       a whole new continent: America
                     </strong>
@@ -178,8 +178,9 @@ export default function InfoPage() {
                   <p className="text-secondary-100 text-sm md:text-base">
                     But he was so sure he had reached India that he called the
                     local people{" "}
-                    <strong className="text-white">"Indians"</strong>. This name
-                    stuck for centuries, even though he was completely wrong!
+                    <strong className="text-white">&quot;Indians&quot;</strong>.
+                    This name stuck for centuries, even though he was completely
+                    wrong!
                   </p>
                 </CardContent>
               </Card>
@@ -194,12 +195,13 @@ export default function InfoPage() {
                   <p className="text-primary-100 text-sm md:text-base">
                     Without the{" "}
                     <strong className="text-white">
-                      Grand Bazaar's economic power
+                      Grand Bazaar&apos;s economic power
                     </strong>
                     and the high prices Europeans had to pay there, they would
                     never have been so desperate to find a new route to India.
-                    Columbus might never have sailed west. The Grand Bazaar's
-                    success actually led to the discovery of America!
+                    Columbus might never have sailed west. The Grand
+                    Bazaar&apos;s success actually led to the discovery of
+                    America!
                   </p>
                 </CardContent>
               </Card>

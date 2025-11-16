@@ -8,7 +8,6 @@ import {
   FaArrowRight,
   FaHistory,
   FaBook,
-  FaMusic,
   FaBan,
 } from "react-icons/fa";
 import Image from "next/image";
@@ -63,7 +62,8 @@ export default function InfoPage() {
                 Esir Han served as a{" "}
                 <strong className="text-white">slave trading center</strong>,
                 particularly for buying and selling war captives. This building
-                witnessed some of history's most painful human transactions.
+                witnessed some of history&apos;s most painful human
+                transactions.
               </p>
 
               <div className="flex items-start mb-4">
@@ -82,7 +82,7 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaBook className="mr-2" />
-                    Pushkin's Grandfather: From Slave to Noble
+                    Pushkin&apos;s Grandfather: From Slave to Noble
                   </h3>
 
                   {/* Abraham Hannibal Image */}
@@ -97,14 +97,14 @@ export default function InfoPage() {
                     <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
                       <p className="text-xs text-primary-200 italic">
                         Abraham Hannibal, sold in this han, became ancestor to
-                        Russia's greatest poet
+                        Russia&apos;s greatest poet
                       </p>
                     </div>
                   </div>
 
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     <strong className="text-white">Abraham Hannibal</strong>,
-                    grandfather of Russian literature's founder Alexander
+                    grandfather of Russian literature&apos;s founder Alexander
                     Pushkin, was kidnapped from Cameroon at age 6 and sold in
                     this very han.
                   </p>
@@ -115,8 +115,8 @@ export default function InfoPage() {
                       adopted and given excellent education
                     </strong>
                     . He became a high-ranking soldier and diplomat, and Pushkin
-                    wrote about his grandfather's story in "The Moor of Peter
-                    the Great."
+                    wrote about his grandfather&apos;s story in &quot;The Moor
+                    of Peter the Great.&quot;
                   </p>
                 </CardContent>
               </Card>
@@ -148,7 +148,7 @@ export default function InfoPage() {
                     <strong className="text-white">
                       Buhurizade Mustafa Itri Efendi
                     </strong>{" "}
-                    - whose portrait appears on today's 100 Turkish Lira
+                    - whose portrait appears on today&apos;s 100 Turkish Lira
                     banknotes - once served as the manager of this very slave
                     market.
                   </p>
@@ -187,16 +187,16 @@ export default function InfoPage() {
                     Layers of History in Stone
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Esir Han stands as a monument to history's complexities -
-                    where human suffering and great art intersect, where slaves
-                    could become nobles, and where artists managed institutions
-                    of human trade. This building reminds us that history is
-                    never simple, and that even in darkness, there can be
-                    threads leading to light. The story of Abraham Hannibal
-                    shows how human potential can triumph over brutal
-                    circumstances, while the Ottoman Empire's eventual banning
-                    of slavery demonstrates society's capacity for moral
-                    progress.
+                    Esir Han stands as a monument to history&apos;s complexities
+                    - where human suffering and great art intersect, where
+                    slaves could become nobles, and where artists managed
+                    institutions of human trade. This building reminds us that
+                    history is never simple, and that even in darkness, there
+                    can be threads leading to light. The story of Abraham
+                    Hannibal shows how human potential can triumph over brutal
+                    circumstances, while the Ottoman Empire&apos;s eventual
+                    banning of slavery demonstrates society&apos;s capacity for
+                    moral progress.
                   </p>
                 </CardContent>
               </Card>
@@ -218,7 +218,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where history's darkest chapters and brightest legacies
+            Where history&apos;s darkest chapters and brightest legacies
             intertwine...
           </p>
         </footer>

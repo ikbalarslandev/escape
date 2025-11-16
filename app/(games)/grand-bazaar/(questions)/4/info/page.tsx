@@ -65,7 +65,8 @@ export default function InfoPage() {
               <div className="flex items-start mb-4">
                 <GiGrowth className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  The name <strong className="text-white">"Sandal"</strong>{" "}
+                  The name{" "}
+                  <strong className="text-white">&quot;Sandal&quot;</strong>{" "}
                   comes from a special type of{" "}
                   <strong className="text-white">
                     valuable fabric and silk
@@ -105,8 +106,9 @@ export default function InfoPage() {
                     <strong className="text-white">
                       between and around these two bedestens
                     </strong>{" "}
-                    began to fill with shops, streets, and inns. This wasn't
-                    planned by architects - it happened naturally as trade grew.
+                    began to fill with shops, streets, and inns. This
+                    wasn&apos;t planned by architects - it happened naturally as
+                    trade grew.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
                     This organic growth eventually formed the massive Grand
@@ -123,8 +125,8 @@ export default function InfoPage() {
                     Not Designed, But Born from Need
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    The Grand Bazaar wasn't created by architects with drawings
-                    and plans. It was the{" "}
+                    The Grand Bazaar wasn&apos;t created by architects with
+                    drawings and plans. It was the{" "}
                     <strong className="text-white">
                       natural result of commercial need
                     </strong>
@@ -132,7 +134,7 @@ export default function InfoPage() {
                     grew to meet that need.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    This makes the Grand Bazaar special - it's a{" "}
+                    This makes the Grand Bazaar special - it&apos;s a{" "}
                     <strong className="text-white">
                       living, breathing organism
                     </strong>{" "}
@@ -161,7 +163,7 @@ export default function InfoPage() {
                     <strong className="text-white">
                       Bursa, Edirne, and Trabzon
                     </strong>{" "}
-                    - Istanbul's two bedestens proved it was one of the{" "}
+                    - Istanbul&apos;s two bedestens proved it was one of the{" "}
                     <strong className="text-white">
                       most important trade centers in the world
                     </strong>
@@ -182,11 +184,11 @@ export default function InfoPage() {
                     great things often start small. These two buildings, each
                     serving different but equally valuable trades, became the{" "}
                     <strong className="text-white">
-                      nucleus around which the world's largest covered market
-                      grew
+                      nucleus around which the world&apos;s largest covered
+                      market grew
                     </strong>
                     . They prove that sometimes the most magnificent structures
-                    aren't designed, but born from practical need.
+                    aren&apos;t designed, but born from practical need.
                   </p>
                 </CardContent>
               </Card>

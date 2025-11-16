@@ -29,7 +29,8 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the Grand Bazaar's brilliant fire protection system!
+            You discovered the Grand Bazaar&apos;s brilliant fire protection
+            system!
           </p>
         </header>
 
@@ -94,7 +95,7 @@ export default function InfoPage() {
                     <strong className="text-white">
                       an enormous fire risk
                     </strong>
-                    that could destroy the entire market and the empire's
+                    that could destroy the entire market and the empire&apos;s
                     commercial heart.
                   </p>
                 </CardContent>
@@ -132,7 +133,7 @@ export default function InfoPage() {
                     Trading with the Sun
                   </h3>
                   <p className="text-secondary-100 text-sm md:text-base mb-3">
-                    Business in the Grand Bazaar followed the sun's rhythm.
+                    Business in the Grand Bazaar followed the sun&apos;s rhythm.
                     Trading{" "}
                     <strong className="text-white">
                       started with sunrise and ended with sunset
@@ -158,7 +159,7 @@ export default function InfoPage() {
                     Sustainable Design Before Its Time
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The Grand Bazaar's lighting solution was not just about
+                    The Grand Bazaar&apos;s lighting solution was not just about
                     safety - it was about
                     <strong className="text-white">
                       {" "}

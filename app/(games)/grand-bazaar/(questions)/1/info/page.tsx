@@ -61,8 +61,8 @@ export default function InfoPage() {
                 The <strong className="text-white">Silk Road</strong> was a very
                 long road for traders. It went from{" "}
                 <strong className="text-white">India to Europe</strong>. It had
-                the name "Silk Road" because silk was a very expensive and
-                important thing to sell.
+                the name &quot;Silk Road&quot; because silk was a very expensive
+                and important thing to sell.
               </p>
 
               <div className="flex items-start mb-4">
@@ -80,7 +80,7 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaRoute className="mr-2" />
-                    The Ottoman Empire's Big Plan
+                    The Ottoman Empire&apos;s Big Plan
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
                     When the{" "}
@@ -127,8 +127,8 @@ export default function InfoPage() {
                       business
                     </p>
                     <p>
-                      • <strong>The world's largest covered market</strong> -
-                      very special!
+                      • <strong>The world&apos;s largest covered market</strong>{" "}
+                      - very special!
                     </p>
                   </div>
 
