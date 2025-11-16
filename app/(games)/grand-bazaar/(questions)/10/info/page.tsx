@@ -3,231 +3,200 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaHistory,
+  FaBook,
+  FaMusic,
+  FaBan,
+} from "react-icons/fa";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
         {/* Header */}
         <header className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <FaCheckCircle className="h-12 w-12 text-secondary-300 mr-4" />
+            <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Journey Complete!
+              Well Done!
             </h1>
           </div>
-          <div className="w-24 h-1 bg-secondary-300 mx-auto mb-4"></div>
-          <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
-            You&lsquo;ve discovered the unique fusion of East and West
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+            You discovered the complex history of Esir Han!
           </p>
         </header>
 
         {/* Success Card */}
-        <Card className="border border-primary-500 bg-primary-800 rounded-2xl shadow-lg mb-8">
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
-            <div className="space-y-6 md:space-y-8 text-primary-100 leading-relaxed">
-              <h2 className="text-2xl md:text-3xl font-light text-secondary-300 text-center mb-6">
-                The Perfect Fusion: Baroque Meets Ottoman
+            <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
+              <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
+                The Slave Market and Its Ironic Connections
               </h2>
 
-              {/* Baroque Style */}
-              <Card className="bg-primary-700 border-primary-400">
-                <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
-                    What is Baroque Style?
+              {/* Esir Han Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/10/1.jpg"
+                  alt="Esir Han - the former slave market in Grand Bazaar"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    Esir Han - where war captives and slaves were once bought
+                    and sold
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-base md:text-lg">
+                Esir Han served as a{" "}
+                <strong className="text-white">slave trading center</strong>,
+                particularly for buying and selling war captives. This building
+                witnessed some of history's most painful human transactions.
+              </p>
+
+              <div className="flex items-start mb-4">
+                <FaHistory className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  But within this dark history lie some of the most{" "}
+                  <strong className="text-white">
+                    surprising and ironic connections
+                  </strong>
+                  to world literature and art.
+                </p>
+              </div>
+
+              {/* Pushkin's Grandfather */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaBook className="mr-2" />
+                    Pushkin's Grandfather: From Slave to Noble
                   </h3>
-                  <div className="space-y-3 text-primary-50">
-                    <p>
-                      <strong className="text-white">Origin:</strong> Started in
-                      17th century Italy.
-                    </p>
-                    <p>
-                      <strong className="text-white">Goal:</strong> To create
-                      emotion, drama, and a sense of theater.
-                    </p>
-                    <div>
-                      <strong className="text-white">Features:</strong>
-                      <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                        <li>Curves and Wavy Lines</li>
-                        <li>
-                          Lots of Decoration: Gold leaf, detailed plasterwork,
-                          carvings
-                        </li>
-                        <li>
-                          Dramatic Light: Uses windows to create light and
-                          shadow
-                        </li>
-                        <li>
-                          Sculptural Elements: Looks like the building is
-                          covered in carvings
-                        </li>
-                      </ul>
+
+                  {/* Abraham Hannibal Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                    <Image
+                      src="/qs-imgs/grand-bazaar/info/10/2.jpg"
+                      alt="Abraham Hannibal - Pushkin's grandfather"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-primary-200 italic">
+                        Abraham Hannibal, sold in this han, became ancestor to
+                        Russia's greatest poet
+                      </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
 
-              {/* Ottoman Style */}
-              <Card className="bg-primary-600 border-primary-400">
-                <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
-                    What is Classical Ottoman Style?
-                  </h3>
-                  <div className="space-y-3 text-primary-50">
-                    <p>
-                      <strong className="text-white">Origin:</strong> Perfected
-                      in the 16th century by architect Mimar Sinan.
-                    </p>
-                    <p>
-                      <strong className="text-white">Goal:</strong> To create a
-                      calm, peaceful, and harmonious space for prayer.
-                    </p>
-                    <div>
-                      <strong className="text-white">Features:</strong>
-                      <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                        <li>Geometric Shapes: Clear circles and squares</li>
-                        <li>A Grand Central Dome</li>
-                        <li>
-                          Simple & Abstract Decoration: Tiles, Islamic
-                          calligraphy, patterns
-                        </li>
-                        <li>
-                          Balanced & Even Light: Many windows for a soft glow
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Comparison Table */}
-              <Card className="bg-primary-700 border-primary-400">
-                <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-semibold text-secondary-300 mb-4 text-center">
-                    The Unique Mix at Nuruosmaniye Mosque
-                  </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm md:text-base">
-                      <thead>
-                        <tr className="border-b border-primary-400">
-                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
-                            Feature
-                          </th>
-                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
-                            Classical Ottoman Style
-                          </th>
-                          <th className="text-left py-3 px-2 md:px-4 font-semibold text-white bg-primary-600">
-                            Nuruosmaniye&lsquo;s Baroque Style
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-primary-500">
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            COURTYARD
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Rectangle or Square
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Semi-Circle or Oval
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            DOME BASE
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Triangular Supports (pendentives)
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Curved, Shell-like Supports
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            DECORATION
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Tiles and Calligraphy
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Plaster Reliefs, Leaf Patterns, more 3D effect and
-                            gold
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            STAIRS
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Straight and simple lines
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Curved and Wavy form
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            WINDOWS
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Regular rows, straight tops
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Wavy and Curved tops
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-primary-600 transition-colors">
-                          <td className="py-3 px-2 md:px-4 font-medium text-white">
-                            OVERALL FEELING
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-primary-50">
-                            Calm, peaceful, balanced
-                          </td>
-                          <td className="py-3 px-2 md:px-4 text-secondary-200 font-medium">
-                            Movement, grandeur, emotional
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Conclusion */}
-              <Card className="bg-primary-600 border-primary-400">
-                <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-semibold text-secondary-300 mb-4 text-center">
-                    A Masterpiece of Mixing Styles
-                  </h3>
-                  <p className="text-primary-50 text-base md:text-lg text-center leading-relaxed">
-                    Nuruosmaniye Mosque is a perfect example of the Ottoman
-                    Empire opening up to the West. It keeps the traditional
-                    Ottoman mosque plan but reinterprets it with the dynamic and
-                    decorative language of Baroque style. This created a
-                    completely unique synthesis in architectural history.
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    <strong className="text-white">Abraham Hannibal</strong>,
+                    grandfather of Russian literature's founder Alexander
+                    Pushkin, was kidnapped from Cameroon at age 6 and sold in
+                    this very han.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Bought by a Russian diplomat and gifted to Tsar Peter I, his
+                    intelligence impressed the Tsar so much that he was{" "}
+                    <strong className="text-white">
+                      adopted and given excellent education
+                    </strong>
+                    . He became a high-ranking soldier and diplomat, and Pushkin
+                    wrote about his grandfather's story in "The Moor of Peter
+                    the Great."
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Historical Significance */}
-              <Card className="bg-primary-700 border-primary-400">
-                <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-semibold text-secondary-300 mb-4">
-                    Historical Significance
+              {/* Itri Efendi Connection */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                  <Image
+                    src="/qs-imgs/grand-bazaar/info/10/3.jpg"
+                    alt="Abraham Hannibal - Pushkin's grandfather"
+                    width={600}
+                    height={300}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                    <p className="text-xs text-primary-200 italic">
+                      {" "}
+                      Buhurizade Mustafa Itri Efendi portrait on top of 100
+                      turkish lira
+                    </p>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    Manager of The Slave Market
                   </h3>
-                  <p className="text-primary-50 text-base md:text-lg leading-relaxed">
-                    Built between 1748-1755, Nuruosmaniye represents a turning
-                    point in Ottoman architecture. It marks the beginning of the
-                    &quot;Tulip Period&quot; and the Westernization movement
-                    that would eventually transform the empire. The mosque
-                    stands as a testament to cultural exchange and the ability
-                    to embrace new influences while preserving core identity.
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    In another historical irony, composer{" "}
+                    <strong className="text-white">
+                      Buhurizade Mustafa Itri Efendi
+                    </strong>{" "}
+                    - whose portrait appears on today's 100 Turkish Lira
+                    banknotes - once served as the manager of this very slave
+                    market.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Ottoman Slavery Ban */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaBan className="mr-2" />
+                    Ottoman Empire: Pioneer in Abolishing Slavery
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base mb-3">
+                    Despite this dark history, the Ottoman Empire was among the{" "}
+                    <strong className="text-white">
+                      first states to ban and gradually end slave trade
+                    </strong>
+                    in the 19th century, showing progressive steps toward human
+                    rights.
+                  </p>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    The story of Esir Han serves as a{" "}
+                    <strong className="text-white">painful reminder</strong>
+                    of the brutal face of human trade, while also showing how
+                    societies can evolve and reform over time.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Historical Reflection */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaHistory className="mr-2" />
+                    Layers of History in Stone
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Esir Han stands as a monument to history's complexities -
+                    where human suffering and great art intersect, where slaves
+                    could become nobles, and where artists managed institutions
+                    of human trade. This building reminds us that history is
+                    never simple, and that even in darkness, there can be
+                    threads leading to light. The story of Abraham Hannibal
+                    shows how human potential can triumph over brutal
+                    circumstances, while the Ottoman Empire's eventual banning
+                    of slavery demonstrates society's capacity for moral
+                    progress.
                   </p>
                 </CardContent>
               </Card>
@@ -235,21 +204,22 @@ export default function InfoPage() {
           </CardContent>
         </Card>
 
-        {/* Final Navigation */}
+        {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/final")}
-            className="bg-secondary-500 hover:bg-secondary-400 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            onClick={() => router.push("/")}
+            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            See The Final Page
+            Complete Journey
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
 
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
-          <p className="text-primary-200 font-light italic text-sm md:text-base">
-            Where Pagan, Cross, and Crescent found perfect harmony...
+          <p className="text-primary-300 font-light italic text-sm md:text-base">
+            Where history's darkest chapters and brightest legacies
+            intertwine...
           </p>
         </footer>
       </div>

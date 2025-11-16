@@ -3,7 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaHistory,
+  FaExchangeAlt,
+} from "react-icons/fa";
+import { GiGate } from "react-icons/gi";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -16,12 +23,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Magnificent Discovery!
+              Well Done!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You&apos;ve uncovered the revolutionary courtyard of Nuruosmaniye
+            You discovered the hidden history of Çukur Kule!
           </p>
         </header>
 
@@ -31,126 +38,138 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                A Revolution in Stone
+                From Customs Tower to Shop
               </h2>
 
+              {/* Çukur Kule Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/9/1.jpg"
+                  alt="Çukur Kule - the former customs tower in Grand Bazaar"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    Çukur Kule at the lowest point of the Grand Bazaar - once a
+                    customs checkpoint
+                  </p>
+                </div>
+              </div>
+
               <p className="text-base md:text-lg">
-                Right now, you are standing in the courtyard of the Nuruosmaniye
-                Mosque. You are looking at a revolution made of stone. This is
-                the{" "}
+                At the{" "}
                 <strong className="text-white">
-                  first and only Baroque Style Mosque
+                  lowest point of the Grand Bazaar
                 </strong>{" "}
-                of the Ottoman Empire.
+                stands Çukur Kule, a building with a fascinating history of
+                transformation.
               </p>
 
-              {/* What is Baroque */}
+              <div className="flex items-start mb-4">
+                <GiGate className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  This tower originally served as the{" "}
+                  <strong className="text-white">customs control point</strong>{" "}
+                  for the entire market, monitoring all goods entering and
+                  leaving the bazaar.
+                </p>
+              </div>
+
+              {/* Original Function */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What is Baroque?
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiGate className="mr-2" />
+                    The Grand Bazaar's Gateway
                   </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    Baroque is a style of art and architecture. It is famous for
-                    its{" "}
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    In its early days, Çukur Kule was the{" "}
                     <strong className="text-white">
-                      curves, grandeur, and dramatic effect
+                      main entry and exit point
                     </strong>
-                    . You can often see this style in the cathedrals of Europe.
+                    for the Grand Bazaar. Officials here would check all
+                    merchandise, collect taxes, and ensure proper documentation
+                    for goods.
                   </p>
-                </CardContent>
-              </Card>
-
-              {/* Unique Shape */}
-              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    A Unique Shape
-                  </h3>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    Look around you. Traditional Ottoman mosque courtyards are{" "}
-                    <strong className="text-white">rectangular</strong>. But
-                    this courtyard is different. It is a graceful{" "}
-                    <strong className="text-white">semi-circle</strong>, like it
-                    is opening its arms to you. This design is the{" "}
+                  <p className="text-primary-100 text-sm md:text-base">
+                    Its location at the lowest point made it the{" "}
                     <strong className="text-white">
-                      first and only of its kind
+                      natural control point
                     </strong>{" "}
-                    in Ottoman architecture.
+                    for monitoring the flow of trade through the market.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Columns from Pagan Temple */}
+              {/* The Transformation */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Columns from a Pagan Temple
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaExchangeAlt className="mr-2" />
+                    Swallowed by Growth
                   </h3>
+
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    Over time, the Grand Bazaar experienced{" "}
+                    <strong className="text-white">massive growth</strong>.
+                    Shops, streets, and new sections were added, gradually
+                    expanding the market's boundaries.
+                  </p>
+
                   <p className="text-primary-100 text-sm md:text-base">
-                    There is something even more amazing. The columns that hold
-                    up this courtyard have a secret past. They came from an{" "}
+                    Eventually, the bazaar grew so large that it{" "}
                     <strong className="text-white">
-                      ancient pagan temple in Bergama
+                      completely surrounded and absorbed
                     </strong>
-                    .
+                    the once-separate Çukur Kule, turning it from a border
+                    checkpoint into just another building within the market.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* The Three Traditions */}
+              {/* New Life as a Shop */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Three Traditions, One Space
+                    From Customs Office to Commercial Space
                   </h3>
                   <p className="text-secondary-100 text-sm md:text-base mb-3">
-                    So, here in one place, we have:
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-secondary-100 text-sm md:text-base">
-                      •{" "}
-                      <strong className="text-white">
-                        Architecture inspired by Christian cathedrals
-                      </strong>
-                    </p>
-                    <p className="text-secondary-100 text-sm md:text-base">
-                      •{" "}
-                      <strong className="text-white">
-                        Columns from a pagan temple
-                      </strong>
-                    </p>
-                    <p className="text-secondary-100 text-sm md:text-base">
-                      •{" "}
-                      <strong className="text-white">
-                        All together in an Islamic building
-                      </strong>
-                    </p>
-                  </div>
-                  <p className="text-secondary-100 text-sm md:text-base mt-3">
-                    This mix shows the{" "}
+                    With its original function no longer needed, Çukur Kule
+                    found a new purpose. It was transformed into one of the many{" "}
                     <strong className="text-white">
-                      layered spirit of Istanbul
+                      shops within the bazaar
                     </strong>
-                    , where different histories and faiths meet under one roof.
+                    , joining the commercial life it once monitored.
+                  </p>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    Today, this historic building continues to serve traders and
+                    customers, but as part of the market rather than its
+                    gatekeeper.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Cultural Significance */}
+              {/* Historical Significance */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Cultural Significance
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaHistory className="mr-2" />A Living Monument to Growth
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Nuruosmaniye represents a pivotal moment when the Ottoman
-                    Empire began looking westward, embracing European influences
-                    while maintaining its Islamic identity. The reuse of ancient
-                    columns demonstrates a respect for history and a practical
-                    approach to building materials, creating a space that truly
-                    embodies Istanbul&apos;s position as a bridge between
-                    civilizations.
+                    Çukur Kule stands as a{" "}
+                    <strong className="text-white">
+                      living testament to the Grand Bazaar's incredible
+                      expansion
+                    </strong>
+                    . Its transformation from customs checkpoint to ordinary
+                    shop shows how organic urban development can repurpose
+                    historical structures. This tower witnessed the bazaar's
+                    growth from a small trading center to the world's largest
+                    covered market, and its story reminds us that cities and
+                    markets are always evolving, constantly rewriting their own
+                    histories through growth and change.
                   </p>
                 </CardContent>
               </Card>
@@ -164,7 +183,7 @@ export default function InfoPage() {
             onClick={() => router.push("/grand-bazaar/10/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Enter the Mosque
+            Continue Your Journey
             <FaArrowRight className="ml-2" />
           </Button>
         </div>
@@ -172,7 +191,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where East meets West in architectural harmony...
+            Where history transforms and buildings tell stories of growth...
           </p>
         </footer>
       </div>
