@@ -3,21 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
-import YouTube from "react-youtube";
+import { FaCheckCircle, FaArrowRight, FaGem, FaMosque } from "react-icons/fa";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
-
-  const videoOpts = {
-    height: "100%",
-    width: "100%",
-    playerVars: {
-      autoplay: 0,
-      modestbranding: 1,
-      rel: 0,
-    },
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
@@ -27,12 +17,12 @@ export default function InfoPage() {
           <div className="flex items-center justify-center mb-4">
             <FaCheckCircle className="h-12 w-12 text-secondary-400 mr-4" />
             <h1 className="text-3xl md:text-4xl font-light text-white">
-              Excellent!
+              Well Done!
             </h1>
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the secrets of Vezir Han!
+            You discovered the secret of Cevahir Bedesteni!
           </p>
         </header>
 
@@ -42,117 +32,141 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                Vezir Han: The Heart of the Silk Road
+                The Jewel Market That Supported a Great Mosque
               </h2>
 
-              {/* Silk Road Section */}
-              <Card className="bg-primary-700 border-primary-500">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    What was the Silk Road?
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    The Silk Road was not one road, but a very long network of
-                    trade routes that connected countries. For centuries,
-                    merchants used these routes to carry valuable goods like{" "}
-                    <strong className="text-white">
-                      silk, spices, gems, and ideas
-                    </strong>{" "}
-                    between Asia and Europe.
+              {/* Cevahir Bedesteni Image */}
+              <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
+                <Image
+                  src="/qs-imgs/grand-bazaar/info/3/1.jpg"
+                  alt="Cevahir Bedesteni - the jewel market building"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
+                  <p className="text-sm text-primary-200 italic">
+                    Cevahir Bedesteni - the secure market for precious jewels
+                    and goods
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              {/* Logistics and Trade Center */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  A Logistics and Trade Center
-                </h3>
+              <p className="text-base md:text-lg">
+                After the conquest of Istanbul,{" "}
+                <strong className="text-white">
+                  Sultan Mehmet the Conqueror
+                </strong>{" "}
+                built a special market called{" "}
+                <strong className="text-white">Cevahir Bedesteni</strong>.
+              </p>
+
+              <div className="flex items-start mb-4">
+                <FaGem className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  Vezir Han was a major hub on this network and one of the
-                  biggest trading buildings in Istanbul. It was a central point
-                  where goods traveling the Silk Road were{" "}
+                  The name{" "}
                   <strong className="text-white">
-                    stored, sorted, and sold
+                    "Cevahir" means "jewels"
                   </strong>
-                  . Traders from far away came here to stay and do business.
-                </p>
-                <p className="text-base md:text-lg mt-4">
-                  Because of this, Vezir Han was a vital part of the Grand
-                  Bazaar.{" "}
-                  <strong className="text-white">
-                    The economy of the city and the whole empire was directed
-                    from this place.
-                  </strong>
+                  . This tells us exactly what this building was for - it was a
+                  secure place where the most valuable jewels and precious items
+                  were bought and sold.
                 </p>
               </div>
 
-              {/* Vezir Han Today */}
+              {/* The Purpose */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    The Vezir Han Today
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaMosque className="mr-2" />A Clever Plan for Hagia Sophia
                   </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    Sultan Mehmet built this market for a very special reason.
+                    All the{" "}
+                    <strong className="text-white">
+                      rent money from the shops
+                    </strong>{" "}
+                    would go directly to support{" "}
+                    <strong className="text-white">Hagia Sophia Mosque</strong>.
+                  </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Today, Vezir Han is still a center for business, but now it
-                    is the{" "}
+                    This money was used for the{" "}
                     <strong className="text-white">
-                      heart of the jewelry and gold trade
-                    </strong>
-                    . Inside the building, you will find many shops and
-                    workshops. People here work with{" "}
-                    <strong className="text-white">
-                      gold, silver, precious stones, and jewelry
-                    </strong>
-                    .
+                      maintenance and needs
+                    </strong>{" "}
+                    of the great mosque, ensuring it would always be beautiful
+                    and well-cared for.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* James Bond Section */}
+              {/* How It Worked */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    How This Brilliant System Worked
+                  </h3>
+
+                  <div className="space-y-3 text-primary-100 text-sm md:text-base">
+                    <p>
+                      • <strong>Rich merchants rented shops</strong> in this
+                      secure building
+                    </p>
+                    <p>
+                      • They sold{" "}
+                      <strong>valuable jewels, gold, and precious items</strong>
+                    </p>
+                    <p>
+                      • The <strong>rent money collected</strong> from these
+                      shops
+                    </p>
+                    <p>
+                      • This money was{" "}
+                      <strong>given directly to Hagia Sophia</strong>
+                    </p>
+                    <p>
+                      • The mosque used this money for{" "}
+                      <strong>repairs, maintenance, and daily needs</strong>
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Dual Function */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    James Bond Recorded Here
+                    Two Important Jobs in One Building
                   </h3>
-                  <p className="text-secondary-100 text-sm md:text-base mb-4">
-                    This building is so famous that it was in a James Bond
-                    movie! A scene from{" "}
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    Cevahir Bedesteni served{" "}
                     <strong className="text-white">
-                      &quot;Skyfall&quot; (2012)
-                    </strong>{" "}
-                    was filmed right here inside Vezir Han.
-                  </p>
-
-                  {/* YouTube Video */}
-                  <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900 mt-4">
-                    <div className="relative h-48 md:h-64 w-full">
-                      <YouTube
-                        videoId="yV8-IGY64pE"
-                        opts={videoOpts}
-                        className="w-full h-full"
-                        iframeClassName="w-full h-full rounded-lg"
-                      />
-                    </div>
-                  </div>
-                  <p className="text-secondary-300 text-sm text-center mt-2 italic">
-                    James Bond chase scene filmed in Vezir Han
+                      both economic and religious purposes
+                    </strong>
+                    . It was not just a market, but also a way to support one of
+                    the most important religious buildings in Istanbul. This
+                    clever system helped connect business with faith in a
+                    beautiful way.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Fun Fact */}
+              {/* Legacy */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Did You Know?
+                    A Lasting Legacy
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    Vezir Han was built in 1659-1660 by the famous Ottoman Grand
-                    Vizier Köprülü Mehmed Pasha. The han was designed to be
-                    self-sufficient, with its income supporting the Nuruosmaniye
-                    Mosque complex. For centuries, it has stood as a testament
-                    to Ottoman engineering and commercial prowess.
+                    This system created by Sultan Mehmet showed great wisdom. It
+                    ensured that
+                    <strong className="text-white">
+                      {" "}
+                      Hagia Sophia would always have financial support
+                    </strong>
+                    , while also creating a secure trading place for the most
+                    valuable goods in the empire. It was a perfect solution that
+                    served both God and commerce.
                   </p>
                 </CardContent>
               </Card>
@@ -163,7 +177,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/4/location")}
+            onClick={() => router.push("/grand-bazaar/5/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
@@ -174,7 +188,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where ancient trade meets modern adventure...
+            Where commerce meets faith, great things are built...
           </p>
         </footer>
       </div>
