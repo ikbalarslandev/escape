@@ -3,7 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaGlobeAsia,
+  FaRoute,
+} from "react-icons/fa";
+import { GiTrade } from "react-icons/gi";
 import Image from "next/image";
 
 export default function InfoPage() {
@@ -22,7 +28,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the secret of Çemberlitaş!
+            You found the secret of the Silk Road and Grand Bazaar!
           </p>
         </header>
 
@@ -32,131 +38,125 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Column That Built a Capital City
+                The Silk Road
               </h2>
 
-              {/* Forum of Constantine Image */}
+              {/* Silk Road Map Image */}
               <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
                 <Image
-                  src="/qs-imgs/pagan-cross-crescent/info/1/forum.jpeg"
-                  alt="Forum of Constantine with the Column of Constantine erected in the center"
+                  src="/qs-imgs/grand-bazaar/info/1/1.png"
+                  alt="Ancient Silk Road trade routes stretching from China to the Mediterranean"
                   width={800}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
                   <p className="text-sm text-primary-200 italic">
-                    The Forum of Constantine with the Column of Constantine
-                    standing proudly in the center
+                    The Silk Road connected many countries from East to West
                   </p>
                 </div>
               </div>
 
               <p className="text-base md:text-lg">
-                A long time ago, Emperor Constantine visited a small pagan town
-                called <strong className="text-white">Byzantium</strong>. He
-                decided, &quot;I will build my new capital city here. I will
-                call it <strong className="text-white">New Rome</strong>.&quot;
+                The <strong className="text-white">Silk Road</strong> was a very
+                long road for traders. It went from{" "}
+                <strong className="text-white">India to Europe</strong>. It had
+                the name "Silk Road" because silk was a very expensive and
+                important thing to sell.
               </p>
 
-              <p className="text-base md:text-lg">
-                But he had a big problem. The town was very small. He did not
-                have enough people to build a great capital for his empire.
-              </p>
+              <div className="flex items-start mb-4">
+                <GiTrade className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  But the road was not only for things to buy and sell. It also
+                  carried{" "}
+                  <strong className="text-white">ideas and culture</strong>.
+                  People shared stories, art, and new ways of thinking.
+                </p>
+              </div>
 
-              <p className="text-base md:text-lg">
-                So, Constantine made a clever plan. First, he built a large,
-                round public square called a{" "}
-                <strong className="text-white">Forum</strong>. This was a place
-                for people to meet. Then, he made a brilliant &quot;honey
-                pot&quot; plan to attract people from all around the world. If
-                many people came, he could build a big and powerful nation.
-              </p>
-
-              {/* How He Attracted Pagans */}
+              {/* Ottoman Conquest Impact */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    How Did He Attract the Pagans?
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaRoute className="mr-2" />
+                    The Ottoman Empire's Big Plan
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    In the exact center of the new Forum, he erected a giant
-                    column. This column was special because it came from a
-                    temple for the sun god,{" "}
-                    <strong className="text-white">Apollo</strong>. On top of
-                    the column, he put a statue of himself. The statue wore a
-                    crown with{" "}
-                    <strong className="text-white">seven lights</strong> to look
-                    like Apollo. This made all the pagan people respect him and
-                    want to live in his city.
+                    When the{" "}
+                    <strong className="text-white">
+                      Ottoman Empire took Istanbul
+                    </strong>
+                    , they got control of the most important parts of the Silk
+                    Road.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    He also made a very important rule: the country became{" "}
-                    <strong className="text-white">bilingual</strong>. This
-                    means there were two official languages:{" "}
-                    <strong className="text-white">Latin and Greek</strong>.
-                    Now, the Greek-speaking pagan people felt welcome and were
-                    happy to join his new empire.
+                    This was very smart because they could{" "}
+                    <strong className="text-white">
+                      control all the trade
+                    </strong>
+                    between East and West. They became very rich and powerful.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* How He Attracted Christians and Jews */}
+              {/* Grand Bazaar Section */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    How Did He Attract Christians and Jews?
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <GiTrade className="mr-2" />
+                    The Grand Bazaar: The Biggest Market
                   </h3>
+
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    Constantine sent his mother,{" "}
-                    <strong className="text-white">Helena</strong>, to
-                    Jerusalem. She brought back many holy objects for Christians
-                    and Jews. They buried these holy things under the column in
-                    the forum to protect the city.
+                    Along the Silk Road, there were many markets. But the best
+                    and biggest one was in Istanbul. It was called{" "}
+                    <strong className="text-white">
+                      Kapalıçarşı (Grand Bazaar)
+                    </strong>
+                    .
                   </p>
-                  <div className="text-primary-100 text-sm md:text-base space-y-2">
+
+                  <div className="space-y-2 text-primary-100 text-sm md:text-base">
                     <p>
-                      <strong>For Jews:</strong> The seven-branched candlestick
-                      (Menorah) from King Solomon&apos;s Temple.
+                      • <strong>All expensive things</strong> from far away came
+                      here
                     </p>
                     <p>
-                      <strong>For Christians:</strong> Pieces of wood from the
-                      cross where Jesus died.
+                      • <strong>Traders from everywhere</strong> met here to do
+                      business
                     </p>
                     <p>
-                      <strong>For Christians:</strong> Pieces of the bread that
-                      Jesus used to feed 5,000 people.
-                    </p>
-                    <p>
-                      <strong>For Jews and Christians:</strong> The axe that
-                      Noah used to build his ark.
-                    </p>
-                    <p>
-                      <strong>For Jews and Christians:</strong> One of the
-                      stones that David used in his sling.
+                      • <strong>The world's largest covered market</strong> -
+                      very special!
                     </p>
                   </div>
+
                   <p className="text-primary-100 text-sm md:text-base mt-3">
-                    Because of this, Christians and Jews from all over the world
-                    wanted to come and join him.
+                    The Grand Bazaar showed everyone that the Ottoman Empire was
+                    the{" "}
+                    <strong className="text-white">
+                      most important trading center
+                    </strong>{" "}
+                    in the world.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* The Center of Everything */}
+              {/* Global Impact */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    The Center of Everything
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaGlobeAsia className="mr-2" />
+                    Changing the World
                   </h3>
                   <p className="text-secondary-100 text-sm md:text-base">
-                    This Forum with its column was the{" "}
+                    The Silk Road and Grand Bazaar were not just for buying and
+                    selling. They were like{" "}
                     <strong className="text-white">
-                      heart of Constantinople
+                      bridges between different people
                     </strong>
-                    . It was the reason people came, and it was the reason the
-                    city became a great Empire. Without this special place,
-                    there may have been no great capital city at all.
+                    . They helped share knowledge and culture around the world.
                   </p>
                 </CardContent>
               </Card>
@@ -178,7 +178,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Discover how three traditions came together to build an empire...
+            Learn how trade roads built great empires...
           </p>
         </footer>
       </div>

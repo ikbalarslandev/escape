@@ -3,7 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaArrowRight,
+  FaShip,
+  FaCoins,
+  FaMap,
+} from "react-icons/fa";
 import Image from "next/image";
 
 export default function InfoPage() {
@@ -22,7 +28,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the path and found the holy tree!
+            You discovered how the Grand Bazaar changed world history!
           </p>
         </header>
 
@@ -31,123 +37,169 @@ export default function InfoPage() {
           <CardContent className="p-6 md:p-8">
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
-              <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Story of Çemberlitaş
+              <h2 className="text-xl md:text-3xl font-light text-secondary-400 text-center mb-6">
+                America Discovered because of The Grand Bazaar
               </h2>
 
-              {/* Column of Constantine Image */}
+              {/* Spices and Silk Image */}
               <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
                 <Image
-                  src="/qs-imgs/pagan-cross-crescent/info/2/column.jpg"
-                  alt="Column of Constantine showing the nine distinct stone blocks"
+                  src="/qs-imgs/grand-bazaar/info/2/1.jpg"
+                  alt="Spices and silk traded in the Grand Bazaar"
                   width={800}
-                  height={600}
+                  height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
                   <p className="text-sm text-primary-200 italic">
-                    The Column of Constantine (Çemberlitaş) showing the nine
-                    stone blocks
+                    Valuable spices and silk from India that made the Grand
+                    Bazaar rich
                   </p>
                 </div>
               </div>
 
               <p className="text-base md:text-lg">
-                The Column of Constantine was very tall and was made of{" "}
+                A long time ago, the{" "}
                 <strong className="text-white">
-                  nine separate stone blocks
+                  Ottoman Empire controlled the Silk Road
                 </strong>
-                .
+                . This meant they controlled all the trade of valuable spices
+                and silk coming from India.
               </p>
 
-              <p className="text-base md:text-lg">
-                One day, a very{" "}
-                <strong className="text-white">strong wind storm</strong> hit
-                the city. The wind was so powerful that the statue of
-                Constantine on top of the column fell down. When it fell, it
-                broke, and it also broke{" "}
-                <strong className="text-white">
-                  three of the nine stone blocks
-                </strong>
-                .
-              </p>
+              <div className="flex items-start mb-4">
+                <FaCoins className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <p className="text-base md:text-lg">
+                  The biggest market for these expensive goods was the{" "}
+                  <strong className="text-white">
+                    Grand Bazaar in Istanbul
+                  </strong>
+                  . Everyone wanted to buy these special things.
+                </p>
+              </div>
 
-              {/* Repair Story */}
+              {/* European Problem */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    How They Fixed the Column
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaCoins className="mr-2" />
+                    Europe's Big Money Problem
+                  </h3>
+                  <p className="text-primary-100 text-sm md:text-base mb-3">
+                    European countries had to buy spices and silk from the
+                    Ottomans at{" "}
+                    <strong className="text-white">very high prices</strong>.
+                    This was making them poor and desperate for a new way.
+                  </p>
+                  <p className="text-primary-100 text-sm md:text-base">
+                    They were so desperate that they started sending{" "}
+                    <strong className="text-white">
+                      many explorers across the ocean
+                    </strong>{" "}
+                    to find a route to India that didn't go through Ottoman
+                    lands.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Columbus Solution */}
+              <Card className="bg-primary-700 border-primary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaShip className="mr-2" />
+                    Columbus's Big Plan
                   </h3>
 
-                  {/* Column with Rings Image */}
+                  {/* Columbus Voyage Image */}
                   <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
                     <Image
-                      src="/qs-imgs/pagan-cross-crescent/info/2/column-with-rings.jpg"
-                      alt="Close-up view of the iron reinforcement rings that give Çemberlitaş its name"
+                      src="/qs-imgs/grand-bazaar/info/2/2.jpg"
+                      alt="Christopher Columbus's voyage across the Atlantic"
                       width={600}
-                      height={400}
+                      height={300}
                       className="w-full h-auto object-cover"
                     />
                     <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
                       <p className="text-xs text-primary-200 italic">
-                        The iron reinforcement rings that give the column its
-                        Turkish name &quot;Çemberlitaş&quot;
+                        Columbus was one of many explorers sent to find a new
+                        route to India
                       </p>
                     </div>
                   </div>
 
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    After the statue and the top blocks fell, the column was
-                    shorter and damaged. To fix it, people put a simple{" "}
-                    <strong className="text-white">white marble capital</strong>{" "}
-                    on the top to finish it.
+                    A man named{" "}
+                    <strong className="text-white">Christopher Columbus</strong>{" "}
+                    had an idea. He thought he could sail west across the ocean
+                    to reach India, avoiding the Ottoman Empire completely.
                   </p>
+
                   <p className="text-primary-100 text-sm md:text-base">
-                    They also saw that the column was now weak. So, they placed{" "}
-                    <strong className="text-white">strong iron rings</strong>{" "}
-                    around it to hold the stone blocks together and make it
-                    strong again.
+                    He asked European kings and queens for ships and money. They
+                    agreed because they were desperate to break the Ottoman
+                    control of trade and find a new way to India.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Name Origin */}
+              {/* The Accidental Discovery */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    How It Got Its Name
+                    The Big Mistake That Changed the World
                   </h3>
+
+                  {/* Native Americans Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-secondary-500">
+                    <Image
+                      src="/qs-imgs/grand-bazaar/info/2/3.jpg"
+                      alt="Native Americans that Columbus mistakenly called Indians"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-secondary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-secondary-200 italic">
+                        The people Columbus met in America, whom he mistakenly
+                        called "Indians"
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-secondary-100 text-sm md:text-base mb-3">
+                    Columbus sailed west, but he didn't find India. Instead, he
+                    found{" "}
+                    <strong className="text-white">
+                      a whole new continent: America
+                    </strong>
+                    !
+                  </p>
+
                   <p className="text-secondary-100 text-sm md:text-base">
-                    Because of these metal rings, the column got a new name.
-                    People started to call it{" "}
-                    <strong className="text-white">
-                      &quot;Çemberlitaş&quot;
-                    </strong>
-                    , which means{" "}
-                    <strong className="text-white">
-                      &quot;The Hooped Stone&quot;
-                    </strong>{" "}
-                    or{" "}
-                    <strong className="text-white">
-                      &quot;The Column with Rings&quot;
-                    </strong>
-                    . That is the name we still use today.
+                    But he was so sure he had reached India that he called the
+                    local people{" "}
+                    <strong className="text-white">"Indians"</strong>. This name
+                    stuck for centuries, even though he was completely wrong!
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Fun Fact */}
+              {/* The Connection */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Did You Know?
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                    <FaMap className="mr-2" />
+                    So What Does This Have To Do With The Grand Bazaar?
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The original column stood approximately 50 meters high.
-                    After the storm damage and repairs, it now stands at about
-                    35 meters tall. The iron rings that gave it its famous name
-                    have been replaced and reinforced several times over the
-                    centuries to keep this ancient monument standing strong.
+                    Without the{" "}
+                    <strong className="text-white">
+                      Grand Bazaar's economic power
+                    </strong>
+                    and the high prices Europeans had to pay there, they would
+                    never have been so desperate to find a new route to India.
+                    Columbus might never have sailed west. The Grand Bazaar's
+                    success actually led to the discovery of America!
                   </p>
                 </CardContent>
               </Card>
@@ -158,7 +210,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/3/location")}
+            onClick={() => router.push("/grand-bazaar/4/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
@@ -169,7 +221,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            The stones remember what people forget...
+            Sometimes the biggest discoveries happen by accident...
           </p>
         </footer>
       </div>
