@@ -24,7 +24,7 @@ export default function LocationPage() {
             </h2>
           </div>
           <p className="text-lg md:text-xl text-primary-200 font-light max-w-2xl mx-auto">
-            Begin your quest at the ancient column that started it all
+            Begin your journey at the main entrance of this historic marketplace
           </p>
         </header>
 
@@ -35,8 +35,8 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/qs-imgs/pagan-cross-crescent/loc/1.JPG"
-                  alt="Çemberlitaş Column"
+                  src="/qs-imgs/grand-bazaar/location/1.png"
+                  alt="Gate No:1 - Grand Bazaar"
                   fill
                   className="object-cover z-10"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -52,20 +52,21 @@ export default function LocationPage() {
                 <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
                 <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
                   <FaMapMarkerAlt className="mr-2 text-secondary-400" />
-                  ÇEMBERLİTAŞ COLUMN
+                  GATE NO:1
                 </h2>
               </div>
               <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                This ancient column marks the center of what was once the Forum
-                of Constantine. It was here that Emperor Constantine established
-                the foundation for his new capital.
+                This main entrance gate welcomes you to one of the world's
+                oldest and largest covered markets. Step through this historic
+                portal to begin your exploration of the Grand Bazaar's vibrant
+                corridors and hidden treasures.
               </p>
             </div>
 
             {/* Google Maps Link */}
             <div className="text-center">
               <Link
-                href="https://maps.app.goo.gl/FuZYAzsVNQ4jQ1Nq5"
+                href="https://maps.app.goo.gl/AQ6eKMZ4EF8Z4Ko48"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,7 +85,7 @@ export default function LocationPage() {
 
         {/* Next Button */}
         <div className="text-center">
-          <Link href="/pagan-cross-crescent/1/qs">
+          <Link href="/grand-bazaar/1/qs">
             <Button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Go to Question
               <FaArrowRight className="ml-2" />
@@ -95,7 +96,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where empires began and traditions met...
+            Where commerce meets history and treasures await discovery...
           </p>
         </footer>
       </div>

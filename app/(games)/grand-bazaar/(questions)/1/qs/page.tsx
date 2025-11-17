@@ -39,19 +39,17 @@ const formSchema = z.object({
 
 export default function QuestionPage() {
   const router = useRouter();
-  const [hints, setHints] = useState([false, false, false, false]);
+  const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
 
-  const question =
-    "Follow the green way it will lead you to which feeds the animals. How many animals are there?";
+  const question = "Above the door how many moons do you see?";
 
   const hintData = [
-    "Green way represents moss. Check around the column and find the side which has the most moss - that direction is the way you should follow",
-    "The one which feeds the animals is a machine not a human",
-    "The machine is a vending machine which provides food for animals. Look around that machine",
-    "When you count the animals, don't only count cats. There are other animals too. Be careful and see them too",
+    "Focus on small details in the figure which is above the door.",
+    "Look at the big picture too",
+    "Don't forget the flags above the figure",
   ];
 
   // Initialize form
@@ -77,7 +75,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "18") {
+    if (normalizedAnswer === "13") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -99,7 +97,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/1/info");
+      router.push("/grand-bazaar/1/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -139,7 +137,7 @@ export default function QuestionPage() {
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number of animals..."
+                            placeholder="Enter the number of moons..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -231,7 +229,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/1/location")}
+            onClick={() => router.push("/grand-bazaar/1/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -250,10 +248,7 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                  <p>
-                    Correct answer! You found all 18 animals around the vending
-                    machine.
-                  </p>
+                  <p>Correct answer! You found all 13 moons above the door.</p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">
                       <p className="text-lg font-semibold text-center">
