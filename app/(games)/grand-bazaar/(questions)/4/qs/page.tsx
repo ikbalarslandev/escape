@@ -2,19 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -22,44 +12,39 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   FaLightbulb,
   FaLock,
   FaLockOpen,
   FaCheckCircle,
+  FaTimesCircle,
   FaArrowLeft,
+  FaPaw,
+  FaHashtag,
 } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-
-// Form validation schema
-const formSchema = z.object({
-  answer: z.string().min(1, "Answer cannot be empty"),
-});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [selectedAnimal, setSelectedAnimal] = useState<number | null>(null);
+  const [selectedCount, setSelectedCount] = useState<number | null>(null);
+  const [currentStep, setCurrentStep] = useState<"animal" | "count">("animal");
+  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "I am standing next to the hairs, half of me doesn't have protection from the rain so that part got broken. Which building stands on top of me?";
+    "First, identify which animal you can see. Then, count how many of that animal you can see around the area.";
 
   const hintData = [
-    "I am standing next to a hair saloon",
-    "On top of me half of me covered with the shield from rain but the other half doesn't have protection so that part got broken",
-    "I am a historical stone. They built a whole balcony on top of me",
+    "Look around carefully. Don't look at only the store",
+    "Look at the rocks",
+    "Look at the door",
   ];
 
-  // Initialize form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      answer: "",
-    },
-  });
+  const animalOptions = [1, 2, 3, 4, 5, 6, 7, 8];
+  const countOptions = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -69,30 +54,31 @@ export default function QuestionPage() {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
+  const handleAnimalSelect = (animal: number) => {
+    setSelectedAnimal(animal);
+    setCurrentStep("count");
+  };
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
+  const handleCountSelect = (count: number) => {
+    setSelectedCount(count);
 
-    // Check if answer is correct
-    if (
-      normalizedAnswer === "jewelry store" ||
-      normalizedAnswer === "jewelry shop"
-    ) {
+    // Check both answers: animal should be 3, count should be 5
+    if (selectedAnimal === 5 && count === 3) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer", {
-        type: "manual",
-        message: "Wrong answer! Please try again or use the hints.",
-      });
+      setIsError(true);
     }
-
-    setIsSubmitting(false);
   };
 
-  // Countdown effect
+  const resetSelection = () => {
+    setSelectedAnimal(null);
+    setSelectedCount(null);
+    setCurrentStep("animal");
+    setIsError(false);
+  };
+
+  // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -101,13 +87,13 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/4/info");
+      router.push("/grand-bazaar/4/info");
     }
   }, [isSuccess, countdown, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
@@ -116,6 +102,51 @@ export default function QuestionPage() {
           <div className="w-20 h-1 bg-secondary-400 mx-auto mb-4"></div>
         </header>
 
+        {/* Progress Indicator */}
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-6">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between">
+              <div
+                className={`flex items-center ${
+                  currentStep === "animal"
+                    ? "text-secondary-400"
+                    : "text-primary-300"
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
+                    currentStep === "animal"
+                      ? "bg-secondary-400 text-primary-900"
+                      : "bg-primary-600 text-primary-300"
+                  }`}
+                >
+                  1
+                </div>
+                <span className="font-semibold">Identify Animal</span>
+              </div>
+              <div className="flex-1 h-1 bg-primary-600 mx-4"></div>
+              <div
+                className={`flex items-center ${
+                  currentStep === "count"
+                    ? "text-secondary-400"
+                    : "text-primary-300"
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
+                    currentStep === "count"
+                      ? "bg-secondary-400 text-primary-900"
+                      : "bg-primary-600 text-primary-300"
+                  }`}
+                >
+                  2
+                </div>
+                <span className="font-semibold">Count Animals</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
@@ -123,50 +154,105 @@ export default function QuestionPage() {
               {question}
             </p>
 
-            {/* Answer Form */}
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
-                  name="answer"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        Your Answer:
-                      </FormLabel>
-                      <FormControl>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <Input
-                            {...field}
-                            placeholder="Enter the name of the building..."
-                            className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
-                            disabled={isSubmitting}
-                          />
-                          <Button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-6 md:px-8 text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl min-w-[140px]"
-                          >
-                            {isSubmitting ? (
-                              "Checking..."
-                            ) : (
-                              <>
-                                Submit
-                                <IoIosSend className="ml-2" />
-                              </>
-                            )}
-                          </Button>
-                        </div>
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-base" />
-                    </FormItem>
-                  )}
-                />
-              </form>
-            </Form>
+            {/* Step 1: Animal Selection */}
+            {currentStep === "animal" && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                  <FaPaw className="mr-2 text-secondary-400" />
+                  Step 1: Which animal can you see around Store 49?
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                  {animalOptions.map((option) => (
+                    <div
+                      key={option}
+                      className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
+                        selectedAnimal === option
+                          ? "border-secondary-400 ring-2 ring-secondary-400"
+                          : "border-primary-500 hover:border-secondary-400"
+                      }`}
+                      onClick={() => handleAnimalSelect(option)}
+                    >
+                      <Image
+                        src={`/qs-imgs/grand-bazaar/qs/options/4/${option}.png`}
+                        alt={`Animal option ${option}`}
+                        fill
+                        className="object-contain bg-primary-900 p-2"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        quality={100}
+                      />
+                      <div className="absolute bottom-2 right-2 bg-primary-800 bg-opacity-80 rounded-full w-6 h-6 flex items-center justify-center text-xs font-semibold">
+                        {option}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Step 2: Count Selection */}
+            {currentStep === "count" && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                  <FaHashtag className="mr-2 text-secondary-400" />
+                  Step 2: How many of this animal can you see around the area?
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                  {countOptions.map((option) => (
+                    <div
+                      key={option}
+                      className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
+                        selectedCount === option
+                          ? "border-secondary-400 ring-2 ring-secondary-400"
+                          : "border-primary-500 hover:border-secondary-400"
+                      }`}
+                      onClick={() => handleCountSelect(option)}
+                    >
+                      <div className="w-full h-full bg-primary-700 flex items-center justify-center">
+                        <span className="text-3xl font-bold text-white">
+                          {option}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-2 right-2 bg-primary-800 bg-opacity-80 rounded-full w-6 h-6 flex items-center justify-center text-xs font-semibold">
+                        {option}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Selected Animal Preview */}
+                {selectedAnimal && (
+                  <Card className="bg-primary-700 border-primary-500 mt-6">
+                    <CardContent className="p-4">
+                      <h4 className="text-md font-semibold text-secondary-400 mb-2">
+                        Selected Animal:
+                      </h4>
+                      <div className="relative w-20 h-20 rounded-lg overflow-hidden border border-primary-400">
+                        <Image
+                          src={`/qs-imgs/grand-bazaar/qs/options/4/${selectedAnimal}.png`}
+                          alt={`Selected animal ${selectedAnimal}`}
+                          fill
+                          className="object-contain"
+                          quality={100}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            )}
+
+            {/* Navigation between steps */}
+            {currentStep === "count" && (
+              <div className="flex justify-start mt-4">
+                <Button
+                  onClick={() => setCurrentStep("animal")}
+                  variant="outline"
+                  className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900"
+                >
+                  ← Back to Animal Selection
+                </Button>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -233,7 +319,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/4/location")}
+            onClick={() => router.push("/grand-bazaar/4/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -244,28 +330,62 @@ export default function QuestionPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white">
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Correct!
+                Perfect!
               </DialogTitle>
-              <DialogDescription asChild>
-                <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                  <p>Yes! The jewelry store stands above the ancient stone.</p>
-                  <Card className="bg-primary-700 border-primary-500">
-                    <CardContent className="p-4">
-                      <p className="text-lg font-semibold text-center">
-                        Moving to next location in {countdown} seconds...
-                      </p>
-                      <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
-                        <div
-                          className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
-                          style={{ width: `${((4 - countdown) / 4) * 100}%` }}
-                        ></div>
-                      </div>
-                    </CardContent>
-                  </Card>
+              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                <p>
+                  Excellent! You correctly identified the animal and counted 3
+                  of them around the area.
+                </p>
+                <Card className="bg-primary-700 border-primary-500">
+                  <CardContent className="p-4">
+                    <p className="text-lg font-semibold text-center">
+                      Moving to next in {countdown} seconds...
+                    </p>
+                    <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
+                      <div
+                        className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
+                        style={{ width: `${((4 - countdown) / 4) * 100}%` }}
+                      ></div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Error Dialog */}
+        <Dialog open={isError} onOpenChange={setIsError}>
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
+                <FaTimesCircle className="mr-3" />
+                Incorrect Combination
+              </DialogTitle>
+              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                <p>
+                  The animal and count combination is not correct. Please try
+                  again.
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    onClick={resetSelection}
+                    className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-4 flex-1"
+                  >
+                    Start Over
+                  </Button>
+                  <Button
+                    onClick={() => setIsError(false)}
+                    variant="outline"
+                    className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-2 px-4 flex-1"
+                  >
+                    Try Again
+                  </Button>
                 </div>
               </DialogDescription>
             </DialogHeader>

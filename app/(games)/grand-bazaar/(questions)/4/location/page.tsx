@@ -5,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   FaMapMarkerAlt,
   FaArrowRight,
-  FaExternalLinkAlt,
+  FaStore,
+  FaWalking,
 } from "react-icons/fa";
 
 export default function LocationPage() {
@@ -22,19 +23,45 @@ export default function LocationPage() {
             Location
           </h2>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            Find the connection between ancient and modern
+            Find the distinctive Store Number 49
           </p>
         </header>
 
         {/* Location Content */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
-            {/* Image Section */}
+            {/* Directions Section */}
             <div className="mb-6 md:mb-8">
+              <div className="flex items-center mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
+                  <FaMapMarkerAlt className="mr-2 text-secondary-400" />
+                  STORE NUMBER 49
+                </h2>
+              </div>
+
+              {/* Directions */}
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <FaWalking className="text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                  <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+                    From where you are, walk down to this street and try to find{" "}
+                    <strong className="text-white">Store Number 49</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Street View Image */}
+            <div className="mb-6 md:mb-8">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <FaWalking className="mr-2 text-secondary-400" />
+                The Street You're Looking For
+              </h3>
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/qs-imgs/pagan-cross-crescent/loc/4.JPG"
-                  alt="Vezir Han Connection Point"
+                  src="/qs-imgs/grand-bazaar/location/4/1.png"
+                  alt="Street view showing the location of Store 49"
                   fill
                   className="object-cover z-10"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -42,46 +69,63 @@ export default function LocationPage() {
                 />
                 <div className="absolute inset-0 bg-primary-900 bg-opacity-20"></div>
               </div>
-            </div>
-
-            {/* Description Section */}
-            <div className="mb-6 md:mb-8">
-              <div className="flex items-center mb-4">
-                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
-                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
-                  <FaMapMarkerAlt className="mr-2 text-secondary-400" />
-                  VEZİR HAN CONNECTION POINT
-                </h2>
-              </div>
-              <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                Find the connection point between the Vezir Han entrance door
-                and the autopark area.
+              <p className="text-primary-300 text-sm mt-2 text-center italic">
+                Walk down this street to find Store 49
               </p>
             </div>
 
-            {/* Google Maps Link */}
-            <div className="text-center">
-              <Link
-                href="https://maps.app.goo.gl/pHLswNKs2E991H1z8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-secondary-400 text-secondary-400 hover:bg-secondary-400 hover:text-primary-900 font-semibold py-3 px-6 rounded-full transition-all duration-300"
-                >
-                  <FaMapMarkerAlt className="mr-2" />
-                  Open in Google Maps
-                  <FaExternalLinkAlt className="ml-2 h-3 w-3" />
-                </Button>
-              </Link>
+            {/* Store Appearance Image */}
+            <div className="mb-6 md:mb-8">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <FaStore className="mr-2 text-secondary-400" />
+                The Store Looks Like This
+              </h3>
+              <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
+                <Image
+                  src="/qs-imgs/grand-bazaar/location/4/2.png"
+                  alt="Store Number 49 appearance"
+                  fill
+                  className="object-cover z-10"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-primary-900 bg-opacity-20"></div>
+              </div>
+              <p className="text-primary-300 text-sm mt-2 text-center italic">
+                This is what Store Number 49 looks like
+              </p>
             </div>
+
+            {/* Location Instructions */}
+            <Card className="bg-primary-700 border-primary-500 mt-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                  <FaMapMarkerAlt className="mr-2" />
+                  Finding Store 49
+                </h3>
+                <ol className="text-primary-100 text-sm md:text-base space-y-2 list-decimal list-inside">
+                  <li>
+                    Continue from your current location at the Letter Bazaar
+                    entrance
+                  </li>
+                  <li>Walk down the main street shown in the first image</li>
+                  <li>Look for store numbers as you walk</li>
+                  <li>
+                    Find <strong className="text-white">Store Number 49</strong>{" "}
+                    that matches the second image
+                  </li>
+                  <li>
+                    Take your time to observe the store's distinctive features
+                  </li>
+                </ol>
+              </CardContent>
+            </Card>
           </CardContent>
         </Card>
 
         {/* Next Button */}
         <div className="text-center">
-          <Link href="/pagan-cross-crescent/4/qs">
+          <Link href="/grand-bazaar/4/qs">
             <Button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Go to Question
               <FaArrowRight className="ml-2" />
@@ -92,7 +136,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where history meets the present day...
+            Every store has a story, every number a destination...
           </p>
         </footer>
       </div>
