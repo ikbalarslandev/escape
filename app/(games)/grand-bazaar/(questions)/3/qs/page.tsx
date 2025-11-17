@@ -45,12 +45,12 @@ export default function QuestionPage() {
   const [countdown, setCountdown] = useState(4);
 
   const question =
-    "You see a lot of arches surrounding this place. Some of them are closed with stones. How many windows do they have in total?";
+    "From here look at the letter bazaar entrance. The window on top how many pieces it has?";
 
   const hintData = [
-    "Focus on the arches on the ground floor",
-    "Right next to them, there is a wall covered with green plants.",
-    "These arches are closed with red bricks.",
+    "Look above the entrance door",
+    "Count the tiles how many do you see",
+    "Its an easy question. You can do it",
   ];
 
   // Initialize form
@@ -76,7 +76,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "2") {
+    if (normalizedAnswer === "20") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -98,7 +98,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/3/info");
+      router.push("/grand-bazaar/3/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -138,7 +138,7 @@ export default function QuestionPage() {
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number of windows..."
+                            placeholder="Enter the number of pieces..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -230,7 +230,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/3/location")}
+            onClick={() => router.push("/grand-bazaar/3/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -250,7 +250,8 @@ export default function QuestionPage() {
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
                   <p>
-                    Well done! You found the 2 windows in the bricked-up arches.
+                    Well done! You counted 20 pieces in the window above the
+                    Letter Bazaar entrance.
                   </p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">

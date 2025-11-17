@@ -5,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   FaMapMarkerAlt,
   FaArrowRight,
-  FaExternalLinkAlt,
+  FaStore,
+  FaDirections,
 } from "react-icons/fa";
 
 export default function LocationPage() {
@@ -22,7 +23,7 @@ export default function LocationPage() {
             Location
           </h2>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            Discover the ancient trade hub of the Ottoman Empire
+            Discover the entrance to the Letter Bazaar
           </p>
         </header>
 
@@ -33,8 +34,8 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/qs-imgs/pagan-cross-crescent/loc/3.JPG"
-                  alt="Vezir Han Autopark"
+                  src="/qs-imgs/grand-bazaar/location/3.png"
+                  alt="Entrance of the Letter Bazaar"
                   fill
                   className="object-cover z-10"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -50,37 +51,57 @@ export default function LocationPage() {
                 <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
                 <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
                   <FaMapMarkerAlt className="mr-2 text-secondary-400" />
-                  VEZİR HAN AUTOPARK
+                  LETTER BAZAAR ENTRANCE
                 </h2>
               </div>
-              <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                Enter the historic Vezir Han and find the autopark area.
-              </p>
+
+              {/* Directions */}
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <FaDirections className="text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                  <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+                    Go out of Sandal Bedesteni and find{" "}
+                    <strong className="text-white">Store Number 46</strong>
+                  </p>
+                </div>
+
+                <div className="flex items-start">
+                  <FaStore className="text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                  <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+                    From Store 46, look towards the entrance of the Letter
+                    Bazaar
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Google Maps Link */}
-            <div className="text-center">
-              <Link
-                href="https://maps.app.goo.gl/pHLswNKs2E991H1z8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-secondary-400 text-secondary-400 hover:bg-secondary-400 hover:text-primary-900 font-semibold py-3 px-6 rounded-full transition-all duration-300"
-                >
-                  <FaMapMarkerAlt className="mr-2" />
-                  Open in Google Maps
-                  <FaExternalLinkAlt className="ml-2 h-3 w-3" />
-                </Button>
-              </Link>
-            </div>
+            {/* Location Instructions */}
+            <Card className="bg-primary-700 border-primary-500 mt-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
+                  <FaDirections className="mr-2" />
+                  How to Find This Location
+                </h3>
+                <ol className="text-primary-100 text-sm md:text-base space-y-2 list-decimal list-inside">
+                  <li>
+                    Exit Sandal Bedesteni (the building you just explored)
+                  </li>
+                  <li>
+                    Look for{" "}
+                    <strong className="text-white">Store Number 46</strong> in
+                    the surrounding area
+                  </li>
+                  <li>From Store 46, face the entrance of the Letter Bazaar</li>
+                  <li>Observe the architectural details above the entrance</li>
+                </ol>
+              </CardContent>
+            </Card>
           </CardContent>
         </Card>
 
         {/* Next Button */}
         <div className="text-center">
-          <Link href="/pagan-cross-crescent/3/qs">
+          <Link href="/grand-bazaar/3/qs">
             <Button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Go to Question
               <FaArrowRight className="ml-2" />
@@ -91,7 +112,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where East met West and empires were built on trade...
+            Where words and commerce meet in historic corridors...
           </p>
         </footer>
       </div>
