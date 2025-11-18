@@ -39,7 +39,7 @@ export default function InfoPage() {
               {/* Tea in Grand Bazaar Image */}
               <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
                 <Image
-                  src="/qs-imgs/grand-bazaar/info/7/1.jpg"
+                  src="/qs-imgs/grand-bazaar/info/9/1.jpg"
                   alt="Shop with walkie-talkie and traditional Turkish tea"
                   width={800}
                   height={400}
@@ -205,7 +205,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/8/location")}
+            onClick={() => router.push("/grand-bazaar/bargain")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey

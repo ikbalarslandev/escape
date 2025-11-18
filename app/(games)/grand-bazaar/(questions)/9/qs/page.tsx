@@ -29,8 +29,11 @@ import {
   FaLockOpen,
   FaCheckCircle,
   FaArrowLeft,
+  FaPhone,
+  FaSearch,
 } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
+import Image from "next/image";
 
 // Form validation schema
 const formSchema = z.object({
@@ -44,12 +47,13 @@ export default function QuestionPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
 
-  const question = "How many green half circles can you see?";
+  const question =
+    "How many fixed telephones or intercoms do you see on this street?";
 
   const hintData = [
-    "The half circles are made from green rock",
-    "From the center look at the walls",
-    "Look at the ground",
+    "Some of them are hidden. Look on the walls detaily",
+    "Some phones are different color. Don't miss them",
+    "Look behind the fridge",
   ];
 
   // Initialize form
@@ -75,7 +79,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "5") {
+    if (normalizedAnswer === "7") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -97,7 +101,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/9/info");
+      router.push("/grand-bazaar/9/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -115,9 +119,54 @@ export default function QuestionPage() {
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
-            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6 text-center">
               {question}
             </p>
+
+            {/* Example Images */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <FaPhone className="mr-2 text-secondary-400" />
+                Examples of what to look for:
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-primary-500">
+                  <Image
+                    src="/qs-imgs/grand-bazaar/qs/options/9/1.png"
+                    alt="Example of fixed telephone or intercom 1"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-primary-500">
+                  <Image
+                    src="/qs-imgs/grand-bazaar/qs/options/9/2.png"
+                    alt="Example of fixed telephone or intercom 2"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+              <p className="text-primary-300 text-sm mt-2 text-center italic">
+                Look for objects similar to these examples on the street
+              </p>
+            </div>
+
+            {/* Location Context */}
+            <Card className="bg-primary-700 border-primary-500 mb-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-2 flex items-center">
+                  <FaSearch className="mr-2" />
+                  On the Left Street from Zincirli Han
+                </h3>
+                <p className="text-primary-100 text-sm">
+                  Carefully examine the left street area from Zincirli Han exit.
+                  Count all fixed telephones and intercoms you can find.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Answer Form */}
             <Form {...form}>
@@ -130,14 +179,15 @@ export default function QuestionPage() {
                   name="answer"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        Your Answer:
+                      <FormLabel className="text-lg font-semibold text-white flex items-center">
+                        <FaPhone className="mr-2 text-secondary-400" />
+                        Total Number:
                       </FormLabel>
                       <FormControl>
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number of green half circles..."
+                            placeholder="Enter the total number..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -229,7 +279,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/9/location")}
+            onClick={() => router.push("/grand-bazaar/9/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -248,11 +298,14 @@ export default function QuestionPage() {
               </DialogTitle>
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                  <p>Yes! There are 5 green half circles in the courtyard.</p>
+                  <p>
+                    Excellent! You found all 7 fixed telephones and intercoms on
+                    this street.
+                  </p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">
                       <p className="text-lg font-semibold text-center">
-                        Moving to final location in {countdown} seconds...
+                        Moving to next location in {countdown} seconds...
                       </p>
                       <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
                         <div
