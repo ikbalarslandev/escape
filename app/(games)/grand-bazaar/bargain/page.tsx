@@ -48,7 +48,7 @@ export default function BreakTimePage() {
                     <strong className="text-white">
                       next question will be your final one
                     </strong>{" "}
-                    and it's located{" "}
+                    and it&apos;s located{" "}
                     <strong className="text-white">
                       outside the Grand Bazaar
                     </strong>
@@ -64,9 +64,9 @@ export default function BreakTimePage() {
                   Take Your Time to Explore
                 </h3>
                 <p className="text-base md:text-lg mb-4">
-                  If you'd like to spend more time exploring the Grand Bazaar,
-                  now is your chance! Once you proceed to the final question,
-                  you'll be leaving this historic marketplace.
+                  If you&apos;d like to spend more time exploring the Grand
+                  Bazaar, now is your chance! Once you proceed to the final
+                  question, you&apos;ll be leaving this historic marketplace.
                 </p>
               </div>
 
@@ -125,12 +125,12 @@ export default function BreakTimePage() {
                     <FaShoppingBag className="mr-2" />A Final Moment in History
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    You've explored the heart of one of the world's oldest and
-                    largest covered markets. From the original bedestens to the
-                    maze-like corridors, you've walked in the footsteps of
-                    merchants and traders from centuries past. This is your
-                    chance to fully immerse yourself in the atmosphere before
-                    continuing your journey.
+                    You&apos;ve explored the heart of one of the world&apos;s
+                    oldest and largest covered markets. From the original
+                    bedestens to the maze-like corridors, you&apos;ve walked in
+                    the footsteps of merchants and traders from centuries past.
+                    This is your chance to fully immerse yourself in the
+                    atmosphere before continuing your journey.
                   </p>
                 </CardContent>
               </Card>
@@ -144,8 +144,8 @@ export default function BreakTimePage() {
                       <p className="text-primary-100 text-sm md:text-base">
                         <strong className="text-white">Explore First:</strong>{" "}
                         Take your time to shop, take photos, and experience the
-                        bazaar fully. Return to this page when you're ready to
-                        continue.
+                        bazaar fully. Return to this page when you&apos;re ready
+                        to continue.
                       </p>
                     </div>
                   </div>

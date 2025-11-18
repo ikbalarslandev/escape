@@ -119,7 +119,7 @@ export default function LocationPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Every turn reveals new discoveries in the bazaar's maze...
+            Every turn reveals new discoveries in the bazaar&apos;s maze...
           </p>
         </footer>
       </div>

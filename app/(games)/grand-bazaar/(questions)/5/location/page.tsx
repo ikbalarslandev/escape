@@ -85,7 +85,7 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <FaCompass className="mr-2 text-secondary-400" />
-                Grand Bazaar Bird's Eye View
+                Grand Bazaar Bird&apos;s Eye View
               </h3>
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
@@ -114,7 +114,7 @@ export default function LocationPage() {
                 <div className="text-primary-100 text-sm md:text-base space-y-2">
                   <p>
                     <strong className="text-white">Cevahir Bedesteni</strong>{" "}
-                    (also known as the "Inner Bedesten") is the{" "}
+                    (also known as the &quot;Inner Bedesten&quot;) is the{" "}
                     <strong className="text-white">
                       original and most important building
                     </strong>{" "}

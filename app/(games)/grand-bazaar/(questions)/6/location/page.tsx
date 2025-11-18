@@ -138,8 +138,8 @@ export default function LocationPage() {
                   Navigation Tip
                 </h3>
                 <p className="text-primary-100 text-sm md:text-base">
-                  You're exploring the interconnected corridors of the Grand
-                  Bazaar. The store are arranged in a logical numbering
+                  You&apos;re exploring the interconnected corridors of the
+                  Grand Bazaar. The store are arranged in a logical numbering
                   sequence, so if you find Store 49, continuing in the right
                   direction should lead you to the higher numbered store.
                 </p>

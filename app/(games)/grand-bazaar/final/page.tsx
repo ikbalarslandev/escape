@@ -29,7 +29,8 @@ export default function FinalPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-300 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
-            You've uncovered the secrets of the world's oldest covered market!
+            You&apos;ve uncovered the secrets of the world&apos;s oldest covered
+            market!
           </p>
         </header>
 
@@ -39,16 +40,16 @@ export default function FinalPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-100 leading-relaxed">
               <p className="text-base md:text-lg">
-                You did it! You've journeyed through 500 years of history,
+                You did it! You&apos;ve journeyed through 500 years of history,
                 uncovering the hidden stories that made the Grand Bazaar one of
                 the most influential marketplaces in human history.
               </p>
 
               <p className="text-base md:text-lg">
                 From ancient trade routes to modern bargaining traditions,
-                you've discovered how this labyrinthine market shaped empires,
-                sparked discoveries, and created a unique commercial culture
-                that continues to thrive today.
+                you&apos;ve discovered how this labyrinthine market shaped
+                empires, sparked discoveries, and created a unique commercial
+                culture that continues to thrive today.
               </p>
 
               {/* Key Discoveries */}
@@ -63,9 +64,9 @@ export default function FinalPage() {
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          The Silk Road's Final Stop:
+                          The Silk Road&apos;s Final Stop:
                         </strong>{" "}
-                        How the Grand Bazaar's wealth inspired Columbus to
+                        How the Grand Bazaar&apos;s wealth inspired Columbus to
                         discover America
                       </span>
                     </div>
@@ -73,7 +74,7 @@ export default function FinalPage() {
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          World's First Banking System:
+                          World&apos;s First Banking System:
                         </strong>{" "}
                         How Cevahir and Sandal Bedestens created modern finance
                       </span>
@@ -110,12 +111,13 @@ export default function FinalPage() {
                     Global Impact You Discovered
                   </h3>
                   <p className="text-primary-50 text-sm md:text-base">
-                    The Grand Bazaar wasn't just a market—it was an economic
-                    superpower. Its control over the Silk Road forced Europe to
-                    seek new trade routes, accidentally leading to the discovery
-                    of the Americas. Its secure bedestens invented banking, and
-                    its tea rituals perfected the art of commercial hospitality
-                    that continues to define Turkish business culture.
+                    The Grand Bazaar wasn&apos;t just a market—it was an
+                    economic superpower. Its control over the Silk Road forced
+                    Europe to seek new trade routes, accidentally leading to the
+                    discovery of the Americas. Its secure bedestens invented
+                    banking, and its tea rituals perfected the art of commercial
+                    hospitality that continues to define Turkish business
+                    culture.
                   </p>
                 </CardContent>
               </Card>
@@ -138,7 +140,7 @@ export default function FinalPage() {
                         <strong className="text-white">
                           Nuruosmaniye Gate:
                         </strong>{" "}
-                        Where you discovered the Silk Road's influence
+                        Where you discovered the Silk Road&apos;s influence
                       </span>
                     </li>
                     <li className="flex items-start">
@@ -157,7 +159,7 @@ export default function FinalPage() {
                         <strong className="text-white">
                           Cevahir Bedesteni:
                         </strong>{" "}
-                        The world's first secure banking and jewelry trade
+                        The world&apos;s first secure banking and jewelry trade
                         center
                       </span>
                     </li>
@@ -194,13 +196,13 @@ export default function FinalPage() {
                     Living Legacy You Experienced
                   </h3>
                   <p className="text-primary-50 text-sm md:text-base">
-                    The traditions you discovered aren't just history—they're
-                    alive today. The art of bargaining, the tea rituals, the
-                    organic growth of shops around ancient bedestens, all
-                    continue in the same corridors where merchants have traded
-                    for five centuries. You haven't just learned about history;
-                    you've experienced a living commercial culture that has
-                    outlasted empires.
+                    The traditions you discovered aren&apos;t just
+                    history—they&apos;re alive today. The art of bargaining, the
+                    tea rituals, the organic growth of shops around ancient
+                    bedestens, all continue in the same corridors where
+                    merchants have traded for five centuries. You haven&apos;t
+                    just learned about history; you&apos;ve experienced a living
+                    commercial culture that has outlasted empires.
                   </p>
                 </CardContent>
               </Card>

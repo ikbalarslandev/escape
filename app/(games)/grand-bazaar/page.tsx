@@ -87,7 +87,8 @@ const GrandBazaarIntroPage = () => {
                 of America?
               </p>
               <p className="text-secondary-300 italic text-sm md:text-base">
-                This market didn't just sell goods—it shaped world history...
+                This market didn&apos;t just sell goods—it shaped world
+                history...
               </p>
               <p>
                 For over 500 years, this labyrinthine market has been the heart
@@ -95,12 +96,13 @@ const GrandBazaarIntroPage = () => {
                 geographical discoveries.
               </p>
               <p>
-                From the Silk Road's final stop to the world's first banking
-                system, the Grand Bazaar holds secrets that changed the course
-                of history.
+                From the Silk Road&apos;s final stop to the world&apos;s first
+                banking system, the Grand Bazaar holds secrets that changed the
+                course of history.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Now it's your turn to uncover how this market shaped our world.
+                Now it&apos;s your turn to uncover how this market shaped our
+                world.
               </p>
             </div>
 
@@ -139,8 +141,8 @@ const GrandBazaarIntroPage = () => {
               The Market That Changed the World
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
-              Discover how the Grand Bazaar's influence reached from the Silk
-              Road to the Americas.
+              Discover how the Grand Bazaar&apos;s influence reached from the
+              Silk Road to the Americas.
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
@@ -172,7 +174,7 @@ const GrandBazaarIntroPage = () => {
                     </div>
                     <span className="text-sm md:text-base">
                       Start at the <strong>Nuruosmaniye Gate</strong> - Silk
-                      Road's final stop
+                      Road&apos;s final stop
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -180,8 +182,8 @@ const GrandBazaarIntroPage = () => {
                       <Coins className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Explore the <strong>World's First Banks</strong> in the
-                      Bedestens
+                      Explore the <strong>World&apos;s First Banks</strong> in
+                      the Bedestens
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -306,17 +308,18 @@ const GrandBazaarIntroPage = () => {
         <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
-              World-Changing Secrets You'll Uncover
+              World-Changing Secrets You&apos;ll Uncover
             </h2>
             <ul className="space-y-2 md:space-y-3 text-secondary-100 text-xs md:text-sm">
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                How the Grand Bazaar's wealth inspired Columbus to discover
+                How the Grand Bazaar&apos;s wealth inspired Columbus to discover
                 America
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The world's first banking system in Cevahir and Sandal Bedestens
+                The world&apos;s first banking system in Cevahir and Sandal
+                Bedestens
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>

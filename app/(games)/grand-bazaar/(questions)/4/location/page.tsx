@@ -56,7 +56,7 @@ export default function LocationPage() {
             <div className="mb-6 md:mb-8">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <FaWalking className="mr-2 text-secondary-400" />
-                The Street You're Looking For
+                The Street You&apos;re Looking For
               </h3>
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
@@ -115,7 +115,8 @@ export default function LocationPage() {
                     that matches the second image
                   </li>
                   <li>
-                    Take your time to observe the store's distinctive features
+                    Take your time to observe the store&apos;s distinctive
+                    features
                   </li>
                 </ol>
               </CardContent>

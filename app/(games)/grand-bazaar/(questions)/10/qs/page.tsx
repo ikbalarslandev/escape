@@ -197,7 +197,7 @@ export default function QuestionPage() {
                   <li>Check the pictures displayed above the store</li>
                   <li>Also check the next store nearby</li>
                   <li>
-                    Don't forget to look at pictures on tables or displays
+                    Don&apos;t forget to look at pictures on tables or displays
                   </li>
                   <li>Count every picture that shows chains</li>
                 </ul>
