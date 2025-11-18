@@ -38,7 +38,7 @@ export default function LocationPage() {
                 <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
                 <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
                   <FaMapMarkerAlt className="mr-2 text-secondary-400" />
-                  ZİNCİRLİ HAN EXIT - LEFT STREET
+                  LEFT STREET
                 </h2>
               </div>
 
@@ -47,7 +47,8 @@ export default function LocationPage() {
                 <div className="flex items-start">
                   <FaWalking className="text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                   <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                    From Zincirli Han exit, take the street on the left
+                    Go back to the entrance you used to go inside of the
+                    zincirli han and turn left
                   </p>
                 </div>
 
@@ -68,7 +69,7 @@ export default function LocationPage() {
               </h3>
               <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/qs-imgs/grand-bazaar/location/9/1.png"
+                  src="/qs-imgs/grand-bazaar/location/9/1.jpeg"
                   alt="Zincirli Han exit left street view 1"
                   fill
                   className="object-cover z-10"
