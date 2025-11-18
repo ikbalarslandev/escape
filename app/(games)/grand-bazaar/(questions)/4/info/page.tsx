@@ -206,7 +206,7 @@ export default function InfoPage() {
                     Without the{" "}
                     <strong className="text-white">
                       Grand Bazaar&apos;s economic power
-                    </strong>
+                    </strong>{" "}
                     and the high prices Europeans had to pay there, they would
                     never have been so desperate to find a new route to India.
                     Columbus might never have sailed west. The Grand

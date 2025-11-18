@@ -58,7 +58,7 @@ export default function InfoPage() {
                 appeared:{" "}
                 <strong className="text-white">Sandal Bedesteni</strong>. This
                 was the{" "}
-                <strong className="text-white">second core structure</strong>
+                <strong className="text-white">second core structure</strong>{" "}
                 that would become the heart of the Grand Bazaar.
               </p>
 

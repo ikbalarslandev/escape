@@ -94,7 +94,7 @@ export default function InfoPage() {
                     An open flame in this environment would create{" "}
                     <strong className="text-white">
                       an enormous fire risk
-                    </strong>
+                    </strong>{" "}
                     that could destroy the entire market and the empire&apos;s
                     commercial heart.
                   </p>
