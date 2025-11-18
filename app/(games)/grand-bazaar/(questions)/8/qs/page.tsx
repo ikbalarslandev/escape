@@ -2,19 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -22,32 +12,27 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   FaLightbulb,
   FaLock,
   FaLockOpen,
   FaCheckCircle,
+  FaTimesCircle,
   FaArrowLeft,
   FaCat,
-  FaMountain,
+  FaLightbulb as FaLamp,
 } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-
-// Form validation schema
-const formSchema = z.object({
-  answer: z.string().min(1, "Answer cannot be empty"),
-});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [countdown, setCountdown] = useState(4);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [zoomImage, setZoomImage] = useState<number | null>(null);
 
-  const question =
-    "How many sharp points are there on the stone where the cat is resting?";
+  const question = "Which lamp is the cat looking at?";
 
   const hintData = [
     "The cat is a statue made of rock",
@@ -55,13 +40,7 @@ export default function QuestionPage() {
     "It's in the garden",
   ];
 
-  // Initialize form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      answer: "",
-    },
-  });
+  const options = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -71,27 +50,18 @@ export default function QuestionPage() {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
+  const handleOptionClick = (option: number) => {
+    setSelectedOption(option);
 
-    // Normalize the answer: lowercase and trim
-    const normalizedAnswer = values.answer.toLowerCase().trim();
-
-    // Check if answer is correct
-    if (normalizedAnswer === "13") {
+    if (option === 5) {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      form.setError("answer", {
-        type: "manual",
-        message: "Wrong answer! Please try again or use the hints.",
-      });
+      setIsError(true);
     }
-
-    setIsSubmitting(false);
   };
 
-  // Countdown effect
+  // Countdown effect for success
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -106,7 +76,7 @@ export default function QuestionPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-900 to-primary-800 text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
@@ -122,65 +92,40 @@ export default function QuestionPage() {
               {question}
             </p>
 
-            {/* Location Context */}
-            <Card className="bg-primary-700 border-primary-500 mb-6">
-              <CardContent className="p-4">
-                <h3 className="text-lg font-semibold text-secondary-400 mb-2 flex items-center">
-                  <FaCat className="mr-2" />
-                  Inside Zincirli Han
-                </h3>
-                <p className="text-primary-100 text-sm">
-                  Look for the stone cat statue in Zincirli Han. Count the sharp
-                  points on the stone base where the cat is resting.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Answer Form */}
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
-                  name="answer"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white flex items-center">
-                        <FaMountain className="mr-2 text-secondary-400" />
-                        Number of Sharp Points:
-                      </FormLabel>
-                      <FormControl>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <Input
-                            {...field}
-                            placeholder="Enter the number of sharp points..."
-                            className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
-                            disabled={isSubmitting}
-                          />
-                          <Button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-6 md:px-8 text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl min-w-[140px]"
-                          >
-                            {isSubmitting ? (
-                              "Checking..."
-                            ) : (
-                              <>
-                                Submit
-                                <IoIosSend className="ml-2" />
-                              </>
-                            )}
-                          </Button>
-                        </div>
-                      </FormControl>
-                      <FormMessage className="text-red-300 text-base" />
-                    </FormItem>
-                  )}
-                />
-              </form>
-            </Form>
+            {/* Options Grid */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-white mb-4 text-center flex items-center justify-center">
+                <FaLamp className="mr-2 text-secondary-400" />
+                Select the correct lamp:
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {options.map((option) => (
+                  <div
+                    key={option}
+                    className={`relative aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-300 group ${
+                      selectedOption === option
+                        ? option === 5
+                          ? "border-secondary-400 ring-2 ring-secondary-400"
+                          : "border-red-400 ring-2 ring-red-400"
+                        : "border-primary-500 hover:border-secondary-400"
+                    }`}
+                    onClick={() => handleOptionClick(option)}
+                  >
+                    <Image
+                      src={`/qs-imgs/grand-bazaar/qs/options/8/${option}.jpg`}
+                      alt={`Lamp option ${option}`}
+                      fill
+                      className="object-contain bg-primary-900 p-2"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      quality={100}
+                    />
+                    <div className="absolute bottom-2 right-2 bg-primary-800 bg-opacity-80 rounded-full w-6 h-6 flex items-center justify-center text-xs font-semibold">
+                      {option}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -256,34 +201,89 @@ export default function QuestionPage() {
           </Button>
         </div>
 
+        {/* Zoom Modal */}
+        <Dialog
+          open={zoomImage !== null}
+          onOpenChange={() => setZoomImage(null)}
+        >
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-4xl w-[90vw] h-[90vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-white">
+                Lamp {zoomImage} - Detailed View
+              </DialogTitle>
+            </DialogHeader>
+            <div className="relative w-full h-full flex items-center justify-center">
+              {zoomImage && (
+                <Image
+                  src={`/qs-imgs/grand-bazaar/qs/options/8/${zoomImage}.jpg`}
+                  alt={`Lamp option ${zoomImage} - Detailed`}
+                  fill
+                  className="object-contain"
+                  quality={100}
+                />
+              )}
+            </div>
+            <div className="flex justify-center mt-4">
+              <Button
+                onClick={() => setZoomImage(null)}
+                className="bg-secondary-500 hover:bg-secondary-600 text-white"
+              >
+                Close
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white">
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
                 Correct!
               </DialogTitle>
-              <DialogDescription asChild>
-                <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                  <p>
-                    Excellent! You counted 13 sharp points on the stone where
-                    the cat statue rests.
-                  </p>
-                  <Card className="bg-primary-700 border-primary-500">
-                    <CardContent className="p-4">
-                      <p className="text-lg font-semibold text-center">
-                        Moving to next location in {countdown} seconds...
-                      </p>
-                      <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
-                        <div
-                          className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
-                          style={{ width: `${((4 - countdown) / 4) * 100}%` }}
-                        ></div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                <p>
+                  Perfect! You identified that the cat is looking at lamp number
+                  5.
+                </p>
+                <Card className="bg-primary-700 border-primary-500">
+                  <CardContent className="p-4">
+                    <p className="text-lg font-semibold text-center">
+                      Moving to next location in {countdown} seconds...
+                    </p>
+                    <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
+                      <div
+                        className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
+                        style={{ width: `${((4 - countdown) / 4) * 100}%` }}
+                      ></div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
+        {/* Error Dialog */}
+        <Dialog open={isError} onOpenChange={setIsError}>
+          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
+                <FaTimesCircle className="mr-3" />
+                Not Quite Right!
+              </DialogTitle>
+              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                <p>
+                  This is not the lamp the cat is looking at. Check the hints
+                  and try again.
+                </p>
+                <Button
+                  onClick={() => setIsError(false)}
+                  className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-6 w-full"
+                >
+                  Try Again
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
