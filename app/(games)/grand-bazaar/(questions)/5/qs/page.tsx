@@ -47,10 +47,10 @@ export default function QuestionPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
 
-  const question = "What is the number of the store which has golf ball in it?";
+  const question = "What is the number of the store has this shelf on it?";
 
   const hintData = [
-    "Check the Rolex stores",
+    "It's not in a jewelery Store",
     "Its in the top shelf not the bottom",
     "You can see it from outside of the store",
   ];
@@ -78,7 +78,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "69") {
+    if (normalizedAnswer === "42") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -139,7 +139,7 @@ export default function QuestionPage() {
               <div className="bg-primary-800 p-3 text-center border-t border-primary-600">
                 <p className="text-primary-300 text-sm flex items-center justify-center">
                   <FaGolfBall className="mr-2 text-secondary-400" />
-                  Look for the store number where this golf ball is displayed
+                  Look for the store number where this shelf is displayed
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function QuestionPage() {
                   Inside Cevahir Bedesteni
                 </h3>
                 <p className="text-primary-100 text-sm">
-                  Explore the stores inside Cevahir Bedesteni. The golf ball is
+                  Explore the stores inside Cevahir Bedesteni. The shelf is
                   visible in one of the store displays.
                 </p>
               </CardContent>
@@ -288,7 +288,7 @@ export default function QuestionPage() {
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
                   <p>
-                    Well done! You found Store Number 69 with the golf ball
+                    Well done! You found Store Number 42 with the golf ball
                     display.
                   </p>
                   <Card className="bg-primary-700 border-primary-500">

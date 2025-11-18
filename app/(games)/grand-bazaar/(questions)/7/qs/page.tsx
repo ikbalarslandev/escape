@@ -77,7 +77,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "6") {
+    if (normalizedAnswer === "10") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
