@@ -51,8 +51,9 @@ export default function LocationPage() {
                 </h2>
               </div>
               <p className="text-primary-200 leading-relaxed text-base md:text-lg">
-                Together, Sandal Bedesteni and Cevahir Bedesteni are the very
-                core of the Grand Bazaar. Now, let’s step into the first one.
+                Walk inside by using the door. and start walking you will see
+                the entrance door for sandal bedesteni on your right side. Your
+                next question will be inside of that bedesten.
               </p>
             </div>
 
@@ -70,24 +71,11 @@ export default function LocationPage() {
                 <div className="absolute inset-0 bg-primary-900 bg-opacity-20"></div>
               </div>
             </div>
-
-            {/* Google Maps Link */}
-            <div className="text-center">
-              <Link
-                href="https://maps.app.goo.gl/H4JWWS3AvWNStwkL6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-secondary-400 text-secondary-400 hover:bg-secondary-400 hover:text-primary-900 font-semibold py-3 px-6 rounded-full transition-all duration-300"
-                >
-                  <FaMapMarkerAlt className="mr-2" />
-                  Open in Google Maps
-                  <FaExternalLinkAlt className="ml-2 h-3 w-3" />
-                </Button>
-              </Link>
-            </div>
+            <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+              This is the bird eye view of the Grand Bazaar and together, Sandal
+              Bedesteni and Cevahir Bedesteni are the very core of the Grand
+              Bazaar. Now, let’s step into the first one.
+            </p>
           </CardContent>
         </Card>
 

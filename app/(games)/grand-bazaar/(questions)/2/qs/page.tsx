@@ -31,7 +31,7 @@ export default function QuestionPage() {
   const [zoomImage, setZoomImage] = useState<number | null>(null);
 
   const question =
-    "There is a historical old door in the building what special sign it has on top of it.";
+    "There are two historical doors in the building, each with a sign above it. Both signs were covered with tape, but one special sign remains visible. Which sign can you still see?";
 
   const hintData = [
     "Walk around the door is not functioning",
