@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  FaCheckCircle,
-  FaArrowRight,
-  FaShieldAlt,
-  FaHistory,
-} from "react-icons/fa";
-import { GiBank, GiMoneyStack } from "react-icons/gi";
+import { FaCheckCircle, FaArrowRight, FaGem, FaMosque } from "react-icons/fa";
 import Image from "next/image";
 
 export default function InfoPage() {
@@ -28,7 +22,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the world&apos;s first banking system!
+            You discovered the secret of Cevahir Bedesteni!
           </p>
         </header>
 
@@ -38,164 +32,141 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The First Banks of the World
+                The Jewel Market That Supported a Great Mosque
               </h2>
 
-              {/* Bedesten Security Image */}
+              {/* Cevahir Bedesteni Image */}
               <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
                 <Image
                   src="/qs-imgs/grand-bazaar/info/5/1.jpg"
-                  alt="Cevahir and Sandal Bedestenleri - the secure banking centers"
+                  alt="Cevahir Bedesteni - the jewel market building"
                   width={800}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
                   <p className="text-sm text-primary-200 italic">
-                    Cevahir and Sandal Bedestenleri - protected by state
-                    soldiers as secure banking centers
+                    Cevahir Bedesteni - the secure market for precious jewels
+                    and goods
                   </p>
                 </div>
               </div>
 
               <p className="text-base md:text-lg">
-                Cevahir and Sandal Bedestenleri were much more than just markets
-                - they were{" "}
+                After the conquest of Istanbul,{" "}
                 <strong className="text-white">
-                  one of the world&apos;s first banking systems
-                </strong>
-                .
+                  Sultan Mehmet the Conqueror
+                </strong>{" "}
+                built a special market called{" "}
+                <strong className="text-white">Cevahir Bedesteni</strong>.
               </p>
 
               <div className="flex items-start mb-4">
-                <FaShieldAlt className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <FaGem className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  These buildings were{" "}
+                  The name{" "}
                   <strong className="text-white">
-                    protected by state soldiers
+                    &quot;Cevahir&quot; means &quot;jewels&quot;
                   </strong>
-                  , making them the safest places in the city. Merchants trusted
-                  them completely.
+                  . This tells us exactly what this building was for - it was a
+                  secure place where the most valuable jewels and precious items
+                  were bought and sold.
                 </p>
               </div>
 
-              {/* Banking Functions */}
+              {/* The Purpose */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <GiBank className="mr-2" />
-                    More Than Just Trading
+                    <FaMosque className="mr-2" />A Clever Plan for Hagia Sophia
                   </h3>
-
-                  {/* Money Storage Image */}
-                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
-                    <Image
-                      src="/qs-imgs/grand-bazaar/info/5/2.jpg"
-                      alt="Merchants storing money and gold in secure chests"
-                      width={600}
-                      height={300}
-                      className="w-full h-auto object-cover"
-                    />
-                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
-                      <p className="text-xs text-primary-200 italic">
-                        Merchants stored their money and gold in the secure
-                        bedestens
-                      </p>
-                    </div>
-                  </div>
-
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    In these secure buildings, merchants didn&apos;t just trade
-                    jewels and fabrics. They also stored their{" "}
-                    <strong className="text-white">money and gold</strong> for
-                    safekeeping.
-                  </p>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    This security function turned the bedestens into something
-                    like a{" "}
+                    Sultan Mehmet built this market for a very special reason.
+                    All the{" "}
                     <strong className="text-white">
-                      &quot;state-guaranteed bank&quot;
+                      rent money from the shops
                     </strong>{" "}
-                    - the most trusted financial institution of its time.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Modern Banking Foundations */}
-              <Card className="bg-primary-700 border-primary-500 mt-6">
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <GiMoneyStack className="mr-2" />
-                    The Birth of Modern Banking
-                  </h3>
-                  <p className="text-primary-100 text-sm md:text-base mb-3">
-                    Large payments were made directly from the{" "}
-                    <strong className="text-white">trust accounts</strong> kept
-                    in these bedestens. Merchants didn&apos;t need to carry
-                    heavy gold or coins - they could transfer money safely.
+                    would go directly to support{" "}
+                    <strong className="text-white">Hagia Sophia Mosque</strong>.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    This system laid the{" "}
+                    This money was used for the{" "}
                     <strong className="text-white">
-                      foundations of modern banking
-                    </strong>
-                    . The concepts of secure storage, money transfers, and
-                    trusted financial institutions all started here, centuries
-                    ago.
+                      maintenance and needs
+                    </strong>{" "}
+                    of the great mosque, ensuring it would always be beautiful
+                    and well-cared for.
                   </p>
                 </CardContent>
               </Card>
 
               {/* How It Worked */}
-              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+              <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    How This Ancient Banking Worked
+                    How This Brilliant System Worked
                   </h3>
-                  <div className="space-y-2 text-secondary-100 text-sm md:text-base">
+
+                  <div className="space-y-3 text-primary-100 text-sm md:text-base">
                     <p>
-                      • <strong>State soldiers protected</strong> the bedestens
-                      day and night
+                      • <strong>Rich merchants rented shops</strong> in this
+                      secure building
                     </p>
                     <p>
-                      • Merchants stored{" "}
-                      <strong>money, gold, and valuable items</strong> in secure
-                      chests
+                      • They sold{" "}
+                      <strong>valuable jewels, gold, and precious items</strong>
                     </p>
                     <p>
-                      • <strong>Trust accounts</strong> were created for each
-                      merchant
+                      • The <strong>rent money collected</strong> from these
+                      shops
                     </p>
                     <p>
-                      • Large payments were{" "}
-                      <strong>transferred between accounts</strong> without
-                      moving physical money
+                      • This money was{" "}
+                      <strong>given directly to Hagia Sophia</strong>
                     </p>
                     <p>
-                      • The system was <strong>state-guaranteed</strong> -
-                      completely secure and reliable
+                      • The mosque used this money for{" "}
+                      <strong>repairs, maintenance, and daily needs</strong>
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Historical Significance */}
+              {/* Dual Function */}
+              <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    Two Important Jobs in One Building
+                  </h3>
+                  <p className="text-secondary-100 text-sm md:text-base">
+                    Cevahir Bedesteni served{" "}
+                    <strong className="text-white">
+                      both economic and religious purposes
+                    </strong>
+                    . It was not just a market, but also a way to support one of
+                    the most important religious buildings in Istanbul. This
+                    clever system helped connect business with faith in a
+                    beautiful way.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Legacy */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <FaHistory className="mr-2" />A Financial Revolution
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    A Lasting Legacy
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The banking system developed in Cevahir and Sandal
-                    Bedestenleri was revolutionary. It created a{" "}
+                    This system created by Sultan Mehmet showed great wisdom. It
+                    ensured that
                     <strong className="text-white">
-                      safe, efficient way to handle money
-                    </strong>{" "}
-                    that enabled international trade to flourish. Without this
-                    secure financial foundation, the Grand Bazaar could never
-                    have become the world&apos;s most important trading center.
-                    These buildings weren&apos;t just markets - they were the
-                    heart of a global financial network.
+                      {" "}
+                      Hagia Sophia would always have financial support
+                    </strong>
+                    , while also creating a secure trading place for the most
+                    valuable goods in the empire. It was a perfect solution that
+                    served both God and commerce.
                   </p>
                 </CardContent>
               </Card>
@@ -206,7 +177,7 @@ export default function InfoPage() {
         {/* Navigation */}
         <div className="text-center">
           <Button
-            onClick={() => router.push("/grand-bazaar/7/location")}
+            onClick={() => router.push("/grand-bazaar/5/location")}
             className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Continue Your Journey
@@ -217,7 +188,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where commerce meets security, banking is born...
+            Where commerce meets faith, great things are built...
           </p>
         </footer>
       </div>
