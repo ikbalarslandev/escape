@@ -2,8 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -11,33 +22,46 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   FaLightbulb,
   FaLock,
   FaLockOpen,
   FaCheckCircle,
-  FaTimesCircle,
   FaArrowLeft,
+  FaLink,
+  FaStore,
+  FaSearch,
 } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
+
+// Form validation schema
+const formSchema = z.object({
+  answer: z.string().min(1, "Answer cannot be empty"),
+});
 
 export default function QuestionPage() {
   const router = useRouter();
   const [hints, setHints] = useState([false, false, false]);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
-  const question =
-    "The restored part shows the correct way. If kibla is pointing to 3, where is the right way. Which direction.";
+  const question = "How many chain pictures can you see?";
 
   const hintData = [
-    "Kibla is the direction where imam(the one who leads the pray) pointing his face while praying. For correct direction there is a hole on the wall vertically looks like a door. Pointing to 3 means form the clock imagine this way pointing to number 3.",
-    "Look at the walls and see different parts from the rest. These are the restored parts",
-    "Look at the dome the roof the restored part is showing you the correct direction",
+    "Look at the pictures above the store",
+    "The next store too",
+    "Don't forget the pictures on the table",
   ];
 
-  const options = [1, 2, 3, 4, 5, 6, 7, 8];
+  // Initialize form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      answer: "",
+    },
+  });
 
   const openHint = (index: number) => {
     if (index === 0 || hints[index - 1]) {
@@ -47,18 +71,27 @@ export default function QuestionPage() {
     }
   };
 
-  const handleOptionClick = (option: number) => {
-    setSelectedOption(option);
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
 
-    if (option === 7) {
+    // Normalize the answer: lowercase and trim
+    const normalizedAnswer = values.answer.toLowerCase().trim();
+
+    // Check if answer is correct
+    if (normalizedAnswer === "23") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
-      setIsError(true);
+      form.setError("answer", {
+        type: "manual",
+        message: "Wrong answer! Please try again or use the hints.",
+      });
     }
+
+    setIsSubmitting(false);
   };
 
-  // Countdown effect for success
+  // Countdown effect
   useEffect(() => {
     if (isSuccess && countdown > 0) {
       const timer = setTimeout(() => {
@@ -67,7 +100,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/10/info");
+      router.push("/grand-bazaar/final");
     }
   }, [isSuccess, countdown, router]);
 
@@ -79,57 +112,97 @@ export default function QuestionPage() {
           <h1 className="text-3xl md:text-4xl font-light mb-2 text-white">
             Final Question
           </h1>
-          <div className="w-20 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
+          <p className="text-lg md:text-xl text-primary-200">
+            One last observation challenge!
+          </p>
         </header>
 
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
-            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6 text-center">
               {question}
             </p>
 
-            {/* Clock Diagram */}
-            <div className="mb-6 p-6 bg-primary-700 rounded-lg border border-primary-500">
-              <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Clock Directions Reference:
-              </h3>
-              <div className="grid grid-cols-4 gap-4 text-center">
-                <div className="text-secondary-400 font-semibold">
-                  12 ↑ North
-                </div>
-                <div className="text-secondary-400 font-semibold">3 → East</div>
-                <div className="text-secondary-400 font-semibold">
-                  6 ↓ South
-                </div>
-                <div className="text-secondary-400 font-semibold">9 ← West</div>
-              </div>
-            </div>
+            {/* Location Context */}
+            <Card className="bg-primary-700 border-primary-500 mb-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-2 flex items-center">
+                  <FaStore className="mr-2" />
+                  Observe
+                </h3>
+                <p className="text-primary-100 text-sm">
+                  From your position, look at the stores in front of you. Count
+                  all the chain pictures you can see in the area.
+                </p>
+              </CardContent>
+            </Card>
 
-            {/* Options Grid */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                Select the correct direction:
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                {options.map((option) => (
-                  <Button
-                    key={option}
-                    variant="outline"
-                    className={`h-16 md:h-20 border-2 text-base md:text-lg font-medium transition-all duration-300 bg-primary-700 ${
-                      selectedOption === option
-                        ? option === 7
-                          ? "border-secondary-400 bg-secondary-400 bg-opacity-20 text-secondary-400"
-                          : "border-red-400 bg-red-400 bg-opacity-20 text-red-400"
-                        : "border-primary-400 text-primary-200 hover:border-secondary-400 hover:text-secondary-400"
-                    }`}
-                    onClick={() => handleOptionClick(option)}
-                  >
-                    {option}
-                  </Button>
-                ))}
-              </div>
-            </div>
+            {/* Answer Form */}
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
+                <FormField
+                  control={form.control}
+                  name="answer"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-semibold text-white flex items-center">
+                        <FaLink className="mr-2 text-secondary-400" />
+                        Total Chain Pictures:
+                      </FormLabel>
+                      <FormControl>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <Input
+                            {...field}
+                            placeholder="Enter the total number..."
+                            className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
+                            disabled={isSubmitting}
+                          />
+                          <Button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 px-6 md:px-8 text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl min-w-[140px]"
+                          >
+                            {isSubmitting ? (
+                              "Checking..."
+                            ) : (
+                              <>
+                                Submit
+                                <IoIosSend className="ml-2" />
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-300 text-base" />
+                    </FormItem>
+                  )}
+                />
+              </form>
+            </Form>
+
+            {/* Search Instructions */}
+            <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-2 flex items-center">
+                  <FaSearch className="mr-2" />
+                  Where to Look
+                </h3>
+                <ul className="text-primary-100 text-sm space-y-1 list-disc list-inside">
+                  <li>Look at the store directly in front of you</li>
+                  <li>Check the pictures displayed above the store</li>
+                  <li>Also check the next store nearby</li>
+                  <li>
+                    Don't forget to look at pictures on tables or displays
+                  </li>
+                  <li>Count every picture that shows chains</li>
+                </ul>
+              </CardContent>
+            </Card>
           </CardContent>
         </Card>
 
@@ -196,7 +269,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/10/location")}
+            onClick={() => router.push("/grand-bazaar/10/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -207,51 +280,29 @@ export default function QuestionPage() {
 
         {/* Success Dialog */}
         <Dialog open={isSuccess} onOpenChange={setIsSuccess}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
+          <DialogContent className="bg-primary-800 border-primary-600 text-white">
             <DialogHeader>
               <DialogTitle className="text-2xl flex items-center text-secondary-400 justify-center">
                 <FaCheckCircle className="mr-3" />
-                Correct!
+                🎉 Perfect! Final Question Complete!
               </DialogTitle>
-              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>Perfect! The right way is direction 7.</p>
-                <Card className="bg-primary-700 border-primary-500">
-                  <CardContent className="p-4">
-                    <p className="text-lg font-semibold text-center">
-                      Completing your journey in {countdown} seconds...
-                    </p>
-                    <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
-                      <div
-                        className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${((4 - countdown) / 4) * 100}%` }}
-                      ></div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </DialogDescription>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
-
-        {/* Error Dialog */}
-        <Dialog open={isError} onOpenChange={setIsError}>
-          <DialogContent className="bg-primary-800 border-primary-600 text-white max-w-md">
-            <DialogHeader>
-              <DialogTitle className="text-2xl flex items-center text-red-400 justify-center">
-                <FaTimesCircle className="mr-3" />
-                Wrong Direction!
-              </DialogTitle>
-              <DialogDescription className="text-primary-200 text-lg mt-4 text-center space-y-4">
-                <p>
-                  That&apos;s not the correct direction. Check the hints and
-                  look for the restored sections.
-                </p>
-                <Button
-                  onClick={() => setIsError(false)}
-                  className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-6 w-full"
-                >
-                  Try Again
-                </Button>
+              <DialogDescription asChild>
+                <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
+                  <p>Excellent! You found all 23 chain pictures!</p>
+                  <Card className="bg-primary-700 border-primary-500">
+                    <CardContent className="p-4">
+                      <p className="text-lg font-semibold text-center">
+                        Completing your journey in {countdown} seconds...
+                      </p>
+                      <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
+                        <div
+                          className="bg-secondary-400 h-2 rounded-full transition-all duration-1000"
+                          style={{ width: `${((4 - countdown) / 4) * 100}%` }}
+                        ></div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
