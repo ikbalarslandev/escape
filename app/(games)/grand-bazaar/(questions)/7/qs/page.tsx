@@ -29,6 +29,8 @@ import {
   FaLockOpen,
   FaCheckCircle,
   FaArrowLeft,
+  FaMoon,
+  FaBuilding,
 } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
@@ -44,13 +46,12 @@ export default function QuestionPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
 
-  const question =
-    "There were metal cups to drink the water, but they don't exist anymore. How many cups were there?";
+  const question = "How many moons can you see in the historical locker?";
 
   const hintData = [
-    "They were next to the water faucet",
-    "To prevent them stealing. They were connected to the wall with chains",
-    "The places the chains were connected to the wall still stands there how many connection point can you see from the wall.",
+    "The locker on the back side of the tower not around the display",
+    "It has yellowish color",
+    "Don't forget the small moons",
   ];
 
   // Initialize form
@@ -76,7 +77,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "2") {
+    if (normalizedAnswer === "6") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -98,7 +99,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/7/info");
+      router.push("/grand-bazaar/7/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -116,7 +117,7 @@ export default function QuestionPage() {
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
-            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6 text-center">
               {question}
             </p>
 
@@ -131,14 +132,15 @@ export default function QuestionPage() {
                   name="answer"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        Your Answer:
+                      <FormLabel className="text-lg font-semibold text-white flex items-center">
+                        <FaMoon className="mr-2 text-secondary-400" />
+                        Number of Moons:
                       </FormLabel>
                       <FormControl>
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number of cups..."
+                            placeholder="Enter the number of moons..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -230,7 +232,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/7/location")}
+            onClick={() => router.push("/grand-bazaar/7/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -250,13 +252,12 @@ export default function QuestionPage() {
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
                   <p>
-                    Yes! There were 2 metal cups chained to the wall for public
-                    use.
+                    Perfect! You found all 6 moons in the historical locker.
                   </p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">
                       <p className="text-lg font-semibold text-center">
-                        Continuing your journey in {countdown} seconds...
+                        Moving to next location in {countdown} seconds...
                       </p>
                       <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
                         <div
