@@ -29,6 +29,8 @@ import {
   FaLockOpen,
   FaCheckCircle,
   FaArrowLeft,
+  FaWeightHanging,
+  FaStore,
 } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
@@ -44,12 +46,12 @@ export default function QuestionPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(4);
 
-  const question = "How many lamps get sunlight?";
+  const question = "How many kilos of silver are in the display?";
 
   const hintData = [
-    "Look around and count all the lamps that are not blocked from the sun.",
-    "The lamps are in the second floor",
-    "They are old fashioned",
+    "Look at the display it's at the bottom",
+    "Each piece you see is 1kg of silver",
+    "Count the pieces to see total kg of silver",
   ];
 
   // Initialize form
@@ -75,7 +77,7 @@ export default function QuestionPage() {
     const normalizedAnswer = values.answer.toLowerCase().trim();
 
     // Check if answer is correct
-    if (normalizedAnswer === "2") {
+    if (normalizedAnswer === "20") {
       setIsSuccess(true);
       setCountdown(4);
     } else {
@@ -97,7 +99,7 @@ export default function QuestionPage() {
 
       return () => clearTimeout(timer);
     } else if (isSuccess && countdown === 0) {
-      router.push("/pagan-cross-crescent/6/info");
+      router.push("/grand-bazaar/6/info");
     }
   }, [isSuccess, countdown, router]);
 
@@ -115,9 +117,23 @@ export default function QuestionPage() {
         {/* Question Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
-            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-primary-200 leading-relaxed mb-6 text-center">
               {question}
             </p>
+
+            {/* Silver Display Context */}
+            <Card className="bg-primary-700 border-primary-500 mb-6">
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold text-secondary-400 mb-2 flex items-center">
+                  <FaStore className="mr-2" />
+                  At Store 78-82
+                </h3>
+                <p className="text-primary-100 text-sm">
+                  Look at the display in the store. Count the total kilograms of
+                  silver shown in the display.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Answer Form */}
             <Form {...form}>
@@ -130,14 +146,15 @@ export default function QuestionPage() {
                   name="answer"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold text-white">
-                        Your Answer:
+                      <FormLabel className="text-lg font-semibold text-white flex items-center">
+                        <FaWeightHanging className="mr-2 text-secondary-400" />
+                        Total Kilograms:
                       </FormLabel>
                       <FormControl>
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Input
                             {...field}
-                            placeholder="Enter the number of lamps..."
+                            placeholder="Enter the number of kilos..."
                             className="flex-1 bg-primary-700 border-primary-500 text-white placeholder-primary-300 text-base md:text-lg py-4 px-4 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400"
                             disabled={isSubmitting}
                           />
@@ -229,7 +246,7 @@ export default function QuestionPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Button
-            onClick={() => router.push("/pagan-cross-crescent/6/location")}
+            onClick={() => router.push("/grand-bazaar/6/location")}
             variant="outline"
             className="border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-primary-900 font-semibold py-3 px-6 transition-all duration-300"
           >
@@ -249,13 +266,13 @@ export default function QuestionPage() {
               <DialogDescription asChild>
                 <div className="text-primary-200 text-lg mt-4 text-center space-y-4">
                   <p>
-                    Yes! There are 2 lamps that receive sunlight in the second
-                    floor.
+                    Well done! You counted 20 kilograms of silver in the
+                    display.
                   </p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">
                       <p className="text-lg font-semibold text-center">
-                        Continuing your journey in {countdown} seconds...
+                        Moving to next location in {countdown} seconds...
                       </p>
                       <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
                         <div

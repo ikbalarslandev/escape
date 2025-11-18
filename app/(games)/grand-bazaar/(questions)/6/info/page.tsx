@@ -6,11 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   FaCheckCircle,
   FaArrowRight,
-  FaFire,
-  FaSun,
-  FaLightbulb,
+  FaShieldAlt,
+  FaHistory,
 } from "react-icons/fa";
-import { GiWindow } from "react-icons/gi";
+import { GiBank, GiMoneyStack } from "react-icons/gi";
 import Image from "next/image";
 
 export default function InfoPage() {
@@ -29,8 +28,7 @@ export default function InfoPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-400 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
-            You discovered the Grand Bazaar&apos;s brilliant fire protection
-            system!
+            You discovered the world&apos;s first banking system!
           </p>
         </header>
 
@@ -40,136 +38,164 @@ export default function InfoPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-200 leading-relaxed">
               <h2 className="text-2xl md:text-3xl font-light text-secondary-400 text-center mb-6">
-                The Bazaar That Lived by the Sun
+                The First Banks of the World
               </h2>
 
-              {/* Grand Bazaar Interior Image */}
+              {/* Bedesten Security Image */}
               <div className="my-6 rounded-xl overflow-hidden border border-primary-600 shadow-lg">
                 <Image
                   src="/qs-imgs/grand-bazaar/info/6/1.jpg"
-                  alt="Grand Bazaar interior showing natural light from dome windows"
+                  alt="Cevahir and Sandal Bedestenleri - the secure banking centers"
                   width={800}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="bg-primary-900 bg-opacity-70 p-3 text-center">
                   <p className="text-sm text-primary-200 italic">
-                    Natural light flooding through hundreds of windows in the
-                    domes and roof
+                    Cevahir and Sandal Bedestenleri - protected by state
+                    soldiers as secure banking centers
                   </p>
                 </div>
               </div>
 
               <p className="text-base md:text-lg">
-                In the Grand Bazaar, there was a strict rule:{" "}
-                <strong className="text-white">no open flames allowed</strong>.
-                No gas lamps, no oil lamps - nothing that could start a fire.
+                Cevahir and Sandal Bedestenleri were much more than just markets
+                - they were{" "}
+                <strong className="text-white">
+                  one of the world&apos;s first banking systems
+                </strong>
+                .
               </p>
 
               <div className="flex items-start mb-4">
-                <FaFire className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
+                <FaShieldAlt className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  This was because the main goods traded here -{" "}
+                  These buildings were{" "}
                   <strong className="text-white">
-                    silk, velvet, and other precious fabrics
-                  </strong>{" "}
-                  - were extremely flammable. A single spark could destroy
-                  everything.
+                    protected by state soldiers
+                  </strong>
+                  , making them the safest places in the city. Merchants trusted
+                  them completely.
                 </p>
               </div>
 
-              {/* The Fire Danger */}
+              {/* Banking Functions */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <GiWindow className="mr-2" />
-                    Why Fire Was the Greatest Enemy
+                    <GiBank className="mr-2" />
+                    More Than Just Trading
                   </h3>
+
+                  {/* Money Storage Image */}
+                  <div className="my-4 rounded-lg overflow-hidden border border-primary-500">
+                    <Image
+                      src="/qs-imgs/grand-bazaar/info/6/2.jpg"
+                      alt="Merchants storing money and gold in secure chests"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-primary-800 bg-opacity-70 p-2 text-center">
+                      <p className="text-xs text-primary-200 italic">
+                        Merchants stored their money and gold in the secure
+                        bedestens
+                      </p>
+                    </div>
+                  </div>
+
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    The Grand Bazaar was filled with the most valuable fabrics
-                    in the world. These materials could catch fire easily and
-                    burn quickly.
+                    In these secure buildings, merchants didn&apos;t just trade
+                    jewels and fabrics. They also stored their{" "}
+                    <strong className="text-white">money and gold</strong> for
+                    safekeeping.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    An open flame in this environment would create{" "}
+                    This security function turned the bedestens into something
+                    like a{" "}
                     <strong className="text-white">
-                      an enormous fire risk
-                    </strong>
-                    that could destroy the entire market and the empire&apos;s
-                    commercial heart.
+                      &quot;state-guaranteed bank&quot;
+                    </strong>{" "}
+                    - the most trusted financial institution of its time.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* The Brilliant Solution */}
+              {/* Modern Banking Foundations */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <GiWindow className="mr-2" />
-                    The Architectural Masterpiece
+                    <GiMoneyStack className="mr-2" />
+                    The Birth of Modern Banking
                   </h3>
-
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    The architects solved this problem brilliantly. They placed{" "}
-                    <strong className="text-white">
-                      hundreds of windows and holes
-                    </strong>
-                    in the domes and roof, allowing natural light to flood the
-                    interior all day long.
+                    Large payments were made directly from the{" "}
+                    <strong className="text-white">trust accounts</strong> kept
+                    in these bedestens. Merchants didn&apos;t need to carry
+                    heavy gold or coins - they could transfer money safely.
                   </p>
                   <p className="text-primary-100 text-sm md:text-base">
-                    This clever design eliminated the need for artificial
-                    lighting completely. The bazaar was designed to work with
-                    nature, not against it.
+                    This system laid the{" "}
+                    <strong className="text-white">
+                      foundations of modern banking
+                    </strong>
+                    . The concepts of secure storage, money transfers, and
+                    trusted financial institutions all started here, centuries
+                    ago.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* The Daily Rhythm */}
+              {/* How It Worked */}
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <FaSun className="mr-2" />
-                    Trading with the Sun
+                  <h3 className="text-lg font-semibold text-secondary-400 mb-3">
+                    How This Ancient Banking Worked
                   </h3>
-                  <p className="text-secondary-100 text-sm md:text-base mb-3">
-                    Business in the Grand Bazaar followed the sun&apos;s rhythm.
-                    Trading{" "}
-                    <strong className="text-white">
-                      started with sunrise and ended with sunset
-                    </strong>
-                    . When natural light was available, the market was open.
-                  </p>
-                  <p className="text-secondary-100 text-sm md:text-base">
-                    This natural schedule meant the{" "}
-                    <strong className="text-white">
-                      commercial heart of the Empire
-                    </strong>
-                    could beat safely, without any fire danger threatening its
-                    existence.
-                  </p>
+                  <div className="space-y-2 text-secondary-100 text-sm md:text-base">
+                    <p>
+                      • <strong>State soldiers protected</strong> the bedestens
+                      day and night
+                    </p>
+                    <p>
+                      • Merchants stored{" "}
+                      <strong>money, gold, and valuable items</strong> in secure
+                      chests
+                    </p>
+                    <p>
+                      • <strong>Trust accounts</strong> were created for each
+                      merchant
+                    </p>
+                    <p>
+                      • Large payments were{" "}
+                      <strong>transferred between accounts</strong> without
+                      moving physical money
+                    </p>
+                    <p>
+                      • The system was <strong>state-guaranteed</strong> -
+                      completely secure and reliable
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Legacy */}
+              {/* Historical Significance */}
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <FaLightbulb className="mr-2" />
-                    Sustainable Design Before Its Time
+                    <FaHistory className="mr-2" />A Financial Revolution
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base">
-                    The Grand Bazaar&apos;s lighting solution was not just about
-                    safety - it was about
+                    The banking system developed in Cevahir and Sandal
+                    Bedestenleri was revolutionary. It created a{" "}
                     <strong className="text-white">
-                      {" "}
-                      intelligent, sustainable design
-                    </strong>
-                    . Centuries before electricity, the architects created a
-                    building that used natural resources perfectly. This
-                    brilliant approach protected priceless goods, enabled
-                    international trade, and showed how architecture could solve
-                    practical problems in beautiful ways.
+                      safe, efficient way to handle money
+                    </strong>{" "}
+                    that enabled international trade to flourish. Without this
+                    secure financial foundation, the Grand Bazaar could never
+                    have become the world&apos;s most important trading center.
+                    These buildings weren&apos;t just markets - they were the
+                    heart of a global financial network.
                   </p>
                 </CardContent>
               </Card>
@@ -191,7 +217,7 @@ export default function InfoPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-300 font-light italic text-sm md:text-base">
-            Where sunlight protects commerce and architecture solves problems...
+            Where commerce meets security, banking is born...
           </p>
         </footer>
       </div>
