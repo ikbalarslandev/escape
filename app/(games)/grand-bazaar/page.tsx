@@ -13,23 +13,35 @@ import {
   Play,
   Target,
   History,
-  Cross,
-  Moon,
+  ShoppingBag,
+  Coins,
+  Globe,
 } from "lucide-react";
-import { FaSearch, FaMapMarkerAlt, FaLightbulb } from "react-icons/fa";
+import {
+  FaSearch,
+  FaMapMarkerAlt,
+  FaLightbulb,
+  FaCoffee,
+} from "react-icons/fa";
 import YouTube from "react-youtube";
 
-const PaganCrossCrescentIntroPage = () => {
+const GrandBazaarIntroPage = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   const gameInfo = {
-    title: "Pagan, Cross, Crescent",
-    location: "Historic Peninsula, Istanbul",
-    duration: "2-2.5 hours",
+    title: "Grand Bazaar Secrets",
+    location: "Grand Bazaar, Istanbul",
+    duration: "2-3 hours",
     difficulty: "Medium",
-    teamSize: "2-5 players",
-    distance: "1.8 km",
-    monuments: ["Çemberlitaş Column", "Nuruosmaniye Mosque", "Vezir Han"],
+    teamSize: "2-6 players",
+    distance: "2.2 km",
+    monuments: [
+      "Nuruosmaniye Gate",
+      "Sandal Bedesteni",
+      "Cevahir Bedesteni",
+      "Zincirli Han",
+      "Historic Corridors",
+    ],
   };
 
   const startGame = () => {
@@ -64,33 +76,31 @@ const PaganCrossCrescentIntroPage = () => {
           <div className="max-w-2xl mx-auto text-center bg-primary-800 rounded-2xl p-6 md:p-8 border border-primary-600">
             <div className="mb-6 md:mb-8">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-secondary-400">
-                Pagan, Cross, Crescent
+                Grand Bazaar Secrets
               </h1>
               <div className="w-20 md:w-24 h-1 bg-secondary-400 mx-auto mb-4 md:mb-6"></div>
             </div>
 
             <div className="text-base md:text-lg lg:text-xl leading-relaxed space-y-3 md:space-y-4 mb-6 md:mb-8 text-primary-100">
               <p>
-                Do you want to know why this city became the capital of empires?
+                Did you know the Grand Bazaar accidentally led to the discovery
+                of America?
               </p>
               <p className="text-secondary-300 italic text-sm md:text-base">
-                The answer lies in three powerful forces that shaped its
-                destiny...
+                This market didn't just sell goods—it shaped world history...
               </p>
               <p>
-                For centuries, three great traditions have existed in harmony
-                here:
-                <span className="text-secondary-300"> Pagan</span>,{" "}
-                <span className="text-blue-300">Cross</span>, and{" "}
-                <span className="text-green-300">Crescent</span>.
+                For over 500 years, this labyrinthine market has been the heart
+                of global trade, influencing empires, economies, and even
+                geographical discoveries.
               </p>
               <p>
-                This unique balance is what made Istanbul the heart of empires.
-                Each tradition left its mark, creating the city we know today.
+                From the Silk Road's final stop to the world's first banking
+                system, the Grand Bazaar holds secrets that changed the course
+                of history.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Now it&apos;s your turn to discover how these three forces came
-                together to build one of the world&apos;s greatest cities.
+                Now it's your turn to uncover how this market shaped our world.
               </p>
             </div>
 
@@ -98,7 +108,7 @@ const PaganCrossCrescentIntroPage = () => {
               onClick={() => setShowIntro(false)}
               className="bg-secondary-500 hover:bg-secondary-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold w-full md:w-auto"
             >
-              Discover the Secret
+              Discover the Secrets
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Button>
 
@@ -114,10 +124,10 @@ const PaganCrossCrescentIntroPage = () => {
         {/* Header */}
         <div className="text-center mb-8 pt-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4">
-            Pagan, Cross, Crescent
+            Grand Bazaar Secrets
           </h1>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto px-2">
-            Discover how three traditions created an imperial capital
+            Uncover 500 years of trade, treasures, and world-changing history
           </p>
         </div>
 
@@ -126,16 +136,16 @@ const PaganCrossCrescentIntroPage = () => {
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-white mb-4 flex items-center">
               <History className="h-5 w-5 md:h-6 md:w-6 text-secondary-400 mr-2 md:mr-3" />
-              The Three Traditions
+              The Market That Changed the World
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
-              Explore how Pagan, Christian, and Islamic influences shaped
-              Istanbul&apos;s unique character.
+              Discover how the Grand Bazaar's influence reached from the Silk
+              Road to the Americas.
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
                 <YouTube
-                  videoId="YOUR_VIDEO_ID_HERE"
+                  videoId="0zDa-7_cz8Y"
                   opts={videoOpts}
                   className="w-full h-full"
                   iframeClassName="w-full h-full rounded-lg"
@@ -153,44 +163,43 @@ const PaganCrossCrescentIntroPage = () => {
               <CardContent className="p-4 md:p-6">
                 <h2 className="text-xl md:text-2xl font-light text-white mb-4 md:mb-6 flex items-center">
                   <Target className="h-5 w-5 md:h-6 md:w-6 text-secondary-400 mr-2 md:mr-3" />
-                  Your Journey
+                  Your Journey Through History
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-primary-200">
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <Moon className="text-white text-xs md:text-sm" />
+                      <ShoppingBag className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Start at the <strong>Pagan Column</strong> in Çemberlitaş
+                      Start at the <strong>Nuruosmaniye Gate</strong> - Silk
+                      Road's final stop
                     </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <Cross className="text-white text-xs md:text-sm" />
+                      <Coins className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Explore the <strong>Baroque Mosque</strong> of
-                      Nuruosmaniye
+                      Explore the <strong>World's First Banks</strong> in the
+                      Bedestens
                     </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <span className="text-white text-xs md:text-sm font-bold">
-                        ☪
-                      </span>
+                      <FaCoffee className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Discover the <strong>Trade Hub</strong> at Vezir Han
+                      Discover <strong>Tea Culture Diplomacy</strong> that
+                      drives sales
                     </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-5 h-5 md:w-6 md:h-6 bg-secondary-500 rounded-full flex items-center justify-center mr-2 md:mr-3 mt-0.5 flex-shrink-0">
-                      <span className="text-white text-xs md:text-sm font-bold">
-                        !
-                      </span>
+                      <Globe className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Uncover how three traditions built an empire
+                      Uncover how this market{" "}
+                      <strong>shaped global trade</strong>
                     </span>
                   </li>
                 </ul>
@@ -297,24 +306,31 @@ const PaganCrossCrescentIntroPage = () => {
         <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
           <CardContent className="p-4 md:p-6">
             <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
-              What You&apos;ll Discover
+              World-Changing Secrets You'll Uncover
             </h2>
             <ul className="space-y-2 md:space-y-3 text-secondary-100 text-xs md:text-sm">
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                How a pagan column helped establish a Christian capital
+                How the Grand Bazaar's wealth inspired Columbus to discover
+                America
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                Why a mosque features Christian Baroque architecture
+                The world's first banking system in Cevahir and Sandal Bedestens
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The economic system that sustained empires for centuries
+                Architectural genius: Fire-proof design that protected precious
+                silks
               </li>
               <li className="flex items-start">
                 <span className="text-secondary-400 mr-2">•</span>
-                The secret behind Istanbul&apos;s enduring power
+                Tea culture diplomacy: How curved glasses drive sales to this
+                day
+              </li>
+              <li className="flex items-start">
+                <span className="text-secondary-400 mr-2">•</span>
+                The complex history of trade and humanity at Esir Han
               </li>
             </ul>
           </CardContent>
@@ -328,10 +344,10 @@ const PaganCrossCrescentIntroPage = () => {
                 <FaSearch className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Look for Symbols
+                Look for Details
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                Find hidden pagan, Christian, and Islamic symbols
+                Hidden symbols, architectural features, and historical clues
               </p>
             </CardContent>
           </Card>
@@ -341,10 +357,10 @@ const PaganCrossCrescentIntroPage = () => {
                 <FaMapMarkerAlt className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Follow the Path
+                Navigate the Maze
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                Each location reveals clues to the next
+                Follow the historic corridors and discover hidden passages
               </p>
             </CardContent>
           </Card>
@@ -354,10 +370,10 @@ const PaganCrossCrescentIntroPage = () => {
                 <FaLightbulb className="text-secondary-400 text-lg md:text-xl" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
-                Connect the Dots
+                Connect History
               </h3>
               <p className="text-primary-300 text-xs md:text-sm">
-                See how three traditions created one great city
+                See how local trade shaped global history and discoveries
               </p>
             </CardContent>
           </Card>
@@ -367,12 +383,12 @@ const PaganCrossCrescentIntroPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-secondary-600 to-secondary-700 rounded-2xl p-6 md:p-8 border border-secondary-500">
             <h2 className="text-2xl md:text-3xl font-light text-white mb-3 md:mb-4">
-              Ready to Discover the Secret?
+              Ready to Uncover 500 Years of Secrets?
             </h2>
             <p className="text-secondary-100 mb-4 md:mb-6 text-sm md:text-base max-w-2xl mx-auto px-2">
-              Begin your journey at the Çemberlitaş Column and uncover how three
-              great traditions came together to build an imperial capital that
-              stood the test of time.
+              Begin your journey at the Nuruosmaniye Gate and discover how this
+              ancient market shaped empires, inspired discoveries, and created
+              commercial traditions that continue today.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Button
@@ -392,8 +408,8 @@ const PaganCrossCrescentIntroPage = () => {
               </Link>
             </div>
             <p className="text-secondary-200 text-xs md:text-sm mt-3 md:mt-4">
-              Free to play • No booking required • Discover Istanbul&apos;s
-              secret
+              Free to play • No booking required • Discover world-changing
+              secrets
             </p>
           </div>
         </div>
@@ -402,4 +418,4 @@ const PaganCrossCrescentIntroPage = () => {
   );
 };
 
-export default PaganCrossCrescentIntroPage;
+export default GrandBazaarIntroPage;

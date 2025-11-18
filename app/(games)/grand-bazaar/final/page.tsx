@@ -3,8 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaArrowRight, FaCoffee, FaStar, FaHistory } from "react-icons/fa";
-import { GiLaurelsTrophy, GiStoneBlock } from "react-icons/gi";
+import {
+  FaArrowRight,
+  FaCoffee,
+  FaStar,
+  FaHistory,
+  FaGlobe,
+  FaStore,
+} from "react-icons/fa";
+import { GiLaurelsTrophy, GiStonePath } from "react-icons/gi";
 
 export default function FinalPage() {
   const router = useRouter();
@@ -22,7 +29,7 @@ export default function FinalPage() {
           </div>
           <div className="w-24 h-1 bg-secondary-300 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
-            You restored the balance of Pagan, Cross, and Crescent!
+            You've uncovered the secrets of the world's oldest covered market!
           </p>
         </header>
 
@@ -32,66 +39,83 @@ export default function FinalPage() {
             {/* Historical Info */}
             <div className="space-y-4 md:space-y-6 text-primary-100 leading-relaxed">
               <p className="text-base md:text-lg">
-                You did it! You discovered how three great traditions came
-                together to build one of the world&apos;s greatest cities. The
-                ancient balance between Pagan, Cross, and Crescent has been
-                restored.
+                You did it! You've journeyed through 500 years of history,
+                uncovering the hidden stories that made the Grand Bazaar one of
+                the most influential marketplaces in human history.
               </p>
 
               <p className="text-base md:text-lg">
-                Because of your journey, Istanbul&apos;s layered soul can
-                continue to inspire generations with its story of unity in
-                diversity.
+                From ancient trade routes to modern bargaining traditions,
+                you've discovered how this labyrinthine market shaped empires,
+                sparked discoveries, and created a unique commercial culture
+                that continues to thrive today.
               </p>
 
-              {/* The Three Traditions */}
+              {/* Key Discoveries */}
               <Card className="bg-primary-700 border-primary-400 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-300 mb-3 flex items-center">
                     <FaHistory className="mr-2" />
-                    The Three Traditions You United
+                    The Grand Revelations You Uncovered
                   </h3>
                   <div className="space-y-3 text-primary-50">
                     <div className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
-                        <strong className="text-white">Pagan:</strong> The
-                        ancient column from Apollo&apos;s temple that helped
-                        Constantine build his capital
+                        <strong className="text-white">
+                          The Silk Road's Final Stop:
+                        </strong>{" "}
+                        How the Grand Bazaar's wealth inspired Columbus to
+                        discover America
                       </span>
                     </div>
                     <div className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
-                        <strong className="text-white">Cross:</strong> The
-                        Christian Baroque architecture that inspired
-                        Nuruosmaniye&apos;s revolutionary design
+                        <strong className="text-white">
+                          World's First Banking System:
+                        </strong>{" "}
+                        How Cevahir and Sandal Bedestens created modern finance
                       </span>
                     </div>
                     <div className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
-                        <strong className="text-white">Crescent:</strong> The
-                        Islamic tradition of social welfare and community
-                        service through the külliye system
+                        <strong className="text-white">
+                          Architectural Genius:
+                        </strong>{" "}
+                        Fire-proof design that protected precious silks for
+                        centuries
+                      </span>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-secondary-300 mr-2">•</span>
+                      <span>
+                        <strong className="text-white">
+                          Tea Culture Diplomacy:
+                        </strong>{" "}
+                        How curved glasses and tea rituals drive sales to this
+                        day
                       </span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Architectural Achievement */}
+              {/* Economic Impact */}
               <Card className="bg-primary-600 border-primary-400 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-300 mb-3 flex items-center">
-                    <GiStoneBlock className="mr-2" />
-                    Architectural Harmony You Discovered
+                    <FaGlobe className="mr-2" />
+                    Global Impact You Discovered
                   </h3>
                   <p className="text-primary-50 text-sm md:text-base">
-                    Nuruosmaniye Mosque stands as a perfect example of cultural
-                    synthesis. Baroque curves from European cathedrals, ancient
-                    columns from pagan temples, and Islamic social welfare
-                    traditions all come together in perfect harmony.
+                    The Grand Bazaar wasn't just a market—it was an economic
+                    superpower. Its control over the Silk Road forced Europe to
+                    seek new trade routes, accidentally leading to the discovery
+                    of the Americas. Its secure bedestens invented banking, and
+                    its tea rituals perfected the art of commercial hospitality
+                    that continues to define Turkish business culture.
                   </p>
                 </CardContent>
               </Card>
@@ -99,62 +123,85 @@ export default function FinalPage() {
               {/* Journey Summary */}
               <Card className="bg-primary-700 border-primary-400 mt-6">
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary-300 mb-3">
-                    Your Journey Through History
+                  <h3 className="text-lg font-semibold text-secondary-300 mb-3 flex items-center">
+                    <GiStonePath className="mr-2" />
+                    Your Journey Through the Bazaar
                   </h3>
                   <p className="text-primary-50 text-sm md:text-base mb-3">
-                    You uncovered the secrets that made Istanbul the capital of
-                    empires:
+                    You navigated the historic corridors and uncovered secrets
+                    at every turn:
                   </p>
                   <ul className="text-primary-50 text-sm md:text-base space-y-2">
                     <li className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          Constantine&apos;s Vision:
+                          Nuruosmaniye Gate:
                         </strong>{" "}
-                        How a pagan column attracted people from all faiths to
-                        build a new capital
+                        Where you discovered the Silk Road's influence
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          Ottoman Innovation:
+                          Sandal Bedesteni:
                         </strong>{" "}
-                        The brilliant vakıf system that made mosques
-                        self-sufficient for centuries
+                        The second core that grew organically into a global
+                        market
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
                         <strong className="text-white">
-                          Baroque Revolution:
+                          Cevahir Bedesteni:
                         </strong>{" "}
-                        The first and only Baroque mosque in the Ottoman Empire
+                        The world's first secure banking and jewelry trade
+                        center
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
-                        <strong className="text-white">Social Welfare:</strong>{" "}
-                        How soup kitchens and fountains served the entire
-                        community
+                        <strong className="text-white">Çukur Kule:</strong> From
+                        customs tower to legendary pudding shop
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-secondary-300 mr-2">•</span>
                       <span>
-                        <strong className="text-white">
-                          Engineering Genius:
-                        </strong>{" "}
-                        The hidden cistern that still provides water after 300
-                        years
+                        <strong className="text-white">Zincirli Han:</strong>{" "}
+                        Where chains and commerce created history
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-secondary-300 mr-2">•</span>
+                      <span>
+                        <strong className="text-white">Esir Han:</strong>{" "}
+                        Uncovering the complex history of trade and humanity
                       </span>
                     </li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              {/* Cultural Legacy */}
+              <Card className="bg-primary-600 border-primary-400 mt-6">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary-300 mb-3 flex items-center">
+                    <FaStore className="mr-2" />
+                    Living Legacy You Experienced
+                  </h3>
+                  <p className="text-primary-50 text-sm md:text-base">
+                    The traditions you discovered aren't just history—they're
+                    alive today. The art of bargaining, the tea rituals, the
+                    organic growth of shops around ancient bedestens, all
+                    continue in the same corridors where merchants have traded
+                    for five centuries. You haven't just learned about history;
+                    you've experienced a living commercial culture that has
+                    outlasted empires.
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -175,8 +222,9 @@ export default function FinalPage() {
                 Keep History Alive!
               </h3>
               <p className="text-primary-200 mb-6 text-lg leading-relaxed max-w-md mx-auto">
-                Your journey through time helps preserve these ancient stories.
-                Support our mission to bring more lost histories back to life.
+                Your journey through the Grand Bazaar helps preserve these
+                ancient commercial traditions. Support our mission to bring more
+                lost market histories back to life.
               </p>
               <a
                 href="https://buymeacoffee.com/nikapolis.today"
@@ -187,7 +235,7 @@ export default function FinalPage() {
                 Support Our Journey
               </a>
               <p className="text-primary-300 text-sm mt-4 italic">
-                Every coffee helps unlock another piece of history
+                Every coffee helps unlock another piece of commercial history
               </p>
             </div>
           </CardContent>
@@ -207,7 +255,8 @@ export default function FinalPage() {
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12">
           <p className="text-primary-200 font-light italic text-sm md:text-base">
-            Where different faiths and cultures found harmony in stone...
+            Where commerce built empires and tea cups sealed deals for
+            centuries...
           </p>
         </footer>
       </div>
