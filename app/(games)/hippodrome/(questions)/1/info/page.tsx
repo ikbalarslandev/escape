@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 export default function InfoPage() {
   const router = useRouter();
@@ -24,6 +25,15 @@ export default function InfoPage() {
             You solved the first puzzle!
           </p>
         </header>
+
+        <div className="flex items-center justify-center w-screen mb-4">
+          <Image
+            width={200}
+            height={500}
+            src="/q_imgs/1/serpent.png"
+            alt="serpent column with gold boiler bg-red-500 w-full"
+          />
+        </div>
 
         {/* Success Card */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
