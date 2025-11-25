@@ -57,9 +57,7 @@ export default function LocationPage() {
               </div>
               <p className="text-primary-200 leading-relaxed text-base md:text-lg">
                 This main entrance gate welcomes you to one of the world&apos;s
-                oldest and largest covered markets. Step through this historic
-                portal to begin your exploration of the Grand Bazaar&apos;s
-                vibrant corridors and hidden treasures.
+                oldest and largest covered markets.
               </p>
             </div>
 

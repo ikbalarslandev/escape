@@ -23,6 +23,27 @@ export default function LocationPage() {
           </h2>
         </header>
 
+        {/* Bedesten Information Card */}
+        <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
+          <CardContent className="p-6 md:p-8">
+            <div className="mb-6 md:mb-8">
+              <div className="flex items-center mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-secondary-400 to-secondary-600 mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-semibold text-white flex items-center">
+                  What is a Bedesten?
+                </h2>
+              </div>
+              <p className="text-primary-200 leading-relaxed text-base md:text-lg">
+                To understand the structure of the Grand Bazaar, you first need
+                to know about its Bedestens. In the Ottoman Empire, Bedestens
+                were large markets where many valuable goods were sold, from
+                gold to weapons and expensive fabrics. In Grand Bazaar the most
+                important ones were Sandal Bedesteni and Cevahir Bedesteni.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Location Content */}
         <Card className="border border-primary-600 bg-primary-800 rounded-2xl shadow-lg mb-8">
           <CardContent className="p-6 md:p-8">
@@ -74,7 +95,7 @@ export default function LocationPage() {
             <p className="text-primary-200 leading-relaxed text-base md:text-lg">
               This is the bird eye view of the Grand Bazaar and together, Sandal
               Bedesteni and Cevahir Bedesteni are the very core of the Grand
-              Bazaar. Now, let’s step into the first one.
+              Bazaar. Now, let's step into the first one.
             </p>
           </CardContent>
         </Card>

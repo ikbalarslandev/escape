@@ -58,20 +58,18 @@ export default function InfoPage() {
               </div>
 
               <p className="text-base md:text-lg">
-                The <strong className="text-white">Silk Road</strong> was a very
-                long road for traders. It went from{" "}
-                <strong className="text-white">India to Europe</strong>. It had
-                the name &quot;Silk Road&quot; because silk was a very expensive
-                and important thing to sell.
+                The <strong className="text-white">Silk Road</strong> was a
+                historic road that connected huge empires and allowed people to
+                exchange different goods from India to Europe.
               </p>
 
               <div className="flex items-start mb-4">
                 <GiTrade className="h-6 w-6 text-secondary-400 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-base md:text-lg">
-                  But the road was not only for things to buy and sell. It also
-                  carried{" "}
-                  <strong className="text-white">ideas and culture</strong>.
-                  People shared stories, art, and new ways of thinking.
+                  It is important to know that not only goods traveled on the
+                  Silk Road. Religions, technologies, and art also moved along
+                  it. For example, Buddhism came to China from India because of
+                  this road.
                 </p>
               </div>
 
@@ -80,22 +78,13 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <FaRoute className="mr-2" />
-                    The Ottoman Empire&apos;s Big Plan
+                    Road to Wealth
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    When the{" "}
-                    <strong className="text-white">
-                      Ottoman Empire took Istanbul
-                    </strong>
-                    , they got control of the most important parts of the Silk
-                    Road.
-                  </p>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    This was very smart because they could{" "}
-                    <strong className="text-white">
-                      control all the trade
-                    </strong>
-                    between East and West. They became very rich and powerful.
+                    The Ottoman Empire became very rich and powerful because of
+                    the Silk Road. The most important parts of it passed through
+                    Istanbul, so after taking the city, the Ottomans actually
+                    controlled most of the trade between the East and the West.
                   </p>
                 </CardContent>
               </Card>
@@ -105,12 +94,12 @@ export default function InfoPage() {
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
                     <GiTrade className="mr-2" />
-                    The Grand Bazaar: The Biggest Market
+                    The Biggest Market
                   </h3>
 
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    Along the Silk Road, there were many markets. But the best
-                    and biggest one was in Istanbul. It was called{" "}
+                    There were many markets on the Silk Road, but the best one
+                    was in Istanbul. It was called{" "}
                     <strong className="text-white">
                       Kapalıçarşı (Grand Bazaar)
                     </strong>
@@ -119,17 +108,10 @@ export default function InfoPage() {
 
                   <div className="space-y-2 text-primary-100 text-sm md:text-base">
                     <p>
-                      • <strong>All expensive things</strong> from far away came
-                      here
+                      • The most expensive goods from far countries arrived here
                     </p>
-                    <p>
-                      • <strong>Traders from everywhere</strong> met here to do
-                      business
-                    </p>
-                    <p>
-                      • <strong>The world&apos;s largest covered market</strong>{" "}
-                      - very special!
-                    </p>
+                    <p>• Traders from across the world came to trade</p>
+                    <p>• The biggest covered market in the world</p>
                   </div>
 
                   <p className="text-primary-100 text-sm md:text-base mt-3">

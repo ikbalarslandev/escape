@@ -29,18 +29,18 @@ const GrandBazaarIntroPage = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   const gameInfo = {
-    title: "Grand Bazaar Secrets",
+    title: "Grand Bazaar",
     location: "Grand Bazaar, Istanbul",
-    duration: "2-3 hours",
+    duration: "1-2 hours",
     difficulty: "Medium",
-    teamSize: "2-6 players",
-    distance: "2.2 km",
+    teamSize: "2-4 players",
+    distance: "0.8 km",
     monuments: [
       "Nuruosmaniye Gate",
       "Sandal Bedesteni",
       "Cevahir Bedesteni",
       "Zincirli Han",
-      "Historic Corridors",
+      "Historical Corridors",
     ],
   };
 
@@ -76,7 +76,7 @@ const GrandBazaarIntroPage = () => {
           <div className="max-w-2xl mx-auto text-center bg-primary-800 rounded-2xl p-6 md:p-8 border border-primary-600">
             <div className="mb-6 md:mb-8">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-secondary-400">
-                Grand Bazaar Secrets
+                The Biggest Bazaar
               </h1>
               <div className="w-20 md:w-24 h-1 bg-secondary-400 mx-auto mb-4 md:mb-6"></div>
             </div>
@@ -86,23 +86,20 @@ const GrandBazaarIntroPage = () => {
                 Did you know the Grand Bazaar accidentally led to the discovery
                 of America?
               </p>
-              <p className="text-secondary-300 italic text-sm md:text-base">
-                This market didn&apos;t just sell goods—it shaped world
-                history...
+
+              <p>
+                The Grand Bazaar became the final point of the Silk Road and
+                turned into a place where the first elements of the banking
+                system were born.
               </p>
               <p>
-                For over 500 years, this labyrinthine market has been the heart
-                of global trade, influencing empires, economies, and even
-                geographical discoveries.
-              </p>
-              <p>
-                From the Silk Road&apos;s final stop to the world&apos;s first
-                banking system, the Grand Bazaar holds secrets that changed the
-                course of history.
+                New trade rules appeared here, and decisions made within its
+                walls changed the destinies of continents.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Now it&apos;s your turn to uncover how this market shaped our
-                world.
+                In this game, you will learn how the Grand Bazaar was built,
+                what historical events took place around it, and all the secrets
+                it kept.
               </p>
             </div>
 
@@ -110,7 +107,7 @@ const GrandBazaarIntroPage = () => {
               onClick={() => setShowIntro(false)}
               className="bg-secondary-500 hover:bg-secondary-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold w-full md:w-auto"
             >
-              Discover the Secrets
+              See the Details
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Button>
 
@@ -126,10 +123,10 @@ const GrandBazaarIntroPage = () => {
         {/* Header */}
         <div className="text-center mb-8 pt-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4">
-            Grand Bazaar Secrets
+            Grand Bazaar
           </h1>
           <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto px-2">
-            Uncover 500 years of trade, treasures, and world-changing history
+            Uncover 500 years of trade center
           </p>
         </div>
 
@@ -141,8 +138,7 @@ const GrandBazaarIntroPage = () => {
               The Market That Changed the World
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
-              Discover how the Grand Bazaar&apos;s influence reached from the
-              Silk Road to the Americas.
+              Discover the Grand Bazaar&apos;s influence on world
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
@@ -173,8 +169,7 @@ const GrandBazaarIntroPage = () => {
                       <ShoppingBag className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Start at the <strong>Nuruosmaniye Gate</strong> - Silk
-                      Road&apos;s final stop
+                      Start at the <strong> Gate 1</strong>
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -182,8 +177,7 @@ const GrandBazaarIntroPage = () => {
                       <Coins className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Explore the <strong>World&apos;s First Banks</strong> in
-                      the Bedestens
+                      Explore the Bedestens
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -191,8 +185,7 @@ const GrandBazaarIntroPage = () => {
                       <FaCoffee className="text-white text-xs md:text-sm" />
                     </div>
                     <span className="text-sm md:text-base">
-                      Discover <strong>Tea Culture Diplomacy</strong> that
-                      drives sales
+                      Discover <strong>Tea Culture</strong> that drives sales
                     </span>
                   </li>
                   <li className="flex items-start">
