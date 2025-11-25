@@ -9,13 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  FaStar,
-  FaGoogle,
-  FaCheckCircle,
-  FaCamera,
-  FaPenFancy,
-} from "react-icons/fa";
+import { FaStar, FaCheckCircle, FaCamera, FaPenFancy } from "react-icons/fa";
 import { SiTripadvisor } from "react-icons/si";
 
 export default function ReviewPage() {
@@ -62,7 +56,7 @@ export default function ReviewPage() {
         <div className="border border-primary-600 bg-primary-800/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-8">
           <div className="text-center space-y-6">
             <div className="w-16 h-16 bg-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaGoogle className="text-white text-2xl" />
+              <SiTripadvisor className="text-white text-2xl" />
             </div>
 
             <h2 className="text-2xl font-light text-white mb-2">
