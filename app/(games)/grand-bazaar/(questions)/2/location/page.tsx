@@ -95,7 +95,7 @@ export default function LocationPage() {
             <p className="text-primary-200 leading-relaxed text-base md:text-lg">
               This is the bird eye view of the Grand Bazaar and together, Sandal
               Bedesteni and Cevahir Bedesteni are the very core of the Grand
-              Bazaar. Now, let's step into the first one.
+              Bazaar. Now, let&apos;s step into the first one.
             </p>
           </CardContent>
         </Card>
