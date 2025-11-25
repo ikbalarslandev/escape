@@ -10,14 +10,14 @@ import Image from "next/image";
 
 const BannerScrollerSection = () => {
   const galleryImages = [
-    { src: "/players/1.jpg", alt: "Player adventure 1" },
-    { src: "/players/2.jpg", alt: "Player adventure 2" },
-    { src: "/players/3.jpg", alt: "Player adventure 3" },
-    { src: "/players/4.jpg", alt: "Player adventure 4" },
-    { src: "/players/5.jpg", alt: "Player adventure 5" },
-    { src: "/players/6.jpg", alt: "Player adventure 6" },
-    { src: "/players/7.jpg", alt: "Player adventure 7" },
-    { src: "/players/8.jpg", alt: "Player adventure 8" },
+    { src: "/gallery/1.jpeg", alt: "Player adventure 1" },
+    { src: "/gallery/2.jpeg", alt: "Player adventure 2" },
+    { src: "/gallery/3.jpeg", alt: "Player adventure 3" },
+    { src: "/gallery/4.jpeg", alt: "Player adventure 4" },
+    { src: "/gallery/5.jpeg", alt: "Player adventure 5" },
+    { src: "/gallery/6.jpeg", alt: "Player adventure 6" },
+    { src: "/gallery/7.jpeg", alt: "Player adventure 7" },
+    { src: "/gallery/8.jpeg", alt: "Player adventure 8" },
   ];
 
   return (
@@ -55,7 +55,7 @@ const BannerScrollerSection = () => {
               >
                 <div className="relative aspect-square overflow-hidden rounded">
                   <Image
-                    src="/hero.jpeg"
+                    src={image.src}
                     alt={image.alt}
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-500"

@@ -19,7 +19,7 @@ const GameCardsSection = () => {
       playTime: "2 hours",
       kilometers: 1.8,
       languages: ["English"],
-      image: "/hero.jpeg",
+      image: "/game-cards/1.png",
       isActive: true,
     },
     {
