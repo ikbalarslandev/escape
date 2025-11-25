@@ -54,12 +54,8 @@ export default function InfoPage() {
               </div>
 
               <p className="text-base md:text-lg">
-                After Cevahir Bedesteni was built, a second important building
-                appeared:{" "}
-                <strong className="text-white">Sandal Bedesteni</strong>. This
-                was the{" "}
-                <strong className="text-white">second core structure</strong>{" "}
-                that would become the heart of the Grand Bazaar.
+                Sandal Bedesteni, a second important building, appeared after
+                the construction of Cevahir Bedesteni.
               </p>
 
               <div className="flex items-start mb-4">
@@ -122,23 +118,15 @@ export default function InfoPage() {
               <Card className="bg-primary-700 border-primary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3">
-                    Not Designed, But Born from Need
+                    Born from need
                   </h3>
                   <p className="text-primary-100 text-sm md:text-base mb-3">
-                    The Grand Bazaar wasn&apos;t created by architects with
-                    drawings and plans. It was the{" "}
-                    <strong className="text-white">
-                      natural result of commercial need
-                    </strong>
-                    . As trade increased, more space was needed, and the market
-                    grew to meet that need.
-                  </p>
-                  <p className="text-primary-100 text-sm md:text-base">
-                    This makes the Grand Bazaar special - it&apos;s a{" "}
-                    <strong className="text-white">
-                      living, breathing organism
-                    </strong>{" "}
-                    that grew to serve the people who used it.
+                    It’s surprising that the Grand Bazaar was not created by
+                    architects. It grew gradually, starting from these two
+                    bedestens. The space between them slowly filled with shops,
+                    small streets, and inns. As trade increased, the market
+                    expanded. What began as two buildings turned into an entire
+                    city of trade.
                   </p>
                 </CardContent>
               </Card>
@@ -147,27 +135,23 @@ export default function InfoPage() {
               <Card className="bg-secondary-900 bg-opacity-20 border-secondary-500 mt-6">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold text-secondary-400 mb-3 flex items-center">
-                    <FaMap className="mr-2" />A Sign of Global Importance
+                    <FaMap className="mr-2" />
+                    Global Impact
                   </h3>
                   <p className="text-secondary-100 text-sm md:text-base mb-3">
-                    In Ottoman times, having a bedesten in your city was the
-                    strongest sign that your city was an{" "}
-                    <strong className="text-white">
-                      international trade center
-                    </strong>
-                    . It meant merchants from all over the world came there to
-                    do business.
+                    In Ottoman times, having a bedesten in a city was a sign
+                    that it was a center of global trade. This meant that
+                    merchants from all over the world came there to do business.
+                    Through Cevahir and Sandal Bedestens, the Ottomans turned
+                    Istanbul into a key economic hub between the East and the
+                    West.
                   </p>
                   <p className="text-secondary-100 text-sm md:text-base">
-                    Just like other important Ottoman cities -{" "}
-                    <strong className="text-white">
-                      Bursa, Edirne, and Trabzon
-                    </strong>{" "}
-                    - Istanbul&apos;s two bedestens proved it was one of the{" "}
-                    <strong className="text-white">
-                      most important trade centers in the world
-                    </strong>
-                    .
+                    The story of these two buildings shows us that great things
+                    often begin with small steps. Sometimes the most impressive
+                    structures are born from practical needs rather than
+                    designed from scratch. This is exactly how the Grand Bazaar
+                    came to be.
                   </p>
                 </CardContent>
               </Card>
