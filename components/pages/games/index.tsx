@@ -20,7 +20,7 @@ const GamesPage = () => {
       location: "Sultanahmet, Istanbul",
       description:
         "Step back in time to the heart of Byzantine Constantinople. The Hippodrome was the center of social and political life for over 1000 years. Help us recreate the genius loci of this ancient space as you solve puzzles that bring its history to life.",
-      image: "/hero.jpeg", // Replace with your actual image
+      image: "/game-cards/1.png", // Replace with your actual image
       idealFor: [
         "Travelers",
         "Families with kids",
