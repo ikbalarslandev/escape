@@ -2,6 +2,7 @@ import { simplyfyReview } from "@/utils/simplyfyReviewData";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import { config, success } from "zod";
 dotenv.config({ path: ".env" });
 
 const API_KEY = process.env.TRIP_ADVISOR_API_KEY;
@@ -127,7 +128,59 @@ async function getReviews({
     };
   }
 }
+async function generateReviewsForAllGames(
+  games: {
+    name: string;
+    id: string;
+  }[]
+) {
+  const allReviews = [];
 
+  for (const game of games) {
+    const data = await getReviews({
+      name: game.name,
+      locationId: game.id,
+    });
+
+    const reviews = data.data?.allReviews || [];
+
+    if (reviews && reviews.length > 0) {
+      allReviews.push(...reviews);
+    }
+  }
+  try {
+    // Create data directory relative to project root
+    const dataDir = path.join(process.cwd(), "services", "review", "data");
+
+    const entityFilename = `all.json`;
+    const entityFilePath = path.join(dataDir, entityFilename);
+    const jsonContent = JSON.stringify(
+      {
+        data: {
+          totalReviews: allReviews.length,
+          allReviews,
+        },
+      },
+      null,
+      2
+    );
+
+    fs.writeFileSync(entityFilePath, jsonContent);
+    console.log(`✅ File saved: ${entityFilePath}`);
+
+    return {
+      success: true,
+      filePath: entityFilePath,
+      fileName: entityFilename,
+    };
+  } catch (error) {
+    console.error("❌ Error generating data:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
+  }
+}
 const generateData = async ({
   name,
   locationId,
@@ -180,4 +233,4 @@ const deleteDataFolder = async () => {
   }
 };
 
-export { getReviews, generateData, deleteDataFolder };
+export { generateData, deleteDataFolder, generateReviewsForAllGames };

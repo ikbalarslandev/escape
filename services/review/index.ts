@@ -1,5 +1,9 @@
 import { games } from "./lib/games";
-import { generateData, deleteDataFolder } from "./lib/func";
+import {
+  generateData,
+  deleteDataFolder,
+  generateReviewsForAllGames,
+} from "./lib/func";
 
 deleteDataFolder();
 
@@ -9,3 +13,5 @@ for (const game of games) {
     locationId: game.id,
   });
 }
+
+generateReviewsForAllGames(games);
