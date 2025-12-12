@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "feeds": "npx tsx services/review/index.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

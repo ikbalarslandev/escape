@@ -6,7 +6,7 @@ const simplyfyReview = (data: any[]) => {
         name: d.user.username,
         img: d.user.avatar.original,
       },
-      review: {
+      details: {
         url: d.url,
         rating: d.rating,
         title: d.title,
