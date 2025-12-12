@@ -5,13 +5,17 @@ import {
   generateReviewsForAllGames,
 } from "./lib/func";
 
-deleteDataFolder();
+async function Review() {
+  deleteDataFolder();
 
-for (const game of games) {
-  generateData({
-    name: game.name,
-    locationId: game.id,
-  });
+  for (const game of games) {
+    await generateData({
+      name: game.name,
+      locationId: game.id,
+    });
+  }
+
+  generateReviewsForAllGames(games);
 }
 
-generateReviewsForAllGames(games);
+Review();
