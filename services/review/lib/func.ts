@@ -88,6 +88,14 @@ async function getReviews({
     // Success!
     const data = await response.json();
 
+    const simplifiedReviews = simplyfyReview(data.data);
+    const totalRating = simplifiedReviews.reduce((sum, review) => {
+      const rating = review?.details?.rating || 0;
+      return sum + rating;
+    }, 0);
+    const averageRating =
+      simplifiedReviews.length > 0 ? totalRating / simplifiedReviews.length : 0;
+
     console.info({
       success: true,
       config: {
@@ -97,6 +105,7 @@ async function getReviews({
       },
       data: {
         totalReviews: data.data?.length || 0,
+        averageRating,
         allReviews: simplyfyReview(data.data) || [],
       },
     });
@@ -110,6 +119,7 @@ async function getReviews({
       },
       data: {
         totalReviews: data.data?.length || 0,
+        averageRating,
         allReviews: simplyfyReview(data.data) || [],
       },
     };
@@ -149,6 +159,13 @@ async function generateReviewsForAllGames(
     }
   }
   try {
+    const totalRating = allReviews.reduce((sum, review) => {
+      const rating = review?.details?.rating || 0;
+      return sum + rating;
+    }, 0);
+    const averageRating =
+      allReviews.length > 0 ? totalRating / allReviews.length : 0;
+
     // Create data directory relative to project root
     const dataDir = path.join(process.cwd(), "services", "review", "data");
 
@@ -158,6 +175,7 @@ async function generateReviewsForAllGames(
       {
         data: {
           totalReviews: allReviews.length,
+          averageRating,
           allReviews,
         },
       },
