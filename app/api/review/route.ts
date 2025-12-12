@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { simplyfyReview } from "@/utils/simplyfyReviewData";
 
 const API_KEY = process.env.TRIP_ADVISOR_API_KEY;
 const FALLBACK_LOCATION_ID = "34026318";
@@ -96,7 +97,7 @@ export async function GET(request: Request) {
       },
       data: {
         totalReviews: data.data?.length || 0,
-        allReviews: data.data || [],
+        allReviews: simplyfyReview(data.data) || [],
       },
     });
   } catch (error: any) {
