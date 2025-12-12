@@ -4,16 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  MapPin,
-  Clock,
-  Users,
-  Star,
-  ArrowRight,
-  Play,
-  Target,
-  History,
-} from "lucide-react";
+import { ArrowRight, Play, Target, History } from "lucide-react";
 import { FaSearch, FaMapMarkerAlt, FaLightbulb } from "react-icons/fa";
 import YouTube from "react-youtube";
 
@@ -75,14 +66,13 @@ const HippodromeIntroPage = () => {
 
             <div className="text-base md:text-lg lg:text-xl leading-relaxed space-y-3 md:space-y-4 mb-6 md:mb-8 text-primary-100">
               <p>
-                Welcome, time traveler. Before we begin our journey, let me
-                share a secret about places...
+                Before we begin our journey, let me share a secret about
+                places...
               </p>
               <p className="text-secondary-300 italic text-sm md:text-base">
-                Every location has a soul - what the ancients called{" "}
+                Every location has a soul. What the ancients called{" "}
                 <strong>&apos;Genius Loci&apos;</strong>. It&apos;s the unique
-                spirit, the memory, the very essence that makes a place what it
-                truly is.
+                spirit, the very essence that makes a place what it truly is.
               </p>
               <p>
                 The Hippodrome was once the beating heart of Constantinople,
@@ -90,13 +80,13 @@ const HippodromeIntroPage = () => {
                 thundered, and where the fate of empires was decided.
               </p>
               <p>
-                But over centuries, its genius loci has faded, its stories
+                But over centuries, its genius loci has gone and stories
                 forgotten.
               </p>
               <p className="text-secondary-300 font-semibold text-sm md:text-base">
-                Your mission: Help us reawaken the spirit of this ancient arena.
-                Solve the puzzles hidden in its surviving monuments to restore
-                the genius loci and hear the Hippodrome&apos;s lost stories.
+                Your mission: Help us recreate the spirit of this ancient arena.
+                Solve the puzzles hidden in surviving monuments to restore the
+                genius loci.
               </p>
             </div>
 
@@ -121,11 +111,8 @@ const HippodromeIntroPage = () => {
         {/* Header */}
         <div className="text-center mb-8 pt-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4">
-            Hippodrome: The Lost Spirit
+            What is Hippodrome
           </h1>
-          <p className="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto px-2">
-            Reawaken the ancient soul of Constantinople&apos;s greatest arena
-          </p>
         </div>
 
         {/* YouTube Video Section */}
@@ -136,8 +123,7 @@ const HippodromeIntroPage = () => {
               Discover the Hippodrome
             </h2>
             <p className="text-primary-200 mb-4 text-sm md:text-base">
-              Watch this short documentary to understand the historical
-              significance of the Hippodrome before you begin your adventure.
+              Watch this documentary to understand Hippodrome.
             </p>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-primary-900">
               <div className="relative h-48 md:h-64 lg:h-80 w-full">
@@ -200,7 +186,7 @@ const HippodromeIntroPage = () => {
                       </span>
                     </div>
                     <span className="text-sm md:text-base">
-                      Restore the Genius Loci - the spirit of the place
+                      Restore the Genius Loci
                     </span>
                   </li>
                 </ul>
@@ -208,33 +194,6 @@ const HippodromeIntroPage = () => {
             </Card>
           </div>
         </div>
-
-        {/* What You&apos;ll Learn */}
-        <Card className="border border-secondary-600 bg-secondary-900 bg-opacity-20 rounded-2xl mb-8">
-          <CardContent className="p-4 md:p-6">
-            <h2 className="text-xl md:text-2xl font-light text-secondary-200 mb-3 md:mb-4">
-              Historical Insights
-            </h2>
-            <ul className="space-y-2 md:space-y-3 text-secondary-100 text-xs md:text-sm">
-              <li className="flex items-start">
-                <span className="text-secondary-400 mr-2">•</span>
-                The political power of chariot racing factions (Blues vs Greens)
-              </li>
-              <li className="flex items-start">
-                <span className="text-secondary-400 mr-2">•</span>
-                How emperors used the Hippodrome to connect with citizens
-              </li>
-              <li className="flex items-start">
-                <span className="text-secondary-400 mr-2">•</span>
-                The engineering marvel of ancient Roman stadium design
-              </li>
-              <li className="flex items-start">
-                <span className="text-secondary-400 mr-2">•</span>
-                Stories of famous charioteers and their legendary races
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
 
         {/* Tips Section */}
         <div className="max-w-4xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -283,17 +242,15 @@ const HippodromeIntroPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-secondary-600 to-secondary-700 rounded-2xl p-6 md:p-8 border border-secondary-500">
             <h2 className="text-2xl md:text-3xl font-light text-white mb-3 md:mb-4">
-              Ready to Awaken the Spirit?
+              Ready ?
             </h2>
             <p className="text-secondary-100 mb-4 md:mb-6 text-sm md:text-base max-w-2xl mx-auto px-2">
-              Begin your journey at the German Fountain and follow the path of
-              ancient chariots. Remember to observe carefully - the answers are
-              hidden in plain sight!
+              Remember to observe carefully. The answers are hidden!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Button
                 onClick={startGame}
-                className="bg-white hover:bg-gray-100 text-primary-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-2xl"
+                className="bg-white hover:bg-gray-100 text-secondary-700 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-2xl"
               >
                 <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Start Adventure
@@ -301,7 +258,7 @@ const HippodromeIntroPage = () => {
               <Link href="/games">
                 <Button
                   variant="outline"
-                  className="border-secondary-400 text-secondary-500 hover:bg-secondary-400 hover:text-primary-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full"
+                  className="border-secondary-400 text-red-700 hover:bg-secondary-400 hover:text-primary-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg w-full"
                 >
                   Choose Different Game
                 </Button>

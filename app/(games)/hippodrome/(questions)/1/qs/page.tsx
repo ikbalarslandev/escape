@@ -267,7 +267,7 @@ export default function QuestionPage() {
                   </p>
                   <Card className="bg-primary-700 border-primary-500">
                     <CardContent className="p-4">
-                      <p className="text-lg font-semibold text-center">
+                      <p className="text-lg font-semibold text-center text-white">
                         Redirecting in {countdown} seconds...
                       </p>
                       <div className="w-full bg-primary-600 rounded-full h-2 mt-3">
@@ -317,7 +317,7 @@ export default function QuestionPage() {
                   <p>
                     If you look at the area today, you can still see these 3
                     towers on the spina. In the question, it says &quot;spina is
-                    my home&quot; - this means the answer is on one of these 3
+                    my home&quot;, this means the answer is on one of these 3
                     towers.
                   </p>
                   <p className="font-semibold text-secondary-300 text-center">
