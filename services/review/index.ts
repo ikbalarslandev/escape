@@ -1,7 +1,7 @@
 import { games } from "./lib/games";
-import { generateData } from "./lib/func";
+import { generateData, deleteDataFolder } from "./lib/func";
 
-// delete the data folder under services/review/data.
+deleteDataFolder();
 
 for (const game of games) {
   generateData({

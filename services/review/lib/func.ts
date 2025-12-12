@@ -171,4 +171,13 @@ const generateData = async ({
   }
 };
 
-export { getReviews, generateData };
+const deleteDataFolder = async () => {
+  const dataDir = path.join(process.cwd(), "services", "review", "data");
+
+  if (fs.existsSync(dataDir)) {
+    fs.rmSync(dataDir, { recursive: true, force: true });
+    console.log(`🗑️  Deleted: ${dataDir}`);
+  }
+};
+
+export { getReviews, generateData, deleteDataFolder };
