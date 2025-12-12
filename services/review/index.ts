@@ -1,5 +1,5 @@
 import { simplyfyReview } from "@/utils/simplyfyReviewData";
-import { games } from "./games";
+import { games } from "./lib/games";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 
