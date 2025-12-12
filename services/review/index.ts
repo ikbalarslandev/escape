@@ -1,9 +1,18 @@
 import { simplyfyReview } from "@/utils/simplyfyReviewData";
+import { games } from "./games";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
 
 const API_KEY = process.env.TRIP_ADVISOR_API_KEY;
 const FALLBACK_LOCATION_ID = "34026318";
 
-export async function getReviews(request: Request) {
+export async function getReviews({
+  name,
+  locationId,
+}: {
+  name: string;
+  locationId: string;
+}) {
   try {
     if (!API_KEY) {
       return {
@@ -15,11 +24,7 @@ export async function getReviews(request: Request) {
       };
     }
 
-    // Get locationId from query parameters or use fallback
-    const { searchParams } = new URL(request.url);
-    let locationId = searchParams.get("locationId");
     const usedFallback = !locationId;
-
     if (!locationId) {
       locationId = FALLBACK_LOCATION_ID;
     }
@@ -81,10 +86,11 @@ export async function getReviews(request: Request) {
     // Success!
     const data = await response.json();
 
-    console.log({
+    console.info({
       success: true,
       config: {
         locationId,
+        name,
         usedFallback,
       },
       data: {
@@ -97,6 +103,7 @@ export async function getReviews(request: Request) {
       success: true,
       config: {
         locationId,
+        name,
         usedFallback,
       },
       data: {
@@ -118,4 +125,11 @@ export async function getReviews(request: Request) {
       status: 500,
     };
   }
+}
+
+for (const game of games) {
+  getReviews({
+    name: game.name,
+    locationId: game.id,
+  });
 }
