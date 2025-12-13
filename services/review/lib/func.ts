@@ -52,34 +52,15 @@ async function getReviews({
         errorDetails = null;
       }
 
-      // Provide specific guidance based on error
-      let helpMessage = "";
-      if (response.status === 403) {
-        if (API_KEY.length === 9) {
-          helpMessage =
-            "You are using a 9-character key. The working key from browser is 32 characters. Update your .env.local with the full key.";
-        } else {
-          helpMessage =
-            "API key is invalid or does not have permission to access this endpoint.";
-        }
-      }
-
       return {
         success: false,
         error: "TripAdvisor API Error",
         message: `API returned ${response.status} ${response.statusText}`,
         details: errorDetails,
-        help: helpMessage,
         status: response.status,
         config: {
-          apiKeyLength: API_KEY.length,
-          expectedLength: 32,
           locationId,
           usedFallback,
-          urlMasked: `https://api.content.tripadvisor.com/api/v1/location/${locationId}/reviews?key=${API_KEY.substring(
-            0,
-            8
-          )}...`,
         },
       };
     }
@@ -210,6 +191,8 @@ const generateData = async ({
       name,
       locationId,
     });
+
+    if (entityFeed.data?.totalReviews == 0) return;
 
     // Create data directory relative to project root
     const dataDir = path.join(process.cwd(), "services", "review", "data");
