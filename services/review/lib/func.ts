@@ -2,7 +2,6 @@ import { simplyfyReview } from "@/utils/simplyfyReviewData";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
-import { config, success } from "zod";
 dotenv.config({ path: ".env" });
 
 const API_KEY = process.env.TRIP_ADVISOR_API_KEY;
@@ -96,7 +95,7 @@ async function getReviews({
     const averageRating =
       simplifiedReviews.length > 0 ? totalRating / simplifiedReviews.length : 0;
 
-    console.info({
+    console.log({
       success: true,
       config: {
         locationId,
