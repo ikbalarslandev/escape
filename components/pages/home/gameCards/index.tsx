@@ -15,9 +15,9 @@ const GameCardsSection = () => {
     {
       id: 1,
       title: "Hipodrome",
-      difficulty: 7,
+      difficulty: 6,
       playTime: "2 hours",
-      kilometers: 1.8,
+      kilometers: 0.8,
       languages: ["English"],
       image: "/game-cards/1.png",
       isActive: true,

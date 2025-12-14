@@ -31,10 +31,10 @@ const GamesPage = () => {
         "Coworkers",
       ],
       startingLocation: "German Fountain",
-      difficulty: 2,
+      difficulty: 3,
       teamSize: "2-4 players",
       playTime: "1.5-2 hours",
-      distance: "2.5 km",
+      distance: "0.8 km",
       languages: ["English"],
       playedBy: 3,
       highlights: [
