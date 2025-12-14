@@ -12,36 +12,10 @@ import { Circle } from "lucide-react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { useState, useEffect } from "react";
-
-interface ReviewUser {
-  name: string;
-  img: string;
-}
-
-interface ReviewDetails {
-  url: string;
-  rating: number;
-  title: string;
-  desc: string;
-  type: string;
-}
-
-interface Review {
-  date: string;
-  user: ReviewUser;
-  details: ReviewDetails;
-}
-
-interface ReviewsData {
-  data: {
-    totalReviews: number;
-    averageRating: number;
-    allReviews: Review[];
-  };
-}
+import { IReviewsData } from "@/types/review";
 
 const BannerReviewsSection = () => {
-  const [reviewsData, setReviewsData] = useState<ReviewsData | null>(null);
+  const [reviewsData, setReviewsData] = useState<IReviewsData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

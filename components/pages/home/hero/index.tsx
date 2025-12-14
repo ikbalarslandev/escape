@@ -5,8 +5,19 @@ import { Users } from "lucide-react";
 import Image from "next/image";
 import PartnerAutoScroller from "./partners";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { IReviewsData } from "@/types/review";
 
 const HeroSection = () => {
+  const [reviewsData, setReviewsData] = useState<IReviewsData | null>(null);
+
+  useEffect(() => {
+    fetch("/review-data/all.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setReviewsData(data);
+      });
+  }, []);
   return (
     <section className="relative min-h-dvh w-full overflow-hidden">
       {/* Background Image */}
@@ -40,7 +51,9 @@ const HeroSection = () => {
           <div className="flex items-center space-x-6 mb-8">
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Users className="w-5 h-5 text-secondary-400" />
-              <span className="font-semibold">3 people</span>
+              <span className="font-semibold">
+                {reviewsData?.data.totalReviews} people
+              </span>
               <span className="text-primary-200">played the game</span>
             </div>
           </div>

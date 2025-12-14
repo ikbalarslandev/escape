@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,8 @@ import {
   Calendar,
   Sparkles,
 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { IReviewsData } from "@/types/review";
 
 const GamesPage = () => {
   const games = [
@@ -157,6 +160,16 @@ const GamesPage = () => {
   );
 
   const featuredGame = games[0]; // Hippodrome is the featured game
+
+  const [reviewsData, setReviewsData] = useState<IReviewsData | null>(null);
+
+  useEffect(() => {
+    fetch("/review-data/hippodrome.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setReviewsData(data);
+      });
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -319,7 +332,7 @@ const GamesPage = () => {
                             Played By
                           </div>
                           <div className="text-gray-600">
-                            {featuredGame.playedBy} explorers
+                            {reviewsData?.data.totalReviews} explorers
                           </div>
                         </div>
                       </div>
