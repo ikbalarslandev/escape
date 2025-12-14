@@ -147,7 +147,7 @@ async function generateReviewsForAllGames(
       allReviews.length > 0 ? totalRating / allReviews.length : 0;
 
     // Create data directory relative to project root
-    const dataDir = path.join(process.cwd(), "services", "review", "data");
+    const dataDir = path.join(process.cwd(), "public", "review-data");
 
     const entityFilename = `all.json`;
     const entityFilePath = path.join(dataDir, entityFilename);
@@ -195,7 +195,7 @@ const generateData = async ({
     if (entityFeed.data?.totalReviews == 0) return;
 
     // Create data directory relative to project root
-    const dataDir = path.join(process.cwd(), "services", "review", "data");
+    const dataDir = path.join(process.cwd(), "public", "review-data");
 
     // Create directory if it doesn't exist
     if (!fs.existsSync(dataDir)) {
@@ -225,8 +225,7 @@ const generateData = async ({
 };
 
 const deleteDataFolder = async () => {
-  const dataDir = path.join(process.cwd(), "services", "review", "data");
-
+  const dataDir = path.join(process.cwd(), "public", "review-data");
   if (fs.existsSync(dataDir)) {
     fs.rmSync(dataDir, { recursive: true, force: true });
     console.log(`🗑️  Deleted: ${dataDir}`);
