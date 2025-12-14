@@ -7,7 +7,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
-import { Star } from "lucide-react";
+import { Circle } from "lucide-react";
+
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { useState, useEffect } from "react";
@@ -65,11 +66,11 @@ const BannerReviewsSection = () => {
     return (
       <div className="flex gap-1">
         {[...Array(5)].map((_, i) => (
-          <Star
+          <Circle
             key={i}
             className={`w-4 h-4 ${
               i < rating
-                ? "fill-yellow-400 text-yellow-400"
+                ? "fill-tripadvisor-500 text-tripadvisor-500"
                 : "fill-gray-300 text-gray-300"
             }`}
           />

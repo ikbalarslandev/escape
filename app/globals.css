@@ -28,6 +28,8 @@
   --color-secondary-800: #115e59;
   --color-secondary-900: #134e4a;
 
+  --color-tripadvisor-500: #00aa6c;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
