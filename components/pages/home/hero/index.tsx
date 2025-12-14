@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center mt-10">
         <div className="max-w-2xl text-white">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-            Outdoor Escape <span>Games in</span>
+            Outdoor Escape <span>Games in</span>{" "}
             <span className="block text-secondary-400 ml-auto w-full">
               Istanbul
             </span>
