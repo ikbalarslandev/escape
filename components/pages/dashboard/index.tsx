@@ -96,35 +96,37 @@ export default function DashboardPage() {
           </div>
 
           {/* Stats Row */}
-          <div className="flex md:flex-row gap-4 mb-8">
-            <div className="flex-1 bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl p-5 shadow-sm">
-              <div className="flex flex-col items-center justify-between">
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            {/* All-Star Players */}
+            <div className="flex-1 bg-gradient-to-br from-white to-purple-50 border border-purple-100 rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition">
+              <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-2xl font-bold text-gray-900">
-                    {playersData.length}
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900">
+                    {playersWithAllGames.length}
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Total Players
+                  <div className=" text-gray-500 mt-1">
+                    All-Star{" "}
+                    <span className="text-xs">(finished all games)</span>
                   </div>
                 </div>
-                <div className="p-3 bg-blue-100 rounded-xl">
-                  <FaUser className="h-6 w-6 text-blue-600" />
+
+                <div className="p-3 md:p-4 bg-purple-100 rounded-2xl">
+                  <FaCrown className="h-6 w-6 md:h-7 md:w-7 text-purple-600" />
                 </div>
               </div>
             </div>
-
-            <div className="flex-1 bg-gradient-to-br from-white to-purple-50 border border-purple-100 rounded-2xl p-5 shadow-sm">
-              <div className="flex flex-col items-center justify-between">
+            {/* Total Players */}
+            <div className="flex-1 bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition">
+              <div className="flex items-center justify-between md:justify-between">
                 <div>
-                  <div className="text-2xl font-bold text-gray-900">
-                    {playersWithAllGames.length}
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900">
+                    {playersData.length}
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    All-Star Players
-                  </div>
+                  <div className=" text-gray-500 mt-1">Total</div>
                 </div>
-                <div className="p-3 bg-purple-100 rounded-xl">
-                  <FaCrown className="h-6 w-6 text-purple-600" />
+
+                <div className="p-3 md:p-4 bg-blue-100 rounded-2xl">
+                  <FaUser className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
                 </div>
               </div>
             </div>
