@@ -48,7 +48,7 @@ const HeroSection = () => {
             family!
           </p>
 
-          <div className="flex items-center space-x-6 mb-8">
+          <Link href="/dashboard" className="flex items-center space-x-6 mb-8">
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Users className="w-5 h-5 text-secondary-400" />
               <span className="font-semibold">
@@ -56,7 +56,7 @@ const HeroSection = () => {
               </span>
               <span className="text-primary-200">played the game</span>
             </div>
-          </div>
+          </Link>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button

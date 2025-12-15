@@ -8,7 +8,7 @@
     {
       "number": 2,
       "name": "Elif Demir",
-      "instagram": "@elif.demir",
+      "instagram": "elif.demir",
       "games": [1]
     },
     {
@@ -19,7 +19,7 @@
     {
       "number": 4,
       "name": "Ayşe Yılmaz",
-      "instagram": "@ayse.yilmaz",
+      "instagram": "ayse.yilmaz",
       "games": [1, 3]
     },
     {
@@ -30,7 +30,7 @@
     {
       "number": 6,
       "name": "Zeynep Aydın",
-      "instagram": "@zeynep.aydin",
+      "instagram": "zeynep.aydin",
       "games": [1, 2, 3]
     },
     {
@@ -41,7 +41,7 @@
     {
       "number": 8,
       "name": "Ece Koç",
-      "instagram": "@ece.koc",
+      "instagram": "ece.koc",
       "games": [2, 3]
     },
     {
@@ -52,7 +52,7 @@
     {
       "number": 10,
       "name": "Melis Karaca",
-      "instagram": "@melis.karaca",
+      "instagram": "melis.karaca",
       "games": [1, 2]
     }
   ]

@@ -19,6 +19,7 @@ const NavComponent = () => {
   const navLinks = [
     { href: "/howItWorks", label: "How to Play" },
     { href: "/games", label: "Games" },
+    { href: "/dashboard", label: "Dashboard" },
     { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },

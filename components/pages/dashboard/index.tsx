@@ -13,67 +13,21 @@ import {
 import { FaInstagram, FaTrophy, FaCrown } from "react-icons/fa";
 import { FaUser, FaChartLine } from "react-icons/fa6";
 import BannerReviewsSection from "@/components/pages/home/bannerReviews";
-
-const playersData = [
-  {
-    number: 1,
-    name: "Ikbal Arslan",
-    games: [1, 2],
-  },
-  {
-    number: 2,
-    name: "Elif Demir",
-    instagram: "elif.demir",
-    games: [1],
-  },
-  {
-    number: 3,
-    name: "Mehmet Kaya",
-    games: [2, 3],
-  },
-  {
-    number: 4,
-    name: "Ayşe Yılmaz",
-    instagram: "ayse.yilmaz",
-    games: [1, 3],
-  },
-  {
-    number: 5,
-    name: "Can Özkan",
-    games: [2],
-  },
-  {
-    number: 6,
-    name: "Zeynep Aydın",
-    instagram: "zeynep.aydin",
-    games: [1, 2, 3],
-  },
-  {
-    number: 7,
-    name: "Burak Şahin",
-    games: [3],
-  },
-  {
-    number: 8,
-    name: "Ece Koç",
-    instagram: "ece.koc",
-    games: [2, 3],
-  },
-  {
-    number: 9,
-    name: "Kerem Polat",
-    games: [1],
-  },
-  {
-    number: 10,
-    name: "Melis Karaca",
-    instagram: "melis.karaca",
-    games: [1, 2],
-  },
-];
+import { useState, useEffect } from "react";
+import { IDashboardUser } from "@/types/dashboard";
 
 export default function DashboardPage() {
-  const playersWithAllGames = playersData.filter((p) => p.games.length === 3);
+  const [playersData, setPlayersData] = useState<IDashboardUser[] | null>(null);
+
+  useEffect(() => {
+    fetch("/dashboard/mock.json")
+      .then((res) => res.json())
+      .then((DashboardData) => {
+        setPlayersData(DashboardData.data);
+      });
+  }, []);
+
+  const playersWithAllGames = playersData?.filter((p) => p.games.length === 3);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/20 pt-4 md:p-8">
@@ -102,7 +56,7 @@ export default function DashboardPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-gray-900">
-                    {playersWithAllGames.length}
+                    {playersWithAllGames?.length}
                   </div>
                   <div className=" text-gray-500 mt-1">
                     All-Star{" "}
@@ -120,7 +74,7 @@ export default function DashboardPage() {
               <div className="flex items-center justify-between md:justify-between">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-gray-900">
-                    {playersData.length}
+                    {playersData?.length}
                   </div>
                   <div className=" text-gray-500 mt-1">Total</div>
                 </div>
@@ -195,7 +149,7 @@ export default function DashboardPage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {playersData.map((player, index) => (
+                {playersData?.map((player, index) => (
                   <TableRow
                     key={player.number}
                     className={`group transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-blue-50/30 ${
@@ -343,10 +297,10 @@ export default function DashboardPage() {
                 </div>
               </div>
               <div className="text-sm text-gray-700">
-                <span className="font-medium">{playersData.length}</span>{" "}
+                <span className="font-medium">{playersData?.length}</span>{" "}
                 players •{" "}
                 <span className="font-medium">
-                  {playersWithAllGames.length}
+                  {playersWithAllGames?.length}
                 </span>{" "}
                 All-Stars
               </div>
