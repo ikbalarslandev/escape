@@ -1,13 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -18,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { FaInstagram } from "react-icons/fa";
 
 // Mock data from your JSON
 const playersData = [
@@ -29,7 +23,7 @@ const playersData = [
   {
     number: 2,
     name: "Elif Demir",
-    instagram: "@elif.demir",
+    instagram: "elif.demir",
     games: [1],
   },
   {
@@ -40,7 +34,7 @@ const playersData = [
   {
     number: 4,
     name: "Ayşe Yılmaz",
-    instagram: "@ayse.yilmaz",
+    instagram: "ayse.yilmaz",
     games: [1, 3],
   },
   {
@@ -51,7 +45,7 @@ const playersData = [
   {
     number: 6,
     name: "Zeynep Aydın",
-    instagram: "@zeynep.aydin",
+    instagram: "zeynep.aydin",
     games: [1, 2, 3],
   },
   {
@@ -62,7 +56,7 @@ const playersData = [
   {
     number: 8,
     name: "Ece Koç",
-    instagram: "@ece.koc",
+    instagram: "ece.koc",
     games: [2, 3],
   },
   {
@@ -73,18 +67,12 @@ const playersData = [
   {
     number: 10,
     name: "Melis Karaca",
-    instagram: "@melis.karaca",
+    instagram: "melis.karaca",
     games: [1, 2],
   },
 ];
 
 export default function DashboardPage() {
-  const [selectedGame, setSelectedGame] = useState<number | null>(null);
-
-  const filteredPlayers = selectedGame
-    ? playersData.filter((player) => player.games.includes(selectedGame))
-    : playersData;
-
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
@@ -109,31 +97,23 @@ export default function DashboardPage() {
 
         {/* Players Table */}
         <Card className="mb-6">
-          <CardHeader>
-            <CardTitle>Players List</CardTitle>
-            <CardDescription>
-              Showing {filteredPlayers.length} player
-              {filteredPlayers.length !== 1 ? "s" : ""}
-              {selectedGame ? ` who played in Game ${selectedGame}` : ""}
-            </CardDescription>
-          </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[80px]">#</TableHead>
+                  <TableHead className="w-[80px]">Number</TableHead>
                   <TableHead>Player</TableHead>
-                  <TableHead className="text-center">Game 1</TableHead>
+                  <TableHead className="text-center">Hippodrome</TableHead>
                   <TableHead className="text-center">Game 2</TableHead>
                   <TableHead className="text-center">Game 3</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredPlayers.map((player) => (
+                {playersData.map((player) => (
                   <TableRow key={player.number}>
                     <TableCell className="font-medium">
                       <Badge variant="secondary" className="font-bold">
-                        #{player.number}
+                        {player.number}
                       </Badge>
                     </TableCell>
                     <TableCell>
@@ -141,16 +121,12 @@ export default function DashboardPage() {
                         {player.instagram ? (
                           <>
                             <span className="font-medium flex items-center gap-2">
-                              <span className="text-pink-500">📸</span>
+                              <FaInstagram />
                               {player.instagram}
-                            </span>
-                            <span className="text-sm text-gray-500">
-                              {player.name}
                             </span>
                           </>
                         ) : (
                           <span className="font-medium flex items-center gap-2">
-                            <span className="text-gray-600">👤</span>
                             {player.name}
                           </span>
                         )}
@@ -181,15 +157,6 @@ export default function DashboardPage() {
                 ))}
               </TableBody>
             </Table>
-
-            {/* No results message */}
-            {filteredPlayers.length === 0 && (
-              <div className="text-center py-8">
-                <p className="text-gray-500">
-                  No players found for the selected game filter.
-                </p>
-              </div>
-            )}
           </CardContent>
         </Card>
       </div>
