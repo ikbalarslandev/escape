@@ -96,9 +96,9 @@ export default function DashboardPage() {
           </div>
 
           {/* Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl p-5 shadow-sm">
-              <div className="flex items-center justify-between">
+          <div className="flex md:flex-row gap-4 mb-8">
+            <div className="flex-1 bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl p-5 shadow-sm">
+              <div className="flex flex-col items-center justify-between">
                 <div>
                   <div className="text-2xl font-bold text-gray-900">
                     {playersData.length}
@@ -113,8 +113,8 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-purple-50 border border-purple-100 rounded-2xl p-5 shadow-sm">
-              <div className="flex items-center justify-between">
+            <div className="flex-1 bg-gradient-to-br from-white to-purple-50 border border-purple-100 rounded-2xl p-5 shadow-sm">
+              <div className="flex flex-col items-center justify-between">
                 <div>
                   <div className="text-2xl font-bold text-gray-900">
                     {playersWithAllGames.length}
