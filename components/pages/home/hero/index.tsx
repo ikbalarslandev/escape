@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
 import Image from "next/image";
-import PartnerAutoScroller from "./partners";
+// import PartnerAutoScroller from "./partners";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { IReviewsData } from "@/types/review";
@@ -77,7 +77,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <PartnerAutoScroller />
+      {/* <PartnerAutoScroller /> */}
     </section>
   );
 };
