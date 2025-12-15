@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { FaInstagram } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
+import BannerReviewsSection from "@/components/pages/home/bannerReviews";
 
 // Mock data from your JSON
 const playersData = [
@@ -213,6 +214,8 @@ export default function DashboardPage() {
             </TableBody>
           </Table>
         </div>
+
+        <BannerReviewsSection />
       </div>
     </div>
   );
